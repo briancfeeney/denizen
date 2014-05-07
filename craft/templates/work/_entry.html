@@ -1,0 +1,50 @@
+{# Work entry template #}
+
+
+{% extends "_layout" %}
+
+{% block content %}
+
+	<div class="thumbnail-overlay">
+	{% for image in entry.videoThumbnail.limit(1) %}
+		<img src="{{ image.getUrl() }}" class="thumbnail_fullwidth">
+		<button class="play">Play</button>
+	{% endfor %}
+	</div>
+	
+	{% for video in entry.mp4Video %}
+	<video id="video_fullwidth" preload="auto"  loop="loop" muted="muted" volume="0">
+		<source src="{{ video.getUrl() }}" type="video/mp4">
+		Video not supported
+	</video>
+	{% endfor %}
+	
+	<section id="work-info">
+		<div class="container">
+			<div class="row">
+				<div class="col-sm-9 offset-sm-1">
+					<h4>{{ entry.workType }}</h4>
+					<h1>{{ entry.title }}</h1>
+					{{ entry.body }}
+					<ul class="list-inline">
+						<li><h5>Creatives:</h5></li>
+						{% if entry.creatives | length %}
+							{% for person in entry.creatives %}
+								<li>{{ person.title }}</li>
+							{% endfor %}
+						{% endif %}
+					</ul>
+				</div>
+				<div class="col-sm-2">
+					<section class="clientLogo">
+					{% for client in entry.client %}
+						{% for image in client.logo.limit(1) %}
+						<img src="{{ image.getUrl() }}">
+						{% endfor %}
+					{% endfor %}
+					</section>
+				</div>
+			</div>
+		</div>
+	</section>
+{% endblock %}

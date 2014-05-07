@@ -16,7 +16,7 @@ class __TwigTemplate_c954584e6833098b9728072f141d5ce5b9835dcf5243e9eb2d9b88cd3ef
     protected function doDisplay(array $context, array $blocks = array())
     {
         // line 1
-        $context["__internal_19fc49a27a98db52bd60030dc8885c4c8b2ea15d5cb593b3ce352e2cebcc904c"] = $this->env->loadTemplate("_includes/forms");
+        $context["__internal_f00686db412fd3258c402f60b9479234b895fd9f1c5d3a27f78ff6b11963c2e7"] = $this->env->loadTemplate("_includes/forms");
         // line 3
         \Craft\craft()->templates->includeTranslations(
         	"Display in a table",
@@ -124,7 +124,7 @@ class __TwigTemplate_c954584e6833098b9728072f141d5ce5b9835dcf5243e9eb2d9b88cd3ef
 \t\t\t\t\t<div class=\"texticon search icon\">
 \t\t\t\t\t\t";
         // line 45
-        echo $context["__internal_19fc49a27a98db52bd60030dc8885c4c8b2ea15d5cb593b3ce352e2cebcc904c"]->gettext(array("placeholder" => \Craft\Craft::t("Search")));
+        echo $context["__internal_f00686db412fd3258c402f60b9479234b895fd9f1c5d3a27f78ff6b11963c2e7"]->gettext(array("placeholder" => \Craft\Craft::t("Search")));
         // line 47
         echo "
 \t\t\t\t\t</div>
@@ -156,6 +156,6 @@ class __TwigTemplate_c954584e6833098b9728072f141d5ce5b9835dcf5243e9eb2d9b88cd3ef
 
     public function getDebugInfo()
     {
-        return array (  129 => 47,  127 => 45,  123 => 43,  117 => 39,  101 => 37,  96 => 36,  90 => 33,  81 => 30,  62 => 24,  45 => 18,  43 => 17,  36 => 12,  21 => 3,  19 => 1,  88 => 34,  84 => 31,  80 => 32,  75 => 26,  66 => 18,  64 => 17,  61 => 16,  58 => 23,  55 => 14,  50 => 40,  44 => 25,  41 => 24,  34 => 11,  32 => 10,  30 => 9,  28 => 4,  26 => 3,  107 => 34,  104 => 33,  100 => 31,  92 => 35,  87 => 32,  76 => 24,  72 => 30,  65 => 20,  63 => 19,  60 => 18,  57 => 17,  54 => 22,  48 => 19,  46 => 26,  39 => 23,  37 => 11,  33 => 9,  31 => 7,  29 => 6,  27 => 8,  25 => 2,);
+        return array (  129 => 47,  127 => 45,  123 => 43,  117 => 39,  101 => 37,  96 => 36,  90 => 33,  87 => 32,  81 => 30,  62 => 24,  54 => 22,  48 => 19,  45 => 18,  43 => 17,  36 => 12,  27 => 8,  21 => 3,  19 => 1,  92 => 35,  88 => 34,  84 => 31,  80 => 32,  75 => 26,  72 => 30,  66 => 18,  64 => 17,  61 => 16,  58 => 23,  55 => 14,  50 => 40,  46 => 26,  44 => 25,  41 => 24,  39 => 23,  37 => 11,  34 => 11,  32 => 10,  30 => 9,  28 => 4,  26 => 3,  24 => 2,);
     }
 }
