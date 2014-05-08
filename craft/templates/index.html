@@ -14,7 +14,7 @@
 
 	<section id="home-top" class="fullscreen">
 		<div class="logo-container">
-			<a href="/"><img class="logo-splash" src="/public/images/denizen-logo_white-outline.png"></a>
+			<img class="logo-splash" src="/public/images/denizen-logo_white-outline.png">
 		</div>
 	</section>
 	
@@ -40,14 +40,14 @@
 	<section id="aboutUs" class="fullscreen">
 		<div class="container">
 			<div class="heading">
-				<h2>About Us</h2>
+				<h4>About Us</h4>
 			</div>
 		</div>
 	</section>
 	<section id="ourClients" class="fullscreen">
 		<div class="container">
 			<div class="heading">
-				<h2>Our Clients</h2>
+				<h4>Our Clients</h4>
 			</div>
 		</div>
 	</section>
@@ -63,7 +63,7 @@
 
 		//Dynamically assign height
 		function sizeContent() {
-		    var newHeight = $(window).height() - $("header").height() + "px";
+		    var newHeight = $(window).height();
 		    $(".fullscreen").css("min-height", newHeight);
 	}
 	</script>

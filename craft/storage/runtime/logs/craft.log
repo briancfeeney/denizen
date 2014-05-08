@@ -2118,3 +2118,26 @@ REQUEST_URI=/work/fast-n-loud
 2014/05/07 23:33:21 [error] [application] Unable to find the template “error”.
 
 ******************************************************************************************************
+2014/05/08 03:02:17 [error] [application] Unable to find the template “about”.
+2014/05/08 03:02:17 [error] [application] 404 - 
+2014/05/08 03:02:17 [error] [exception.Craft\HttpException.404] exception 'Craft\HttpException' in /Users/bcfeeney/Sites/denizen/craft/app/controllers/TemplatesController.php:191
+Stack trace:
+#0 /Users/bcfeeney/Sites/denizen/craft/app/controllers/TemplatesController.php(27): Craft\TemplatesController->_render('about', Array)
+#1 [internal function]: Craft\TemplatesController->actionRender('about', Array)
+#2 /Users/bcfeeney/Sites/denizen/craft/app/framework/web/actions/CAction.php(108): ReflectionMethod->invokeArgs(Object(Craft\TemplatesController), Array)
+#3 /Users/bcfeeney/Sites/denizen/craft/app/framework/web/actions/CInlineAction.php(47): CAction->runWithParamsInternal(Object(Craft\TemplatesController), Object(ReflectionMethod), Array)
+#4 /Users/bcfeeney/Sites/denizen/craft/app/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#5 /Users/bcfeeney/Sites/denizen/craft/app/framework/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#6 /Users/bcfeeney/Sites/denizen/craft/app/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), NULL)
+#7 /Users/bcfeeney/Sites/denizen/craft/app/framework/web/CWebApplication.php(282): CController->run('render')
+#8 /Users/bcfeeney/Sites/denizen/craft/app/framework/web/CWebApplication.php(141): CWebApplication->runController('templates/rende...')
+#9 /Users/bcfeeney/Sites/denizen/craft/app/etc/web/WebApp.php(240): CWebApplication->processRequest()
+#10 /Users/bcfeeney/Sites/denizen/craft/app/framework/base/CApplication.php(180): Craft\WebApp->processRequest()
+#11 /Users/bcfeeney/Sites/denizen/craft/app/index.php(196): CApplication->run()
+#12 /Users/bcfeeney/Sites/denizen/index.php(14): require_once('/Users/bcfeeney...')
+#13 {main}
+REQUEST_URI=/about
+HTTP_REFERER=http://denizen.dev/
+---
+
+******************************************************************************************************

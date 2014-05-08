@@ -20,15 +20,20 @@
 	
 	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>	
 	
+	<script type="text/javascript" src="//use.typekit.net/zzt4jrb.js"></script>
+	<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+	
 </head>
 
 <body {% if craft.request.firstSegment == '' %}class="home"{% endif %}>
 	<header id="header">
-		<!-- <h1><a href="{{ siteUrl }}">{{ siteName }}</a></h1> -->
+		<div class="logo-container">
+			<a href="/"><img class="logo-splash" src="/public/images/denizen-logo_white-outline.png"></a>
+		</div>
 		<nav>
 			<ul>
-				<li><a href="{{ url('work') }}" {% if craft.request.firstSegment == 'work' %}class="active"{% endif %}>Work</a></li>
-				<li><a href="{{ url('about') }}" {% if craft.request.firstSegment == 'about' %}class="active"{% endif %}>About</a></li>
+				<li><a href="{{ url('work') }}" {% if craft.request.firstSegment == 'work' %}class="active"{% endif %}>Our Work</a></li>
+				<li><a href="{{ url('about') }}" {% if craft.request.firstSegment == 'about' %}class="active"{% endif %}>About Us</a></li>
 				<li><a href="{{ url('news') }}" {% if craft.request.firstSegment == 'news' %}class="active"{% endif %}>News</a></li>
 			</ul>
 		</nav>

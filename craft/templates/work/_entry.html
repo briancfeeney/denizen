@@ -5,19 +5,23 @@
 
 {% block content %}
 
-	<div class="thumbnail-overlay">
-	{% for image in entry.videoThumbnail.limit(1) %}
-		<img src="{{ image.getUrl() }}" class="thumbnail_fullwidth">
-		<button class="play">Play</button>
-	{% endfor %}
-	</div>
+	<section id="video-player">
+		<div class="thumbnail-overlay">
+		{% for image in entry.videoThumbnail.limit(1) %}
+			<img src="{{ image.getUrl() }}" class="thumbnail_fullwidth">
+			<button class="play">Play</button>
+		{% endfor %}
+		</div>
 	
-	{% for video in entry.mp4Video %}
-	<video id="video_fullwidth" preload="auto"  loop="loop" muted="muted" volume="0">
-		<source src="{{ video.getUrl() }}" type="video/mp4">
-		Video not supported
-	</video>
-	{% endfor %}
+		{% for video in entry.mp4Video %}
+		<video id="video_fullwidth" preload="auto" volume="3">
+			<source src="{{ video.getUrl() }}" type="video/mp4">
+			Video not supported
+		</video>
+		{% endfor %}
+	
+		<button class="pause hide">Pause</button>
+	</section>
 	
 	<section id="work-info">
 		<div class="container">
@@ -47,4 +51,25 @@
 			</div>
 		</div>
 	</section>
+	
+	<script>
+		$(".play").click(function() {
+			$(".thumbnail-overlay").addClass("hide");
+			$('video').trigger("play");
+			$('.pause').removeClass("hide");
+		});
+	
+		$(".pause").click(function() {
+			if($("video").get(0).paused) {
+				$('video').trigger("play");
+			}else{
+				$('video').trigger("pause");
+			}
+		});
+	
+		$("video").bind("ended", function() {
+		   $(".thumbnail-overlay").removeClass("hide");
+		});
+	</script>
+	
 {% endblock %}

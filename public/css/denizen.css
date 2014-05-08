@@ -5772,9 +5772,28 @@ button.close {
     display: none !important;
   }
 }
+.franklinB {
+  font-family: "franklin-gothic-urw", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+}
+.franklinBI {
+  font-family: "franklin-gothic-urw", sans-serif;
+  font-style: italic;
+  font-weight: 400;
+}
+.franklinD {
+  font-family: "franklin-gothic-urw", sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
 body {
   background-color: #1b1b1b;
   color: #ffffff;
+  font-family: "franklin-gothic-urw", sans-serif;
+  font-style: normal;
+  font-weight: 400;
 }
 body.home {
   background-color: #4f117e;
@@ -5788,6 +5807,10 @@ h4 {
   text-transform: uppercase;
   color: #6c5e80;
   font-size: 1.5em;
+  font-family: "franklin-gothic-urw", sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  letter-spacing: 2px;
 }
 h5 {
   text-transform: uppercase;
@@ -5805,10 +5828,13 @@ img {
 }
 /* -------------------------------------------------------------------------------- */
 header {
-  position: fixed;
+  z-index: 10;
+}
+header nav {
+  position: absolute;
   top: 2em;
   right: 4em;
-  z-index: 10;
+  z-index: 11;
 }
 header nav ul {
   list-style-type: none;
@@ -5821,6 +5847,33 @@ header nav ul li a {
   color: #fff;
   margin-left: 2em;
   text-transform: uppercase;
+  font-family: "franklin-gothic-urw", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 1.2em;
+  padding-bottom: 3px;
+  letter-spacing: 1px;
+}
+header nav ul li a:hover {
+  color: #fff;
+  border-bottom: 3px solid #3e3250;
+  text-decoration: none;
+}
+header .logo-container {
+  max-width: 300px;
+  max-height: 40%;
+  margin-top: 0;
+  margin-left: 0;
+  position: absolute;
+}
+header .logo-container .logo-splash {
+  padding: 2em 4em;
+}
+.home header .logo-container {
+  display: none;
+}
+.home header nav {
+  position: fixed;
 }
 /* -------------------------------------------------------------------------------- */
 #video_background {
@@ -5857,12 +5910,9 @@ header nav ul li a {
 .logo-container.smaller {
   max-width: 300px;
   max-height: 40%;
-  margin-top: 0;
+  margin-top: -2em;
   margin-left: 0;
   position: fixed;
-}
-.logo-container.smaller .logo-splash {
-  padding: 2em 4em;
 }
 #video-gallery {
   background-color: #111;
@@ -5909,19 +5959,35 @@ header nav ul li a {
   top: 100px;
   width: 100%;
   text-align: center;
+  z-index: 7;
 }
-.thumbnail-overlay button {
+button {
   background-color: transparent;
   border: 1px solid #ffffff;
   position: absolute;
-  top: 45%;
   z-index: 10;
   padding: 10px 20px;
   font-size: 1.5em;
   text-transform: uppercase;
+  font-family: "franklin-gothic-urw", sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  letter-spacing: 2px;
 }
-.thumbnail-overlay button:hover {
+button:focus {
+  outline: none;
+}
+button:hover {
   background-color: rgba(62, 50, 80, 0.5);
+}
+button.play {
+  top: 45%;
+}
+button.pause {
+  top: 120px;
+  right: 20px;
+  font-size: 1em;
+  z-index: 5;
 }
 #work-info {
   padding: 2em 0;

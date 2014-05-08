@@ -1,5 +1,6 @@
 @import "bootstrap.less";
 
+// COLOR
 @purple: rgba(62,50,80,1);
 @purple-denizen: rgba(79,17,126,1);
 @lightPurple: rgba(108,94,128,1);
@@ -7,9 +8,28 @@
 @black: rgb(4,4,4);
 @darkGray: rgb(27,27,27);
 
+// FONTS
+.franklinB {
+	font-family: "franklin-gothic-urw",sans-serif;
+	font-style: normal;
+	font-weight: 400;
+}
+.franklinBI {
+	font-family: "franklin-gothic-urw",sans-serif;
+	font-style: italic;
+	font-weight: 400;
+}
+.franklinD {
+	font-family: "franklin-gothic-urw",sans-serif;
+	font-style: normal;
+	font-weight: 700;
+	letter-spacing: 2px;
+}
+
 body {
 	background-color: @darkGray;
 	color: @white;
+	.franklinB();
 	&.home {
 		background-color: @purple-denizen;
 		background-image: url("/public/images/dot-pattern.png");
@@ -25,6 +45,7 @@ h4 {
 	text-transform: uppercase;
 	color: @lightPurple;
 	font-size: 1.5em;
+	.franklinD();
 }
 
 h5 {
@@ -51,11 +72,12 @@ img {
 // HEADER
 
 header {
-	position: fixed;
-	top: 2em;
-	right: 4em;
 	z-index: 10;
 	nav {
+		position: absolute;
+		top: 2em;
+		right: 4em;
+		z-index: 11;
 		ul {
 			list-style-type: none;
 			li {
@@ -65,8 +87,38 @@ header {
 					color: #fff;
 					margin-left: 2em;
 					text-transform: uppercase;
+					.franklinB();
+					font-size: 1.2em;
+					padding-bottom: 3px;
+					letter-spacing: 1px;
+					&:hover {
+						color: #fff;
+						border-bottom: 3px solid @purple;
+						text-decoration: none;
+					}
 				}
 			}
+		}
+	}
+	.logo-container {
+		max-width: 300px;
+		max-height: 40%;
+		margin-top: 0;
+		margin-left: 0;
+		position: absolute;
+		.logo-splash {
+			padding: 2em 4em;
+		}
+	}
+}
+
+.home {
+	header {
+		.logo-container {
+			display: none;
+		}
+		nav {
+			position: fixed;
 		}
 	}
 }
@@ -109,12 +161,9 @@ header {
 	&.smaller {
 		max-width: 300px;
 		max-height: 40%;
-		margin-top: 0;
+		margin-top: -2em;
 		margin-left: 0;
 		position: fixed;
-		.logo-splash {
-			padding: 2em 4em;
-		}
 	}
 }
 
@@ -171,18 +220,32 @@ header {
 	top: 100px;
 	width: 100%;
 	text-align: center;
-	button {
-		background-color: transparent;
-		border: 1px solid @white;
-		position: absolute;
+	z-index: 7;
+}
+
+button {
+	background-color: transparent;
+	border: 1px solid @white;
+	position: absolute;
+	z-index: 10;
+	padding: 10px 20px;
+	font-size: 1.5em;
+	text-transform: uppercase;
+	.franklinD();
+	&:focus {
+		outline: none;
+	}
+	&:hover {
+		background-color: rgba(62,50,80,.5);
+	}
+	&.play {
 		top: 45%;
-		z-index: 10;
-		padding: 10px 20px;
-		font-size: 1.5em;
-		text-transform: uppercase;
-		&:hover {
-			background-color: rgba(62,50,80,.5);
-		}
+	}
+	&.pause {
+		top: 120px;
+		right: 20px;
+		font-size: 1em;
+		z-index: 5;
 	}
 }
 
