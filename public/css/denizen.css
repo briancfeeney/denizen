@@ -5795,7 +5795,7 @@ body {
   font-style: normal;
   font-weight: 400;
 }
-body.home {
+body#home {
   background-color: #4f117e;
   background-image: url("/public/images/dot-pattern.png");
 }
@@ -5828,7 +5828,7 @@ img {
 }
 /* -------------------------------------------------------------------------------- */
 header {
-  z-index: 10;
+  z-index: 99999;
 }
 header nav {
   position: absolute;
@@ -5869,10 +5869,10 @@ header .logo-container {
 header .logo-container .logo-splash {
   padding: 2em 4em;
 }
-.home header .logo-container {
+#home header .logo-container {
   display: none;
 }
-.home header nav {
+#home header nav {
   position: fixed;
 }
 /* -------------------------------------------------------------------------------- */
@@ -5914,18 +5914,18 @@ header .logo-container .logo-splash {
   margin-left: 0;
   position: fixed;
 }
-#video-gallery {
+#ourWork {
   background-color: #111;
   padding: 10em 2em;
 }
-#video-gallery .videoThumbnail {
+#ourWork .videoThumbnail {
   padding: 1em 0;
 }
-#video-gallery .videoThumbnail a {
+#ourWork .videoThumbnail a {
   display: block;
   background-color: #3e3250;
 }
-#video-gallery .videoThumbnail h6 {
+#ourWork .videoThumbnail h6 {
   position: absolute;
   font-size: 1.5em;
   bottom: 60px;
@@ -5934,10 +5934,10 @@ header .logo-container .logo-splash {
   display: none;
   z-index: 2;
 }
-#video-gallery .videoThumbnail:hover h6 {
+#ourWork .videoThumbnail:hover h6 {
   display: block;
 }
-#video-gallery .videoThumbnail:hover img {
+#ourWork .videoThumbnail:hover img {
   opacity: .3;
 }
 #aboutUs {

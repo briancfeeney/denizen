@@ -36,11 +36,11 @@ class __TwigTemplate_230dd438914c2843dc4d8f00217d6140a28bfdca98928d829e36c85d5e4
 
 \t<section id=\"home-top\" class=\"fullscreen\">
 \t\t<div class=\"logo-container\">
-\t\t\t<img class=\"logo-splash\" src=\"/public/images/denizen-logo_white-outline.png\">
+\t\t\t<a href=\"/#home\"><img class=\"logo-splash\" src=\"/public/images/denizen-logo_white-outline.png\"></a>
 \t\t</div>
 \t</section>
 \t
-\t<section id=\"video-gallery\">
+\t<section id=\"ourWork\">
 \t\t<div class=\"container\">
 \t\t\t<div class=\"row\">
 \t\t\t\t";

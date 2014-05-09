@@ -47,7 +47,7 @@ class __TwigTemplate_ed9828a305972340c53d0d40de6bc3549ef5af4912c3259926e58666934
 <body ";
         // line 28
         if (($this->getAttribute($this->getAttribute((isset($context["craft"]) ? $context["craft"] : null), "request"), "firstSegment") == "")) {
-            echo "class=\"home\"";
+            echo "id=\"home\"";
         }
         echo ">
 \t<header id=\"header\">
@@ -56,26 +56,20 @@ class __TwigTemplate_ed9828a305972340c53d0d40de6bc3549ef5af4912c3259926e58666934
 \t\t</div>
 \t\t<nav>
 \t\t\t<ul>
-\t\t\t\t<li><a href=\"";
+\t\t\t\t<li><a href=\"/#ourWork\" ";
         // line 35
-        echo twig_escape_filter($this->env, \Craft\UrlHelper::getUrl("work"), "html", null, true);
-        echo "\" ";
         if (($this->getAttribute($this->getAttribute((isset($context["craft"]) ? $context["craft"] : null), "request"), "firstSegment") == "work")) {
             echo "class=\"active\"";
         }
         echo ">Our Work</a></li>
-\t\t\t\t<li><a href=\"";
+\t\t\t\t<li><a href=\"/#aboutUs\" ";
         // line 36
-        echo twig_escape_filter($this->env, \Craft\UrlHelper::getUrl("about"), "html", null, true);
-        echo "\" ";
         if (($this->getAttribute($this->getAttribute((isset($context["craft"]) ? $context["craft"] : null), "request"), "firstSegment") == "about")) {
             echo "class=\"active\"";
         }
         echo ">About Us</a></li>
-\t\t\t\t<li><a href=\"";
+\t\t\t\t<li><a href=\"/#aboutUs\" ";
         // line 37
-        echo twig_escape_filter($this->env, \Craft\UrlHelper::getUrl("news"), "html", null, true);
-        echo "\" ";
         if (($this->getAttribute($this->getAttribute((isset($context["craft"]) ? $context["craft"] : null), "request"), "firstSegment") == "news")) {
             echo "class=\"active\"";
         }
@@ -128,6 +122,6 @@ class __TwigTemplate_ed9828a305972340c53d0d40de6bc3549ef5af4912c3259926e58666934
 
     public function getDebugInfo()
     {
-        return array (  112 => 44,  109 => 43,  97 => 50,  92 => 47,  90 => 43,  77 => 37,  69 => 36,  61 => 35,  49 => 28,  35 => 17,  27 => 16,  20 => 11,);
+        return array (  106 => 44,  103 => 43,  91 => 50,  84 => 43,  73 => 37,  67 => 36,  49 => 28,  35 => 17,  27 => 16,  20 => 11,  86 => 47,  80 => 35,  69 => 30,  65 => 29,  61 => 35,  57 => 26,  52 => 25,  48 => 24,  31 => 9,  28 => 8,);
     }
 }

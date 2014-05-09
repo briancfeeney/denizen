@@ -16,6 +16,7 @@
 		{% for video in entry.mp4Video %}
 		<video id="video_fullwidth" preload="auto" volume="3">
 			<source src="{{ video.getUrl() }}" type="video/mp4">
+			<source src="/public/flash/landing.webm" type="video/webm">
 			Video not supported
 		</video>
 		{% endfor %}
