@@ -2141,3 +2141,859 @@ HTTP_REFERER=http://denizen.dev/
 ---
 
 ******************************************************************************************************
+2014/05/10 13:56:05 [error] [application] Unable to find the template “public/flash/sample-ogg.ogv”.
+2014/05/10 13:56:05 [error] [application] 404 - 
+2014/05/10 13:56:05 [error] [exception.Craft\HttpException.404] exception 'Craft\HttpException' in /Users/bcfeeney/Sites/denizen/craft/app/controllers/TemplatesController.php:191
+Stack trace:
+#0 /Users/bcfeeney/Sites/denizen/craft/app/controllers/TemplatesController.php(27): Craft\TemplatesController->_render('public/flash/sa...', Array)
+#1 [internal function]: Craft\TemplatesController->actionRender('public/flash/sa...', Array)
+#2 /Users/bcfeeney/Sites/denizen/craft/app/framework/web/actions/CAction.php(108): ReflectionMethod->invokeArgs(Object(Craft\TemplatesController), Array)
+#3 /Users/bcfeeney/Sites/denizen/craft/app/framework/web/actions/CInlineAction.php(47): CAction->runWithParamsInternal(Object(Craft\TemplatesController), Object(ReflectionMethod), Array)
+#4 /Users/bcfeeney/Sites/denizen/craft/app/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#5 /Users/bcfeeney/Sites/denizen/craft/app/framework/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#6 /Users/bcfeeney/Sites/denizen/craft/app/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), NULL)
+#7 /Users/bcfeeney/Sites/denizen/craft/app/framework/web/CWebApplication.php(282): CController->run('render')
+#8 /Users/bcfeeney/Sites/denizen/craft/app/framework/web/CWebApplication.php(141): CWebApplication->runController('templates/rende...')
+#9 /Users/bcfeeney/Sites/denizen/craft/app/etc/web/WebApp.php(240): CWebApplication->processRequest()
+#10 /Users/bcfeeney/Sites/denizen/craft/app/framework/base/CApplication.php(180): Craft\WebApp->processRequest()
+#11 /Users/bcfeeney/Sites/denizen/craft/app/index.php(196): CApplication->run()
+#12 /Users/bcfeeney/Sites/denizen/index.php(14): require_once('/Users/bcfeeney...')
+#13 {main}
+REQUEST_URI=/public/flash/sample-ogg.ogv
+HTTP_REFERER=http://denizen.dev/work/fast-n-loud
+---
+
+******************************************************************************************************
+2014/05/10 14:16:03 [info] [application] [Forced] Starting task DeleteStaleTemplateCaches that has a total of 0 steps.
+in /Users/bcfeeney/Sites/denizen/craft/app/services/TasksService.php (176)
+2014/05/10 14:16:03 [info] [application] [Forced] Finished task 4 (DeleteStaleTemplateCaches).
+in /Users/bcfeeney/Sites/denizen/craft/app/services/TasksService.php (221)
+
+******************************************************************************************************
+2014/05/10 14:30:01 [info] [application] [Forced] Starting task DeleteStaleTemplateCaches that has a total of 0 steps.
+in /Users/bcfeeney/Sites/denizen/craft/app/services/TasksService.php (176)
+2014/05/10 14:30:01 [info] [application] [Forced] Finished task 5 (DeleteStaleTemplateCaches).
+in /Users/bcfeeney/Sites/denizen/craft/app/services/TasksService.php (221)
+
+******************************************************************************************************
+2014/05/10 14:39:29 [info] [application] [Forced] Starting task DeleteStaleTemplateCaches that has a total of 0 steps.
+in /Users/bcfeeney/Sites/denizen/craft/app/services/TasksService.php (176)
+2014/05/10 14:39:29 [info] [application] [Forced] Finished task 6 (DeleteStaleTemplateCaches).
+in /Users/bcfeeney/Sites/denizen/craft/app/services/TasksService.php (221)
+
+******************************************************************************************************
+2014/05/10 14:44:12 [error] [exception.Twig_Error_Runtime] exception 'CException' with message 'Craft\ElementCriteriaModel and its behaviors do not have a method or closure named "getUrl".' in /Users/bcfeeney/Sites/denizen/craft/app/framework/base/CComponent.php:266
+Stack trace:
+#0 /Users/bcfeeney/Sites/denizen/craft/app/models/BaseModel.php(100): CComponent->__call('getUrl', Array)
+#1 [internal function]: Craft\BaseModel->__call('getUrl', Array)
+#2 [internal function]: Craft\ElementCriteriaModel->getUrl()
+#3 /Users/bcfeeney/Sites/denizen/craft/app/vendor/twig/twig/lib/Twig/Template.php(471): call_user_func_array(Array, Array)
+#4 /Users/bcfeeney/Sites/denizen/craft/app/etc/templating/BaseTemplate.php(40): Twig_Template->getAttribute(Object(Craft\ElementCriteriaModel), 'getUrl', Array, 'method', false, false)
+#5 /Users/bcfeeney/Sites/denizen/craft/storage/runtime/compiled_templates/ba/ca/888cff535303d028eca22c47043dbce5d31a58e6e23d55926790d54e0cf3.php(61): Craft\BaseTemplate->getAttribute(Object(Craft\ElementCriteriaModel), 'getUrl', Array, 'method')
+#6 /Users/bcfeeney/Sites/denizen/craft/app/vendor/twig/twig/lib/Twig/Template.php(144): __TwigTemplate_baca888cff535303d028eca22c47043dbce5d31a58e6e23d55926790d54e0cf3->block_content(Array, Array)
+#7 /Users/bcfeeney/Sites/denizen/craft/storage/runtime/compiled_templates/ed/98/28a305972340c53d0d40de6bc3549ef5af4912c3259926e586669341fcee.php(84): Twig_Template->displayBlock('content', Array, Array)
+#8 /Users/bcfeeney/Sites/denizen/craft/app/vendor/twig/twig/lib/Twig/Template.php(278): __TwigTemplate_ed9828a305972340c53d0d40de6bc3549ef5af4912c3259926e586669341fcee->doDisplay(Array, Array)
+#9 /Users/bcfeeney/Sites/denizen/craft/app/vendor/twig/twig/lib/Twig/Template.php(252): Twig_Template->displayWithErrorHandling(Array, Array)
+#10 /Users/bcfeeney/Sites/denizen/craft/storage/runtime/compiled_templates/ba/ca/888cff535303d028eca22c47043dbce5d31a58e6e23d55926790d54e0cf3.php(24): Twig_Template->display(Array, Array)
+#11 /Users/bcfeeney/Sites/denizen/craft/app/vendor/twig/twig/lib/Twig/Template.php(278): __TwigTemplate_baca888cff535303d028eca22c47043dbce5d31a58e6e23d55926790d54e0cf3->doDisplay(Array, Array)
+#12 /Users/bcfeeney/Sites/denizen/craft/app/vendor/twig/twig/lib/Twig/Template.php(252): Twig_Template->displayWithErrorHandling(Array, Array)
+#13 /Users/bcfeeney/Sites/denizen/craft/app/vendor/twig/twig/lib/Twig/Template.php(263): Twig_Template->display(Array)
+#14 /Users/bcfeeney/Sites/denizen/craft/app/vendor/twig/twig/lib/Twig/Environment.php(292): Twig_Template->render(Array)
+#15 /Users/bcfeeney/Sites/denizen/craft/app/services/TemplatesService.php(158): Twig_Environment->render('work/_entry', Array)
+#16 /Users/bcfeeney/Sites/denizen/craft/app/controllers/BaseController.php(75): Craft\TemplatesService->render('work/_entry', Array)
+#17 /Users/bcfeeney/Sites/denizen/craft/app/controllers/TemplatesController.php(185): Craft\BaseController->renderTemplate('work/_entry', Array)
+#18 /Users/bcfeeney/Sites/denizen/craft/app/controllers/TemplatesController.php(27): Craft\TemplatesController->_render('work/_entry', Array)
+#19 [internal function]: Craft\TemplatesController->actionRender('work/_entry', Array)
+#20 /Users/bcfeeney/Sites/denizen/craft/app/framework/web/actions/CAction.php(108): ReflectionMethod->invokeArgs(Object(Craft\TemplatesController), Array)
+#21 /Users/bcfeeney/Sites/denizen/craft/app/framework/web/actions/CInlineAction.php(47): CAction->runWithParamsInternal(Object(Craft\TemplatesController), Object(ReflectionMethod), Array)
+#22 /Users/bcfeeney/Sites/denizen/craft/app/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#23 /Users/bcfeeney/Sites/denizen/craft/app/framework/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#24 /Users/bcfeeney/Sites/denizen/craft/app/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), NULL)
+#25 /Users/bcfeeney/Sites/denizen/craft/app/framework/web/CWebApplication.php(282): CController->run('render')
+#26 /Users/bcfeeney/Sites/denizen/craft/app/framework/web/CWebApplication.php(141): CWebApplication->runController('templates/rende...')
+#27 /Users/bcfeeney/Sites/denizen/craft/app/etc/web/WebApp.php(240): CWebApplication->processRequest()
+#28 /Users/bcfeeney/Sites/denizen/craft/app/framework/base/CApplication.php(180): Craft\WebApp->processRequest()
+#29 /Users/bcfeeney/Sites/denizen/craft/app/index.php(196): CApplication->run()
+#30 /Users/bcfeeney/Sites/denizen/index.php(14): require_once('/Users/bcfeeney...')
+#31 {main}
+
+Next exception 'Twig_Error_Runtime' with message 'An exception has been thrown during the rendering of a template ("Craft\ElementCriteriaModel and its behaviors do not have a method or closure named "getUrl".") in "work/_entry" at line 18.' in /Users/bcfeeney/Sites/denizen/craft/app/vendor/twig/twig/lib/Twig/Template.php:148
+Stack trace:
+#0 /Users/bcfeeney/Sites/denizen/craft/storage/runtime/compiled_templates/ed/98/28a305972340c53d0d40de6bc3549ef5af4912c3259926e586669341fcee.php(84): Twig_Template->displayBlock('content', Array, Array)
+#1 /Users/bcfeeney/Sites/denizen/craft/app/vendor/twig/twig/lib/Twig/Template.php(278): __TwigTemplate_ed9828a305972340c53d0d40de6bc3549ef5af4912c3259926e586669341fcee->doDisplay(Array, Array)
+#2 /Users/bcfeeney/Sites/denizen/craft/app/vendor/twig/twig/lib/Twig/Template.php(252): Twig_Template->displayWithErrorHandling(Array, Array)
+#3 /Users/bcfeeney/Sites/denizen/craft/storage/runtime/compiled_templates/ba/ca/888cff535303d028eca22c47043dbce5d31a58e6e23d55926790d54e0cf3.php(24): Twig_Template->display(Array, Array)
+#4 /Users/bcfeeney/Sites/denizen/craft/app/vendor/twig/twig/lib/Twig/Template.php(278): __TwigTemplate_baca888cff535303d028eca22c47043dbce5d31a58e6e23d55926790d54e0cf3->doDisplay(Array, Array)
+#5 /Users/bcfeeney/Sites/denizen/craft/app/vendor/twig/twig/lib/Twig/Template.php(252): Twig_Template->displayWithErrorHandling(Array, Array)
+#6 /Users/bcfeeney/Sites/denizen/craft/app/vendor/twig/twig/lib/Twig/Template.php(263): Twig_Template->display(Array)
+#7 /Users/bcfeeney/Sites/denizen/craft/app/vendor/twig/twig/lib/Twig/Environment.php(292): Twig_Template->render(Array)
+#8 /Users/bcfeeney/Sites/denizen/craft/app/services/TemplatesService.php(158): Twig_Environment->render('work/_entry', Array)
+#9 /Users/bcfeeney/Sites/denizen/craft/app/controllers/BaseController.php(75): Craft\TemplatesService->render('work/_entry', Array)
+#10 /Users/bcfeeney/Sites/denizen/craft/app/controllers/TemplatesController.php(185): Craft\BaseController->renderTemplate('work/_entry', Array)
+#11 /Users/bcfeeney/Sites/denizen/craft/app/controllers/TemplatesController.php(27): Craft\TemplatesController->_render('work/_entry', Array)
+#12 [internal function]: Craft\TemplatesController->actionRender('work/_entry', Array)
+#13 /Users/bcfeeney/Sites/denizen/craft/app/framework/web/actions/CAction.php(108): ReflectionMethod->invokeArgs(Object(Craft\TemplatesController), Array)
+#14 /Users/bcfeeney/Sites/denizen/craft/app/framework/web/actions/CInlineAction.php(47): CAction->runWithParamsInternal(Object(Craft\TemplatesController), Object(ReflectionMethod), Array)
+#15 /Users/bcfeeney/Sites/denizen/craft/app/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#16 /Users/bcfeeney/Sites/denizen/craft/app/framework/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#17 /Users/bcfeeney/Sites/denizen/craft/app/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), NULL)
+#18 /Users/bcfeeney/Sites/denizen/craft/app/framework/web/CWebApplication.php(282): CController->run('render')
+#19 /Users/bcfeeney/Sites/denizen/craft/app/framework/web/CWebApplication.php(141): CWebApplication->runController('templates/rende...')
+#20 /Users/bcfeeney/Sites/denizen/craft/app/etc/web/WebApp.php(240): CWebApplication->processRequest()
+#21 /Users/bcfeeney/Sites/denizen/craft/app/framework/base/CApplication.php(180): Craft\WebApp->processRequest()
+#22 /Users/bcfeeney/Sites/denizen/craft/app/index.php(196): CApplication->run()
+#23 /Users/bcfeeney/Sites/denizen/index.php(14): require_once('/Users/bcfeeney...')
+#24 {main}
+REQUEST_URI=/work/fast-n-loud
+HTTP_REFERER=http://denizen.dev/
+---
+2014/05/10 14:44:12 [error] [application] Unable to find the template “500”.
+2014/05/10 14:44:12 [error] [application] Unable to find the template “error”.
+
+******************************************************************************************************
+2014/05/10 14:44:29 [error] [php] Object of class Craft\ElementCriteriaModel could not be converted to string (/Users/bcfeeney/Sites/denizen/craft/storage/runtime/compiled_templates/ba/ca/888cff535303d028eca22c47043dbce5d31a58e6e23d55926790d54e0cf3.php:61)
+Stack trace:
+#0 /Users/bcfeeney/Sites/denizen/craft/app/vendor/twig/twig/lib/Twig/Template.php(278): __TwigTemplate_ed9828a305972340c53d0d40de6bc3549ef5af4912c3259926e586669341fcee->doDisplay()
+#1 /Users/bcfeeney/Sites/denizen/craft/app/vendor/twig/twig/lib/Twig/Template.php(252): __TwigTemplate_ed9828a305972340c53d0d40de6bc3549ef5af4912c3259926e586669341fcee->displayWithErrorHandling()
+#2 /Users/bcfeeney/Sites/denizen/craft/storage/runtime/compiled_templates/ba/ca/888cff535303d028eca22c47043dbce5d31a58e6e23d55926790d54e0cf3.php(24): __TwigTemplate_ed9828a305972340c53d0d40de6bc3549ef5af4912c3259926e586669341fcee->display()
+#3 /Users/bcfeeney/Sites/denizen/craft/app/vendor/twig/twig/lib/Twig/Template.php(278): __TwigTemplate_baca888cff535303d028eca22c47043dbce5d31a58e6e23d55926790d54e0cf3->doDisplay()
+#4 /Users/bcfeeney/Sites/denizen/craft/app/vendor/twig/twig/lib/Twig/Template.php(252): __TwigTemplate_baca888cff535303d028eca22c47043dbce5d31a58e6e23d55926790d54e0cf3->displayWithErrorHandling()
+#5 /Users/bcfeeney/Sites/denizen/craft/app/vendor/twig/twig/lib/Twig/Template.php(263): __TwigTemplate_baca888cff535303d028eca22c47043dbce5d31a58e6e23d55926790d54e0cf3->display()
+#6 /Users/bcfeeney/Sites/denizen/craft/app/vendor/twig/twig/lib/Twig/Environment.php(292): __TwigTemplate_baca888cff535303d028eca22c47043dbce5d31a58e6e23d55926790d54e0cf3->render()
+#7 /Users/bcfeeney/Sites/denizen/craft/app/services/TemplatesService.php(158): Twig_Environment->render()
+#8 /Users/bcfeeney/Sites/denizen/craft/app/controllers/BaseController.php(75): Craft\TemplatesService->render()
+#9 /Users/bcfeeney/Sites/denizen/craft/app/controllers/TemplatesController.php(185): Craft\TemplatesController->renderTemplate()
+#10 /Users/bcfeeney/Sites/denizen/craft/app/controllers/TemplatesController.php(27): Craft\TemplatesController->_render()
+#11 unknown(0): Craft\TemplatesController->actionRender()
+#12 /Users/bcfeeney/Sites/denizen/craft/app/framework/web/actions/CAction.php(108): ReflectionMethod->invokeArgs()
+#13 /Users/bcfeeney/Sites/denizen/craft/app/framework/web/actions/CInlineAction.php(47): CInlineAction->runWithParamsInternal()
+#14 /Users/bcfeeney/Sites/denizen/craft/app/framework/web/CController.php(308): CInlineAction->runWithParams()
+#15 /Users/bcfeeney/Sites/denizen/craft/app/framework/web/CController.php(286): Craft\TemplatesController->runAction()
+#16 /Users/bcfeeney/Sites/denizen/craft/app/framework/web/CController.php(265): Craft\TemplatesController->runActionWithFilters()
+#17 /Users/bcfeeney/Sites/denizen/craft/app/framework/web/CWebApplication.php(282): Craft\TemplatesController->run()
+#18 /Users/bcfeeney/Sites/denizen/craft/app/framework/web/CWebApplication.php(141): Craft\WebApp->runController()
+#19 /Users/bcfeeney/Sites/denizen/craft/app/etc/web/WebApp.php(240): Craft\WebApp->processRequest()
+#20 /Users/bcfeeney/Sites/denizen/craft/app/framework/base/CApplication.php(180): Craft\WebApp->processRequest()
+#21 /Users/bcfeeney/Sites/denizen/craft/app/index.php(196): Craft\WebApp->run()
+#22 /Users/bcfeeney/Sites/denizen/index.php(14): require_once()
+REQUEST_URI=/work/fast-n-loud
+2014/05/10 14:44:29 [error] [application] Unable to find the template “500”.
+2014/05/10 14:44:29 [error] [application] Unable to find the template “error”.
+
+******************************************************************************************************
+2014/05/10 14:45:40 [error] [exception.Twig_Error_Runtime] exception 'CException' with message 'Craft\ElementCriteriaModel and its behaviors do not have a method or closure named "getUrl".' in /Users/bcfeeney/Sites/denizen/craft/app/framework/base/CComponent.php:266
+Stack trace:
+#0 /Users/bcfeeney/Sites/denizen/craft/app/models/BaseModel.php(100): CComponent->__call('getUrl', Array)
+#1 [internal function]: Craft\BaseModel->__call('getUrl', Array)
+#2 [internal function]: Craft\ElementCriteriaModel->getUrl()
+#3 /Users/bcfeeney/Sites/denizen/craft/app/vendor/twig/twig/lib/Twig/Template.php(471): call_user_func_array(Array, Array)
+#4 /Users/bcfeeney/Sites/denizen/craft/app/etc/templating/BaseTemplate.php(40): Twig_Template->getAttribute(Object(Craft\ElementCriteriaModel), 'getUrl', Array, 'method', false, false)
+#5 /Users/bcfeeney/Sites/denizen/craft/storage/runtime/compiled_templates/ba/ca/888cff535303d028eca22c47043dbce5d31a58e6e23d55926790d54e0cf3.php(61): Craft\BaseTemplate->getAttribute(Object(Craft\ElementCriteriaModel), 'getUrl', Array, 'method')
+#6 /Users/bcfeeney/Sites/denizen/craft/app/vendor/twig/twig/lib/Twig/Template.php(144): __TwigTemplate_baca888cff535303d028eca22c47043dbce5d31a58e6e23d55926790d54e0cf3->block_content(Array, Array)
+#7 /Users/bcfeeney/Sites/denizen/craft/storage/runtime/compiled_templates/ed/98/28a305972340c53d0d40de6bc3549ef5af4912c3259926e586669341fcee.php(84): Twig_Template->displayBlock('content', Array, Array)
+#8 /Users/bcfeeney/Sites/denizen/craft/app/vendor/twig/twig/lib/Twig/Template.php(278): __TwigTemplate_ed9828a305972340c53d0d40de6bc3549ef5af4912c3259926e586669341fcee->doDisplay(Array, Array)
+#9 /Users/bcfeeney/Sites/denizen/craft/app/vendor/twig/twig/lib/Twig/Template.php(252): Twig_Template->displayWithErrorHandling(Array, Array)
+#10 /Users/bcfeeney/Sites/denizen/craft/storage/runtime/compiled_templates/ba/ca/888cff535303d028eca22c47043dbce5d31a58e6e23d55926790d54e0cf3.php(24): Twig_Template->display(Array, Array)
+#11 /Users/bcfeeney/Sites/denizen/craft/app/vendor/twig/twig/lib/Twig/Template.php(278): __TwigTemplate_baca888cff535303d028eca22c47043dbce5d31a58e6e23d55926790d54e0cf3->doDisplay(Array, Array)
+#12 /Users/bcfeeney/Sites/denizen/craft/app/vendor/twig/twig/lib/Twig/Template.php(252): Twig_Template->displayWithErrorHandling(Array, Array)
+#13 /Users/bcfeeney/Sites/denizen/craft/app/vendor/twig/twig/lib/Twig/Template.php(263): Twig_Template->display(Array)
+#14 /Users/bcfeeney/Sites/denizen/craft/app/vendor/twig/twig/lib/Twig/Environment.php(292): Twig_Template->render(Array)
+#15 /Users/bcfeeney/Sites/denizen/craft/app/services/TemplatesService.php(158): Twig_Environment->render('work/_entry', Array)
+#16 /Users/bcfeeney/Sites/denizen/craft/app/controllers/BaseController.php(75): Craft\TemplatesService->render('work/_entry', Array)
+#17 /Users/bcfeeney/Sites/denizen/craft/app/controllers/TemplatesController.php(185): Craft\BaseController->renderTemplate('work/_entry', Array)
+#18 /Users/bcfeeney/Sites/denizen/craft/app/controllers/TemplatesController.php(27): Craft\TemplatesController->_render('work/_entry', Array)
+#19 [internal function]: Craft\TemplatesController->actionRender('work/_entry', Array)
+#20 /Users/bcfeeney/Sites/denizen/craft/app/framework/web/actions/CAction.php(108): ReflectionMethod->invokeArgs(Object(Craft\TemplatesController), Array)
+#21 /Users/bcfeeney/Sites/denizen/craft/app/framework/web/actions/CInlineAction.php(47): CAction->runWithParamsInternal(Object(Craft\TemplatesController), Object(ReflectionMethod), Array)
+#22 /Users/bcfeeney/Sites/denizen/craft/app/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#23 /Users/bcfeeney/Sites/denizen/craft/app/framework/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#24 /Users/bcfeeney/Sites/denizen/craft/app/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), NULL)
+#25 /Users/bcfeeney/Sites/denizen/craft/app/framework/web/CWebApplication.php(282): CController->run('render')
+#26 /Users/bcfeeney/Sites/denizen/craft/app/framework/web/CWebApplication.php(141): CWebApplication->runController('templates/rende...')
+#27 /Users/bcfeeney/Sites/denizen/craft/app/etc/web/WebApp.php(240): CWebApplication->processRequest()
+#28 /Users/bcfeeney/Sites/denizen/craft/app/framework/base/CApplication.php(180): Craft\WebApp->processRequest()
+#29 /Users/bcfeeney/Sites/denizen/craft/app/index.php(196): CApplication->run()
+#30 /Users/bcfeeney/Sites/denizen/index.php(14): require_once('/Users/bcfeeney...')
+#31 {main}
+
+Next exception 'Twig_Error_Runtime' with message 'An exception has been thrown during the rendering of a template ("Craft\ElementCriteriaModel and its behaviors do not have a method or closure named "getUrl".") in "work/_entry" at line 18.' in /Users/bcfeeney/Sites/denizen/craft/app/vendor/twig/twig/lib/Twig/Template.php:148
+Stack trace:
+#0 /Users/bcfeeney/Sites/denizen/craft/storage/runtime/compiled_templates/ed/98/28a305972340c53d0d40de6bc3549ef5af4912c3259926e586669341fcee.php(84): Twig_Template->displayBlock('content', Array, Array)
+#1 /Users/bcfeeney/Sites/denizen/craft/app/vendor/twig/twig/lib/Twig/Template.php(278): __TwigTemplate_ed9828a305972340c53d0d40de6bc3549ef5af4912c3259926e586669341fcee->doDisplay(Array, Array)
+#2 /Users/bcfeeney/Sites/denizen/craft/app/vendor/twig/twig/lib/Twig/Template.php(252): Twig_Template->displayWithErrorHandling(Array, Array)
+#3 /Users/bcfeeney/Sites/denizen/craft/storage/runtime/compiled_templates/ba/ca/888cff535303d028eca22c47043dbce5d31a58e6e23d55926790d54e0cf3.php(24): Twig_Template->display(Array, Array)
+#4 /Users/bcfeeney/Sites/denizen/craft/app/vendor/twig/twig/lib/Twig/Template.php(278): __TwigTemplate_baca888cff535303d028eca22c47043dbce5d31a58e6e23d55926790d54e0cf3->doDisplay(Array, Array)
+#5 /Users/bcfeeney/Sites/denizen/craft/app/vendor/twig/twig/lib/Twig/Template.php(252): Twig_Template->displayWithErrorHandling(Array, Array)
+#6 /Users/bcfeeney/Sites/denizen/craft/app/vendor/twig/twig/lib/Twig/Template.php(263): Twig_Template->display(Array)
+#7 /Users/bcfeeney/Sites/denizen/craft/app/vendor/twig/twig/lib/Twig/Environment.php(292): Twig_Template->render(Array)
+#8 /Users/bcfeeney/Sites/denizen/craft/app/services/TemplatesService.php(158): Twig_Environment->render('work/_entry', Array)
+#9 /Users/bcfeeney/Sites/denizen/craft/app/controllers/BaseController.php(75): Craft\TemplatesService->render('work/_entry', Array)
+#10 /Users/bcfeeney/Sites/denizen/craft/app/controllers/TemplatesController.php(185): Craft\BaseController->renderTemplate('work/_entry', Array)
+#11 /Users/bcfeeney/Sites/denizen/craft/app/controllers/TemplatesController.php(27): Craft\TemplatesController->_render('work/_entry', Array)
+#12 [internal function]: Craft\TemplatesController->actionRender('work/_entry', Array)
+#13 /Users/bcfeeney/Sites/denizen/craft/app/framework/web/actions/CAction.php(108): ReflectionMethod->invokeArgs(Object(Craft\TemplatesController), Array)
+#14 /Users/bcfeeney/Sites/denizen/craft/app/framework/web/actions/CInlineAction.php(47): CAction->runWithParamsInternal(Object(Craft\TemplatesController), Object(ReflectionMethod), Array)
+#15 /Users/bcfeeney/Sites/denizen/craft/app/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#16 /Users/bcfeeney/Sites/denizen/craft/app/framework/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#17 /Users/bcfeeney/Sites/denizen/craft/app/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), NULL)
+#18 /Users/bcfeeney/Sites/denizen/craft/app/framework/web/CWebApplication.php(282): CController->run('render')
+#19 /Users/bcfeeney/Sites/denizen/craft/app/framework/web/CWebApplication.php(141): CWebApplication->runController('templates/rende...')
+#20 /Users/bcfeeney/Sites/denizen/craft/app/etc/web/WebApp.php(240): CWebApplication->processRequest()
+#21 /Users/bcfeeney/Sites/denizen/craft/app/framework/base/CApplication.php(180): Craft\WebApp->processRequest()
+#22 /Users/bcfeeney/Sites/denizen/craft/app/index.php(196): CApplication->run()
+#23 /Users/bcfeeney/Sites/denizen/index.php(14): require_once('/Users/bcfeeney...')
+#24 {main}
+REQUEST_URI=/work/fast-n-loud
+HTTP_REFERER=http://denizen.dev/
+---
+2014/05/10 14:45:40 [error] [application] Unable to find the template “500”.
+2014/05/10 14:45:40 [error] [application] Unable to find the template “error”.
+
+******************************************************************************************************
+2014/05/10 14:47:37 [error] [exception.Twig_Error_Runtime] exception 'CException' with message 'Craft\ElementCriteriaModel and its behaviors do not have a method or closure named "getUrl".' in /Users/bcfeeney/Sites/denizen/craft/app/framework/base/CComponent.php:266
+Stack trace:
+#0 /Users/bcfeeney/Sites/denizen/craft/app/models/BaseModel.php(100): CComponent->__call('getUrl', Array)
+#1 [internal function]: Craft\BaseModel->__call('getUrl', Array)
+#2 [internal function]: Craft\ElementCriteriaModel->getUrl()
+#3 /Users/bcfeeney/Sites/denizen/craft/app/vendor/twig/twig/lib/Twig/Template.php(471): call_user_func_array(Array, Array)
+#4 /Users/bcfeeney/Sites/denizen/craft/app/etc/templating/BaseTemplate.php(40): Twig_Template->getAttribute(Object(Craft\ElementCriteriaModel), 'getUrl', Array, 'method', false, false)
+#5 /Users/bcfeeney/Sites/denizen/craft/storage/runtime/compiled_templates/ba/ca/888cff535303d028eca22c47043dbce5d31a58e6e23d55926790d54e0cf3.php(61): Craft\BaseTemplate->getAttribute(Object(Craft\ElementCriteriaModel), 'getUrl', Array, 'method')
+#6 /Users/bcfeeney/Sites/denizen/craft/app/vendor/twig/twig/lib/Twig/Template.php(144): __TwigTemplate_baca888cff535303d028eca22c47043dbce5d31a58e6e23d55926790d54e0cf3->block_content(Array, Array)
+#7 /Users/bcfeeney/Sites/denizen/craft/storage/runtime/compiled_templates/ed/98/28a305972340c53d0d40de6bc3549ef5af4912c3259926e586669341fcee.php(84): Twig_Template->displayBlock('content', Array, Array)
+#8 /Users/bcfeeney/Sites/denizen/craft/app/vendor/twig/twig/lib/Twig/Template.php(278): __TwigTemplate_ed9828a305972340c53d0d40de6bc3549ef5af4912c3259926e586669341fcee->doDisplay(Array, Array)
+#9 /Users/bcfeeney/Sites/denizen/craft/app/vendor/twig/twig/lib/Twig/Template.php(252): Twig_Template->displayWithErrorHandling(Array, Array)
+#10 /Users/bcfeeney/Sites/denizen/craft/storage/runtime/compiled_templates/ba/ca/888cff535303d028eca22c47043dbce5d31a58e6e23d55926790d54e0cf3.php(24): Twig_Template->display(Array, Array)
+#11 /Users/bcfeeney/Sites/denizen/craft/app/vendor/twig/twig/lib/Twig/Template.php(278): __TwigTemplate_baca888cff535303d028eca22c47043dbce5d31a58e6e23d55926790d54e0cf3->doDisplay(Array, Array)
+#12 /Users/bcfeeney/Sites/denizen/craft/app/vendor/twig/twig/lib/Twig/Template.php(252): Twig_Template->displayWithErrorHandling(Array, Array)
+#13 /Users/bcfeeney/Sites/denizen/craft/app/vendor/twig/twig/lib/Twig/Template.php(263): Twig_Template->display(Array)
+#14 /Users/bcfeeney/Sites/denizen/craft/app/vendor/twig/twig/lib/Twig/Environment.php(292): Twig_Template->render(Array)
+#15 /Users/bcfeeney/Sites/denizen/craft/app/services/TemplatesService.php(158): Twig_Environment->render('work/_entry', Array)
+#16 /Users/bcfeeney/Sites/denizen/craft/app/controllers/BaseController.php(75): Craft\TemplatesService->render('work/_entry', Array)
+#17 /Users/bcfeeney/Sites/denizen/craft/app/controllers/TemplatesController.php(185): Craft\BaseController->renderTemplate('work/_entry', Array)
+#18 /Users/bcfeeney/Sites/denizen/craft/app/controllers/TemplatesController.php(27): Craft\TemplatesController->_render('work/_entry', Array)
+#19 [internal function]: Craft\TemplatesController->actionRender('work/_entry', Array)
+#20 /Users/bcfeeney/Sites/denizen/craft/app/framework/web/actions/CAction.php(108): ReflectionMethod->invokeArgs(Object(Craft\TemplatesController), Array)
+#21 /Users/bcfeeney/Sites/denizen/craft/app/framework/web/actions/CInlineAction.php(47): CAction->runWithParamsInternal(Object(Craft\TemplatesController), Object(ReflectionMethod), Array)
+#22 /Users/bcfeeney/Sites/denizen/craft/app/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#23 /Users/bcfeeney/Sites/denizen/craft/app/framework/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#24 /Users/bcfeeney/Sites/denizen/craft/app/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), NULL)
+#25 /Users/bcfeeney/Sites/denizen/craft/app/framework/web/CWebApplication.php(282): CController->run('render')
+#26 /Users/bcfeeney/Sites/denizen/craft/app/framework/web/CWebApplication.php(141): CWebApplication->runController('templates/rende...')
+#27 /Users/bcfeeney/Sites/denizen/craft/app/etc/web/WebApp.php(240): CWebApplication->processRequest()
+#28 /Users/bcfeeney/Sites/denizen/craft/app/framework/base/CApplication.php(180): Craft\WebApp->processRequest()
+#29 /Users/bcfeeney/Sites/denizen/craft/app/index.php(196): CApplication->run()
+#30 /Users/bcfeeney/Sites/denizen/index.php(14): require_once('/Users/bcfeeney...')
+#31 {main}
+
+Next exception 'Twig_Error_Runtime' with message 'An exception has been thrown during the rendering of a template ("Craft\ElementCriteriaModel and its behaviors do not have a method or closure named "getUrl".") in "work/_entry" at line 18.' in /Users/bcfeeney/Sites/denizen/craft/app/vendor/twig/twig/lib/Twig/Template.php:148
+Stack trace:
+#0 /Users/bcfeeney/Sites/denizen/craft/storage/runtime/compiled_templates/ed/98/28a305972340c53d0d40de6bc3549ef5af4912c3259926e586669341fcee.php(84): Twig_Template->displayBlock('content', Array, Array)
+#1 /Users/bcfeeney/Sites/denizen/craft/app/vendor/twig/twig/lib/Twig/Template.php(278): __TwigTemplate_ed9828a305972340c53d0d40de6bc3549ef5af4912c3259926e586669341fcee->doDisplay(Array, Array)
+#2 /Users/bcfeeney/Sites/denizen/craft/app/vendor/twig/twig/lib/Twig/Template.php(252): Twig_Template->displayWithErrorHandling(Array, Array)
+#3 /Users/bcfeeney/Sites/denizen/craft/storage/runtime/compiled_templates/ba/ca/888cff535303d028eca22c47043dbce5d31a58e6e23d55926790d54e0cf3.php(24): Twig_Template->display(Array, Array)
+#4 /Users/bcfeeney/Sites/denizen/craft/app/vendor/twig/twig/lib/Twig/Template.php(278): __TwigTemplate_baca888cff535303d028eca22c47043dbce5d31a58e6e23d55926790d54e0cf3->doDisplay(Array, Array)
+#5 /Users/bcfeeney/Sites/denizen/craft/app/vendor/twig/twig/lib/Twig/Template.php(252): Twig_Template->displayWithErrorHandling(Array, Array)
+#6 /Users/bcfeeney/Sites/denizen/craft/app/vendor/twig/twig/lib/Twig/Template.php(263): Twig_Template->display(Array)
+#7 /Users/bcfeeney/Sites/denizen/craft/app/vendor/twig/twig/lib/Twig/Environment.php(292): Twig_Template->render(Array)
+#8 /Users/bcfeeney/Sites/denizen/craft/app/services/TemplatesService.php(158): Twig_Environment->render('work/_entry', Array)
+#9 /Users/bcfeeney/Sites/denizen/craft/app/controllers/BaseController.php(75): Craft\TemplatesService->render('work/_entry', Array)
+#10 /Users/bcfeeney/Sites/denizen/craft/app/controllers/TemplatesController.php(185): Craft\BaseController->renderTemplate('work/_entry', Array)
+#11 /Users/bcfeeney/Sites/denizen/craft/app/controllers/TemplatesController.php(27): Craft\TemplatesController->_render('work/_entry', Array)
+#12 [internal function]: Craft\TemplatesController->actionRender('work/_entry', Array)
+#13 /Users/bcfeeney/Sites/denizen/craft/app/framework/web/actions/CAction.php(108): ReflectionMethod->invokeArgs(Object(Craft\TemplatesController), Array)
+#14 /Users/bcfeeney/Sites/denizen/craft/app/framework/web/actions/CInlineAction.php(47): CAction->runWithParamsInternal(Object(Craft\TemplatesController), Object(ReflectionMethod), Array)
+#15 /Users/bcfeeney/Sites/denizen/craft/app/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#16 /Users/bcfeeney/Sites/denizen/craft/app/framework/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#17 /Users/bcfeeney/Sites/denizen/craft/app/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), NULL)
+#18 /Users/bcfeeney/Sites/denizen/craft/app/framework/web/CWebApplication.php(282): CController->run('render')
+#19 /Users/bcfeeney/Sites/denizen/craft/app/framework/web/CWebApplication.php(141): CWebApplication->runController('templates/rende...')
+#20 /Users/bcfeeney/Sites/denizen/craft/app/etc/web/WebApp.php(240): CWebApplication->processRequest()
+#21 /Users/bcfeeney/Sites/denizen/craft/app/framework/base/CApplication.php(180): Craft\WebApp->processRequest()
+#22 /Users/bcfeeney/Sites/denizen/craft/app/index.php(196): CApplication->run()
+#23 /Users/bcfeeney/Sites/denizen/index.php(14): require_once('/Users/bcfeeney...')
+#24 {main}
+REQUEST_URI=/work/fast-n-loud
+HTTP_REFERER=http://denizen.dev/
+---
+2014/05/10 14:47:37 [error] [application] Unable to find the template “500”.
+2014/05/10 14:47:37 [error] [application] Unable to find the template “error”.
+
+******************************************************************************************************
+2014/05/10 14:50:47 [error] [exception.Twig_Error_Runtime] exception 'CException' with message 'Craft\ElementCriteriaModel and its behaviors do not have a method or closure named "getUrl".' in /Users/bcfeeney/Sites/denizen/craft/app/framework/base/CComponent.php:266
+Stack trace:
+#0 /Users/bcfeeney/Sites/denizen/craft/app/models/BaseModel.php(100): CComponent->__call('getUrl', Array)
+#1 [internal function]: Craft\BaseModel->__call('getUrl', Array)
+#2 [internal function]: Craft\ElementCriteriaModel->getUrl()
+#3 /Users/bcfeeney/Sites/denizen/craft/app/vendor/twig/twig/lib/Twig/Template.php(471): call_user_func_array(Array, Array)
+#4 /Users/bcfeeney/Sites/denizen/craft/app/etc/templating/BaseTemplate.php(40): Twig_Template->getAttribute(Object(Craft\ElementCriteriaModel), 'getUrl', Array, 'method', false, false)
+#5 /Users/bcfeeney/Sites/denizen/craft/storage/runtime/compiled_templates/ba/ca/888cff535303d028eca22c47043dbce5d31a58e6e23d55926790d54e0cf3.php(61): Craft\BaseTemplate->getAttribute(Object(Craft\ElementCriteriaModel), 'getUrl', Array, 'method')
+#6 /Users/bcfeeney/Sites/denizen/craft/app/vendor/twig/twig/lib/Twig/Template.php(144): __TwigTemplate_baca888cff535303d028eca22c47043dbce5d31a58e6e23d55926790d54e0cf3->block_content(Array, Array)
+#7 /Users/bcfeeney/Sites/denizen/craft/storage/runtime/compiled_templates/ed/98/28a305972340c53d0d40de6bc3549ef5af4912c3259926e586669341fcee.php(84): Twig_Template->displayBlock('content', Array, Array)
+#8 /Users/bcfeeney/Sites/denizen/craft/app/vendor/twig/twig/lib/Twig/Template.php(278): __TwigTemplate_ed9828a305972340c53d0d40de6bc3549ef5af4912c3259926e586669341fcee->doDisplay(Array, Array)
+#9 /Users/bcfeeney/Sites/denizen/craft/app/vendor/twig/twig/lib/Twig/Template.php(252): Twig_Template->displayWithErrorHandling(Array, Array)
+#10 /Users/bcfeeney/Sites/denizen/craft/storage/runtime/compiled_templates/ba/ca/888cff535303d028eca22c47043dbce5d31a58e6e23d55926790d54e0cf3.php(24): Twig_Template->display(Array, Array)
+#11 /Users/bcfeeney/Sites/denizen/craft/app/vendor/twig/twig/lib/Twig/Template.php(278): __TwigTemplate_baca888cff535303d028eca22c47043dbce5d31a58e6e23d55926790d54e0cf3->doDisplay(Array, Array)
+#12 /Users/bcfeeney/Sites/denizen/craft/app/vendor/twig/twig/lib/Twig/Template.php(252): Twig_Template->displayWithErrorHandling(Array, Array)
+#13 /Users/bcfeeney/Sites/denizen/craft/app/vendor/twig/twig/lib/Twig/Template.php(263): Twig_Template->display(Array)
+#14 /Users/bcfeeney/Sites/denizen/craft/app/vendor/twig/twig/lib/Twig/Environment.php(292): Twig_Template->render(Array)
+#15 /Users/bcfeeney/Sites/denizen/craft/app/services/TemplatesService.php(158): Twig_Environment->render('work/_entry', Array)
+#16 /Users/bcfeeney/Sites/denizen/craft/app/controllers/BaseController.php(75): Craft\TemplatesService->render('work/_entry', Array)
+#17 /Users/bcfeeney/Sites/denizen/craft/app/controllers/TemplatesController.php(185): Craft\BaseController->renderTemplate('work/_entry', Array)
+#18 /Users/bcfeeney/Sites/denizen/craft/app/controllers/TemplatesController.php(27): Craft\TemplatesController->_render('work/_entry', Array)
+#19 [internal function]: Craft\TemplatesController->actionRender('work/_entry', Array)
+#20 /Users/bcfeeney/Sites/denizen/craft/app/framework/web/actions/CAction.php(108): ReflectionMethod->invokeArgs(Object(Craft\TemplatesController), Array)
+#21 /Users/bcfeeney/Sites/denizen/craft/app/framework/web/actions/CInlineAction.php(47): CAction->runWithParamsInternal(Object(Craft\TemplatesController), Object(ReflectionMethod), Array)
+#22 /Users/bcfeeney/Sites/denizen/craft/app/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#23 /Users/bcfeeney/Sites/denizen/craft/app/framework/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#24 /Users/bcfeeney/Sites/denizen/craft/app/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), NULL)
+#25 /Users/bcfeeney/Sites/denizen/craft/app/framework/web/CWebApplication.php(282): CController->run('render')
+#26 /Users/bcfeeney/Sites/denizen/craft/app/framework/web/CWebApplication.php(141): CWebApplication->runController('templates/rende...')
+#27 /Users/bcfeeney/Sites/denizen/craft/app/etc/web/WebApp.php(240): CWebApplication->processRequest()
+#28 /Users/bcfeeney/Sites/denizen/craft/app/framework/base/CApplication.php(180): Craft\WebApp->processRequest()
+#29 /Users/bcfeeney/Sites/denizen/craft/app/index.php(196): CApplication->run()
+#30 /Users/bcfeeney/Sites/denizen/index.php(14): require_once('/Users/bcfeeney...')
+#31 {main}
+
+Next exception 'Twig_Error_Runtime' with message 'An exception has been thrown during the rendering of a template ("Craft\ElementCriteriaModel and its behaviors do not have a method or closure named "getUrl".") in "work/_entry" at line 18.' in /Users/bcfeeney/Sites/denizen/craft/app/vendor/twig/twig/lib/Twig/Template.php:148
+Stack trace:
+#0 /Users/bcfeeney/Sites/denizen/craft/storage/runtime/compiled_templates/ed/98/28a305972340c53d0d40de6bc3549ef5af4912c3259926e586669341fcee.php(84): Twig_Template->displayBlock('content', Array, Array)
+#1 /Users/bcfeeney/Sites/denizen/craft/app/vendor/twig/twig/lib/Twig/Template.php(278): __TwigTemplate_ed9828a305972340c53d0d40de6bc3549ef5af4912c3259926e586669341fcee->doDisplay(Array, Array)
+#2 /Users/bcfeeney/Sites/denizen/craft/app/vendor/twig/twig/lib/Twig/Template.php(252): Twig_Template->displayWithErrorHandling(Array, Array)
+#3 /Users/bcfeeney/Sites/denizen/craft/storage/runtime/compiled_templates/ba/ca/888cff535303d028eca22c47043dbce5d31a58e6e23d55926790d54e0cf3.php(24): Twig_Template->display(Array, Array)
+#4 /Users/bcfeeney/Sites/denizen/craft/app/vendor/twig/twig/lib/Twig/Template.php(278): __TwigTemplate_baca888cff535303d028eca22c47043dbce5d31a58e6e23d55926790d54e0cf3->doDisplay(Array, Array)
+#5 /Users/bcfeeney/Sites/denizen/craft/app/vendor/twig/twig/lib/Twig/Template.php(252): Twig_Template->displayWithErrorHandling(Array, Array)
+#6 /Users/bcfeeney/Sites/denizen/craft/app/vendor/twig/twig/lib/Twig/Template.php(263): Twig_Template->display(Array)
+#7 /Users/bcfeeney/Sites/denizen/craft/app/vendor/twig/twig/lib/Twig/Environment.php(292): Twig_Template->render(Array)
+#8 /Users/bcfeeney/Sites/denizen/craft/app/services/TemplatesService.php(158): Twig_Environment->render('work/_entry', Array)
+#9 /Users/bcfeeney/Sites/denizen/craft/app/controllers/BaseController.php(75): Craft\TemplatesService->render('work/_entry', Array)
+#10 /Users/bcfeeney/Sites/denizen/craft/app/controllers/TemplatesController.php(185): Craft\BaseController->renderTemplate('work/_entry', Array)
+#11 /Users/bcfeeney/Sites/denizen/craft/app/controllers/TemplatesController.php(27): Craft\TemplatesController->_render('work/_entry', Array)
+#12 [internal function]: Craft\TemplatesController->actionRender('work/_entry', Array)
+#13 /Users/bcfeeney/Sites/denizen/craft/app/framework/web/actions/CAction.php(108): ReflectionMethod->invokeArgs(Object(Craft\TemplatesController), Array)
+#14 /Users/bcfeeney/Sites/denizen/craft/app/framework/web/actions/CInlineAction.php(47): CAction->runWithParamsInternal(Object(Craft\TemplatesController), Object(ReflectionMethod), Array)
+#15 /Users/bcfeeney/Sites/denizen/craft/app/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#16 /Users/bcfeeney/Sites/denizen/craft/app/framework/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#17 /Users/bcfeeney/Sites/denizen/craft/app/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), NULL)
+#18 /Users/bcfeeney/Sites/denizen/craft/app/framework/web/CWebApplication.php(282): CController->run('render')
+#19 /Users/bcfeeney/Sites/denizen/craft/app/framework/web/CWebApplication.php(141): CWebApplication->runController('templates/rende...')
+#20 /Users/bcfeeney/Sites/denizen/craft/app/etc/web/WebApp.php(240): CWebApplication->processRequest()
+#21 /Users/bcfeeney/Sites/denizen/craft/app/framework/base/CApplication.php(180): Craft\WebApp->processRequest()
+#22 /Users/bcfeeney/Sites/denizen/craft/app/index.php(196): CApplication->run()
+#23 /Users/bcfeeney/Sites/denizen/index.php(14): require_once('/Users/bcfeeney...')
+#24 {main}
+REQUEST_URI=/work/fast-n-loud
+HTTP_REFERER=http://denizen.dev/
+---
+2014/05/10 14:50:48 [error] [application] Unable to find the template “500”.
+2014/05/10 14:50:48 [error] [application] Unable to find the template “error”.
+
+******************************************************************************************************
+2014/05/10 14:51:00 [error] [php] Object of class Craft\ElementCriteriaModel could not be converted to string (/Users/bcfeeney/Sites/denizen/craft/storage/runtime/compiled_templates/ba/ca/888cff535303d028eca22c47043dbce5d31a58e6e23d55926790d54e0cf3.php:61)
+Stack trace:
+#0 /Users/bcfeeney/Sites/denizen/craft/app/vendor/twig/twig/lib/Twig/Template.php(278): __TwigTemplate_ed9828a305972340c53d0d40de6bc3549ef5af4912c3259926e586669341fcee->doDisplay()
+#1 /Users/bcfeeney/Sites/denizen/craft/app/vendor/twig/twig/lib/Twig/Template.php(252): __TwigTemplate_ed9828a305972340c53d0d40de6bc3549ef5af4912c3259926e586669341fcee->displayWithErrorHandling()
+#2 /Users/bcfeeney/Sites/denizen/craft/storage/runtime/compiled_templates/ba/ca/888cff535303d028eca22c47043dbce5d31a58e6e23d55926790d54e0cf3.php(24): __TwigTemplate_ed9828a305972340c53d0d40de6bc3549ef5af4912c3259926e586669341fcee->display()
+#3 /Users/bcfeeney/Sites/denizen/craft/app/vendor/twig/twig/lib/Twig/Template.php(278): __TwigTemplate_baca888cff535303d028eca22c47043dbce5d31a58e6e23d55926790d54e0cf3->doDisplay()
+#4 /Users/bcfeeney/Sites/denizen/craft/app/vendor/twig/twig/lib/Twig/Template.php(252): __TwigTemplate_baca888cff535303d028eca22c47043dbce5d31a58e6e23d55926790d54e0cf3->displayWithErrorHandling()
+#5 /Users/bcfeeney/Sites/denizen/craft/app/vendor/twig/twig/lib/Twig/Template.php(263): __TwigTemplate_baca888cff535303d028eca22c47043dbce5d31a58e6e23d55926790d54e0cf3->display()
+#6 /Users/bcfeeney/Sites/denizen/craft/app/vendor/twig/twig/lib/Twig/Environment.php(292): __TwigTemplate_baca888cff535303d028eca22c47043dbce5d31a58e6e23d55926790d54e0cf3->render()
+#7 /Users/bcfeeney/Sites/denizen/craft/app/services/TemplatesService.php(158): Twig_Environment->render()
+#8 /Users/bcfeeney/Sites/denizen/craft/app/controllers/BaseController.php(75): Craft\TemplatesService->render()
+#9 /Users/bcfeeney/Sites/denizen/craft/app/controllers/TemplatesController.php(185): Craft\TemplatesController->renderTemplate()
+#10 /Users/bcfeeney/Sites/denizen/craft/app/controllers/TemplatesController.php(27): Craft\TemplatesController->_render()
+#11 unknown(0): Craft\TemplatesController->actionRender()
+#12 /Users/bcfeeney/Sites/denizen/craft/app/framework/web/actions/CAction.php(108): ReflectionMethod->invokeArgs()
+#13 /Users/bcfeeney/Sites/denizen/craft/app/framework/web/actions/CInlineAction.php(47): CInlineAction->runWithParamsInternal()
+#14 /Users/bcfeeney/Sites/denizen/craft/app/framework/web/CController.php(308): CInlineAction->runWithParams()
+#15 /Users/bcfeeney/Sites/denizen/craft/app/framework/web/CController.php(286): Craft\TemplatesController->runAction()
+#16 /Users/bcfeeney/Sites/denizen/craft/app/framework/web/CController.php(265): Craft\TemplatesController->runActionWithFilters()
+#17 /Users/bcfeeney/Sites/denizen/craft/app/framework/web/CWebApplication.php(282): Craft\TemplatesController->run()
+#18 /Users/bcfeeney/Sites/denizen/craft/app/framework/web/CWebApplication.php(141): Craft\WebApp->runController()
+#19 /Users/bcfeeney/Sites/denizen/craft/app/etc/web/WebApp.php(240): Craft\WebApp->processRequest()
+#20 /Users/bcfeeney/Sites/denizen/craft/app/framework/base/CApplication.php(180): Craft\WebApp->processRequest()
+#21 /Users/bcfeeney/Sites/denizen/craft/app/index.php(196): Craft\WebApp->run()
+#22 /Users/bcfeeney/Sites/denizen/index.php(14): require_once()
+REQUEST_URI=/work/fast-n-loud
+2014/05/10 14:51:00 [error] [application] Unable to find the template “500”.
+2014/05/10 14:51:00 [error] [application] Unable to find the template “error”.
+
+******************************************************************************************************
+2014/05/10 14:54:20 [error] [exception.Twig_Error_Runtime] exception 'CException' with message 'Craft\ElementCriteriaModel and its behaviors do not have a method or closure named "url".' in /Users/bcfeeney/Sites/denizen/craft/app/framework/base/CComponent.php:266
+Stack trace:
+#0 /Users/bcfeeney/Sites/denizen/craft/app/models/BaseModel.php(100): CComponent->__call('url', Array)
+#1 [internal function]: Craft\BaseModel->__call('url', Array)
+#2 [internal function]: Craft\ElementCriteriaModel->url()
+#3 /Users/bcfeeney/Sites/denizen/craft/app/vendor/twig/twig/lib/Twig/Template.php(471): call_user_func_array(Array, Array)
+#4 /Users/bcfeeney/Sites/denizen/craft/app/etc/templating/BaseTemplate.php(40): Twig_Template->getAttribute(Object(Craft\ElementCriteriaModel), 'url', Array, 'any', false, false)
+#5 /Users/bcfeeney/Sites/denizen/craft/storage/runtime/compiled_templates/ba/ca/888cff535303d028eca22c47043dbce5d31a58e6e23d55926790d54e0cf3.php(61): Craft\BaseTemplate->getAttribute(Object(Craft\ElementCriteriaModel), 'url')
+#6 /Users/bcfeeney/Sites/denizen/craft/app/vendor/twig/twig/lib/Twig/Template.php(144): __TwigTemplate_baca888cff535303d028eca22c47043dbce5d31a58e6e23d55926790d54e0cf3->block_content(Array, Array)
+#7 /Users/bcfeeney/Sites/denizen/craft/storage/runtime/compiled_templates/ed/98/28a305972340c53d0d40de6bc3549ef5af4912c3259926e586669341fcee.php(84): Twig_Template->displayBlock('content', Array, Array)
+#8 /Users/bcfeeney/Sites/denizen/craft/app/vendor/twig/twig/lib/Twig/Template.php(278): __TwigTemplate_ed9828a305972340c53d0d40de6bc3549ef5af4912c3259926e586669341fcee->doDisplay(Array, Array)
+#9 /Users/bcfeeney/Sites/denizen/craft/app/vendor/twig/twig/lib/Twig/Template.php(252): Twig_Template->displayWithErrorHandling(Array, Array)
+#10 /Users/bcfeeney/Sites/denizen/craft/storage/runtime/compiled_templates/ba/ca/888cff535303d028eca22c47043dbce5d31a58e6e23d55926790d54e0cf3.php(24): Twig_Template->display(Array, Array)
+#11 /Users/bcfeeney/Sites/denizen/craft/app/vendor/twig/twig/lib/Twig/Template.php(278): __TwigTemplate_baca888cff535303d028eca22c47043dbce5d31a58e6e23d55926790d54e0cf3->doDisplay(Array, Array)
+#12 /Users/bcfeeney/Sites/denizen/craft/app/vendor/twig/twig/lib/Twig/Template.php(252): Twig_Template->displayWithErrorHandling(Array, Array)
+#13 /Users/bcfeeney/Sites/denizen/craft/app/vendor/twig/twig/lib/Twig/Template.php(263): Twig_Template->display(Array)
+#14 /Users/bcfeeney/Sites/denizen/craft/app/vendor/twig/twig/lib/Twig/Environment.php(292): Twig_Template->render(Array)
+#15 /Users/bcfeeney/Sites/denizen/craft/app/services/TemplatesService.php(158): Twig_Environment->render('work/_entry', Array)
+#16 /Users/bcfeeney/Sites/denizen/craft/app/controllers/BaseController.php(75): Craft\TemplatesService->render('work/_entry', Array)
+#17 /Users/bcfeeney/Sites/denizen/craft/app/controllers/TemplatesController.php(185): Craft\BaseController->renderTemplate('work/_entry', Array)
+#18 /Users/bcfeeney/Sites/denizen/craft/app/controllers/TemplatesController.php(27): Craft\TemplatesController->_render('work/_entry', Array)
+#19 [internal function]: Craft\TemplatesController->actionRender('work/_entry', Array)
+#20 /Users/bcfeeney/Sites/denizen/craft/app/framework/web/actions/CAction.php(108): ReflectionMethod->invokeArgs(Object(Craft\TemplatesController), Array)
+#21 /Users/bcfeeney/Sites/denizen/craft/app/framework/web/actions/CInlineAction.php(47): CAction->runWithParamsInternal(Object(Craft\TemplatesController), Object(ReflectionMethod), Array)
+#22 /Users/bcfeeney/Sites/denizen/craft/app/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#23 /Users/bcfeeney/Sites/denizen/craft/app/framework/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#24 /Users/bcfeeney/Sites/denizen/craft/app/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), NULL)
+#25 /Users/bcfeeney/Sites/denizen/craft/app/framework/web/CWebApplication.php(282): CController->run('render')
+#26 /Users/bcfeeney/Sites/denizen/craft/app/framework/web/CWebApplication.php(141): CWebApplication->runController('templates/rende...')
+#27 /Users/bcfeeney/Sites/denizen/craft/app/etc/web/WebApp.php(240): CWebApplication->processRequest()
+#28 /Users/bcfeeney/Sites/denizen/craft/app/framework/base/CApplication.php(180): Craft\WebApp->processRequest()
+#29 /Users/bcfeeney/Sites/denizen/craft/app/index.php(196): CApplication->run()
+#30 /Users/bcfeeney/Sites/denizen/index.php(14): require_once('/Users/bcfeeney...')
+#31 {main}
+
+Next exception 'Twig_Error_Runtime' with message 'An exception has been thrown during the rendering of a template ("Craft\ElementCriteriaModel and its behaviors do not have a method or closure named "url".") in "work/_entry" at line 18.' in /Users/bcfeeney/Sites/denizen/craft/app/vendor/twig/twig/lib/Twig/Template.php:148
+Stack trace:
+#0 /Users/bcfeeney/Sites/denizen/craft/storage/runtime/compiled_templates/ed/98/28a305972340c53d0d40de6bc3549ef5af4912c3259926e586669341fcee.php(84): Twig_Template->displayBlock('content', Array, Array)
+#1 /Users/bcfeeney/Sites/denizen/craft/app/vendor/twig/twig/lib/Twig/Template.php(278): __TwigTemplate_ed9828a305972340c53d0d40de6bc3549ef5af4912c3259926e586669341fcee->doDisplay(Array, Array)
+#2 /Users/bcfeeney/Sites/denizen/craft/app/vendor/twig/twig/lib/Twig/Template.php(252): Twig_Template->displayWithErrorHandling(Array, Array)
+#3 /Users/bcfeeney/Sites/denizen/craft/storage/runtime/compiled_templates/ba/ca/888cff535303d028eca22c47043dbce5d31a58e6e23d55926790d54e0cf3.php(24): Twig_Template->display(Array, Array)
+#4 /Users/bcfeeney/Sites/denizen/craft/app/vendor/twig/twig/lib/Twig/Template.php(278): __TwigTemplate_baca888cff535303d028eca22c47043dbce5d31a58e6e23d55926790d54e0cf3->doDisplay(Array, Array)
+#5 /Users/bcfeeney/Sites/denizen/craft/app/vendor/twig/twig/lib/Twig/Template.php(252): Twig_Template->displayWithErrorHandling(Array, Array)
+#6 /Users/bcfeeney/Sites/denizen/craft/app/vendor/twig/twig/lib/Twig/Template.php(263): Twig_Template->display(Array)
+#7 /Users/bcfeeney/Sites/denizen/craft/app/vendor/twig/twig/lib/Twig/Environment.php(292): Twig_Template->render(Array)
+#8 /Users/bcfeeney/Sites/denizen/craft/app/services/TemplatesService.php(158): Twig_Environment->render('work/_entry', Array)
+#9 /Users/bcfeeney/Sites/denizen/craft/app/controllers/BaseController.php(75): Craft\TemplatesService->render('work/_entry', Array)
+#10 /Users/bcfeeney/Sites/denizen/craft/app/controllers/TemplatesController.php(185): Craft\BaseController->renderTemplate('work/_entry', Array)
+#11 /Users/bcfeeney/Sites/denizen/craft/app/controllers/TemplatesController.php(27): Craft\TemplatesController->_render('work/_entry', Array)
+#12 [internal function]: Craft\TemplatesController->actionRender('work/_entry', Array)
+#13 /Users/bcfeeney/Sites/denizen/craft/app/framework/web/actions/CAction.php(108): ReflectionMethod->invokeArgs(Object(Craft\TemplatesController), Array)
+#14 /Users/bcfeeney/Sites/denizen/craft/app/framework/web/actions/CInlineAction.php(47): CAction->runWithParamsInternal(Object(Craft\TemplatesController), Object(ReflectionMethod), Array)
+#15 /Users/bcfeeney/Sites/denizen/craft/app/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#16 /Users/bcfeeney/Sites/denizen/craft/app/framework/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#17 /Users/bcfeeney/Sites/denizen/craft/app/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), NULL)
+#18 /Users/bcfeeney/Sites/denizen/craft/app/framework/web/CWebApplication.php(282): CController->run('render')
+#19 /Users/bcfeeney/Sites/denizen/craft/app/framework/web/CWebApplication.php(141): CWebApplication->runController('templates/rende...')
+#20 /Users/bcfeeney/Sites/denizen/craft/app/etc/web/WebApp.php(240): CWebApplication->processRequest()
+#21 /Users/bcfeeney/Sites/denizen/craft/app/framework/base/CApplication.php(180): Craft\WebApp->processRequest()
+#22 /Users/bcfeeney/Sites/denizen/craft/app/index.php(196): CApplication->run()
+#23 /Users/bcfeeney/Sites/denizen/index.php(14): require_once('/Users/bcfeeney...')
+#24 {main}
+REQUEST_URI=/work/fast-n-loud
+HTTP_REFERER=http://denizen.dev/
+---
+2014/05/10 14:54:20 [error] [application] Unable to find the template “500”.
+2014/05/10 14:54:20 [error] [application] Unable to find the template “error”.
+
+******************************************************************************************************
+2014/05/10 14:55:29 [error] [exception.Twig_Error_Runtime] exception 'CException' with message 'Craft\ElementCriteriaModel and its behaviors do not have a method or closure named "url".' in /Users/bcfeeney/Sites/denizen/craft/app/framework/base/CComponent.php:266
+Stack trace:
+#0 /Users/bcfeeney/Sites/denizen/craft/app/models/BaseModel.php(100): CComponent->__call('url', Array)
+#1 [internal function]: Craft\BaseModel->__call('url', Array)
+#2 [internal function]: Craft\ElementCriteriaModel->url()
+#3 /Users/bcfeeney/Sites/denizen/craft/app/vendor/twig/twig/lib/Twig/Template.php(471): call_user_func_array(Array, Array)
+#4 /Users/bcfeeney/Sites/denizen/craft/app/etc/templating/BaseTemplate.php(40): Twig_Template->getAttribute(Object(Craft\ElementCriteriaModel), 'url', Array, 'any', false, false)
+#5 /Users/bcfeeney/Sites/denizen/craft/storage/runtime/compiled_templates/ba/ca/888cff535303d028eca22c47043dbce5d31a58e6e23d55926790d54e0cf3.php(61): Craft\BaseTemplate->getAttribute(Object(Craft\ElementCriteriaModel), 'url')
+#6 /Users/bcfeeney/Sites/denizen/craft/app/vendor/twig/twig/lib/Twig/Template.php(144): __TwigTemplate_baca888cff535303d028eca22c47043dbce5d31a58e6e23d55926790d54e0cf3->block_content(Array, Array)
+#7 /Users/bcfeeney/Sites/denizen/craft/storage/runtime/compiled_templates/ed/98/28a305972340c53d0d40de6bc3549ef5af4912c3259926e586669341fcee.php(84): Twig_Template->displayBlock('content', Array, Array)
+#8 /Users/bcfeeney/Sites/denizen/craft/app/vendor/twig/twig/lib/Twig/Template.php(278): __TwigTemplate_ed9828a305972340c53d0d40de6bc3549ef5af4912c3259926e586669341fcee->doDisplay(Array, Array)
+#9 /Users/bcfeeney/Sites/denizen/craft/app/vendor/twig/twig/lib/Twig/Template.php(252): Twig_Template->displayWithErrorHandling(Array, Array)
+#10 /Users/bcfeeney/Sites/denizen/craft/storage/runtime/compiled_templates/ba/ca/888cff535303d028eca22c47043dbce5d31a58e6e23d55926790d54e0cf3.php(24): Twig_Template->display(Array, Array)
+#11 /Users/bcfeeney/Sites/denizen/craft/app/vendor/twig/twig/lib/Twig/Template.php(278): __TwigTemplate_baca888cff535303d028eca22c47043dbce5d31a58e6e23d55926790d54e0cf3->doDisplay(Array, Array)
+#12 /Users/bcfeeney/Sites/denizen/craft/app/vendor/twig/twig/lib/Twig/Template.php(252): Twig_Template->displayWithErrorHandling(Array, Array)
+#13 /Users/bcfeeney/Sites/denizen/craft/app/vendor/twig/twig/lib/Twig/Template.php(263): Twig_Template->display(Array)
+#14 /Users/bcfeeney/Sites/denizen/craft/app/vendor/twig/twig/lib/Twig/Environment.php(292): Twig_Template->render(Array)
+#15 /Users/bcfeeney/Sites/denizen/craft/app/services/TemplatesService.php(158): Twig_Environment->render('work/_entry', Array)
+#16 /Users/bcfeeney/Sites/denizen/craft/app/controllers/BaseController.php(75): Craft\TemplatesService->render('work/_entry', Array)
+#17 /Users/bcfeeney/Sites/denizen/craft/app/controllers/TemplatesController.php(185): Craft\BaseController->renderTemplate('work/_entry', Array)
+#18 /Users/bcfeeney/Sites/denizen/craft/app/controllers/TemplatesController.php(27): Craft\TemplatesController->_render('work/_entry', Array)
+#19 [internal function]: Craft\TemplatesController->actionRender('work/_entry', Array)
+#20 /Users/bcfeeney/Sites/denizen/craft/app/framework/web/actions/CAction.php(108): ReflectionMethod->invokeArgs(Object(Craft\TemplatesController), Array)
+#21 /Users/bcfeeney/Sites/denizen/craft/app/framework/web/actions/CInlineAction.php(47): CAction->runWithParamsInternal(Object(Craft\TemplatesController), Object(ReflectionMethod), Array)
+#22 /Users/bcfeeney/Sites/denizen/craft/app/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#23 /Users/bcfeeney/Sites/denizen/craft/app/framework/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#24 /Users/bcfeeney/Sites/denizen/craft/app/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), NULL)
+#25 /Users/bcfeeney/Sites/denizen/craft/app/framework/web/CWebApplication.php(282): CController->run('render')
+#26 /Users/bcfeeney/Sites/denizen/craft/app/framework/web/CWebApplication.php(141): CWebApplication->runController('templates/rende...')
+#27 /Users/bcfeeney/Sites/denizen/craft/app/etc/web/WebApp.php(240): CWebApplication->processRequest()
+#28 /Users/bcfeeney/Sites/denizen/craft/app/framework/base/CApplication.php(180): Craft\WebApp->processRequest()
+#29 /Users/bcfeeney/Sites/denizen/craft/app/index.php(196): CApplication->run()
+#30 /Users/bcfeeney/Sites/denizen/index.php(14): require_once('/Users/bcfeeney...')
+#31 {main}
+
+Next exception 'Twig_Error_Runtime' with message 'An exception has been thrown during the rendering of a template ("Craft\ElementCriteriaModel and its behaviors do not have a method or closure named "url".") in "work/_entry" at line 18.' in /Users/bcfeeney/Sites/denizen/craft/app/vendor/twig/twig/lib/Twig/Template.php:148
+Stack trace:
+#0 /Users/bcfeeney/Sites/denizen/craft/storage/runtime/compiled_templates/ed/98/28a305972340c53d0d40de6bc3549ef5af4912c3259926e586669341fcee.php(84): Twig_Template->displayBlock('content', Array, Array)
+#1 /Users/bcfeeney/Sites/denizen/craft/app/vendor/twig/twig/lib/Twig/Template.php(278): __TwigTemplate_ed9828a305972340c53d0d40de6bc3549ef5af4912c3259926e586669341fcee->doDisplay(Array, Array)
+#2 /Users/bcfeeney/Sites/denizen/craft/app/vendor/twig/twig/lib/Twig/Template.php(252): Twig_Template->displayWithErrorHandling(Array, Array)
+#3 /Users/bcfeeney/Sites/denizen/craft/storage/runtime/compiled_templates/ba/ca/888cff535303d028eca22c47043dbce5d31a58e6e23d55926790d54e0cf3.php(24): Twig_Template->display(Array, Array)
+#4 /Users/bcfeeney/Sites/denizen/craft/app/vendor/twig/twig/lib/Twig/Template.php(278): __TwigTemplate_baca888cff535303d028eca22c47043dbce5d31a58e6e23d55926790d54e0cf3->doDisplay(Array, Array)
+#5 /Users/bcfeeney/Sites/denizen/craft/app/vendor/twig/twig/lib/Twig/Template.php(252): Twig_Template->displayWithErrorHandling(Array, Array)
+#6 /Users/bcfeeney/Sites/denizen/craft/app/vendor/twig/twig/lib/Twig/Template.php(263): Twig_Template->display(Array)
+#7 /Users/bcfeeney/Sites/denizen/craft/app/vendor/twig/twig/lib/Twig/Environment.php(292): Twig_Template->render(Array)
+#8 /Users/bcfeeney/Sites/denizen/craft/app/services/TemplatesService.php(158): Twig_Environment->render('work/_entry', Array)
+#9 /Users/bcfeeney/Sites/denizen/craft/app/controllers/BaseController.php(75): Craft\TemplatesService->render('work/_entry', Array)
+#10 /Users/bcfeeney/Sites/denizen/craft/app/controllers/TemplatesController.php(185): Craft\BaseController->renderTemplate('work/_entry', Array)
+#11 /Users/bcfeeney/Sites/denizen/craft/app/controllers/TemplatesController.php(27): Craft\TemplatesController->_render('work/_entry', Array)
+#12 [internal function]: Craft\TemplatesController->actionRender('work/_entry', Array)
+#13 /Users/bcfeeney/Sites/denizen/craft/app/framework/web/actions/CAction.php(108): ReflectionMethod->invokeArgs(Object(Craft\TemplatesController), Array)
+#14 /Users/bcfeeney/Sites/denizen/craft/app/framework/web/actions/CInlineAction.php(47): CAction->runWithParamsInternal(Object(Craft\TemplatesController), Object(ReflectionMethod), Array)
+#15 /Users/bcfeeney/Sites/denizen/craft/app/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#16 /Users/bcfeeney/Sites/denizen/craft/app/framework/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#17 /Users/bcfeeney/Sites/denizen/craft/app/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), NULL)
+#18 /Users/bcfeeney/Sites/denizen/craft/app/framework/web/CWebApplication.php(282): CController->run('render')
+#19 /Users/bcfeeney/Sites/denizen/craft/app/framework/web/CWebApplication.php(141): CWebApplication->runController('templates/rende...')
+#20 /Users/bcfeeney/Sites/denizen/craft/app/etc/web/WebApp.php(240): CWebApplication->processRequest()
+#21 /Users/bcfeeney/Sites/denizen/craft/app/framework/base/CApplication.php(180): Craft\WebApp->processRequest()
+#22 /Users/bcfeeney/Sites/denizen/craft/app/index.php(196): CApplication->run()
+#23 /Users/bcfeeney/Sites/denizen/index.php(14): require_once('/Users/bcfeeney...')
+#24 {main}
+REQUEST_URI=/work/fast-n-loud
+HTTP_REFERER=http://denizen.dev/
+---
+2014/05/10 14:55:29 [error] [application] Unable to find the template “500”.
+2014/05/10 14:55:29 [error] [application] Unable to find the template “error”.
+
+******************************************************************************************************
+2014/05/10 14:57:29 [error] [exception.Twig_Error_Runtime] exception 'CException' with message 'Craft\ElementCriteriaModel and its behaviors do not have a method or closure named "url".' in /Users/bcfeeney/Sites/denizen/craft/app/framework/base/CComponent.php:266
+Stack trace:
+#0 /Users/bcfeeney/Sites/denizen/craft/app/models/BaseModel.php(100): CComponent->__call('url', Array)
+#1 [internal function]: Craft\BaseModel->__call('url', Array)
+#2 [internal function]: Craft\ElementCriteriaModel->url()
+#3 /Users/bcfeeney/Sites/denizen/craft/app/vendor/twig/twig/lib/Twig/Template.php(471): call_user_func_array(Array, Array)
+#4 /Users/bcfeeney/Sites/denizen/craft/app/etc/templating/BaseTemplate.php(40): Twig_Template->getAttribute(Object(Craft\ElementCriteriaModel), 'url', Array, 'any', false, false)
+#5 /Users/bcfeeney/Sites/denizen/craft/storage/runtime/compiled_templates/ba/ca/888cff535303d028eca22c47043dbce5d31a58e6e23d55926790d54e0cf3.php(61): Craft\BaseTemplate->getAttribute(Object(Craft\ElementCriteriaModel), 'url')
+#6 /Users/bcfeeney/Sites/denizen/craft/app/vendor/twig/twig/lib/Twig/Template.php(144): __TwigTemplate_baca888cff535303d028eca22c47043dbce5d31a58e6e23d55926790d54e0cf3->block_content(Array, Array)
+#7 /Users/bcfeeney/Sites/denizen/craft/storage/runtime/compiled_templates/ed/98/28a305972340c53d0d40de6bc3549ef5af4912c3259926e586669341fcee.php(84): Twig_Template->displayBlock('content', Array, Array)
+#8 /Users/bcfeeney/Sites/denizen/craft/app/vendor/twig/twig/lib/Twig/Template.php(278): __TwigTemplate_ed9828a305972340c53d0d40de6bc3549ef5af4912c3259926e586669341fcee->doDisplay(Array, Array)
+#9 /Users/bcfeeney/Sites/denizen/craft/app/vendor/twig/twig/lib/Twig/Template.php(252): Twig_Template->displayWithErrorHandling(Array, Array)
+#10 /Users/bcfeeney/Sites/denizen/craft/storage/runtime/compiled_templates/ba/ca/888cff535303d028eca22c47043dbce5d31a58e6e23d55926790d54e0cf3.php(24): Twig_Template->display(Array, Array)
+#11 /Users/bcfeeney/Sites/denizen/craft/app/vendor/twig/twig/lib/Twig/Template.php(278): __TwigTemplate_baca888cff535303d028eca22c47043dbce5d31a58e6e23d55926790d54e0cf3->doDisplay(Array, Array)
+#12 /Users/bcfeeney/Sites/denizen/craft/app/vendor/twig/twig/lib/Twig/Template.php(252): Twig_Template->displayWithErrorHandling(Array, Array)
+#13 /Users/bcfeeney/Sites/denizen/craft/app/vendor/twig/twig/lib/Twig/Template.php(263): Twig_Template->display(Array)
+#14 /Users/bcfeeney/Sites/denizen/craft/app/vendor/twig/twig/lib/Twig/Environment.php(292): Twig_Template->render(Array)
+#15 /Users/bcfeeney/Sites/denizen/craft/app/services/TemplatesService.php(158): Twig_Environment->render('work/_entry', Array)
+#16 /Users/bcfeeney/Sites/denizen/craft/app/controllers/BaseController.php(75): Craft\TemplatesService->render('work/_entry', Array)
+#17 /Users/bcfeeney/Sites/denizen/craft/app/controllers/TemplatesController.php(185): Craft\BaseController->renderTemplate('work/_entry', Array)
+#18 /Users/bcfeeney/Sites/denizen/craft/app/controllers/TemplatesController.php(27): Craft\TemplatesController->_render('work/_entry', Array)
+#19 [internal function]: Craft\TemplatesController->actionRender('work/_entry', Array)
+#20 /Users/bcfeeney/Sites/denizen/craft/app/framework/web/actions/CAction.php(108): ReflectionMethod->invokeArgs(Object(Craft\TemplatesController), Array)
+#21 /Users/bcfeeney/Sites/denizen/craft/app/framework/web/actions/CInlineAction.php(47): CAction->runWithParamsInternal(Object(Craft\TemplatesController), Object(ReflectionMethod), Array)
+#22 /Users/bcfeeney/Sites/denizen/craft/app/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#23 /Users/bcfeeney/Sites/denizen/craft/app/framework/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#24 /Users/bcfeeney/Sites/denizen/craft/app/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), NULL)
+#25 /Users/bcfeeney/Sites/denizen/craft/app/framework/web/CWebApplication.php(282): CController->run('render')
+#26 /Users/bcfeeney/Sites/denizen/craft/app/framework/web/CWebApplication.php(141): CWebApplication->runController('templates/rende...')
+#27 /Users/bcfeeney/Sites/denizen/craft/app/etc/web/WebApp.php(240): CWebApplication->processRequest()
+#28 /Users/bcfeeney/Sites/denizen/craft/app/framework/base/CApplication.php(180): Craft\WebApp->processRequest()
+#29 /Users/bcfeeney/Sites/denizen/craft/app/index.php(196): CApplication->run()
+#30 /Users/bcfeeney/Sites/denizen/index.php(14): require_once('/Users/bcfeeney...')
+#31 {main}
+
+Next exception 'Twig_Error_Runtime' with message 'An exception has been thrown during the rendering of a template ("Craft\ElementCriteriaModel and its behaviors do not have a method or closure named "url".") in "work/_entry" at line 18.' in /Users/bcfeeney/Sites/denizen/craft/app/vendor/twig/twig/lib/Twig/Template.php:148
+Stack trace:
+#0 /Users/bcfeeney/Sites/denizen/craft/storage/runtime/compiled_templates/ed/98/28a305972340c53d0d40de6bc3549ef5af4912c3259926e586669341fcee.php(84): Twig_Template->displayBlock('content', Array, Array)
+#1 /Users/bcfeeney/Sites/denizen/craft/app/vendor/twig/twig/lib/Twig/Template.php(278): __TwigTemplate_ed9828a305972340c53d0d40de6bc3549ef5af4912c3259926e586669341fcee->doDisplay(Array, Array)
+#2 /Users/bcfeeney/Sites/denizen/craft/app/vendor/twig/twig/lib/Twig/Template.php(252): Twig_Template->displayWithErrorHandling(Array, Array)
+#3 /Users/bcfeeney/Sites/denizen/craft/storage/runtime/compiled_templates/ba/ca/888cff535303d028eca22c47043dbce5d31a58e6e23d55926790d54e0cf3.php(24): Twig_Template->display(Array, Array)
+#4 /Users/bcfeeney/Sites/denizen/craft/app/vendor/twig/twig/lib/Twig/Template.php(278): __TwigTemplate_baca888cff535303d028eca22c47043dbce5d31a58e6e23d55926790d54e0cf3->doDisplay(Array, Array)
+#5 /Users/bcfeeney/Sites/denizen/craft/app/vendor/twig/twig/lib/Twig/Template.php(252): Twig_Template->displayWithErrorHandling(Array, Array)
+#6 /Users/bcfeeney/Sites/denizen/craft/app/vendor/twig/twig/lib/Twig/Template.php(263): Twig_Template->display(Array)
+#7 /Users/bcfeeney/Sites/denizen/craft/app/vendor/twig/twig/lib/Twig/Environment.php(292): Twig_Template->render(Array)
+#8 /Users/bcfeeney/Sites/denizen/craft/app/services/TemplatesService.php(158): Twig_Environment->render('work/_entry', Array)
+#9 /Users/bcfeeney/Sites/denizen/craft/app/controllers/BaseController.php(75): Craft\TemplatesService->render('work/_entry', Array)
+#10 /Users/bcfeeney/Sites/denizen/craft/app/controllers/TemplatesController.php(185): Craft\BaseController->renderTemplate('work/_entry', Array)
+#11 /Users/bcfeeney/Sites/denizen/craft/app/controllers/TemplatesController.php(27): Craft\TemplatesController->_render('work/_entry', Array)
+#12 [internal function]: Craft\TemplatesController->actionRender('work/_entry', Array)
+#13 /Users/bcfeeney/Sites/denizen/craft/app/framework/web/actions/CAction.php(108): ReflectionMethod->invokeArgs(Object(Craft\TemplatesController), Array)
+#14 /Users/bcfeeney/Sites/denizen/craft/app/framework/web/actions/CInlineAction.php(47): CAction->runWithParamsInternal(Object(Craft\TemplatesController), Object(ReflectionMethod), Array)
+#15 /Users/bcfeeney/Sites/denizen/craft/app/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#16 /Users/bcfeeney/Sites/denizen/craft/app/framework/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#17 /Users/bcfeeney/Sites/denizen/craft/app/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), NULL)
+#18 /Users/bcfeeney/Sites/denizen/craft/app/framework/web/CWebApplication.php(282): CController->run('render')
+#19 /Users/bcfeeney/Sites/denizen/craft/app/framework/web/CWebApplication.php(141): CWebApplication->runController('templates/rende...')
+#20 /Users/bcfeeney/Sites/denizen/craft/app/etc/web/WebApp.php(240): CWebApplication->processRequest()
+#21 /Users/bcfeeney/Sites/denizen/craft/app/framework/base/CApplication.php(180): Craft\WebApp->processRequest()
+#22 /Users/bcfeeney/Sites/denizen/craft/app/index.php(196): CApplication->run()
+#23 /Users/bcfeeney/Sites/denizen/index.php(14): require_once('/Users/bcfeeney...')
+#24 {main}
+REQUEST_URI=/work/fast-n-loud
+HTTP_REFERER=http://denizen.dev/
+---
+2014/05/10 14:57:29 [error] [application] Unable to find the template “500”.
+2014/05/10 14:57:29 [error] [application] Unable to find the template “error”.
+
+******************************************************************************************************
+2014/05/10 14:58:25 [error] [php] Object of class Craft\ElementCriteriaModel could not be converted to string (/Users/bcfeeney/Sites/denizen/craft/storage/runtime/compiled_templates/ba/ca/888cff535303d028eca22c47043dbce5d31a58e6e23d55926790d54e0cf3.php:61)
+Stack trace:
+#0 /Users/bcfeeney/Sites/denizen/craft/app/vendor/twig/twig/lib/Twig/Template.php(278): __TwigTemplate_ed9828a305972340c53d0d40de6bc3549ef5af4912c3259926e586669341fcee->doDisplay()
+#1 /Users/bcfeeney/Sites/denizen/craft/app/vendor/twig/twig/lib/Twig/Template.php(252): __TwigTemplate_ed9828a305972340c53d0d40de6bc3549ef5af4912c3259926e586669341fcee->displayWithErrorHandling()
+#2 /Users/bcfeeney/Sites/denizen/craft/storage/runtime/compiled_templates/ba/ca/888cff535303d028eca22c47043dbce5d31a58e6e23d55926790d54e0cf3.php(24): __TwigTemplate_ed9828a305972340c53d0d40de6bc3549ef5af4912c3259926e586669341fcee->display()
+#3 /Users/bcfeeney/Sites/denizen/craft/app/vendor/twig/twig/lib/Twig/Template.php(278): __TwigTemplate_baca888cff535303d028eca22c47043dbce5d31a58e6e23d55926790d54e0cf3->doDisplay()
+#4 /Users/bcfeeney/Sites/denizen/craft/app/vendor/twig/twig/lib/Twig/Template.php(252): __TwigTemplate_baca888cff535303d028eca22c47043dbce5d31a58e6e23d55926790d54e0cf3->displayWithErrorHandling()
+#5 /Users/bcfeeney/Sites/denizen/craft/app/vendor/twig/twig/lib/Twig/Template.php(263): __TwigTemplate_baca888cff535303d028eca22c47043dbce5d31a58e6e23d55926790d54e0cf3->display()
+#6 /Users/bcfeeney/Sites/denizen/craft/app/vendor/twig/twig/lib/Twig/Environment.php(292): __TwigTemplate_baca888cff535303d028eca22c47043dbce5d31a58e6e23d55926790d54e0cf3->render()
+#7 /Users/bcfeeney/Sites/denizen/craft/app/services/TemplatesService.php(158): Twig_Environment->render()
+#8 /Users/bcfeeney/Sites/denizen/craft/app/controllers/BaseController.php(75): Craft\TemplatesService->render()
+#9 /Users/bcfeeney/Sites/denizen/craft/app/controllers/TemplatesController.php(185): Craft\TemplatesController->renderTemplate()
+#10 /Users/bcfeeney/Sites/denizen/craft/app/controllers/TemplatesController.php(27): Craft\TemplatesController->_render()
+#11 unknown(0): Craft\TemplatesController->actionRender()
+#12 /Users/bcfeeney/Sites/denizen/craft/app/framework/web/actions/CAction.php(108): ReflectionMethod->invokeArgs()
+#13 /Users/bcfeeney/Sites/denizen/craft/app/framework/web/actions/CInlineAction.php(47): CInlineAction->runWithParamsInternal()
+#14 /Users/bcfeeney/Sites/denizen/craft/app/framework/web/CController.php(308): CInlineAction->runWithParams()
+#15 /Users/bcfeeney/Sites/denizen/craft/app/framework/web/CController.php(286): Craft\TemplatesController->runAction()
+#16 /Users/bcfeeney/Sites/denizen/craft/app/framework/web/CController.php(265): Craft\TemplatesController->runActionWithFilters()
+#17 /Users/bcfeeney/Sites/denizen/craft/app/framework/web/CWebApplication.php(282): Craft\TemplatesController->run()
+#18 /Users/bcfeeney/Sites/denizen/craft/app/framework/web/CWebApplication.php(141): Craft\WebApp->runController()
+#19 /Users/bcfeeney/Sites/denizen/craft/app/etc/web/WebApp.php(240): Craft\WebApp->processRequest()
+#20 /Users/bcfeeney/Sites/denizen/craft/app/framework/base/CApplication.php(180): Craft\WebApp->processRequest()
+#21 /Users/bcfeeney/Sites/denizen/craft/app/index.php(196): Craft\WebApp->run()
+#22 /Users/bcfeeney/Sites/denizen/index.php(14): require_once()
+REQUEST_URI=/work/fast-n-loud
+2014/05/10 14:58:25 [error] [application] Unable to find the template “500”.
+2014/05/10 14:58:25 [error] [application] Unable to find the template “error”.
+
+******************************************************************************************************
+2014/05/10 14:59:30 [error] [php] Object of class Craft\ElementCriteriaModel could not be converted to string (/Users/bcfeeney/Sites/denizen/craft/storage/runtime/compiled_templates/ba/ca/888cff535303d028eca22c47043dbce5d31a58e6e23d55926790d54e0cf3.php:61)
+Stack trace:
+#0 /Users/bcfeeney/Sites/denizen/craft/app/vendor/twig/twig/lib/Twig/Template.php(278): __TwigTemplate_ed9828a305972340c53d0d40de6bc3549ef5af4912c3259926e586669341fcee->doDisplay()
+#1 /Users/bcfeeney/Sites/denizen/craft/app/vendor/twig/twig/lib/Twig/Template.php(252): __TwigTemplate_ed9828a305972340c53d0d40de6bc3549ef5af4912c3259926e586669341fcee->displayWithErrorHandling()
+#2 /Users/bcfeeney/Sites/denizen/craft/storage/runtime/compiled_templates/ba/ca/888cff535303d028eca22c47043dbce5d31a58e6e23d55926790d54e0cf3.php(24): __TwigTemplate_ed9828a305972340c53d0d40de6bc3549ef5af4912c3259926e586669341fcee->display()
+#3 /Users/bcfeeney/Sites/denizen/craft/app/vendor/twig/twig/lib/Twig/Template.php(278): __TwigTemplate_baca888cff535303d028eca22c47043dbce5d31a58e6e23d55926790d54e0cf3->doDisplay()
+#4 /Users/bcfeeney/Sites/denizen/craft/app/vendor/twig/twig/lib/Twig/Template.php(252): __TwigTemplate_baca888cff535303d028eca22c47043dbce5d31a58e6e23d55926790d54e0cf3->displayWithErrorHandling()
+#5 /Users/bcfeeney/Sites/denizen/craft/app/vendor/twig/twig/lib/Twig/Template.php(263): __TwigTemplate_baca888cff535303d028eca22c47043dbce5d31a58e6e23d55926790d54e0cf3->display()
+#6 /Users/bcfeeney/Sites/denizen/craft/app/vendor/twig/twig/lib/Twig/Environment.php(292): __TwigTemplate_baca888cff535303d028eca22c47043dbce5d31a58e6e23d55926790d54e0cf3->render()
+#7 /Users/bcfeeney/Sites/denizen/craft/app/services/TemplatesService.php(158): Twig_Environment->render()
+#8 /Users/bcfeeney/Sites/denizen/craft/app/controllers/BaseController.php(75): Craft\TemplatesService->render()
+#9 /Users/bcfeeney/Sites/denizen/craft/app/controllers/TemplatesController.php(185): Craft\TemplatesController->renderTemplate()
+#10 /Users/bcfeeney/Sites/denizen/craft/app/controllers/TemplatesController.php(27): Craft\TemplatesController->_render()
+#11 unknown(0): Craft\TemplatesController->actionRender()
+#12 /Users/bcfeeney/Sites/denizen/craft/app/framework/web/actions/CAction.php(108): ReflectionMethod->invokeArgs()
+#13 /Users/bcfeeney/Sites/denizen/craft/app/framework/web/actions/CInlineAction.php(47): CInlineAction->runWithParamsInternal()
+#14 /Users/bcfeeney/Sites/denizen/craft/app/framework/web/CController.php(308): CInlineAction->runWithParams()
+#15 /Users/bcfeeney/Sites/denizen/craft/app/framework/web/CController.php(286): Craft\TemplatesController->runAction()
+#16 /Users/bcfeeney/Sites/denizen/craft/app/framework/web/CController.php(265): Craft\TemplatesController->runActionWithFilters()
+#17 /Users/bcfeeney/Sites/denizen/craft/app/framework/web/CWebApplication.php(282): Craft\TemplatesController->run()
+#18 /Users/bcfeeney/Sites/denizen/craft/app/framework/web/CWebApplication.php(141): Craft\WebApp->runController()
+#19 /Users/bcfeeney/Sites/denizen/craft/app/etc/web/WebApp.php(240): Craft\WebApp->processRequest()
+#20 /Users/bcfeeney/Sites/denizen/craft/app/framework/base/CApplication.php(180): Craft\WebApp->processRequest()
+#21 /Users/bcfeeney/Sites/denizen/craft/app/index.php(196): Craft\WebApp->run()
+#22 /Users/bcfeeney/Sites/denizen/index.php(14): require_once()
+REQUEST_URI=/work/fast-n-loud
+2014/05/10 14:59:30 [error] [application] Unable to find the template “500”.
+2014/05/10 14:59:30 [error] [application] Unable to find the template “error”.
+
+******************************************************************************************************
+2014/05/10 15:00:00 [error] [exception.Twig_Error_Syntax] exception 'Twig_Error_Syntax' with message 'Unexpected "}" in "work/_entry" at line 18' in /Users/bcfeeney/Sites/denizen/craft/app/vendor/twig/twig/lib/Twig/Lexer.php:259
+Stack trace:
+#0 /Users/bcfeeney/Sites/denizen/craft/app/vendor/twig/twig/lib/Twig/Lexer.php(205): Twig_Lexer->lexExpression()
+#1 /Users/bcfeeney/Sites/denizen/craft/app/vendor/twig/twig/lib/Twig/Lexer.php(111): Twig_Lexer->lexBlock()
+#2 /Users/bcfeeney/Sites/denizen/craft/app/vendor/twig/twig/lib/Twig/Environment.php(469): Twig_Lexer->tokenize('{# Work entry t...', 'work/_entry')
+#3 /Users/bcfeeney/Sites/denizen/craft/app/vendor/twig/twig/lib/Twig/Environment.php(559): Twig_Environment->tokenize('{# Work entry t...', 'work/_entry')
+#4 /Users/bcfeeney/Sites/denizen/craft/app/vendor/twig/twig/lib/Twig/Environment.php(334): Twig_Environment->compileSource('{# Work entry t...', 'work/_entry')
+#5 /Users/bcfeeney/Sites/denizen/craft/app/vendor/twig/twig/lib/Twig/Environment.php(292): Twig_Environment->loadTemplate('work/_entry')
+#6 /Users/bcfeeney/Sites/denizen/craft/app/services/TemplatesService.php(158): Twig_Environment->render('work/_entry', Array)
+#7 /Users/bcfeeney/Sites/denizen/craft/app/controllers/BaseController.php(75): Craft\TemplatesService->render('work/_entry', Array)
+#8 /Users/bcfeeney/Sites/denizen/craft/app/controllers/TemplatesController.php(185): Craft\BaseController->renderTemplate('work/_entry', Array)
+#9 /Users/bcfeeney/Sites/denizen/craft/app/controllers/TemplatesController.php(27): Craft\TemplatesController->_render('work/_entry', Array)
+#10 [internal function]: Craft\TemplatesController->actionRender('work/_entry', Array)
+#11 /Users/bcfeeney/Sites/denizen/craft/app/framework/web/actions/CAction.php(108): ReflectionMethod->invokeArgs(Object(Craft\TemplatesController), Array)
+#12 /Users/bcfeeney/Sites/denizen/craft/app/framework/web/actions/CInlineAction.php(47): CAction->runWithParamsInternal(Object(Craft\TemplatesController), Object(ReflectionMethod), Array)
+#13 /Users/bcfeeney/Sites/denizen/craft/app/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#14 /Users/bcfeeney/Sites/denizen/craft/app/framework/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#15 /Users/bcfeeney/Sites/denizen/craft/app/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), NULL)
+#16 /Users/bcfeeney/Sites/denizen/craft/app/framework/web/CWebApplication.php(282): CController->run('render')
+#17 /Users/bcfeeney/Sites/denizen/craft/app/framework/web/CWebApplication.php(141): CWebApplication->runController('templates/rende...')
+#18 /Users/bcfeeney/Sites/denizen/craft/app/etc/web/WebApp.php(240): CWebApplication->processRequest()
+#19 /Users/bcfeeney/Sites/denizen/craft/app/framework/base/CApplication.php(180): Craft\WebApp->processRequest()
+#20 /Users/bcfeeney/Sites/denizen/craft/app/index.php(196): CApplication->run()
+#21 /Users/bcfeeney/Sites/denizen/index.php(14): require_once('/Users/bcfeeney...')
+#22 {main}
+REQUEST_URI=/work/fast-n-loud
+HTTP_REFERER=http://denizen.dev/
+---
+2014/05/10 15:00:00 [error] [application] Unable to find the template “500”.
+2014/05/10 15:00:00 [error] [application] Unable to find the template “error”.
+
+******************************************************************************************************
+2014/05/10 15:01:27 [error] [exception.Twig_Error_Runtime] exception 'CException' with message 'Craft\MatrixBlockModel and its behaviors do not have a method or closure named "first".' in /Users/bcfeeney/Sites/denizen/craft/app/framework/base/CComponent.php:266
+Stack trace:
+#0 /Users/bcfeeney/Sites/denizen/craft/app/models/BaseModel.php(100): CComponent->__call('first', Array)
+#1 [internal function]: Craft\BaseModel->__call('first', Array)
+#2 [internal function]: Craft\MatrixBlockModel->first()
+#3 /Users/bcfeeney/Sites/denizen/craft/app/vendor/twig/twig/lib/Twig/Template.php(471): call_user_func_array(Array, Array)
+#4 /Users/bcfeeney/Sites/denizen/craft/app/etc/templating/BaseTemplate.php(40): Twig_Template->getAttribute(Object(Craft\MatrixBlockModel), 'first', Array, 'method', false, false)
+#5 /Users/bcfeeney/Sites/denizen/craft/storage/runtime/compiled_templates/ba/ca/888cff535303d028eca22c47043dbce5d31a58e6e23d55926790d54e0cf3.php(62): Craft\BaseTemplate->getAttribute(Object(Craft\MatrixBlockModel), 'first', Array, 'method')
+#6 /Users/bcfeeney/Sites/denizen/craft/app/vendor/twig/twig/lib/Twig/Template.php(144): __TwigTemplate_baca888cff535303d028eca22c47043dbce5d31a58e6e23d55926790d54e0cf3->block_content(Array, Array)
+#7 /Users/bcfeeney/Sites/denizen/craft/storage/runtime/compiled_templates/ed/98/28a305972340c53d0d40de6bc3549ef5af4912c3259926e586669341fcee.php(84): Twig_Template->displayBlock('content', Array, Array)
+#8 /Users/bcfeeney/Sites/denizen/craft/app/vendor/twig/twig/lib/Twig/Template.php(278): __TwigTemplate_ed9828a305972340c53d0d40de6bc3549ef5af4912c3259926e586669341fcee->doDisplay(Array, Array)
+#9 /Users/bcfeeney/Sites/denizen/craft/app/vendor/twig/twig/lib/Twig/Template.php(252): Twig_Template->displayWithErrorHandling(Array, Array)
+#10 /Users/bcfeeney/Sites/denizen/craft/storage/runtime/compiled_templates/ba/ca/888cff535303d028eca22c47043dbce5d31a58e6e23d55926790d54e0cf3.php(24): Twig_Template->display(Array, Array)
+#11 /Users/bcfeeney/Sites/denizen/craft/app/vendor/twig/twig/lib/Twig/Template.php(278): __TwigTemplate_baca888cff535303d028eca22c47043dbce5d31a58e6e23d55926790d54e0cf3->doDisplay(Array, Array)
+#12 /Users/bcfeeney/Sites/denizen/craft/app/vendor/twig/twig/lib/Twig/Template.php(252): Twig_Template->displayWithErrorHandling(Array, Array)
+#13 /Users/bcfeeney/Sites/denizen/craft/app/vendor/twig/twig/lib/Twig/Template.php(263): Twig_Template->display(Array)
+#14 /Users/bcfeeney/Sites/denizen/craft/app/vendor/twig/twig/lib/Twig/Environment.php(292): Twig_Template->render(Array)
+#15 /Users/bcfeeney/Sites/denizen/craft/app/services/TemplatesService.php(158): Twig_Environment->render('work/_entry', Array)
+#16 /Users/bcfeeney/Sites/denizen/craft/app/controllers/BaseController.php(75): Craft\TemplatesService->render('work/_entry', Array)
+#17 /Users/bcfeeney/Sites/denizen/craft/app/controllers/TemplatesController.php(185): Craft\BaseController->renderTemplate('work/_entry', Array)
+#18 /Users/bcfeeney/Sites/denizen/craft/app/controllers/TemplatesController.php(27): Craft\TemplatesController->_render('work/_entry', Array)
+#19 [internal function]: Craft\TemplatesController->actionRender('work/_entry', Array)
+#20 /Users/bcfeeney/Sites/denizen/craft/app/framework/web/actions/CAction.php(108): ReflectionMethod->invokeArgs(Object(Craft\TemplatesController), Array)
+#21 /Users/bcfeeney/Sites/denizen/craft/app/framework/web/actions/CInlineAction.php(47): CAction->runWithParamsInternal(Object(Craft\TemplatesController), Object(ReflectionMethod), Array)
+#22 /Users/bcfeeney/Sites/denizen/craft/app/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#23 /Users/bcfeeney/Sites/denizen/craft/app/framework/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#24 /Users/bcfeeney/Sites/denizen/craft/app/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), NULL)
+#25 /Users/bcfeeney/Sites/denizen/craft/app/framework/web/CWebApplication.php(282): CController->run('render')
+#26 /Users/bcfeeney/Sites/denizen/craft/app/framework/web/CWebApplication.php(141): CWebApplication->runController('templates/rende...')
+#27 /Users/bcfeeney/Sites/denizen/craft/app/etc/web/WebApp.php(240): CWebApplication->processRequest()
+#28 /Users/bcfeeney/Sites/denizen/craft/app/framework/base/CApplication.php(180): Craft\WebApp->processRequest()
+#29 /Users/bcfeeney/Sites/denizen/craft/app/index.php(196): CApplication->run()
+#30 /Users/bcfeeney/Sites/denizen/index.php(14): require_once('/Users/bcfeeney...')
+#31 {main}
+
+Next exception 'Twig_Error_Runtime' with message 'An exception has been thrown during the rendering of a template ("Craft\MatrixBlockModel and its behaviors do not have a method or closure named "first".") in "work/_entry" at line 18.' in /Users/bcfeeney/Sites/denizen/craft/app/vendor/twig/twig/lib/Twig/Template.php:148
+Stack trace:
+#0 /Users/bcfeeney/Sites/denizen/craft/storage/runtime/compiled_templates/ed/98/28a305972340c53d0d40de6bc3549ef5af4912c3259926e586669341fcee.php(84): Twig_Template->displayBlock('content', Array, Array)
+#1 /Users/bcfeeney/Sites/denizen/craft/app/vendor/twig/twig/lib/Twig/Template.php(278): __TwigTemplate_ed9828a305972340c53d0d40de6bc3549ef5af4912c3259926e586669341fcee->doDisplay(Array, Array)
+#2 /Users/bcfeeney/Sites/denizen/craft/app/vendor/twig/twig/lib/Twig/Template.php(252): Twig_Template->displayWithErrorHandling(Array, Array)
+#3 /Users/bcfeeney/Sites/denizen/craft/storage/runtime/compiled_templates/ba/ca/888cff535303d028eca22c47043dbce5d31a58e6e23d55926790d54e0cf3.php(24): Twig_Template->display(Array, Array)
+#4 /Users/bcfeeney/Sites/denizen/craft/app/vendor/twig/twig/lib/Twig/Template.php(278): __TwigTemplate_baca888cff535303d028eca22c47043dbce5d31a58e6e23d55926790d54e0cf3->doDisplay(Array, Array)
+#5 /Users/bcfeeney/Sites/denizen/craft/app/vendor/twig/twig/lib/Twig/Template.php(252): Twig_Template->displayWithErrorHandling(Array, Array)
+#6 /Users/bcfeeney/Sites/denizen/craft/app/vendor/twig/twig/lib/Twig/Template.php(263): Twig_Template->display(Array)
+#7 /Users/bcfeeney/Sites/denizen/craft/app/vendor/twig/twig/lib/Twig/Environment.php(292): Twig_Template->render(Array)
+#8 /Users/bcfeeney/Sites/denizen/craft/app/services/TemplatesService.php(158): Twig_Environment->render('work/_entry', Array)
+#9 /Users/bcfeeney/Sites/denizen/craft/app/controllers/BaseController.php(75): Craft\TemplatesService->render('work/_entry', Array)
+#10 /Users/bcfeeney/Sites/denizen/craft/app/controllers/TemplatesController.php(185): Craft\BaseController->renderTemplate('work/_entry', Array)
+#11 /Users/bcfeeney/Sites/denizen/craft/app/controllers/TemplatesController.php(27): Craft\TemplatesController->_render('work/_entry', Array)
+#12 [internal function]: Craft\TemplatesController->actionRender('work/_entry', Array)
+#13 /Users/bcfeeney/Sites/denizen/craft/app/framework/web/actions/CAction.php(108): ReflectionMethod->invokeArgs(Object(Craft\TemplatesController), Array)
+#14 /Users/bcfeeney/Sites/denizen/craft/app/framework/web/actions/CInlineAction.php(47): CAction->runWithParamsInternal(Object(Craft\TemplatesController), Object(ReflectionMethod), Array)
+#15 /Users/bcfeeney/Sites/denizen/craft/app/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#16 /Users/bcfeeney/Sites/denizen/craft/app/framework/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#17 /Users/bcfeeney/Sites/denizen/craft/app/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), NULL)
+#18 /Users/bcfeeney/Sites/denizen/craft/app/framework/web/CWebApplication.php(282): CController->run('render')
+#19 /Users/bcfeeney/Sites/denizen/craft/app/framework/web/CWebApplication.php(141): CWebApplication->runController('templates/rende...')
+#20 /Users/bcfeeney/Sites/denizen/craft/app/etc/web/WebApp.php(240): CWebApplication->processRequest()
+#21 /Users/bcfeeney/Sites/denizen/craft/app/framework/base/CApplication.php(180): Craft\WebApp->processRequest()
+#22 /Users/bcfeeney/Sites/denizen/craft/app/index.php(196): CApplication->run()
+#23 /Users/bcfeeney/Sites/denizen/index.php(14): require_once('/Users/bcfeeney...')
+#24 {main}
+REQUEST_URI=/work/fast-n-loud
+HTTP_REFERER=http://denizen.dev/
+---
+2014/05/10 15:01:27 [error] [application] Unable to find the template “500”.
+2014/05/10 15:01:27 [error] [application] Unable to find the template “error”.
+
+******************************************************************************************************
+2014/05/10 15:08:02 [info] [application] [Forced] Starting task DeleteStaleTemplateCaches that has a total of 0 steps.
+in /Users/bcfeeney/Sites/denizen/craft/app/services/TasksService.php (176)
+2014/05/10 15:08:02 [info] [application] [Forced] Finished task 7 (DeleteStaleTemplateCaches).
+in /Users/bcfeeney/Sites/denizen/craft/app/services/TasksService.php (221)
+
+******************************************************************************************************
+2014/05/10 15:09:57 [info] [application] [Forced] Starting task DeleteStaleTemplateCaches that has a total of 0 steps.
+in /Users/bcfeeney/Sites/denizen/craft/app/services/TasksService.php (176)
+2014/05/10 15:09:57 [info] [application] [Forced] Finished task 8 (DeleteStaleTemplateCaches).
+in /Users/bcfeeney/Sites/denizen/craft/app/services/TasksService.php (221)
+
+******************************************************************************************************
+2014/05/10 15:10:00 [error] [exception.Twig_Error_Runtime] exception 'CException' with message 'Craft\ElementCriteriaModel and its behaviors do not have a method or closure named "getUrl".' in /Users/bcfeeney/Sites/denizen/craft/app/framework/base/CComponent.php:266
+Stack trace:
+#0 /Users/bcfeeney/Sites/denizen/craft/app/models/BaseModel.php(100): CComponent->__call('getUrl', Array)
+#1 [internal function]: Craft\BaseModel->__call('getUrl', Array)
+#2 [internal function]: Craft\ElementCriteriaModel->getUrl()
+#3 /Users/bcfeeney/Sites/denizen/craft/app/vendor/twig/twig/lib/Twig/Template.php(471): call_user_func_array(Array, Array)
+#4 /Users/bcfeeney/Sites/denizen/craft/app/etc/templating/BaseTemplate.php(40): Twig_Template->getAttribute(Object(Craft\ElementCriteriaModel), 'getUrl', Array, 'method', false, false)
+#5 /Users/bcfeeney/Sites/denizen/craft/storage/runtime/compiled_templates/ba/ca/888cff535303d028eca22c47043dbce5d31a58e6e23d55926790d54e0cf3.php(55): Craft\BaseTemplate->getAttribute(Object(Craft\ElementCriteriaModel), 'getUrl', Array, 'method')
+#6 /Users/bcfeeney/Sites/denizen/craft/app/vendor/twig/twig/lib/Twig/Template.php(144): __TwigTemplate_baca888cff535303d028eca22c47043dbce5d31a58e6e23d55926790d54e0cf3->block_content(Array, Array)
+#7 /Users/bcfeeney/Sites/denizen/craft/storage/runtime/compiled_templates/ed/98/28a305972340c53d0d40de6bc3549ef5af4912c3259926e586669341fcee.php(84): Twig_Template->displayBlock('content', Array, Array)
+#8 /Users/bcfeeney/Sites/denizen/craft/app/vendor/twig/twig/lib/Twig/Template.php(278): __TwigTemplate_ed9828a305972340c53d0d40de6bc3549ef5af4912c3259926e586669341fcee->doDisplay(Array, Array)
+#9 /Users/bcfeeney/Sites/denizen/craft/app/vendor/twig/twig/lib/Twig/Template.php(252): Twig_Template->displayWithErrorHandling(Array, Array)
+#10 /Users/bcfeeney/Sites/denizen/craft/storage/runtime/compiled_templates/ba/ca/888cff535303d028eca22c47043dbce5d31a58e6e23d55926790d54e0cf3.php(24): Twig_Template->display(Array, Array)
+#11 /Users/bcfeeney/Sites/denizen/craft/app/vendor/twig/twig/lib/Twig/Template.php(278): __TwigTemplate_baca888cff535303d028eca22c47043dbce5d31a58e6e23d55926790d54e0cf3->doDisplay(Array, Array)
+#12 /Users/bcfeeney/Sites/denizen/craft/app/vendor/twig/twig/lib/Twig/Template.php(252): Twig_Template->displayWithErrorHandling(Array, Array)
+#13 /Users/bcfeeney/Sites/denizen/craft/app/vendor/twig/twig/lib/Twig/Template.php(263): Twig_Template->display(Array)
+#14 /Users/bcfeeney/Sites/denizen/craft/app/vendor/twig/twig/lib/Twig/Environment.php(292): Twig_Template->render(Array)
+#15 /Users/bcfeeney/Sites/denizen/craft/app/services/TemplatesService.php(158): Twig_Environment->render('work/_entry', Array)
+#16 /Users/bcfeeney/Sites/denizen/craft/app/controllers/BaseController.php(75): Craft\TemplatesService->render('work/_entry', Array)
+#17 /Users/bcfeeney/Sites/denizen/craft/app/controllers/TemplatesController.php(185): Craft\BaseController->renderTemplate('work/_entry', Array)
+#18 /Users/bcfeeney/Sites/denizen/craft/app/controllers/TemplatesController.php(27): Craft\TemplatesController->_render('work/_entry', Array)
+#19 [internal function]: Craft\TemplatesController->actionRender('work/_entry', Array)
+#20 /Users/bcfeeney/Sites/denizen/craft/app/framework/web/actions/CAction.php(108): ReflectionMethod->invokeArgs(Object(Craft\TemplatesController), Array)
+#21 /Users/bcfeeney/Sites/denizen/craft/app/framework/web/actions/CInlineAction.php(47): CAction->runWithParamsInternal(Object(Craft\TemplatesController), Object(ReflectionMethod), Array)
+#22 /Users/bcfeeney/Sites/denizen/craft/app/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#23 /Users/bcfeeney/Sites/denizen/craft/app/framework/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#24 /Users/bcfeeney/Sites/denizen/craft/app/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), NULL)
+#25 /Users/bcfeeney/Sites/denizen/craft/app/framework/web/CWebApplication.php(282): CController->run('render')
+#26 /Users/bcfeeney/Sites/denizen/craft/app/framework/web/CWebApplication.php(141): CWebApplication->runController('templates/rende...')
+#27 /Users/bcfeeney/Sites/denizen/craft/app/etc/web/WebApp.php(240): CWebApplication->processRequest()
+#28 /Users/bcfeeney/Sites/denizen/craft/app/framework/base/CApplication.php(180): Craft\WebApp->processRequest()
+#29 /Users/bcfeeney/Sites/denizen/craft/app/index.php(196): CApplication->run()
+#30 /Users/bcfeeney/Sites/denizen/index.php(14): require_once('/Users/bcfeeney...')
+#31 {main}
+
+Next exception 'Twig_Error_Runtime' with message 'An exception has been thrown during the rendering of a template ("Craft\ElementCriteriaModel and its behaviors do not have a method or closure named "getUrl".") in "work/_entry" at line 17.' in /Users/bcfeeney/Sites/denizen/craft/app/vendor/twig/twig/lib/Twig/Template.php:148
+Stack trace:
+#0 /Users/bcfeeney/Sites/denizen/craft/storage/runtime/compiled_templates/ed/98/28a305972340c53d0d40de6bc3549ef5af4912c3259926e586669341fcee.php(84): Twig_Template->displayBlock('content', Array, Array)
+#1 /Users/bcfeeney/Sites/denizen/craft/app/vendor/twig/twig/lib/Twig/Template.php(278): __TwigTemplate_ed9828a305972340c53d0d40de6bc3549ef5af4912c3259926e586669341fcee->doDisplay(Array, Array)
+#2 /Users/bcfeeney/Sites/denizen/craft/app/vendor/twig/twig/lib/Twig/Template.php(252): Twig_Template->displayWithErrorHandling(Array, Array)
+#3 /Users/bcfeeney/Sites/denizen/craft/storage/runtime/compiled_templates/ba/ca/888cff535303d028eca22c47043dbce5d31a58e6e23d55926790d54e0cf3.php(24): Twig_Template->display(Array, Array)
+#4 /Users/bcfeeney/Sites/denizen/craft/app/vendor/twig/twig/lib/Twig/Template.php(278): __TwigTemplate_baca888cff535303d028eca22c47043dbce5d31a58e6e23d55926790d54e0cf3->doDisplay(Array, Array)
+#5 /Users/bcfeeney/Sites/denizen/craft/app/vendor/twig/twig/lib/Twig/Template.php(252): Twig_Template->displayWithErrorHandling(Array, Array)
+#6 /Users/bcfeeney/Sites/denizen/craft/app/vendor/twig/twig/lib/Twig/Template.php(263): Twig_Template->display(Array)
+#7 /Users/bcfeeney/Sites/denizen/craft/app/vendor/twig/twig/lib/Twig/Environment.php(292): Twig_Template->render(Array)
+#8 /Users/bcfeeney/Sites/denizen/craft/app/services/TemplatesService.php(158): Twig_Environment->render('work/_entry', Array)
+#9 /Users/bcfeeney/Sites/denizen/craft/app/controllers/BaseController.php(75): Craft\TemplatesService->render('work/_entry', Array)
+#10 /Users/bcfeeney/Sites/denizen/craft/app/controllers/TemplatesController.php(185): Craft\BaseController->renderTemplate('work/_entry', Array)
+#11 /Users/bcfeeney/Sites/denizen/craft/app/controllers/TemplatesController.php(27): Craft\TemplatesController->_render('work/_entry', Array)
+#12 [internal function]: Craft\TemplatesController->actionRender('work/_entry', Array)
+#13 /Users/bcfeeney/Sites/denizen/craft/app/framework/web/actions/CAction.php(108): ReflectionMethod->invokeArgs(Object(Craft\TemplatesController), Array)
+#14 /Users/bcfeeney/Sites/denizen/craft/app/framework/web/actions/CInlineAction.php(47): CAction->runWithParamsInternal(Object(Craft\TemplatesController), Object(ReflectionMethod), Array)
+#15 /Users/bcfeeney/Sites/denizen/craft/app/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#16 /Users/bcfeeney/Sites/denizen/craft/app/framework/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#17 /Users/bcfeeney/Sites/denizen/craft/app/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), NULL)
+#18 /Users/bcfeeney/Sites/denizen/craft/app/framework/web/CWebApplication.php(282): CController->run('render')
+#19 /Users/bcfeeney/Sites/denizen/craft/app/framework/web/CWebApplication.php(141): CWebApplication->runController('templates/rende...')
+#20 /Users/bcfeeney/Sites/denizen/craft/app/etc/web/WebApp.php(240): CWebApplication->processRequest()
+#21 /Users/bcfeeney/Sites/denizen/craft/app/framework/base/CApplication.php(180): Craft\WebApp->processRequest()
+#22 /Users/bcfeeney/Sites/denizen/craft/app/index.php(196): CApplication->run()
+#23 /Users/bcfeeney/Sites/denizen/index.php(14): require_once('/Users/bcfeeney...')
+#24 {main}
+REQUEST_URI=/work/fast-n-loud
+HTTP_REFERER=http://denizen.dev/
+---
+2014/05/10 15:10:00 [error] [application] Unable to find the template “500”.
+2014/05/10 15:10:00 [error] [application] Unable to find the template “error”.
+
+******************************************************************************************************
+2014/05/10 15:10:25 [error] [php] Object of class Craft\ElementCriteriaModel could not be converted to string (/Users/bcfeeney/Sites/denizen/craft/storage/runtime/compiled_templates/ba/ca/888cff535303d028eca22c47043dbce5d31a58e6e23d55926790d54e0cf3.php:55)
+Stack trace:
+#0 /Users/bcfeeney/Sites/denizen/craft/app/vendor/twig/twig/lib/Twig/Template.php(278): __TwigTemplate_ed9828a305972340c53d0d40de6bc3549ef5af4912c3259926e586669341fcee->doDisplay()
+#1 /Users/bcfeeney/Sites/denizen/craft/app/vendor/twig/twig/lib/Twig/Template.php(252): __TwigTemplate_ed9828a305972340c53d0d40de6bc3549ef5af4912c3259926e586669341fcee->displayWithErrorHandling()
+#2 /Users/bcfeeney/Sites/denizen/craft/storage/runtime/compiled_templates/ba/ca/888cff535303d028eca22c47043dbce5d31a58e6e23d55926790d54e0cf3.php(24): __TwigTemplate_ed9828a305972340c53d0d40de6bc3549ef5af4912c3259926e586669341fcee->display()
+#3 /Users/bcfeeney/Sites/denizen/craft/app/vendor/twig/twig/lib/Twig/Template.php(278): __TwigTemplate_baca888cff535303d028eca22c47043dbce5d31a58e6e23d55926790d54e0cf3->doDisplay()
+#4 /Users/bcfeeney/Sites/denizen/craft/app/vendor/twig/twig/lib/Twig/Template.php(252): __TwigTemplate_baca888cff535303d028eca22c47043dbce5d31a58e6e23d55926790d54e0cf3->displayWithErrorHandling()
+#5 /Users/bcfeeney/Sites/denizen/craft/app/vendor/twig/twig/lib/Twig/Template.php(263): __TwigTemplate_baca888cff535303d028eca22c47043dbce5d31a58e6e23d55926790d54e0cf3->display()
+#6 /Users/bcfeeney/Sites/denizen/craft/app/vendor/twig/twig/lib/Twig/Environment.php(292): __TwigTemplate_baca888cff535303d028eca22c47043dbce5d31a58e6e23d55926790d54e0cf3->render()
+#7 /Users/bcfeeney/Sites/denizen/craft/app/services/TemplatesService.php(158): Twig_Environment->render()
+#8 /Users/bcfeeney/Sites/denizen/craft/app/controllers/BaseController.php(75): Craft\TemplatesService->render()
+#9 /Users/bcfeeney/Sites/denizen/craft/app/controllers/TemplatesController.php(185): Craft\TemplatesController->renderTemplate()
+#10 /Users/bcfeeney/Sites/denizen/craft/app/controllers/TemplatesController.php(27): Craft\TemplatesController->_render()
+#11 unknown(0): Craft\TemplatesController->actionRender()
+#12 /Users/bcfeeney/Sites/denizen/craft/app/framework/web/actions/CAction.php(108): ReflectionMethod->invokeArgs()
+#13 /Users/bcfeeney/Sites/denizen/craft/app/framework/web/actions/CInlineAction.php(47): CInlineAction->runWithParamsInternal()
+#14 /Users/bcfeeney/Sites/denizen/craft/app/framework/web/CController.php(308): CInlineAction->runWithParams()
+#15 /Users/bcfeeney/Sites/denizen/craft/app/framework/web/CController.php(286): Craft\TemplatesController->runAction()
+#16 /Users/bcfeeney/Sites/denizen/craft/app/framework/web/CController.php(265): Craft\TemplatesController->runActionWithFilters()
+#17 /Users/bcfeeney/Sites/denizen/craft/app/framework/web/CWebApplication.php(282): Craft\TemplatesController->run()
+#18 /Users/bcfeeney/Sites/denizen/craft/app/framework/web/CWebApplication.php(141): Craft\WebApp->runController()
+#19 /Users/bcfeeney/Sites/denizen/craft/app/etc/web/WebApp.php(240): Craft\WebApp->processRequest()
+#20 /Users/bcfeeney/Sites/denizen/craft/app/framework/base/CApplication.php(180): Craft\WebApp->processRequest()
+#21 /Users/bcfeeney/Sites/denizen/craft/app/index.php(196): Craft\WebApp->run()
+#22 /Users/bcfeeney/Sites/denizen/index.php(14): require_once()
+REQUEST_URI=/work/fast-n-loud
+2014/05/10 15:10:25 [error] [application] Unable to find the template “500”.
+2014/05/10 15:10:25 [error] [application] Unable to find the template “error”.
+
+******************************************************************************************************

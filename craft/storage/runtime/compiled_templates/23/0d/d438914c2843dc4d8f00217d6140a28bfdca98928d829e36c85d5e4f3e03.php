@@ -31,7 +31,7 @@ class __TwigTemplate_230dd438914c2843dc4d8f00217d6140a28bfdca98928d829e36c85d5e4
         echo "
 \t<video id=\"video_background\" preload=\"auto\" autoplay=\"true\" loop=\"loop\" muted=\"muted\" volume=\"0\">
 \t\t<source src=\"/public/mp4/Discovery_FastNLoud_Kraft.mp4\" type=\"video/mp4\">
-\t\t<source src=\"/public/flash/landing.webm\" type=\"video/webm\">
+\t\t<source src=\"/public/webm/landing.webm\" type=\"video/webm\">
 \t</video>
 
 \t<section id=\"home-top\" class=\"fullscreen\">

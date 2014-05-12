@@ -5949,10 +5949,14 @@ header .logo-container .logo-splash {
   padding: 5em 2em;
 }
 /* -------------------------------------------------------------------------------- */
+#video-player {
+  position: relative;
+}
 #video_fullwidth {
   width: 100%;
   height: auto;
   margin-top: 100px;
+  background-color: #1b1b1b;
 }
 .thumbnail-overlay {
   position: absolute;
@@ -5982,6 +5986,7 @@ button:hover {
 }
 button.play {
   top: 45%;
+  left: 50%;
 }
 button.pause {
   top: 120px;

@@ -13,13 +13,18 @@
 		{% endfor %}
 		</div>
 	
-		{% for video in entry.mp4Video %}
 		<video id="video_fullwidth" preload="auto" volume="3">
-			<source src="{{ video.getUrl() }}" type="video/mp4">
-			<source src="/public/flash/landing.webm" type="video/webm">
+			{% for mp4 in entry.videomp4 %}
+				<source src="{{ mp4.getUrl() }}" type="video/mp4">
+			{% endfor %}
+			{% for webm in entry.videowebm %}
+				<source src="{{ webm.getUrl() }}" type="video/webm">
+			{% endfor %}
+			{% for ogg in entry.videoogg %}
+				<source src="{{ ogg.getUrl() }}" type="video/ogg">
+			{% endfor %}
 			Video not supported
 		</video>
-		{% endfor %}
 	
 		<button class="pause hide">Pause</button>
 	</section>

@@ -209,10 +209,15 @@ header {
 /* -------------------------------------------------------------------------------- */
 // WORK DETAIL
 
+#video-player {
+	position: relative;
+}
+
 #video_fullwidth {
 	width: 100%;
 	height: auto;
 	margin-top: 100px;
+	background-color: @darkGray;
 }
 
 .thumbnail-overlay {
@@ -240,6 +245,7 @@ button {
 	}
 	&.play {
 		top: 45%;
+		left: 50%;
 	}
 	&.pause {
 		top: 120px;
