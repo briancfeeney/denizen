@@ -5890,16 +5890,19 @@ header .logo-container .logo-splash {
   background-color: #4f117e;
 }
 .logo-container {
+  -webkit-transition: all 0.65s ease-in-out;
+  -moz-transition: all 0.65s ease-in-out;
+  -ms-transition: all 0.65s ease-in-out;
+  -o-transition: all 0.65s ease-in-out;
+  transition: all 0.65s ease-in-out;
   margin-top: 15%;
   max-height: 100%;
   max-width: 100%;
   text-align: center;
+  -webkit-backface-visibility: hidden;
+  -webkit-transform: translateZ(0);
+  position: fixed;
   z-index: 10;
-  -webkit-transition: all .5s;
-  -moz-transition: all .5s;
-  -ms-transition: all .5s;
-  -o-transition: all .5s;
-  transition: all .5s;
 }
 .logo-container .logo-splash {
   max-width: 100%;
@@ -6010,6 +6013,9 @@ button.pause {
 #work-info ul li:first-child:after,
 #work-info ul li:last-child:after {
   content: none;
+}
+#work-info ul li:first-child {
+  margin-right: 5px;
 }
 #work-info .clientLogo {
   text-align: center;

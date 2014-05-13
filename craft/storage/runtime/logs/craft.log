@@ -2997,3 +2997,251 @@ REQUEST_URI=/work/fast-n-loud
 2014/05/10 15:10:25 [error] [application] Unable to find the template “error”.
 
 ******************************************************************************************************
+2014/05/13 12:47:37 [info] [application] [Forced] Preparing to update craft.
+in /Users/bcfeeney/Sites/denizen/craft/app/services/UpdatesService.php (264)
+2014/05/13 12:47:37 [info] [application] [Forced] Updating from 2.0.2538 to 2.0.2539.
+in /Users/bcfeeney/Sites/denizen/craft/app/services/UpdatesService.php (282)
+2014/05/13 12:47:38 [info] [application] [Forced] Finished preparing to update craft.
+in /Users/bcfeeney/Sites/denizen/craft/app/services/UpdatesService.php (289)
+
+******************************************************************************************************
+2014/05/13 12:47:38 [info] [application] [Forced] Starting to process the update download.
+in /Users/bcfeeney/Sites/denizen/craft/app/services/UpdatesService.php (304)
+2014/05/13 12:47:38 [info] [application] [Forced] Starting to process the update download.
+in /Users/bcfeeney/Sites/denizen/craft/app/etc/updates/Updater.php (71)
+2014/05/13 12:47:38 [info] [application] [Forced] Downloading patch file to /Users/bcfeeney/Sites/denizen/craft/storage/runtime/temp/
+in /Users/bcfeeney/Sites/denizen/craft/app/etc/updates/Updater.php (75)
+2014/05/13 12:47:39 [info] [application] [Forced] Validating downloaded update.
+in /Users/bcfeeney/Sites/denizen/craft/app/etc/updates/Updater.php (88)
+2014/05/13 12:47:39 [info] [application] [Forced] Validating MD5 for /Users/bcfeeney/Sites/denizen/craft/storage/runtime/temp/d8df65cdcdddde5f51b5f7527e999d68.zip
+in /Users/bcfeeney/Sites/denizen/craft/app/etc/updates/Updater.php (316)
+2014/05/13 12:47:39 [info] [application] [Forced] Unpacking the downloaded package.
+in /Users/bcfeeney/Sites/denizen/craft/app/etc/updates/Updater.php (95)
+2014/05/13 12:47:39 [info] [application] [Forced] Unzipping package to /Users/bcfeeney/Sites/denizen/craft/storage/runtime/temp/034730bf-22ac-401a-8f51-5460d172116b
+in /Users/bcfeeney/Sites/denizen/craft/app/etc/updates/Updater.php (339)
+2014/05/13 12:47:39 [info] [application] [Forced] Validating update manifest file paths are writable.
+in /Users/bcfeeney/Sites/denizen/craft/app/etc/updates/Updater.php (112)
+2014/05/13 12:47:39 [info] [application] [Forced] Finished processing the update download.
+in /Users/bcfeeney/Sites/denizen/craft/app/services/UpdatesService.php (312)
+
+******************************************************************************************************
+2014/05/13 12:47:39 [info] [application] [Forced] Starting to backup files that need to be updated.
+in /Users/bcfeeney/Sites/denizen/craft/app/services/UpdatesService.php (327)
+2014/05/13 12:47:39 [info] [application] [Forced] Backing up files that are about to be updated.
+in /Users/bcfeeney/Sites/denizen/craft/app/etc/updates/Updater.php (131)
+2014/05/13 12:47:39 [info] [application] [Forced] Backing up file /Users/bcfeeney/Sites/denizen/craft/app/Craft.php
+in /Users/bcfeeney/Sites/denizen/craft/app/etc/updates/Updater.php (444)
+2014/05/13 12:47:39 [info] [application] [Forced] Backing up file /Users/bcfeeney/Sites/denizen/craft/app/Info.php
+in /Users/bcfeeney/Sites/denizen/craft/app/etc/updates/Updater.php (444)
+2014/05/13 12:47:39 [info] [application] [Forced] Backing up file /Users/bcfeeney/Sites/denizen/craft/app/controllers/AppController.php
+in /Users/bcfeeney/Sites/denizen/craft/app/etc/updates/Updater.php (444)
+2014/05/13 12:47:39 [info] [application] [Forced] Backing up file /Users/bcfeeney/Sites/denizen/craft/app/etc/config/common.php
+in /Users/bcfeeney/Sites/denizen/craft/app/etc/updates/Updater.php (444)
+2014/05/13 12:47:39 [info] [application] [Forced] Backing up file /Users/bcfeeney/Sites/denizen/craft/app/etc/et/Et.php
+in /Users/bcfeeney/Sites/denizen/craft/app/etc/updates/Updater.php (444)
+2014/05/13 12:47:39 [info] [application] [Forced] Backing up file /Users/bcfeeney/Sites/denizen/craft/app/etc/requirements/Requirements.php
+in /Users/bcfeeney/Sites/denizen/craft/app/etc/updates/Updater.php (444)
+2014/05/13 12:47:39 [info] [application] [Forced] Backing up file /Users/bcfeeney/Sites/denizen/craft/app/helpers/CpHelper.php
+in /Users/bcfeeney/Sites/denizen/craft/app/etc/updates/Updater.php (444)
+2014/05/13 12:47:39 [info] [application] [Forced] Backing up file /Users/bcfeeney/Sites/denizen/craft/app/models/EtModel.php
+in /Users/bcfeeney/Sites/denizen/craft/app/etc/updates/Updater.php (444)
+2014/05/13 12:47:39 [info] [application] [Forced] Backing up file /Users/bcfeeney/Sites/denizen/craft/app/models/InfoModel.php
+in /Users/bcfeeney/Sites/denizen/craft/app/etc/updates/Updater.php (444)
+2014/05/13 12:47:39 [info] [application] [Forced] Backing up file /Users/bcfeeney/Sites/denizen/craft/app/resources/js/cp.js
+in /Users/bcfeeney/Sites/denizen/craft/app/etc/updates/Updater.php (444)
+2014/05/13 12:47:39 [info] [application] [Forced] Backing up file /Users/bcfeeney/Sites/denizen/craft/app/resources/js/compressed/cp.js
+in /Users/bcfeeney/Sites/denizen/craft/app/etc/updates/Updater.php (444)
+2014/05/13 12:47:39 [info] [application] [Forced] Backing up file /Users/bcfeeney/Sites/denizen/craft/app/services/EtService.php
+in /Users/bcfeeney/Sites/denizen/craft/app/etc/updates/Updater.php (444)
+2014/05/13 12:47:39 [info] [application] [Forced] Backing up file /Users/bcfeeney/Sites/denizen/craft/app/templates/_layouts/base.html
+in /Users/bcfeeney/Sites/denizen/craft/app/etc/updates/Updater.php (444)
+2014/05/13 12:47:39 [info] [application] [Forced] Backing up file /Users/bcfeeney/Sites/denizen/craft/app/variables/CpVariable.php
+in /Users/bcfeeney/Sites/denizen/craft/app/etc/updates/Updater.php (444)
+2014/05/13 12:47:39 [info] [application] [Forced] Backing up file /Users/bcfeeney/Sites/denizen/craft/app/templates/_layouts/cp.html
+in /Users/bcfeeney/Sites/denizen/craft/app/etc/updates/Updater.php (444)
+2014/05/13 12:47:39 [info] [application] [Forced] Backing up file /Users/bcfeeney/Sites/denizen/craft/app/controllers/DashboardController.php
+in /Users/bcfeeney/Sites/denizen/craft/app/etc/updates/Updater.php (444)
+2014/05/13 12:47:39 [info] [application] [Forced] Backing up file /Users/bcfeeney/Sites/denizen/craft/app/controllers/ElementsController.php
+in /Users/bcfeeney/Sites/denizen/craft/app/etc/updates/Updater.php (444)
+2014/05/13 12:47:39 [info] [application] [Forced] Backing up file /Users/bcfeeney/Sites/denizen/craft/app/controllers/EntriesController.php
+in /Users/bcfeeney/Sites/denizen/craft/app/etc/updates/Updater.php (444)
+2014/05/13 12:47:39 [info] [application] [Forced] Backing up file /Users/bcfeeney/Sites/denizen/craft/app/elementtypes/BaseElementType.php
+in /Users/bcfeeney/Sites/denizen/craft/app/etc/updates/Updater.php (444)
+2014/05/13 12:47:39 [info] [application] [Forced] Backing up file /Users/bcfeeney/Sites/denizen/craft/app/etc/web/WebApp.php
+in /Users/bcfeeney/Sites/denizen/craft/app/etc/updates/Updater.php (444)
+2014/05/13 12:47:39 [info] [application] [Forced] Backing up file /Users/bcfeeney/Sites/denizen/craft/app/fieldtypes/NumberFieldType.php
+in /Users/bcfeeney/Sites/denizen/craft/app/etc/updates/Updater.php (444)
+2014/05/13 12:47:39 [info] [application] [Forced] Backing up file /Users/bcfeeney/Sites/denizen/craft/app/helpers/IOHelper.php
+in /Users/bcfeeney/Sites/denizen/craft/app/etc/updates/Updater.php (444)
+2014/05/13 12:47:39 [info] [application] [Forced] Backing up file /Users/bcfeeney/Sites/denizen/craft/app/models/MatrixBlockModel.php
+in /Users/bcfeeney/Sites/denizen/craft/app/etc/updates/Updater.php (444)
+2014/05/13 12:47:39 [info] [application] [Forced] Backing up file /Users/bcfeeney/Sites/denizen/craft/app/services/EntriesService.php
+in /Users/bcfeeney/Sites/denizen/craft/app/etc/updates/Updater.php (444)
+2014/05/13 12:47:39 [info] [application] [Forced] Backing up file /Users/bcfeeney/Sites/denizen/craft/app/services/TemplateCacheService.php
+in /Users/bcfeeney/Sites/denizen/craft/app/etc/updates/Updater.php (444)
+2014/05/13 12:47:39 [info] [application] [Forced] Finished backing up files.
+in /Users/bcfeeney/Sites/denizen/craft/app/services/UpdatesService.php (334)
+
+******************************************************************************************************
+2014/05/13 12:47:39 [info] [application] [Forced] Starting to update files.
+in /Users/bcfeeney/Sites/denizen/craft/app/services/UpdatesService.php (349)
+2014/05/13 12:47:39 [info] [application] [Forced] Putting the site into maintenance mode.
+in /Users/bcfeeney/Sites/denizen/craft/app/etc/updates/Updater.php (147)
+2014/05/13 12:47:39 [info] [application] [Forced] Performing file update.
+in /Users/bcfeeney/Sites/denizen/craft/app/etc/updates/Updater.php (151)
+2014/05/13 12:47:39 [info] [application] [Forced] Updating file: /Users/bcfeeney/Sites/denizen/craft/app/Craft.php
+in /Users/bcfeeney/Sites/denizen/craft/app/helpers/UpdateHelper.php (133)
+2014/05/13 12:47:39 [info] [application] [Forced] Updating file: /Users/bcfeeney/Sites/denizen/craft/app/Info.php
+in /Users/bcfeeney/Sites/denizen/craft/app/helpers/UpdateHelper.php (133)
+2014/05/13 12:47:39 [info] [application] [Forced] Updating file: /Users/bcfeeney/Sites/denizen/craft/app/controllers/AppController.php
+in /Users/bcfeeney/Sites/denizen/craft/app/helpers/UpdateHelper.php (133)
+2014/05/13 12:47:39 [info] [application] [Forced] Updating file: /Users/bcfeeney/Sites/denizen/craft/app/etc/config/common.php
+in /Users/bcfeeney/Sites/denizen/craft/app/helpers/UpdateHelper.php (133)
+2014/05/13 12:47:40 [info] [application] [Forced] Updating file: /Users/bcfeeney/Sites/denizen/craft/app/etc/et/Et.php
+in /Users/bcfeeney/Sites/denizen/craft/app/helpers/UpdateHelper.php (133)
+2014/05/13 12:47:40 [info] [application] [Forced] Updating file: /Users/bcfeeney/Sites/denizen/craft/app/etc/requirements/Requirements.php
+in /Users/bcfeeney/Sites/denizen/craft/app/helpers/UpdateHelper.php (133)
+2014/05/13 12:47:40 [info] [application] [Forced] Updating file: /Users/bcfeeney/Sites/denizen/craft/app/helpers/CpHelper.php
+in /Users/bcfeeney/Sites/denizen/craft/app/helpers/UpdateHelper.php (133)
+2014/05/13 12:47:40 [info] [application] [Forced] Updating file: /Users/bcfeeney/Sites/denizen/craft/app/models/EtModel.php
+in /Users/bcfeeney/Sites/denizen/craft/app/helpers/UpdateHelper.php (133)
+2014/05/13 12:47:40 [info] [application] [Forced] Updating file: /Users/bcfeeney/Sites/denizen/craft/app/models/InfoModel.php
+in /Users/bcfeeney/Sites/denizen/craft/app/helpers/UpdateHelper.php (133)
+2014/05/13 12:47:40 [info] [application] [Forced] Updating file: /Users/bcfeeney/Sites/denizen/craft/app/resources/js/cp.js
+in /Users/bcfeeney/Sites/denizen/craft/app/helpers/UpdateHelper.php (133)
+2014/05/13 12:47:40 [info] [application] [Forced] Updating file: /Users/bcfeeney/Sites/denizen/craft/app/resources/js/compressed/cp.js
+in /Users/bcfeeney/Sites/denizen/craft/app/helpers/UpdateHelper.php (133)
+2014/05/13 12:47:40 [info] [application] [Forced] Updating file: /Users/bcfeeney/Sites/denizen/craft/app/services/EtService.php
+in /Users/bcfeeney/Sites/denizen/craft/app/helpers/UpdateHelper.php (133)
+2014/05/13 12:47:40 [info] [application] [Forced] Updating file: /Users/bcfeeney/Sites/denizen/craft/app/templates/_layouts/base.html
+in /Users/bcfeeney/Sites/denizen/craft/app/helpers/UpdateHelper.php (133)
+2014/05/13 12:47:40 [info] [application] [Forced] Updating file: /Users/bcfeeney/Sites/denizen/craft/app/variables/CpVariable.php
+in /Users/bcfeeney/Sites/denizen/craft/app/helpers/UpdateHelper.php (133)
+2014/05/13 12:47:40 [info] [application] [Forced] Updating file: /Users/bcfeeney/Sites/denizen/craft/app/templates/_layouts/cp.html
+in /Users/bcfeeney/Sites/denizen/craft/app/helpers/UpdateHelper.php (133)
+2014/05/13 12:47:40 [info] [application] [Forced] Updating file: /Users/bcfeeney/Sites/denizen/craft/app/migrations/m140508_000000_fix_disabled_matrix_blocks.php
+in /Users/bcfeeney/Sites/denizen/craft/app/helpers/UpdateHelper.php (133)
+2014/05/13 12:47:40 [info] [application] [Forced] Updating file: /Users/bcfeeney/Sites/denizen/craft/app/controllers/DashboardController.php
+in /Users/bcfeeney/Sites/denizen/craft/app/helpers/UpdateHelper.php (133)
+2014/05/13 12:47:40 [info] [application] [Forced] Updating file: /Users/bcfeeney/Sites/denizen/craft/app/controllers/ElementsController.php
+in /Users/bcfeeney/Sites/denizen/craft/app/helpers/UpdateHelper.php (133)
+2014/05/13 12:47:40 [info] [application] [Forced] Updating file: /Users/bcfeeney/Sites/denizen/craft/app/controllers/EntriesController.php
+in /Users/bcfeeney/Sites/denizen/craft/app/helpers/UpdateHelper.php (133)
+2014/05/13 12:47:40 [info] [application] [Forced] Updating file: /Users/bcfeeney/Sites/denizen/craft/app/elementtypes/BaseElementType.php
+in /Users/bcfeeney/Sites/denizen/craft/app/helpers/UpdateHelper.php (133)
+2014/05/13 12:47:40 [info] [application] [Forced] Updating file: /Users/bcfeeney/Sites/denizen/craft/app/etc/web/WebApp.php
+in /Users/bcfeeney/Sites/denizen/craft/app/helpers/UpdateHelper.php (133)
+2014/05/13 12:47:40 [info] [application] [Forced] Updating file: /Users/bcfeeney/Sites/denizen/craft/app/fieldtypes/NumberFieldType.php
+in /Users/bcfeeney/Sites/denizen/craft/app/helpers/UpdateHelper.php (133)
+2014/05/13 12:47:40 [info] [application] [Forced] Updating file: /Users/bcfeeney/Sites/denizen/craft/app/helpers/IOHelper.php
+in /Users/bcfeeney/Sites/denizen/craft/app/helpers/UpdateHelper.php (133)
+2014/05/13 12:47:40 [info] [application] [Forced] Updating file: /Users/bcfeeney/Sites/denizen/craft/app/models/MatrixBlockModel.php
+in /Users/bcfeeney/Sites/denizen/craft/app/helpers/UpdateHelper.php (133)
+2014/05/13 12:47:40 [info] [application] [Forced] Updating file: /Users/bcfeeney/Sites/denizen/craft/app/services/EntriesService.php
+in /Users/bcfeeney/Sites/denizen/craft/app/helpers/UpdateHelper.php (133)
+2014/05/13 12:47:40 [info] [application] [Forced] Updating file: /Users/bcfeeney/Sites/denizen/craft/app/services/TemplateCacheService.php
+in /Users/bcfeeney/Sites/denizen/craft/app/helpers/UpdateHelper.php (133)
+2014/05/13 12:47:40 [info] [application] [Forced] Finished updating files.
+in /Users/bcfeeney/Sites/denizen/craft/app/services/UpdatesService.php (356)
+
+******************************************************************************************************
+2014/05/13 12:47:40 [info] [application] [Forced] Starting to backup database.
+in /Users/bcfeeney/Sites/denizen/craft/app/services/UpdatesService.php (370)
+2014/05/13 12:47:40 [info] [application] [Forced] Starting to backup database.
+in /Users/bcfeeney/Sites/denizen/craft/app/etc/updates/Updater.php (164)
+2014/05/13 12:47:41 [info] [application] [Forced] Finished backing up database.
+in /Users/bcfeeney/Sites/denizen/craft/app/services/UpdatesService.php (384)
+
+******************************************************************************************************
+2014/05/13 12:47:41 [info] [application] [Forced] Starting to update the database.
+in /Users/bcfeeney/Sites/denizen/craft/app/services/UpdatesService.php (401)
+2014/05/13 12:47:41 [info] [application] [Forced] Craft wants to update the database.
+in /Users/bcfeeney/Sites/denizen/craft/app/services/UpdatesService.php (409)
+2014/05/13 12:47:41 [info] [application] [Forced] Running migrations...
+in /Users/bcfeeney/Sites/denizen/craft/app/etc/updates/Updater.php (181)
+2014/05/13 12:47:41 [info] [application] [Forced] Total 1 new migration to be applied for Craft:
+in /Users/bcfeeney/Sites/denizen/craft/app/services/MigrationsService.php (67)
+2014/05/13 12:47:41 [info] [application] [Forced] m140508_000000_fix_disabled_matrix_blocks
+in /Users/bcfeeney/Sites/denizen/craft/app/services/MigrationsService.php (72)
+2014/05/13 12:47:41 [info] [application] [Forced] Applying migration: m140508_000000_fix_disabled_matrix_blocks
+in /Users/bcfeeney/Sites/denizen/craft/app/services/MigrationsService.php (131)
+2014/05/13 12:47:41 [info] [application] [Forced] Applied migration: m140508_000000_fix_disabled_matrix_blocks (time: 0.038s)
+in /Users/bcfeeney/Sites/denizen/craft/app/services/MigrationsService.php (158)
+2014/05/13 12:47:41 [info] [application] [Forced] Craft migrated up successfully.
+in /Users/bcfeeney/Sites/denizen/craft/app/services/MigrationsService.php (104)
+2014/05/13 12:47:41 [info] [application] [Forced] Settings new Craft release info in craft_info table.
+in /Users/bcfeeney/Sites/denizen/craft/app/etc/updates/Updater.php (191)
+2014/05/13 12:47:41 [info] [application] [Forced] Taking the site out of maintenance mode.
+in /Users/bcfeeney/Sites/denizen/craft/app/etc/updates/Updater.php (206)
+2014/05/13 12:47:41 [info] [application] [Forced] Craft is done updating the database.
+in /Users/bcfeeney/Sites/denizen/craft/app/services/UpdatesService.php (411)
+
+******************************************************************************************************
+2014/05/13 12:47:41 [info] [application] [Forced] Starting to clean up after the update.
+in /Users/bcfeeney/Sites/denizen/craft/app/services/UpdatesService.php (444)
+2014/05/13 12:47:41 [info] [application] [Forced] Clearing the update cache.
+in /Users/bcfeeney/Sites/denizen/craft/app/etc/updates/Updater.php (218)
+2014/05/13 12:47:41 [info] [application] [Forced] Flushing update info from cache.
+in /Users/bcfeeney/Sites/denizen/craft/app/services/UpdatesService.php (176)
+2014/05/13 12:47:43 [info] [application] [Forced] Cleaning up temp files after update.
+in /Users/bcfeeney/Sites/denizen/craft/app/etc/updates/Updater.php (230)
+2014/05/13 12:47:44 [info] [application] [Forced] Deleting file: /Users/bcfeeney/Sites/denizen/craft/app/Craft.php.bak
+in /Users/bcfeeney/Sites/denizen/craft/app/etc/updates/Updater.php (283)
+2014/05/13 12:47:44 [info] [application] [Forced] Deleting file: /Users/bcfeeney/Sites/denizen/craft/app/Info.php.bak
+in /Users/bcfeeney/Sites/denizen/craft/app/etc/updates/Updater.php (283)
+2014/05/13 12:47:44 [info] [application] [Forced] Deleting file: /Users/bcfeeney/Sites/denizen/craft/app/controllers/AppController.php.bak
+in /Users/bcfeeney/Sites/denizen/craft/app/etc/updates/Updater.php (283)
+2014/05/13 12:47:44 [info] [application] [Forced] Deleting file: /Users/bcfeeney/Sites/denizen/craft/app/controllers/DashboardController.php.bak
+in /Users/bcfeeney/Sites/denizen/craft/app/etc/updates/Updater.php (283)
+2014/05/13 12:47:44 [info] [application] [Forced] Deleting file: /Users/bcfeeney/Sites/denizen/craft/app/controllers/ElementsController.php.bak
+in /Users/bcfeeney/Sites/denizen/craft/app/etc/updates/Updater.php (283)
+2014/05/13 12:47:44 [info] [application] [Forced] Deleting file: /Users/bcfeeney/Sites/denizen/craft/app/controllers/EntriesController.php.bak
+in /Users/bcfeeney/Sites/denizen/craft/app/etc/updates/Updater.php (283)
+2014/05/13 12:47:44 [info] [application] [Forced] Deleting file: /Users/bcfeeney/Sites/denizen/craft/app/elementtypes/BaseElementType.php.bak
+in /Users/bcfeeney/Sites/denizen/craft/app/etc/updates/Updater.php (283)
+2014/05/13 12:47:44 [info] [application] [Forced] Deleting file: /Users/bcfeeney/Sites/denizen/craft/app/etc/config/common.php.bak
+in /Users/bcfeeney/Sites/denizen/craft/app/etc/updates/Updater.php (283)
+2014/05/13 12:47:44 [info] [application] [Forced] Deleting file: /Users/bcfeeney/Sites/denizen/craft/app/etc/et/Et.php.bak
+in /Users/bcfeeney/Sites/denizen/craft/app/etc/updates/Updater.php (283)
+2014/05/13 12:47:44 [info] [application] [Forced] Deleting file: /Users/bcfeeney/Sites/denizen/craft/app/etc/requirements/Requirements.php.bak
+in /Users/bcfeeney/Sites/denizen/craft/app/etc/updates/Updater.php (283)
+2014/05/13 12:47:44 [info] [application] [Forced] Deleting file: /Users/bcfeeney/Sites/denizen/craft/app/etc/web/WebApp.php.bak
+in /Users/bcfeeney/Sites/denizen/craft/app/etc/updates/Updater.php (283)
+2014/05/13 12:47:44 [info] [application] [Forced] Deleting file: /Users/bcfeeney/Sites/denizen/craft/app/fieldtypes/NumberFieldType.php.bak
+in /Users/bcfeeney/Sites/denizen/craft/app/etc/updates/Updater.php (283)
+2014/05/13 12:47:44 [info] [application] [Forced] Deleting file: /Users/bcfeeney/Sites/denizen/craft/app/helpers/CpHelper.php.bak
+in /Users/bcfeeney/Sites/denizen/craft/app/etc/updates/Updater.php (283)
+2014/05/13 12:47:44 [info] [application] [Forced] Deleting file: /Users/bcfeeney/Sites/denizen/craft/app/helpers/IOHelper.php.bak
+in /Users/bcfeeney/Sites/denizen/craft/app/etc/updates/Updater.php (283)
+2014/05/13 12:47:44 [info] [application] [Forced] Deleting file: /Users/bcfeeney/Sites/denizen/craft/app/models/EtModel.php.bak
+in /Users/bcfeeney/Sites/denizen/craft/app/etc/updates/Updater.php (283)
+2014/05/13 12:47:44 [info] [application] [Forced] Deleting file: /Users/bcfeeney/Sites/denizen/craft/app/models/InfoModel.php.bak
+in /Users/bcfeeney/Sites/denizen/craft/app/etc/updates/Updater.php (283)
+2014/05/13 12:47:44 [info] [application] [Forced] Deleting file: /Users/bcfeeney/Sites/denizen/craft/app/models/MatrixBlockModel.php.bak
+in /Users/bcfeeney/Sites/denizen/craft/app/etc/updates/Updater.php (283)
+2014/05/13 12:47:44 [info] [application] [Forced] Deleting file: /Users/bcfeeney/Sites/denizen/craft/app/resources/js/compressed/cp.js.bak
+in /Users/bcfeeney/Sites/denizen/craft/app/etc/updates/Updater.php (283)
+2014/05/13 12:47:44 [info] [application] [Forced] Deleting file: /Users/bcfeeney/Sites/denizen/craft/app/resources/js/cp.js.bak
+in /Users/bcfeeney/Sites/denizen/craft/app/etc/updates/Updater.php (283)
+2014/05/13 12:47:44 [info] [application] [Forced] Deleting file: /Users/bcfeeney/Sites/denizen/craft/app/services/EntriesService.php.bak
+in /Users/bcfeeney/Sites/denizen/craft/app/etc/updates/Updater.php (283)
+2014/05/13 12:47:44 [info] [application] [Forced] Deleting file: /Users/bcfeeney/Sites/denizen/craft/app/services/EtService.php.bak
+in /Users/bcfeeney/Sites/denizen/craft/app/etc/updates/Updater.php (283)
+2014/05/13 12:47:44 [info] [application] [Forced] Deleting file: /Users/bcfeeney/Sites/denizen/craft/app/services/TemplateCacheService.php.bak
+in /Users/bcfeeney/Sites/denizen/craft/app/etc/updates/Updater.php (283)
+2014/05/13 12:47:44 [info] [application] [Forced] Deleting file: /Users/bcfeeney/Sites/denizen/craft/app/templates/_layouts/base.html.bak
+in /Users/bcfeeney/Sites/denizen/craft/app/etc/updates/Updater.php (283)
+2014/05/13 12:47:44 [info] [application] [Forced] Deleting file: /Users/bcfeeney/Sites/denizen/craft/app/templates/_layouts/cp.html.bak
+in /Users/bcfeeney/Sites/denizen/craft/app/etc/updates/Updater.php (283)
+2014/05/13 12:47:44 [info] [application] [Forced] Deleting file: /Users/bcfeeney/Sites/denizen/craft/app/variables/CpVariable.php.bak
+in /Users/bcfeeney/Sites/denizen/craft/app/etc/updates/Updater.php (283)
+2014/05/13 12:47:44 [info] [application] [Forced] Finished Updater.
+in /Users/bcfeeney/Sites/denizen/craft/app/etc/updates/Updater.php (234)
+2014/05/13 12:47:44 [info] [application] [Forced] Finished cleaning up after the update.
+in /Users/bcfeeney/Sites/denizen/craft/app/services/UpdatesService.php (451)
+2014/05/13 12:47:44 [info] [application] [Forced] Trying to write to file at /Users/bcfeeney/Sites/denizen/craft/storage/runtime/cache/a5b84ee34964ad46361076285b8dccb1.bin using LOCK_EX.
+in /Users/bcfeeney/Sites/denizen/craft/app/helpers/IOHelper.php (756)
+2014/05/13 12:47:44 [info] [application] [Forced] Successfully wrote to file at /Users/bcfeeney/Sites/denizen/craft/storage/runtime/cache/a5b84ee34964ad46361076285b8dccb1.bin using LOCK_EX. Saving in cache.
+in /Users/bcfeeney/Sites/denizen/craft/app/helpers/IOHelper.php (763)
+
+******************************************************************************************************
