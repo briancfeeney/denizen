@@ -3245,3 +3245,32 @@ in /Users/bcfeeney/Sites/denizen/craft/app/helpers/IOHelper.php (756)
 in /Users/bcfeeney/Sites/denizen/craft/app/helpers/IOHelper.php (763)
 
 ******************************************************************************************************
+2014/05/13 12:57:33 [error] [application] Unable to find the template “clients/_entry”.
+2014/05/13 12:57:33 [error] [application] 404 - 
+2014/05/13 12:57:33 [error] [exception.Craft\HttpException.404] exception 'Craft\HttpException' in /Users/bcfeeney/Sites/denizen/craft/app/controllers/TemplatesController.php:191
+Stack trace:
+#0 /Users/bcfeeney/Sites/denizen/craft/app/controllers/TemplatesController.php(27): Craft\TemplatesController->_render('clients/_entry', Array)
+#1 [internal function]: Craft\TemplatesController->actionRender('clients/_entry', Array)
+#2 /Users/bcfeeney/Sites/denizen/craft/app/framework/web/actions/CAction.php(108): ReflectionMethod->invokeArgs(Object(Craft\TemplatesController), Array)
+#3 /Users/bcfeeney/Sites/denizen/craft/app/framework/web/actions/CInlineAction.php(47): CAction->runWithParamsInternal(Object(Craft\TemplatesController), Object(ReflectionMethod), Array)
+#4 /Users/bcfeeney/Sites/denizen/craft/app/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#5 /Users/bcfeeney/Sites/denizen/craft/app/framework/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#6 /Users/bcfeeney/Sites/denizen/craft/app/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), NULL)
+#7 /Users/bcfeeney/Sites/denizen/craft/app/framework/web/CWebApplication.php(282): CController->run('render')
+#8 /Users/bcfeeney/Sites/denizen/craft/app/framework/web/CWebApplication.php(141): CWebApplication->runController('templates/rende...')
+#9 /Users/bcfeeney/Sites/denizen/craft/app/etc/web/WebApp.php(246): CWebApplication->processRequest()
+#10 /Users/bcfeeney/Sites/denizen/craft/app/framework/base/CApplication.php(180): Craft\WebApp->processRequest()
+#11 /Users/bcfeeney/Sites/denizen/craft/app/index.php(196): CApplication->run()
+#12 /Users/bcfeeney/Sites/denizen/index.php(14): require_once('/Users/bcfeeney...')
+#13 {main}
+REQUEST_URI=/clients/wb
+HTTP_REFERER=http://denizen.dev/
+---
+
+******************************************************************************************************
+2014/05/14 23:50:39 [info] [application] [Forced] Starting task DeleteStaleTemplateCaches that has a total of 0 steps.
+in /Users/bcfeeney/Sites/denizen/craft/app/services/TasksService.php (176)
+2014/05/14 23:50:39 [info] [application] [Forced] Finished task 9 (DeleteStaleTemplateCaches).
+in /Users/bcfeeney/Sites/denizen/craft/app/services/TasksService.php (221)
+
+******************************************************************************************************

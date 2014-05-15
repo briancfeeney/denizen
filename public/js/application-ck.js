@@ -1,1 +1,1 @@
-$(document).ready(function(){$(document).on("scroll",function(){$(document).scrollTop()>100?$(".logo-container").addClass("smaller"):$(".logo-container").removeClass("smaller")})});
+$(document).ready(function(){$(document).on("scroll",function(){$(document).scrollTop()>200?$(".logo-container").addClass("smaller"):$(".logo-container").removeClass("smaller")})});

@@ -8,6 +8,8 @@
 @black: rgb(4,4,4);
 @darkGray: rgb(27,27,27);
 
+@small: 650px;
+
 // FONTS
 .franklinB {
 	font-family: "franklin-gothic-urw",sans-serif;
@@ -25,6 +27,11 @@
 	font-weight: 700;
 	letter-spacing: 2px;
 }
+.callunaR {
+	font-family: "calluna",serif;
+	font-style: normal;
+	font-weight: 300;
+}
 
 body {
 	background-color: @darkGray;
@@ -34,6 +41,10 @@ body {
 		background-color: @purple-denizen;
 		background-image: url("/public/images/dot-pattern.png");
 	}
+}
+
+p {
+	.callunaR();
 }
 
 h2 {
@@ -65,8 +76,22 @@ img {
 .heading {
 	text-align: center;
 	margin-top: 5em;
+	margin-bottom: 3em;
 }
 
+.clientLogo {
+	text-align: center;
+	padding-top: 20px;
+	img {
+		opacity: .5;
+		margin: 0 auto;
+	}
+	&:hover {
+		img {
+			opacity: 1;
+		}
+	}
+}
 
 /* -------------------------------------------------------------------------------- */
 // HEADER
@@ -82,7 +107,7 @@ header {
 			list-style-type: none;
 			li {
 				display: inline-block;
-				margin-top: 1em;
+				margin-top: .5em;
 				a {
 					color: #fff;
 					margin-left: 2em;
@@ -123,6 +148,49 @@ header {
 	}
 }
 
+@media (max-width: @small) {
+	#home-top, header {
+		.logo-container {
+			margin-top: 0;
+			position: absolute;
+			max-width: 100%;
+			&.smaller {
+				max-width: 100%;
+				max-height: 40%;
+				margin-top: 0;
+				margin-left: 0;
+			}
+			.logo-splash {
+				padding: 2.5em 3em 0;
+			}
+		}
+	}
+	header {
+		nav {
+			left: 0;
+			right: 0;
+			position: absolute;
+			ul {
+				text-align: center;
+				padding: 0;
+				margin-top: 8em;
+				@media (max-width: 500px) {
+					margin-top: 7em;
+				}
+				@media (max-width: 401px) {
+					margin-top: 6em;
+				}
+				li a {
+					margin: 1em;
+				}
+			}
+		}
+	}
+	#home header nav {
+		position: absolute;
+	}
+}
+
 
 /* -------------------------------------------------------------------------------- */
 // HOMEPAGE
@@ -154,7 +222,7 @@ header {
 	-webkit-backface-visibility: hidden;
 	-webkit-transform: translateZ(0); 
 	position: fixed;
-	z-index: 10;
+	z-index: 12;
 	.logo-splash {
 		max-width: 100%;
 		max-height: 100%;
@@ -166,13 +234,12 @@ header {
 		max-height: 40%;
 		margin-top: -2em;
 		margin-left: 0;
-		position: fixed;
 	}
 }
 
 #ourWork {
 	background-color: #111;
-	padding: 10em 2em;
+	padding: 2.5em 0;
 	.videoThumbnail {
 		padding: 1em 0;
 		a {
@@ -200,13 +267,30 @@ header {
 }
 
 #aboutUs {
-	background-color: @black;
-	padding: 5em 2em;
+	background-color: rgba(0,0,0,.7);
+	padding: 2.5em 0;
+	.heading {
+		margin-top: 2.5em;
+	}
+	p {
+		text-align: left;
+		font-size: 1.5em;
+		margin-bottom: 1em;
+		@media (max-width: @small) {
+			font-size: 1.2em;
+		}
+	}
 }
 
 #ourClients {
 	background-color: @darkGray;
 	padding: 5em 2em;
+	.clientLogo {
+		padding: 40px 20px;
+		img {
+			max-width: 180px;
+		}
+	}
 }
 
 /* -------------------------------------------------------------------------------- */
@@ -214,6 +298,9 @@ header {
 
 #video-player {
 	position: relative;
+	@media (max-width: @small) {
+		padding-top: 100px;
+	}
 }
 
 #video_fullwidth {
@@ -229,6 +316,9 @@ header {
 	width: 100%;
 	text-align: center;
 	z-index: 7;
+	@media (max-width: @small) {
+		top: 200px;
+	}
 }
 
 button {
@@ -248,13 +338,23 @@ button {
 	}
 	&.play {
 		top: 45%;
-		left: 50%;
+		left: 47%;
+		@media (max-width: @small) {
+			left: 42%;
+			font-size: 1em;
+		}
 	}
 	&.pause {
 		top: 120px;
 		right: 20px;
 		font-size: 1em;
 		z-index: 5;
+		@media (max-width: @small) {
+			bottom: 20px;
+			top: inherit;
+			font-size: .6em;
+			padding: 5px 10px;
+		}
 	}
 }
 
@@ -280,15 +380,12 @@ button {
 		}
 	}
 	.clientLogo {
-		text-align: center;
-		padding-top: 20px;
 		img {
-			opacity: .5;
 			max-width: 100px;
-			margin: 0 auto;
 		}
 	}
 }
+
 
 /* -------------------------------------------------------------------------------- */
 // FOOTER
@@ -302,6 +399,13 @@ footer {
 		opacity: .6;
 		&:last-child {
 			margin-right: 0;
+		}
+	}
+	@media (max-width: @small) {
+		font-size: .8em;
+		span {
+			display: block;
+			margin: 10px 0;
 		}
 	}
 }

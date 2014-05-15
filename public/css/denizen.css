@@ -5788,6 +5788,11 @@ button.close {
   font-weight: 700;
   letter-spacing: 2px;
 }
+.callunaR {
+  font-family: "calluna", serif;
+  font-style: normal;
+  font-weight: 300;
+}
 body {
   background-color: #1b1b1b;
   color: #ffffff;
@@ -5798,6 +5803,11 @@ body {
 body#home {
   background-color: #4f117e;
   background-image: url("/public/images/dot-pattern.png");
+}
+p {
+  font-family: "calluna", serif;
+  font-style: normal;
+  font-weight: 300;
 }
 h2 {
   color: #6c5e80;
@@ -5825,6 +5835,18 @@ img {
 .heading {
   text-align: center;
   margin-top: 5em;
+  margin-bottom: 3em;
+}
+.clientLogo {
+  text-align: center;
+  padding-top: 20px;
+}
+.clientLogo img {
+  opacity: .5;
+  margin: 0 auto;
+}
+.clientLogo:hover img {
+  opacity: 1;
 }
 /* -------------------------------------------------------------------------------- */
 header {
@@ -5841,7 +5863,7 @@ header nav ul {
 }
 header nav ul li {
   display: inline-block;
-  margin-top: 1em;
+  margin-top: .5em;
 }
 header nav ul li a {
   color: #fff;
@@ -5875,6 +5897,51 @@ header .logo-container .logo-splash {
 #home header nav {
   position: fixed;
 }
+@media (max-width: 650px) {
+  #home-top .logo-container,
+  header .logo-container {
+    margin-top: 0;
+    position: absolute;
+    max-width: 100%;
+  }
+  #home-top .logo-container.smaller,
+  header .logo-container.smaller {
+    max-width: 100%;
+    max-height: 40%;
+    margin-top: 0;
+    margin-left: 0;
+  }
+  #home-top .logo-container .logo-splash,
+  header .logo-container .logo-splash {
+    padding: 2.5em 3em 0;
+  }
+  header nav {
+    left: 0;
+    right: 0;
+    position: absolute;
+  }
+  header nav ul {
+    text-align: center;
+    padding: 0;
+    margin-top: 8em;
+  }
+  header nav ul li a {
+    margin: 1em;
+  }
+  #home header nav {
+    position: absolute;
+  }
+}
+@media (max-width: 650px) and (max-width: 500px) {
+  header nav ul {
+    margin-top: 7em;
+  }
+}
+@media (max-width: 650px) and (max-width: 401px) {
+  header nav ul {
+    margin-top: 6em;
+  }
+}
 /* -------------------------------------------------------------------------------- */
 #video_background {
   position: fixed;
@@ -5902,7 +5969,7 @@ header .logo-container .logo-splash {
   -webkit-backface-visibility: hidden;
   -webkit-transform: translateZ(0);
   position: fixed;
-  z-index: 10;
+  z-index: 12;
 }
 .logo-container .logo-splash {
   max-width: 100%;
@@ -5915,11 +5982,10 @@ header .logo-container .logo-splash {
   max-height: 40%;
   margin-top: -2em;
   margin-left: 0;
-  position: fixed;
 }
 #ourWork {
   background-color: #111;
-  padding: 10em 2em;
+  padding: 2.5em 0;
 }
 #ourWork .videoThumbnail {
   padding: 1em 0;
@@ -5944,16 +6010,40 @@ header .logo-container .logo-splash {
   opacity: .3;
 }
 #aboutUs {
-  background-color: #040404;
-  padding: 5em 2em;
+  background-color: rgba(0, 0, 0, 0.7);
+  padding: 2.5em 0;
+}
+#aboutUs .heading {
+  margin-top: 2.5em;
+}
+#aboutUs p {
+  text-align: left;
+  font-size: 1.5em;
+  margin-bottom: 1em;
+}
+@media (max-width: 650px) {
+  #aboutUs p {
+    font-size: 1.2em;
+  }
 }
 #ourClients {
   background-color: #1b1b1b;
   padding: 5em 2em;
 }
+#ourClients .clientLogo {
+  padding: 40px 20px;
+}
+#ourClients .clientLogo img {
+  max-width: 180px;
+}
 /* -------------------------------------------------------------------------------- */
 #video-player {
   position: relative;
+}
+@media (max-width: 650px) {
+  #video-player {
+    padding-top: 100px;
+  }
 }
 #video_fullwidth {
   width: 100%;
@@ -5967,6 +6057,11 @@ header .logo-container .logo-splash {
   width: 100%;
   text-align: center;
   z-index: 7;
+}
+@media (max-width: 650px) {
+  .thumbnail-overlay {
+    top: 200px;
+  }
 }
 button {
   background-color: transparent;
@@ -5989,13 +6084,27 @@ button:hover {
 }
 button.play {
   top: 45%;
-  left: 50%;
+  left: 47%;
+}
+@media (max-width: 650px) {
+  button.play {
+    left: 42%;
+    font-size: 1em;
+  }
 }
 button.pause {
   top: 120px;
   right: 20px;
   font-size: 1em;
   z-index: 5;
+}
+@media (max-width: 650px) {
+  button.pause {
+    bottom: 20px;
+    top: inherit;
+    font-size: .6em;
+    padding: 5px 10px;
+  }
 }
 #work-info {
   padding: 2em 0;
@@ -6017,14 +6126,8 @@ button.pause {
 #work-info ul li:first-child {
   margin-right: 5px;
 }
-#work-info .clientLogo {
-  text-align: center;
-  padding-top: 20px;
-}
 #work-info .clientLogo img {
-  opacity: .5;
   max-width: 100px;
-  margin: 0 auto;
 }
 /* -------------------------------------------------------------------------------- */
 footer {
@@ -6038,4 +6141,13 @@ footer span {
 }
 footer span:last-child {
   margin-right: 0;
+}
+@media (max-width: 650px) {
+  footer {
+    font-size: .8em;
+  }
+  footer span {
+    display: block;
+    margin: 10px 0;
+  }
 }

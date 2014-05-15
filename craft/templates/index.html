@@ -19,6 +19,9 @@
 	</section>
 	
 	<section id="ourWork">
+		<div class="heading">
+			<h4>Our Work</h4>
+		</div>
 		<div class="container">
 			<div class="row">
 				{% for entry in craft.entries.section('work').find() %}
@@ -42,12 +45,74 @@
 			<div class="heading">
 				<h4>About Us</h4>
 			</div>
+			<div class="row">
+				<div class="col-md-8 col-md-offset-2">
+					{{ about.aboutText }}
+				</div>
+			</div>
 		</div>
 	</section>
 	<section id="ourClients" class="fullscreen">
 		<div class="container">
 			<div class="heading">
 				<h4>Our Clients</h4>
+			</div>
+			<div class="row">
+				{% for entry in craft.entries.section('clients').find() %}
+					{% for image in entry.logo.limit(1) %}
+					<div class="col-sm-3 col-xs-6">
+						<div class="clientLogo">
+							<a href="{{ entry.url }}">
+								<img src="{{ image.getUrl() }}">
+							</a>
+						</div>
+					</div>
+					{% endfor %}
+				{% endfor %}
+				{% for entry in craft.entries.section('clients').find() %}
+					{% for image in entry.logo.limit(1) %}
+					<div class="col-sm-3 col-xs-6">
+						<div class="clientLogo">
+							<a href="{{ entry.url }}">
+								<img src="{{ image.getUrl() }}">
+							</a>
+						</div>
+					</div>
+					{% endfor %}
+				{% endfor %}
+				{% for entry in craft.entries.section('clients').find() %}
+					{% for image in entry.logo.limit(1) %}
+					<div class="col-sm-3 col-xs-6">
+						<div class="clientLogo">
+							<a href="{{ entry.url }}">
+								<img src="{{ image.getUrl() }}">
+							</a>
+						</div>
+					</div>
+					{% endfor %}
+				{% endfor %}
+				{% for entry in craft.entries.section('clients').find() %}
+					{% for image in entry.logo.limit(1) %}
+					<div class="col-sm-3 col-xs-6">
+						<div class="clientLogo">
+							<a href="{{ entry.url }}">
+								<img src="{{ image.getUrl() }}">
+							</a>
+						</div>
+					</div>
+					{% endfor %}
+				{% endfor %}
+				{% for entry in craft.entries.section('clients').find() %}
+					{% for image in entry.logo.limit(1) %}
+					<div class="col-sm-3 col-xs-6">
+						<div class="clientLogo">
+							<a href="{{ entry.url }}">
+								<img src="{{ image.getUrl() }}">
+							</a>
+						</div>
+					</div>
+					{% endfor %}
+				{% endfor %}
 			</div>
 		</div>
 	</section>
