@@ -14,14 +14,23 @@
 {% set title = "News" %}
 
 {% block content %}
-	<h1>News</h1>
-
-	{% for entry in craft.entries.section('news').find() %}
-		<article>
-			<h3><a href="{{ entry.url }}">{{ entry.title }}</a></h3>
-			<p>Posted on {{ entry.postDate.format('F d, Y') }}</p>
-			{{ entry.body.getPage(1) }}
-			<p><a href="{{ entry.url }}">Continue reading</a></p>
-		</article>
-	{% endfor %}
+	<section id="news">
+		
+		<div class="heading">
+			<h4>News</h4>
+		</div>
+		
+		<div class="container">
+			<div class="col-sm-8 col-sm-offset-2">
+				{% for entry in craft.entries.section('news').find() %}
+					<article>
+						<h3><a href="{{ entry.url }}">{{ entry.title }}</a></h3>
+						<h6>{{ entry.postDate.format('F d, Y') }}</h6>
+						{{ entry.body }}
+					</article>
+				{% endfor %}
+			</div>
+		</div>
+	
+	</section>
 {% endblock %}

@@ -37,7 +37,8 @@ class __TwigTemplate_ed9828a305972340c53d0d40de6bc3549ef5af4912c3259926e58666934
 
 \t<link rel=\"stylesheet\" type=\"text/css\" href=\"/public/css/denizen.css\" />
 \t
-\t<script src=\"//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js\"></script>\t
+\t<script src=\"//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js\"></script>
+\t<script src=\"/public/js/modernizr.custom.99139.js\"></script>\t
 \t
 \t<script type=\"text/javascript\" src=\"//use.typekit.net/zzt4jrb.js\"></script>
 \t<script type=\"text/javascript\">try{Typekit.load();}catch(e){}</script>
@@ -45,7 +46,7 @@ class __TwigTemplate_ed9828a305972340c53d0d40de6bc3549ef5af4912c3259926e58666934
 </head>
 
 <body ";
-        // line 28
+        // line 29
         if (($this->getAttribute($this->getAttribute((isset($context["craft"]) ? $context["craft"] : null), "request"), "firstSegment") == "")) {
             echo "id=\"home\"";
         }
@@ -57,19 +58,19 @@ class __TwigTemplate_ed9828a305972340c53d0d40de6bc3549ef5af4912c3259926e58666934
 \t\t<nav>
 \t\t\t<ul>
 \t\t\t\t<li><a href=\"/#ourWork\" ";
-        // line 35
+        // line 36
         if (($this->getAttribute($this->getAttribute((isset($context["craft"]) ? $context["craft"] : null), "request"), "firstSegment") == "work")) {
             echo "class=\"active\"";
         }
         echo ">Our Work</a></li>
 \t\t\t\t<li><a href=\"/#aboutUs\" ";
-        // line 36
+        // line 37
         if (($this->getAttribute($this->getAttribute((isset($context["craft"]) ? $context["craft"] : null), "request"), "firstSegment") == "about")) {
             echo "class=\"active\"";
         }
         echo ">About Us</a></li>
 \t\t\t\t<!-- <li><a href=\"/#aboutUs\" ";
-        // line 37
+        // line 38
         if (($this->getAttribute($this->getAttribute((isset($context["craft"]) ? $context["craft"] : null), "request"), "firstSegment") == "news")) {
             echo "class=\"active\"";
         }
@@ -80,14 +81,14 @@ class __TwigTemplate_ed9828a305972340c53d0d40de6bc3549ef5af4912c3259926e58666934
 
 \t<main id=\"content\" role=\"main\">
 \t\t";
-        // line 43
+        // line 44
         $this->displayBlock('content', $context, $blocks);
-        // line 47
+        // line 48
         echo "\t</main>
 
 \t<footer id=\"footer\">
 \t\t<span>";
-        // line 50
+        // line 51
         echo twig_escape_filter($this->env, $this->getAttribute((isset($context["contactInfo"]) ? $context["contactInfo"] : null), "address"), "html", null, true);
         echo "</span> <span>";
         echo twig_escape_filter($this->env, $this->getAttribute((isset($context["contactInfo"]) ? $context["contactInfo"] : null), "phone"), "html", null, true);
@@ -99,10 +100,10 @@ class __TwigTemplate_ed9828a305972340c53d0d40de6bc3549ef5af4912c3259926e58666934
 ";
     }
 
-    // line 43
+    // line 44
     public function block_content($context, array $blocks = array())
     {
-        // line 44
+        // line 45
         echo "\t\t\t<p>If you see me, you haven’t set your <code>";
         echo "{% block content %}…{% endblock %}";
         echo "</code> yet.</p>
@@ -122,6 +123,6 @@ class __TwigTemplate_ed9828a305972340c53d0d40de6bc3549ef5af4912c3259926e58666934
 
     public function getDebugInfo()
     {
-        return array (  106 => 44,  103 => 43,  91 => 50,  86 => 47,  84 => 43,  73 => 37,  67 => 36,  61 => 35,  49 => 28,  35 => 17,  27 => 16,  20 => 11,);
+        return array (  107 => 45,  104 => 44,  92 => 51,  87 => 48,  85 => 44,  74 => 38,  68 => 37,  62 => 36,  50 => 29,  35 => 17,  27 => 16,  20 => 11,);
     }
 }

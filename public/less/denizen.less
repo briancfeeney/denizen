@@ -38,8 +38,8 @@ body {
 	color: @white;
 	.franklinB();
 	&#home {
-		background-color: @purple-denizen;
-		background-image: url("/public/images/dot-pattern.png");
+		background-color: @black;
+		/* background-image: url("/public/images/dot-pattern.png"); */
 	}
 }
 
@@ -195,19 +195,72 @@ header {
 /* -------------------------------------------------------------------------------- */
 // HOMEPAGE
 
+/*
 #video_background { 
 	position: fixed; 
-	bottom: 0px; 
-	right: 0px; 
+	top: 0; 
+	left: 0;
 	min-width: 100%; 
 	min-height: 100%; 
 	width: auto; 
 	height: auto; 
 	z-index: -1000; 
 	overflow: hidden; 
-	opacity: .5;
-	background-color: @purple-denizen;
+	background-color: @black;
+	#bg_video {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+
+	}
 }
+
+@supports (object-fit: cover) {
+	#video_background { 
+		position: fixed; 
+		top: 0; 
+		left: -20%;
+		min-width: 100%; 
+		min-height: 100%; 
+		width: auto; 
+		height: auto; 
+		z-index: -1000; 
+		overflow: hidden; 
+		background-color: @black;
+		#bg_video {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+		}
+	}
+}
+*/
+
+#video_background { 
+	position: fixed; 
+	bottom: 0px; 
+	left: -20%; 
+	min-width: 100%; 
+	min-height: 100%; 
+	width: auto; 
+	height: auto; 
+	z-index: -1000; 
+	overflow: hidden; 
+	background-color: @black;
+	text-align: center;
+	#bg_video {
+		position: relative;
+	}
+	@media (max-width: @small) {
+		left: -100%;
+	}
+}
+
 
 .logo-container {
 	-webkit-transition: all .65s ease-in-out;
@@ -267,7 +320,7 @@ header {
 }
 
 #aboutUs {
-	background-color: rgba(0,0,0,.7);
+	background-color: rgba(0,0,0,.1);
 	padding: 2.5em 0;
 	.heading {
 		margin-top: 2.5em;
@@ -298,6 +351,7 @@ header {
 
 #video-player {
 	position: relative;
+	overflow: hidden;
 	@media (max-width: @small) {
 		padding-top: 100px;
 	}
@@ -362,6 +416,7 @@ button {
 	padding: 2em 0;
 	ul {
 		font-size: .9em;
+		margin: 0;
 		li {
 			margin: 0;
 			padding: 0;
@@ -388,6 +443,35 @@ button {
 
 
 /* -------------------------------------------------------------------------------- */
+// NEWS
+
+#news {
+	padding: 2.5em 0;
+	article {
+		margin-bottom: 3em;
+		padding-bottom: 2em;
+		border-bottom: 2px solid @purple;
+		&:last-child {
+			border: none;
+		}
+		h3, a {
+			color: @lightPurple;
+		}
+		h6 {
+			color: @purple;
+			font-size: .9em;
+		}
+		p {
+			font-size: 1.1em;
+		}
+	}
+	@media (max-width: @small) {
+		padding-top: 10em;
+	}
+}
+
+
+/* -------------------------------------------------------------------------------- */
 // FOOTER
 
 footer {
@@ -407,5 +491,21 @@ footer {
 			display: block;
 			margin: 10px 0;
 		}
+	}
+}
+
+
+/* -------------------------------------------------------------------------------- */
+// Coming Soon
+
+#comingSoon {
+	.logo-container {
+		margin-top: 12%;
+	}
+	text-align: center;
+	h1 {
+		text-transform: uppercase;
+		.franklinD();
+		letter-spacing: .25em;
 	}
 }

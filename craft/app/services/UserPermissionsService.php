@@ -99,30 +99,19 @@ class UserPermissionsService extends BaseApplicationComponent
 		// Entries
 
 		$sections = craft()->sections->getAllSections();
-		$singles = array();
-		$nonSingles = array();
 
 		foreach ($sections as $section)
 		{
+			$label = Craft::t('Section - {section}', array('section' => Craft::t($section->name)));
+
 			if ($section->type == SectionType::Single)
 			{
-				$singles[] = $section;
+				$permissions[$label] = $this->_getSingleEntryPermissions($section);
 			}
 			else
 			{
-				$nonSingles[] = $section;
+				$permissions[$label] = $this->_getEntryPermissions($section);
 			}
-		}
-
-		if ($singles)
-		{
-			$permissions[Craft::t('Singles')] = $this->_getSingleEntryPermissions($singles);
-		}
-
-		foreach ($nonSingles as $section)
-		{
-			$label = Craft::t('Section - {section}', array('section' => Craft::t($section->name)));
-			$permissions[$label] = $this->_getEntryPermissions($section->id);
 		}
 
 		// Global sets
@@ -327,38 +316,51 @@ class UserPermissionsService extends BaseApplicationComponent
 	}
 
 	/**
-	 * Returns the single entry permissions.
+	 * Returns the entry permissions for a given Single section.
 	 *
 	 * @access private
-	 * @param array $singles
+	 * @param ScetinoModel $section
 	 * @return array
 	 */
-	private function _getSingleEntryPermissions($singles)
+	private function _getSingleEntryPermissions($section)
 	{
-		$permissions = array();
+		$suffix = ':'.$section->id;
 
-		foreach ($singles as $single)
-		{
-			$permissions['editEntries:'.$single->id] = array(
-				'label' => Craft::t('Edit “{title}”', array('title' => $single->name))
-			);
-		}
-
-		return $permissions;
+		return array(
+			"editEntries{$suffix}" => array(
+				'label' => Craft::t('Edit “{title}”', array('title' => Craft::t($section->name))),
+				'nested' => array(
+					"publishEntries{$suffix}" => array(
+						'label' => Craft::t('Publish live changes')
+					),
+					"editPeerEntryDrafts{$suffix}" => array(
+						'label' => Craft::t('Edit other authors’ drafts'),
+						'nested' => array(
+							"publishPeerEntryDrafts{$suffix}" => array(
+								'label' => Craft::t('Publish other authors’ drafts')
+							),
+							"deletePeerEntryDrafts{$suffix}" => array(
+								'label' => Craft::t('Delete other authors’ drafts')
+							),
+						)
+					),
+				)
+			)
+		);
 	}
 
 	/**
-	 * Returns the entry permissions for a given section.
+	 * Returns the entry permissions for a given Channel or Structure section.
 	 *
 	 * @access private
-	 * @param int $sectionId
+	 * @param SectionModel $section
 	 * @return array
 	 */
-	private function _getEntryPermissions($sectionId)
+	private function _getEntryPermissions($section)
 	{
-		$suffix = ':'.$sectionId;
+		$suffix = ':'.$section->id;
 
-		$permissions = array(
+		return array(
 			"editEntries{$suffix}" => array(
 				'label' => Craft::t('Edit entries'),
 				'nested' => array(
@@ -366,35 +368,36 @@ class UserPermissionsService extends BaseApplicationComponent
 						'label' => Craft::t('Create entries'),
 					),
 					"publishEntries{$suffix}" => array(
-						'label' => Craft::t('Publish entries live')
+						'label' => Craft::t('Publish live changes')
+					),
+					"deleteEntries{$suffix}" => array(
+						'label' => Craft::t('Delete entries')
 					),
 					"editPeerEntries{$suffix}" => array(
 						'label' => Craft::t('Edit other authors’ entries'),
 						'nested' => array(
+							"publishPeerEntries{$suffix}" => array(
+								'label' => Craft::t('Publish live changes for other authors’ entries')
+							),
 							"deletePeerEntries{$suffix}" => array(
 								'label' => Craft::t('Delete other authors’ entries')
 							),
-							"editPeerEntryDrafts{$suffix}" => array(
-								'label' => Craft::t('Edit other authors’ drafts'),
-								'nested' => array(
-									"publishPeerEntryDrafts{$suffix}" => array(
-										'label' => Craft::t('Publish other authors’ drafts')
-									),
-									"deletePeerEntryDrafts{$suffix}" => array(
-										'label' => Craft::t('Delete other authors’ drafts')
-									),
-								)
+						)
+					),
+					"editPeerEntryDrafts{$suffix}" => array(
+						'label' => Craft::t('Edit other authors’ drafts'),
+						'nested' => array(
+							"publishPeerEntryDrafts{$suffix}" => array(
+								'label' => Craft::t('Publish other authors’ drafts')
+							),
+							"deletePeerEntryDrafts{$suffix}" => array(
+								'label' => Craft::t('Delete other authors’ drafts')
 							),
 						)
-					)
+					),
 				)
-			),
-			"deleteEntries{$suffix}" => array(
-				'label' => Craft::t('Delete entries')
-			),
+			)
 		);
-
-		return $permissions;
 	}
 
 	/**
@@ -411,7 +414,7 @@ class UserPermissionsService extends BaseApplicationComponent
 		foreach ($globalSets as $globalSet)
 		{
 			$permissions['editGlobalSet:'.$globalSet->id] = array(
-				'label' => Craft::t('Edit “{title}”', array('title' => $globalSet->name))
+				'label' => Craft::t('Edit “{title}”', array('title' => Craft::t($globalSet->name)))
 			);
 		}
 
@@ -432,7 +435,7 @@ class UserPermissionsService extends BaseApplicationComponent
 		foreach ($groups as $group)
 		{
 			$permissions['editCategories:'.$group->id] = array(
-				'label' => Craft::t('Edit “{title}”', array('title' => $group->name))
+				'label' => Craft::t('Edit “{title}”', array('title' => Craft::t($group->name)))
 			);
 		}
 

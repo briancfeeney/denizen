@@ -7,10 +7,21 @@
 
 {% block content %}
 
-	<video id="video_background" preload="auto" autoplay="true" loop="loop" muted="muted" volume="0">
-		<source src="/public/mp4/Discovery_FastNLoud_Kraft.mp4" type="video/mp4">
-		<source src="/public/webm/landing.webm" type="video/webm">
+	<div id="video_background">
+	<video id="bg_video" preload="auto" autoplay="true" loop="loop" muted="muted" volume="0">
+		{% for block in home.mainBackgroundVideo %}
+			{% for mp4 in block.backgroundMp4 %}
+				<source src="{{ mp4.getUrl() }}" type="video/mp4">
+			{% endfor %}
+			{% for webm in block.backgroundWebm %}
+				<source src="{{ webm.getUrl() }}" type="video/webm">
+			{% endfor %}
+			{% for ogg in block.backgroundOgg %}
+				<source src="{{ ogg.getUrl() }}" type="video/ogg">
+			{% endfor %}
+		{% endfor %}
 	</video>
+	</div>
 
 	<section id="home-top" class="fullscreen">
 		<div class="logo-container">
@@ -62,53 +73,9 @@
 					{% for image in entry.logo.limit(1) %}
 					<div class="col-sm-3 col-xs-6">
 						<div class="clientLogo">
-							<a href="{{ entry.url }}">
+							<!-- <a href="{{ entry.url }}"> -->
 								<img src="{{ image.getUrl() }}">
-							</a>
-						</div>
-					</div>
-					{% endfor %}
-				{% endfor %}
-				{% for entry in craft.entries.section('clients').find() %}
-					{% for image in entry.logo.limit(1) %}
-					<div class="col-sm-3 col-xs-6">
-						<div class="clientLogo">
-							<a href="{{ entry.url }}">
-								<img src="{{ image.getUrl() }}">
-							</a>
-						</div>
-					</div>
-					{% endfor %}
-				{% endfor %}
-				{% for entry in craft.entries.section('clients').find() %}
-					{% for image in entry.logo.limit(1) %}
-					<div class="col-sm-3 col-xs-6">
-						<div class="clientLogo">
-							<a href="{{ entry.url }}">
-								<img src="{{ image.getUrl() }}">
-							</a>
-						</div>
-					</div>
-					{% endfor %}
-				{% endfor %}
-				{% for entry in craft.entries.section('clients').find() %}
-					{% for image in entry.logo.limit(1) %}
-					<div class="col-sm-3 col-xs-6">
-						<div class="clientLogo">
-							<a href="{{ entry.url }}">
-								<img src="{{ image.getUrl() }}">
-							</a>
-						</div>
-					</div>
-					{% endfor %}
-				{% endfor %}
-				{% for entry in craft.entries.section('clients').find() %}
-					{% for image in entry.logo.limit(1) %}
-					<div class="col-sm-3 col-xs-6">
-						<div class="clientLogo">
-							<a href="{{ entry.url }}">
-								<img src="{{ image.getUrl() }}">
-							</a>
+							<!-- </a> -->
 						</div>
 					</div>
 					{% endfor %}
@@ -121,16 +88,16 @@
 	<script src="/public/js/application.js"></script>
 	
 	<script type='text/javascript'>
-	$(document).ready(sizeContent);
+		$(document).ready(sizeContent);
 
-		//Every resize of window
-		$(window).resize(sizeContent);
+			//Every resize of window
+			$(window).resize(sizeContent);
 
-		//Dynamically assign height
-		function sizeContent() {
-		    var newHeight = $(window).height();
-		    $(".fullscreen").css("min-height", newHeight);
-	}
+			//Dynamically assign height
+			function sizeContent() {
+			    var newHeight = $(window).height();
+			    $(".fullscreen").css("min-height", newHeight);
+		}
 	</script>
 
 {% endblock %}

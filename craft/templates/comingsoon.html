@@ -1,0 +1,54 @@
+{#
+ # Homepage template
+ # ---------------
+ #}
+
+{% extends "_layout" %}
+
+{% block content %}
+
+<div id="comingSoon">
+	<video id="video_background" preload="auto" autoplay="true" loop="loop" muted="muted" volume="0">
+		{% for block in home.mainBackgroundVideo %}
+			{% for mp4 in block.backgroundMp4 %}
+				<source src="{{ mp4.getUrl() }}" type="video/mp4">
+			{% endfor %}
+			{% for webm in block.backgroundWebm %}
+				<source src="{{ webm.getUrl() }}" type="video/webm">
+			{% endfor %}
+			{% for ogg in block.backgroundOgg %}
+				<source src="{{ ogg.getUrl() }}" type="video/ogg">
+			{% endfor %}
+		{% endfor %}
+	</video>
+
+	<section id="home-top" class="fullscreen">
+		<div class="logo-container">
+			<img class="logo-splash" src="/public/images/denizen-logo_white-outline.png">
+			<h1>Coming Soon</h1>
+		</div>
+	</section>
+</div>
+	
+	<script src="/public/js/classie.js"></script>
+	<script src="/public/js/application.js"></script>
+	
+	<script type='text/javascript'>
+	$(document).ready(sizeContent);
+
+		//Every resize of window
+		$(window).resize(sizeContent);
+
+		//Dynamically assign height
+		function sizeContent() {
+		    var newHeight = $(window).height();
+		    $(".fullscreen").css("min-height", newHeight);
+	}
+	
+	$( document ).ready(function() {
+		$("header").addClass("hide");
+		$("#footer").addClass("hide");
+	});
+	</script>
+
+{% endblock %}

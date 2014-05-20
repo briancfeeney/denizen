@@ -13,7 +13,7 @@
 		{% endfor %}
 		</div>
 	
-		<video id="video_fullwidth" preload="auto" volume="3">
+		<video id="video_fullwidth" preload="auto" volume="7">
 			{% for mp4 in entry.videomp4 %}
 				<source src="{{ mp4.getUrl() }}" type="video/mp4">
 			{% endfor %}
@@ -35,15 +35,20 @@
 				<div class="col-sm-9 offset-sm-1">
 					<h4>{{ entry.workType }}</h4>
 					<h1>{{ entry.title }}</h1>
-					{{ entry.body }}
+					
+					{% if entry.body %}
+						{{ entry.body }}
+					{% endif %}
+					
+					{% if entry.creatives | length %}
 					<ul class="list-inline">
 						<li><h5>Creatives:</h5></li>
-						{% if entry.creatives | length %}
 							{% for person in entry.creatives %}
 								<li>{{ person.title }}</li>
 							{% endfor %}
-						{% endif %}
 					</ul>
+					{% endif %}
+					
 				</div>
 				<div class="col-sm-2">
 					<section class="clientLogo">

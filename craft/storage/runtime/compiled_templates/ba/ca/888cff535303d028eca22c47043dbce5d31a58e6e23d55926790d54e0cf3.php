@@ -49,7 +49,7 @@ class __TwigTemplate_baca888cff535303d028eca22c47043dbce5d31a58e6e23d55926790d54
         // line 14
         echo "\t\t</div>
 \t
-\t\t<video id=\"video_fullwidth\" preload=\"auto\" volume=\"3\">
+\t\t<video id=\"video_fullwidth\" preload=\"auto\" volume=\"7\">
 \t\t\t";
         // line 17
         $context['_parent'] = (array) $context;
@@ -111,21 +111,30 @@ class __TwigTemplate_baca888cff535303d028eca22c47043dbce5d31a58e6e23d55926790d54
         // line 37
         echo twig_escape_filter($this->env, $this->getAttribute((isset($context["entry"]) ? $context["entry"] : null), "title"), "html", null, true);
         echo "</h1>
+\t\t\t\t\t
 \t\t\t\t\t";
-        // line 38
-        echo twig_escape_filter($this->env, $this->getAttribute((isset($context["entry"]) ? $context["entry"] : null), "body"), "html", null, true);
-        echo "
-\t\t\t\t\t<ul class=\"list-inline\">
-\t\t\t\t\t\t<li><h5>Creatives:</h5></li>
-\t\t\t\t\t\t";
-        // line 41
+        // line 39
+        if ($this->getAttribute((isset($context["entry"]) ? $context["entry"] : null), "body")) {
+            // line 40
+            echo "\t\t\t\t\t\t";
+            echo twig_escape_filter($this->env, $this->getAttribute((isset($context["entry"]) ? $context["entry"] : null), "body"), "html", null, true);
+            echo "
+\t\t\t\t\t";
+        }
+        // line 42
+        echo "\t\t\t\t\t
+\t\t\t\t\t";
+        // line 43
         if (twig_length_filter($this->env, $this->getAttribute((isset($context["entry"]) ? $context["entry"] : null), "creatives"))) {
-            // line 42
-            echo "\t\t\t\t\t\t\t";
+            // line 44
+            echo "\t\t\t\t\t<ul class=\"list-inline\">
+\t\t\t\t\t\t<li><h5>Creatives:</h5></li>
+\t\t\t\t\t\t\t";
+            // line 46
             $context['_parent'] = (array) $context;
             $context['_seq'] = twig_ensure_traversable($this->getAttribute((isset($context["entry"]) ? $context["entry"] : null), "creatives"));
             foreach ($context['_seq'] as $context["_key"] => $context["person"]) {
-                // line 43
+                // line 47
                 echo "\t\t\t\t\t\t\t\t<li>";
                 echo twig_escape_filter($this->env, $this->getAttribute((isset($context["person"]) ? $context["person"] : null), "title"), "html", null, true);
                 echo "</li>
@@ -134,25 +143,26 @@ class __TwigTemplate_baca888cff535303d028eca22c47043dbce5d31a58e6e23d55926790d54
             $_parent = $context['_parent'];
             unset($context['_seq'], $context['_iterated'], $context['_key'], $context['person'], $context['_parent'], $context['loop']);
             $context = array_intersect_key($context, $_parent) + $_parent;
-            // line 45
-            echo "\t\t\t\t\t\t";
+            // line 49
+            echo "\t\t\t\t\t</ul>
+\t\t\t\t\t";
         }
-        // line 46
-        echo "\t\t\t\t\t</ul>
+        // line 51
+        echo "\t\t\t\t\t
 \t\t\t\t</div>
 \t\t\t\t<div class=\"col-sm-2\">
 \t\t\t\t\t<section class=\"clientLogo\">
 \t\t\t\t\t";
-        // line 50
+        // line 55
         $context['_parent'] = (array) $context;
         $context['_seq'] = twig_ensure_traversable($this->getAttribute((isset($context["entry"]) ? $context["entry"] : null), "client"));
         foreach ($context['_seq'] as $context["_key"] => $context["client"]) {
-            // line 51
+            // line 56
             echo "\t\t\t\t\t\t";
             $context['_parent'] = (array) $context;
             $context['_seq'] = twig_ensure_traversable($this->getAttribute($this->getAttribute((isset($context["client"]) ? $context["client"] : null), "logo"), "limit", array(0 => 1), "method"));
             foreach ($context['_seq'] as $context["_key"] => $context["image"]) {
-                // line 52
+                // line 57
                 echo "\t\t\t\t\t\t<img src=\"";
                 echo twig_escape_filter($this->env, $this->getAttribute((isset($context["image"]) ? $context["image"] : null), "getUrl", array(), "method"), "html", null, true);
                 echo "\">
@@ -161,13 +171,13 @@ class __TwigTemplate_baca888cff535303d028eca22c47043dbce5d31a58e6e23d55926790d54
             $_parent = $context['_parent'];
             unset($context['_seq'], $context['_iterated'], $context['_key'], $context['image'], $context['_parent'], $context['loop']);
             $context = array_intersect_key($context, $_parent) + $_parent;
-            // line 54
+            // line 59
             echo "\t\t\t\t\t";
         }
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['client'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 55
+        // line 60
         echo "\t\t\t\t\t</section>
 \t\t\t\t</div>
 \t\t\t</div>
@@ -209,6 +219,6 @@ class __TwigTemplate_baca888cff535303d028eca22c47043dbce5d31a58e6e23d55926790d54
 
     public function getDebugInfo()
     {
-        return array (  171 => 55,  165 => 54,  156 => 52,  151 => 51,  147 => 50,  141 => 46,  138 => 45,  129 => 43,  124 => 42,  122 => 41,  116 => 38,  112 => 37,  108 => 36,  96 => 26,  87 => 24,  82 => 23,  73 => 21,  68 => 20,  59 => 18,  55 => 17,  50 => 14,  40 => 11,  36 => 10,  31 => 7,  28 => 6,);
+        return array (  181 => 60,  175 => 59,  166 => 57,  161 => 56,  157 => 55,  151 => 51,  147 => 49,  138 => 47,  134 => 46,  130 => 44,  128 => 43,  125 => 42,  119 => 40,  117 => 39,  112 => 37,  108 => 36,  96 => 26,  87 => 24,  82 => 23,  73 => 21,  68 => 20,  59 => 18,  55 => 17,  50 => 14,  40 => 11,  36 => 10,  31 => 7,  28 => 6,);
     }
 }
