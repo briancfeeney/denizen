@@ -1,7 +1,7 @@
-/public/mp4/*
-/public/flash/*
-/public/thumbnail/*
-/public/logos/*
-/public/ogg/*
-/public/webm/*
+*public/mp4/*
+*public/flash/*
+*public/thumbnail/*
+*public/logos/*
+*public/ogg/*
+*public/webm/*
 *dp.php
