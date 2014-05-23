@@ -163,21 +163,26 @@ class __TwigTemplate_baca888cff535303d028eca22c47043dbce5d31a58e6e23d55926790d54
             $context['_seq'] = twig_ensure_traversable($this->getAttribute($this->getAttribute((isset($context["client"]) ? $context["client"] : null), "logo"), "limit", array(0 => 1), "method"));
             foreach ($context['_seq'] as $context["_key"] => $context["image"]) {
                 // line 57
-                echo "\t\t\t\t\t\t<img src=\"";
+                echo "\t\t\t\t\t\t<a href=\"";
+                echo twig_escape_filter($this->env, $this->getAttribute((isset($context["client"]) ? $context["client"] : null), "url"), "html", null, true);
+                echo "\">
+\t\t\t\t\t\t<img src=\"";
+                // line 58
                 echo twig_escape_filter($this->env, $this->getAttribute((isset($context["image"]) ? $context["image"] : null), "getUrl", array(), "method"), "html", null, true);
                 echo "\">
+\t\t\t\t\t\t</a>
 \t\t\t\t\t\t";
             }
             $_parent = $context['_parent'];
             unset($context['_seq'], $context['_iterated'], $context['_key'], $context['image'], $context['_parent'], $context['loop']);
             $context = array_intersect_key($context, $_parent) + $_parent;
-            // line 59
+            // line 61
             echo "\t\t\t\t\t";
         }
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['client'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 60
+        // line 62
         echo "\t\t\t\t\t</section>
 \t\t\t\t</div>
 \t\t\t</div>
@@ -219,6 +224,6 @@ class __TwigTemplate_baca888cff535303d028eca22c47043dbce5d31a58e6e23d55926790d54
 
     public function getDebugInfo()
     {
-        return array (  181 => 60,  175 => 59,  166 => 57,  161 => 56,  157 => 55,  151 => 51,  147 => 49,  138 => 47,  134 => 46,  130 => 44,  128 => 43,  125 => 42,  119 => 40,  117 => 39,  112 => 37,  108 => 36,  96 => 26,  87 => 24,  82 => 23,  73 => 21,  68 => 20,  59 => 18,  55 => 17,  50 => 14,  40 => 11,  36 => 10,  31 => 7,  28 => 6,);
+        return array (  186 => 62,  180 => 61,  171 => 58,  166 => 57,  161 => 56,  157 => 55,  151 => 51,  147 => 49,  138 => 47,  134 => 46,  130 => 44,  128 => 43,  125 => 42,  119 => 40,  117 => 39,  112 => 37,  108 => 36,  96 => 26,  87 => 24,  82 => 23,  73 => 21,  68 => 20,  59 => 18,  55 => 17,  50 => 14,  40 => 11,  36 => 10,  31 => 7,  28 => 6,);
     }
 }

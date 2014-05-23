@@ -54,7 +54,9 @@
 					<section class="clientLogo">
 					{% for client in entry.client %}
 						{% for image in client.logo.limit(1) %}
+						<a href="{{ client.url }}">
 						<img src="{{ image.getUrl() }}">
+						</a>
 						{% endfor %}
 					{% endfor %}
 					</section>
