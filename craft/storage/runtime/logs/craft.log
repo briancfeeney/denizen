@@ -4333,3 +4333,260 @@ in /Users/bcfeeney/Sites/denizen/craft/app/services/TasksService.php (176)
 in /Users/bcfeeney/Sites/denizen/craft/app/services/TasksService.php (221)
 
 ******************************************************************************************************
+2014/05/20 12:34:12 [error] [application] Unable to find the template “home”.
+2014/05/20 12:34:12 [error] [application] 404 - 
+2014/05/20 12:34:12 [error] [exception.Craft\HttpException.404] exception 'Craft\HttpException' in /Users/bcfeeney/Sites/denizen/craft/app/controllers/TemplatesController.php:191
+Stack trace:
+#0 /Users/bcfeeney/Sites/denizen/craft/app/controllers/TemplatesController.php(27): Craft\TemplatesController->_render('home', Array)
+#1 [internal function]: Craft\TemplatesController->actionRender('home', Array)
+#2 /Users/bcfeeney/Sites/denizen/craft/app/framework/web/actions/CAction.php(108): ReflectionMethod->invokeArgs(Object(Craft\TemplatesController), Array)
+#3 /Users/bcfeeney/Sites/denizen/craft/app/framework/web/actions/CInlineAction.php(47): CAction->runWithParamsInternal(Object(Craft\TemplatesController), Object(ReflectionMethod), Array)
+#4 /Users/bcfeeney/Sites/denizen/craft/app/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#5 /Users/bcfeeney/Sites/denizen/craft/app/framework/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#6 /Users/bcfeeney/Sites/denizen/craft/app/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), NULL)
+#7 /Users/bcfeeney/Sites/denizen/craft/app/framework/web/CWebApplication.php(282): CController->run('render')
+#8 /Users/bcfeeney/Sites/denizen/craft/app/framework/web/CWebApplication.php(141): CWebApplication->runController('templates/rende...')
+#9 /Users/bcfeeney/Sites/denizen/craft/app/etc/web/WebApp.php(247): CWebApplication->processRequest()
+#10 /Users/bcfeeney/Sites/denizen/craft/app/framework/base/CApplication.php(180): Craft\WebApp->processRequest()
+#11 /Users/bcfeeney/Sites/denizen/craft/app/index.php(196): CApplication->run()
+#12 /Users/bcfeeney/Sites/denizen/index.php(14): require_once('/Users/bcfeeney...')
+#13 {main}
+REQUEST_URI=/home
+---
+
+******************************************************************************************************
+2014/05/20 12:40:50 [error] [application] Unable to find the template “images/denizen-cave.png”.
+2014/05/20 12:40:50 [error] [application] 404 - 
+2014/05/20 12:40:50 [error] [exception.Craft\HttpException.404] exception 'Craft\HttpException' in /Users/bcfeeney/Sites/denizen/craft/app/controllers/TemplatesController.php:191
+Stack trace:
+#0 /Users/bcfeeney/Sites/denizen/craft/app/controllers/TemplatesController.php(27): Craft\TemplatesController->_render('images/denizen-...', Array)
+#1 [internal function]: Craft\TemplatesController->actionRender('images/denizen-...', Array)
+#2 /Users/bcfeeney/Sites/denizen/craft/app/framework/web/actions/CAction.php(108): ReflectionMethod->invokeArgs(Object(Craft\TemplatesController), Array)
+#3 /Users/bcfeeney/Sites/denizen/craft/app/framework/web/actions/CInlineAction.php(47): CAction->runWithParamsInternal(Object(Craft\TemplatesController), Object(ReflectionMethod), Array)
+#4 /Users/bcfeeney/Sites/denizen/craft/app/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#5 /Users/bcfeeney/Sites/denizen/craft/app/framework/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#6 /Users/bcfeeney/Sites/denizen/craft/app/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), NULL)
+#7 /Users/bcfeeney/Sites/denizen/craft/app/framework/web/CWebApplication.php(282): CController->run('render')
+#8 /Users/bcfeeney/Sites/denizen/craft/app/framework/web/CWebApplication.php(141): CWebApplication->runController('templates/rende...')
+#9 /Users/bcfeeney/Sites/denizen/craft/app/etc/web/WebApp.php(247): CWebApplication->processRequest()
+#10 /Users/bcfeeney/Sites/denizen/craft/app/framework/base/CApplication.php(180): Craft\WebApp->processRequest()
+#11 /Users/bcfeeney/Sites/denizen/craft/app/index.php(196): CApplication->run()
+#12 /Users/bcfeeney/Sites/denizen/index.php(14): require_once('/Users/bcfeeney...')
+#13 {main}
+REQUEST_URI=/images/denizen-cave.png
+HTTP_REFERER=http://denizen.dev/comingsoon.html
+---
+
+******************************************************************************************************
+2014/05/20 12:41:49 [error] [application] Unable to find the template “images/denizen-cave.png”.
+2014/05/20 12:41:49 [error] [application] 404 - 
+2014/05/20 12:41:49 [error] [exception.Craft\HttpException.404] exception 'Craft\HttpException' in /Users/bcfeeney/Sites/denizen/craft/app/controllers/TemplatesController.php:191
+Stack trace:
+#0 /Users/bcfeeney/Sites/denizen/craft/app/controllers/TemplatesController.php(27): Craft\TemplatesController->_render('images/denizen-...', Array)
+#1 [internal function]: Craft\TemplatesController->actionRender('images/denizen-...', Array)
+#2 /Users/bcfeeney/Sites/denizen/craft/app/framework/web/actions/CAction.php(108): ReflectionMethod->invokeArgs(Object(Craft\TemplatesController), Array)
+#3 /Users/bcfeeney/Sites/denizen/craft/app/framework/web/actions/CInlineAction.php(47): CAction->runWithParamsInternal(Object(Craft\TemplatesController), Object(ReflectionMethod), Array)
+#4 /Users/bcfeeney/Sites/denizen/craft/app/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#5 /Users/bcfeeney/Sites/denizen/craft/app/framework/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#6 /Users/bcfeeney/Sites/denizen/craft/app/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), NULL)
+#7 /Users/bcfeeney/Sites/denizen/craft/app/framework/web/CWebApplication.php(282): CController->run('render')
+#8 /Users/bcfeeney/Sites/denizen/craft/app/framework/web/CWebApplication.php(141): CWebApplication->runController('templates/rende...')
+#9 /Users/bcfeeney/Sites/denizen/craft/app/etc/web/WebApp.php(247): CWebApplication->processRequest()
+#10 /Users/bcfeeney/Sites/denizen/craft/app/framework/base/CApplication.php(180): Craft\WebApp->processRequest()
+#11 /Users/bcfeeney/Sites/denizen/craft/app/index.php(196): CApplication->run()
+#12 /Users/bcfeeney/Sites/denizen/index.php(14): require_once('/Users/bcfeeney...')
+#13 {main}
+REQUEST_URI=/images/denizen-cave.png
+HTTP_REFERER=http://denizen.dev/comingsoon.html
+---
+
+******************************************************************************************************
+2014/05/20 12:41:51 [error] [application] Unable to find the template “images/denizen-cave.png”.
+2014/05/20 12:41:51 [error] [application] 404 - 
+2014/05/20 12:41:51 [error] [exception.Craft\HttpException.404] exception 'Craft\HttpException' in /Users/bcfeeney/Sites/denizen/craft/app/controllers/TemplatesController.php:191
+Stack trace:
+#0 /Users/bcfeeney/Sites/denizen/craft/app/controllers/TemplatesController.php(27): Craft\TemplatesController->_render('images/denizen-...', Array)
+#1 [internal function]: Craft\TemplatesController->actionRender('images/denizen-...', Array)
+#2 /Users/bcfeeney/Sites/denizen/craft/app/framework/web/actions/CAction.php(108): ReflectionMethod->invokeArgs(Object(Craft\TemplatesController), Array)
+#3 /Users/bcfeeney/Sites/denizen/craft/app/framework/web/actions/CInlineAction.php(47): CAction->runWithParamsInternal(Object(Craft\TemplatesController), Object(ReflectionMethod), Array)
+#4 /Users/bcfeeney/Sites/denizen/craft/app/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#5 /Users/bcfeeney/Sites/denizen/craft/app/framework/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#6 /Users/bcfeeney/Sites/denizen/craft/app/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), NULL)
+#7 /Users/bcfeeney/Sites/denizen/craft/app/framework/web/CWebApplication.php(282): CController->run('render')
+#8 /Users/bcfeeney/Sites/denizen/craft/app/framework/web/CWebApplication.php(141): CWebApplication->runController('templates/rende...')
+#9 /Users/bcfeeney/Sites/denizen/craft/app/etc/web/WebApp.php(247): CWebApplication->processRequest()
+#10 /Users/bcfeeney/Sites/denizen/craft/app/framework/base/CApplication.php(180): Craft\WebApp->processRequest()
+#11 /Users/bcfeeney/Sites/denizen/craft/app/index.php(196): CApplication->run()
+#12 /Users/bcfeeney/Sites/denizen/index.php(14): require_once('/Users/bcfeeney...')
+#13 {main}
+REQUEST_URI=/images/denizen-cave.png
+HTTP_REFERER=http://denizen.dev/comingsoon.html
+---
+
+******************************************************************************************************
+2014/05/21 02:48:06 [error] [application] Unable to find the template “home”.
+2014/05/21 02:48:06 [error] [application] 404 - 
+2014/05/21 02:48:06 [error] [exception.Craft\HttpException.404] exception 'Craft\HttpException' in /Users/bcfeeney/Sites/denizen/craft/app/controllers/TemplatesController.php:191
+Stack trace:
+#0 /Users/bcfeeney/Sites/denizen/craft/app/controllers/TemplatesController.php(27): Craft\TemplatesController->_render('home', Array)
+#1 [internal function]: Craft\TemplatesController->actionRender('home', Array)
+#2 /Users/bcfeeney/Sites/denizen/craft/app/framework/web/actions/CAction.php(108): ReflectionMethod->invokeArgs(Object(Craft\TemplatesController), Array)
+#3 /Users/bcfeeney/Sites/denizen/craft/app/framework/web/actions/CInlineAction.php(47): CAction->runWithParamsInternal(Object(Craft\TemplatesController), Object(ReflectionMethod), Array)
+#4 /Users/bcfeeney/Sites/denizen/craft/app/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#5 /Users/bcfeeney/Sites/denizen/craft/app/framework/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#6 /Users/bcfeeney/Sites/denizen/craft/app/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), NULL)
+#7 /Users/bcfeeney/Sites/denizen/craft/app/framework/web/CWebApplication.php(282): CController->run('render')
+#8 /Users/bcfeeney/Sites/denizen/craft/app/framework/web/CWebApplication.php(141): CWebApplication->runController('templates/rende...')
+#9 /Users/bcfeeney/Sites/denizen/craft/app/etc/web/WebApp.php(247): CWebApplication->processRequest()
+#10 /Users/bcfeeney/Sites/denizen/craft/app/framework/base/CApplication.php(180): Craft\WebApp->processRequest()
+#11 /Users/bcfeeney/Sites/denizen/craft/app/index.php(196): CApplication->run()
+#12 /Users/bcfeeney/Sites/denizen/index.php(14): require_once('/Users/bcfeeney...')
+#13 {main}
+REQUEST_URI=/home
+---
+
+******************************************************************************************************
+2014/05/21 22:33:30 [error] [application] Error in Craft\Et::phoneHome. Message: [curl] 6: Couldn't resolve host 'elliott.buildwithcraft.com' [url] https://elliott.buildwithcraft.com/actions/elliott/app/checkForUpdates
+
+******************************************************************************************************
+2014/05/23 01:44:59 [info] [application] [Forced] Starting task DeleteStaleTemplateCaches that has a total of 0 steps.
+in /Users/bcfeeney/Sites/denizen/craft/app/services/TasksService.php (176)
+2014/05/23 01:44:59 [info] [application] [Forced] Finished task 1 (DeleteStaleTemplateCaches).
+in /Users/bcfeeney/Sites/denizen/craft/app/services/TasksService.php (221)
+
+******************************************************************************************************
+2014/05/23 01:45:22 [error] [application] Unable to find the template “clients/_entry”.
+
+******************************************************************************************************
+2014/05/23 01:45:27 [info] [application] [Forced] Starting task DeleteStaleTemplateCaches that has a total of 0 steps.
+in /Users/bcfeeney/Sites/denizen/craft/app/services/TasksService.php (176)
+2014/05/23 01:45:27 [info] [application] [Forced] Finished task 2 (DeleteStaleTemplateCaches).
+in /Users/bcfeeney/Sites/denizen/craft/app/services/TasksService.php (221)
+
+******************************************************************************************************
+2014/05/23 01:46:03 [error] [application] Unable to find the template “clients/_entry”.
+
+******************************************************************************************************
+2014/05/23 01:46:13 [info] [application] [Forced] Starting task DeleteStaleTemplateCaches that has a total of 0 steps.
+in /Users/bcfeeney/Sites/denizen/craft/app/services/TasksService.php (176)
+2014/05/23 01:46:13 [info] [application] [Forced] Finished task 3 (DeleteStaleTemplateCaches).
+in /Users/bcfeeney/Sites/denizen/craft/app/services/TasksService.php (221)
+
+******************************************************************************************************
+2014/05/23 01:46:28 [error] [application] Unable to find the template “clients/_entry”.
+
+******************************************************************************************************
+2014/05/23 01:46:39 [info] [application] [Forced] Starting task DeleteStaleTemplateCaches that has a total of 0 steps.
+in /Users/bcfeeney/Sites/denizen/craft/app/services/TasksService.php (176)
+2014/05/23 01:46:39 [info] [application] [Forced] Finished task 4 (DeleteStaleTemplateCaches).
+in /Users/bcfeeney/Sites/denizen/craft/app/services/TasksService.php (221)
+
+******************************************************************************************************
+2014/05/23 01:46:57 [error] [application] Unable to find the template “clients/_entry”.
+
+******************************************************************************************************
+2014/05/23 01:47:09 [info] [application] [Forced] Starting task DeleteStaleTemplateCaches that has a total of 0 steps.
+in /Users/bcfeeney/Sites/denizen/craft/app/services/TasksService.php (176)
+2014/05/23 01:47:09 [info] [application] [Forced] Finished task 5 (DeleteStaleTemplateCaches).
+in /Users/bcfeeney/Sites/denizen/craft/app/services/TasksService.php (221)
+
+******************************************************************************************************
+2014/05/23 01:47:20 [error] [application] Unable to find the template “clients/_entry”.
+
+******************************************************************************************************
+2014/05/23 01:47:25 [info] [application] [Forced] Starting task DeleteStaleTemplateCaches that has a total of 0 steps.
+in /Users/bcfeeney/Sites/denizen/craft/app/services/TasksService.php (176)
+2014/05/23 01:47:25 [info] [application] [Forced] Finished task 6 (DeleteStaleTemplateCaches).
+in /Users/bcfeeney/Sites/denizen/craft/app/services/TasksService.php (221)
+
+******************************************************************************************************
+2014/05/23 01:47:26 [error] [application] Unable to find the template “clients/_entry”.
+
+******************************************************************************************************
+2014/05/23 01:47:30 [error] [application] Unable to find the template “clients/_entry”.
+
+******************************************************************************************************
+2014/05/23 01:47:39 [info] [application] [Forced] Starting task DeleteStaleTemplateCaches that has a total of 0 steps.
+in /Users/bcfeeney/Sites/denizen/craft/app/services/TasksService.php (176)
+2014/05/23 01:47:39 [info] [application] [Forced] Finished task 7 (DeleteStaleTemplateCaches).
+in /Users/bcfeeney/Sites/denizen/craft/app/services/TasksService.php (221)
+
+******************************************************************************************************
+2014/05/23 01:47:49 [error] [application] Unable to find the template “clients/_entry”.
+
+******************************************************************************************************
+2014/05/23 01:47:58 [info] [application] [Forced] Starting task DeleteStaleTemplateCaches that has a total of 0 steps.
+in /Users/bcfeeney/Sites/denizen/craft/app/services/TasksService.php (176)
+2014/05/23 01:47:58 [info] [application] [Forced] Finished task 8 (DeleteStaleTemplateCaches).
+in /Users/bcfeeney/Sites/denizen/craft/app/services/TasksService.php (221)
+
+******************************************************************************************************
+2014/05/23 02:07:19 [error] [exception.Twig_Error_Runtime] exception 'CException' with message 'Craft\EntryModel and its behaviors do not have a method or closure named "image".' in /Users/bcfeeney/Sites/denizen/craft/app/framework/base/CComponent.php:266
+Stack trace:
+#0 /Users/bcfeeney/Sites/denizen/craft/app/models/BaseModel.php(100): CComponent->__call('image', Array)
+#1 [internal function]: Craft\BaseModel->__call('image', Array)
+#2 [internal function]: Craft\EntryModel->image()
+#3 /Users/bcfeeney/Sites/denizen/craft/app/vendor/twig/twig/lib/Twig/Template.php(471): call_user_func_array(Array, Array)
+#4 /Users/bcfeeney/Sites/denizen/craft/app/etc/templating/BaseTemplate.php(40): Twig_Template->getAttribute(Object(Craft\EntryModel), 'image', Array, 'any', false, false)
+#5 /Users/bcfeeney/Sites/denizen/craft/storage/runtime/compiled_templates/8f/39/f85833f75cbf197b488798dcb65742e0a52ad46df0e3df848e2669bbf13e.php(71): Craft\BaseTemplate->getAttribute(Object(Craft\EntryModel), 'image')
+#6 /Users/bcfeeney/Sites/denizen/craft/app/vendor/twig/twig/lib/Twig/Template.php(144): __TwigTemplate_8f39f85833f75cbf197b488798dcb65742e0a52ad46df0e3df848e2669bbf13e->block_content(Array, Array)
+#7 /Users/bcfeeney/Sites/denizen/craft/storage/runtime/compiled_templates/ed/98/28a305972340c53d0d40de6bc3549ef5af4912c3259926e586669341fcee.php(85): Twig_Template->displayBlock('content', Array, Array)
+#8 /Users/bcfeeney/Sites/denizen/craft/app/vendor/twig/twig/lib/Twig/Template.php(278): __TwigTemplate_ed9828a305972340c53d0d40de6bc3549ef5af4912c3259926e586669341fcee->doDisplay(Array, Array)
+#9 /Users/bcfeeney/Sites/denizen/craft/app/vendor/twig/twig/lib/Twig/Template.php(252): Twig_Template->displayWithErrorHandling(Array, Array)
+#10 /Users/bcfeeney/Sites/denizen/craft/storage/runtime/compiled_templates/8f/39/f85833f75cbf197b488798dcb65742e0a52ad46df0e3df848e2669bbf13e.php(24): Twig_Template->display(Array, Array)
+#11 /Users/bcfeeney/Sites/denizen/craft/app/vendor/twig/twig/lib/Twig/Template.php(278): __TwigTemplate_8f39f85833f75cbf197b488798dcb65742e0a52ad46df0e3df848e2669bbf13e->doDisplay(Array, Array)
+#12 /Users/bcfeeney/Sites/denizen/craft/app/vendor/twig/twig/lib/Twig/Template.php(252): Twig_Template->displayWithErrorHandling(Array, Array)
+#13 /Users/bcfeeney/Sites/denizen/craft/app/vendor/twig/twig/lib/Twig/Template.php(263): Twig_Template->display(Array)
+#14 /Users/bcfeeney/Sites/denizen/craft/app/vendor/twig/twig/lib/Twig/Environment.php(292): Twig_Template->render(Array)
+#15 /Users/bcfeeney/Sites/denizen/craft/app/services/TemplatesService.php(158): Twig_Environment->render('clients/_entry', Array)
+#16 /Users/bcfeeney/Sites/denizen/craft/app/controllers/BaseController.php(75): Craft\TemplatesService->render('clients/_entry', Array)
+#17 /Users/bcfeeney/Sites/denizen/craft/app/controllers/TemplatesController.php(185): Craft\BaseController->renderTemplate('clients/_entry', Array)
+#18 /Users/bcfeeney/Sites/denizen/craft/app/controllers/TemplatesController.php(27): Craft\TemplatesController->_render('clients/_entry', Array)
+#19 [internal function]: Craft\TemplatesController->actionRender('clients/_entry', Array)
+#20 /Users/bcfeeney/Sites/denizen/craft/app/framework/web/actions/CAction.php(108): ReflectionMethod->invokeArgs(Object(Craft\TemplatesController), Array)
+#21 /Users/bcfeeney/Sites/denizen/craft/app/framework/web/actions/CInlineAction.php(47): CAction->runWithParamsInternal(Object(Craft\TemplatesController), Object(ReflectionMethod), Array)
+#22 /Users/bcfeeney/Sites/denizen/craft/app/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#23 /Users/bcfeeney/Sites/denizen/craft/app/framework/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#24 /Users/bcfeeney/Sites/denizen/craft/app/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), NULL)
+#25 /Users/bcfeeney/Sites/denizen/craft/app/framework/web/CWebApplication.php(282): CController->run('render')
+#26 /Users/bcfeeney/Sites/denizen/craft/app/framework/web/CWebApplication.php(141): CWebApplication->runController('templates/rende...')
+#27 /Users/bcfeeney/Sites/denizen/craft/app/etc/web/WebApp.php(247): CWebApplication->processRequest()
+#28 /Users/bcfeeney/Sites/denizen/craft/app/framework/base/CApplication.php(180): Craft\WebApp->processRequest()
+#29 /Users/bcfeeney/Sites/denizen/craft/app/index.php(196): CApplication->run()
+#30 /Users/bcfeeney/Sites/denizen/index.php(14): require_once('/Users/bcfeeney...')
+#31 {main}
+
+Next exception 'Twig_Error_Runtime' with message 'An exception has been thrown during the rendering of a template ("Craft\EntryModel and its behaviors do not have a method or closure named "image".") in "clients/_entry" at line 28.' in /Users/bcfeeney/Sites/denizen/craft/app/vendor/twig/twig/lib/Twig/Template.php:148
+Stack trace:
+#0 /Users/bcfeeney/Sites/denizen/craft/storage/runtime/compiled_templates/ed/98/28a305972340c53d0d40de6bc3549ef5af4912c3259926e586669341fcee.php(85): Twig_Template->displayBlock('content', Array, Array)
+#1 /Users/bcfeeney/Sites/denizen/craft/app/vendor/twig/twig/lib/Twig/Template.php(278): __TwigTemplate_ed9828a305972340c53d0d40de6bc3549ef5af4912c3259926e586669341fcee->doDisplay(Array, Array)
+#2 /Users/bcfeeney/Sites/denizen/craft/app/vendor/twig/twig/lib/Twig/Template.php(252): Twig_Template->displayWithErrorHandling(Array, Array)
+#3 /Users/bcfeeney/Sites/denizen/craft/storage/runtime/compiled_templates/8f/39/f85833f75cbf197b488798dcb65742e0a52ad46df0e3df848e2669bbf13e.php(24): Twig_Template->display(Array, Array)
+#4 /Users/bcfeeney/Sites/denizen/craft/app/vendor/twig/twig/lib/Twig/Template.php(278): __TwigTemplate_8f39f85833f75cbf197b488798dcb65742e0a52ad46df0e3df848e2669bbf13e->doDisplay(Array, Array)
+#5 /Users/bcfeeney/Sites/denizen/craft/app/vendor/twig/twig/lib/Twig/Template.php(252): Twig_Template->displayWithErrorHandling(Array, Array)
+#6 /Users/bcfeeney/Sites/denizen/craft/app/vendor/twig/twig/lib/Twig/Template.php(263): Twig_Template->display(Array)
+#7 /Users/bcfeeney/Sites/denizen/craft/app/vendor/twig/twig/lib/Twig/Environment.php(292): Twig_Template->render(Array)
+#8 /Users/bcfeeney/Sites/denizen/craft/app/services/TemplatesService.php(158): Twig_Environment->render('clients/_entry', Array)
+#9 /Users/bcfeeney/Sites/denizen/craft/app/controllers/BaseController.php(75): Craft\TemplatesService->render('clients/_entry', Array)
+#10 /Users/bcfeeney/Sites/denizen/craft/app/controllers/TemplatesController.php(185): Craft\BaseController->renderTemplate('clients/_entry', Array)
+#11 /Users/bcfeeney/Sites/denizen/craft/app/controllers/TemplatesController.php(27): Craft\TemplatesController->_render('clients/_entry', Array)
+#12 [internal function]: Craft\TemplatesController->actionRender('clients/_entry', Array)
+#13 /Users/bcfeeney/Sites/denizen/craft/app/framework/web/actions/CAction.php(108): ReflectionMethod->invokeArgs(Object(Craft\TemplatesController), Array)
+#14 /Users/bcfeeney/Sites/denizen/craft/app/framework/web/actions/CInlineAction.php(47): CAction->runWithParamsInternal(Object(Craft\TemplatesController), Object(ReflectionMethod), Array)
+#15 /Users/bcfeeney/Sites/denizen/craft/app/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#16 /Users/bcfeeney/Sites/denizen/craft/app/framework/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#17 /Users/bcfeeney/Sites/denizen/craft/app/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), NULL)
+#18 /Users/bcfeeney/Sites/denizen/craft/app/framework/web/CWebApplication.php(282): CController->run('render')
+#19 /Users/bcfeeney/Sites/denizen/craft/app/framework/web/CWebApplication.php(141): CWebApplication->runController('templates/rende...')
+#20 /Users/bcfeeney/Sites/denizen/craft/app/etc/web/WebApp.php(247): CWebApplication->processRequest()
+#21 /Users/bcfeeney/Sites/denizen/craft/app/framework/base/CApplication.php(180): Craft\WebApp->processRequest()
+#22 /Users/bcfeeney/Sites/denizen/craft/app/index.php(196): CApplication->run()
+#23 /Users/bcfeeney/Sites/denizen/index.php(14): require_once('/Users/bcfeeney...')
+#24 {main}
+REQUEST_URI=/clients/wb
+HTTP_REFERER=http://denizen.dev/clients/wb
+---
+2014/05/23 02:07:19 [error] [application] Unable to find the template “500”.
+2014/05/23 02:07:19 [error] [application] Unable to find the template “error”.
+
+******************************************************************************************************

@@ -1,0 +1,48 @@
+{#
+ # Clients entry template
+ # -------------------
+ #}
+
+{% extends "_layout" %}
+
+{% block content %}
+
+<section id="ourWork" class="singleClient">
+	
+	<div class="container">
+
+		<div class="row">
+			<div class="col-sm-2 col-sm-offset-5 col-xs-6 col-xs-offset-3">
+				{% for image in entry.logo.limit(1) %}
+					<img src="{{ image.getUrl() }}" class="logo">
+				{% endfor %}
+			</div>
+		</div>
+		
+		<div class="container">
+			<div class="row">
+				{% set posts = craft.entries.find({section:'work', parentOf:entry}) %}
+				{% if posts | length %}
+
+				        {% for post in posts %}
+				            <div class="col-sm-4">
+								<div class="videoThumbnail">
+									<a href="{{ post.url }}">
+										<h6>{{ post.title }}</h6>
+										{% for image in post.videoThumbnail.limit(1) %}
+										<img src="{{ image.getUrl() }}">
+										{% endfor %}
+									</a>
+								</div>
+							</div>
+				        {% endfor %}
+
+				{% endif %}
+			</div>
+		</div>
+
+	</div>
+
+</section>
+
+{% endblock %}

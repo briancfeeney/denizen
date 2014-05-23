@@ -30,62 +30,9 @@ class __TwigTemplate_7792468032be05875895a8fd381a7548ac43b81d7228d99526a90bafecb
         // line 9
         echo "
 <div id=\"comingSoon\">
-\t<video id=\"video_background\" preload=\"auto\" autoplay=\"true\" loop=\"loop\" muted=\"muted\" volume=\"0\">
-\t\t";
-        // line 12
-        $context['_parent'] = (array) $context;
-        $context['_seq'] = twig_ensure_traversable($this->getAttribute((isset($context["home"]) ? $context["home"] : null), "mainBackgroundVideo"));
-        foreach ($context['_seq'] as $context["_key"] => $context["block"]) {
-            // line 13
-            echo "\t\t\t";
-            $context['_parent'] = (array) $context;
-            $context['_seq'] = twig_ensure_traversable($this->getAttribute((isset($context["block"]) ? $context["block"] : null), "backgroundMp4"));
-            foreach ($context['_seq'] as $context["_key"] => $context["mp4"]) {
-                // line 14
-                echo "\t\t\t\t<source src=\"";
-                echo twig_escape_filter($this->env, $this->getAttribute((isset($context["mp4"]) ? $context["mp4"] : null), "getUrl", array(), "method"), "html", null, true);
-                echo "\" type=\"video/mp4\">
-\t\t\t";
-            }
-            $_parent = $context['_parent'];
-            unset($context['_seq'], $context['_iterated'], $context['_key'], $context['mp4'], $context['_parent'], $context['loop']);
-            $context = array_intersect_key($context, $_parent) + $_parent;
-            // line 16
-            echo "\t\t\t";
-            $context['_parent'] = (array) $context;
-            $context['_seq'] = twig_ensure_traversable($this->getAttribute((isset($context["block"]) ? $context["block"] : null), "backgroundWebm"));
-            foreach ($context['_seq'] as $context["_key"] => $context["webm"]) {
-                // line 17
-                echo "\t\t\t\t<source src=\"";
-                echo twig_escape_filter($this->env, $this->getAttribute((isset($context["webm"]) ? $context["webm"] : null), "getUrl", array(), "method"), "html", null, true);
-                echo "\" type=\"video/webm\">
-\t\t\t";
-            }
-            $_parent = $context['_parent'];
-            unset($context['_seq'], $context['_iterated'], $context['_key'], $context['webm'], $context['_parent'], $context['loop']);
-            $context = array_intersect_key($context, $_parent) + $_parent;
-            // line 19
-            echo "\t\t\t";
-            $context['_parent'] = (array) $context;
-            $context['_seq'] = twig_ensure_traversable($this->getAttribute((isset($context["block"]) ? $context["block"] : null), "backgroundOgg"));
-            foreach ($context['_seq'] as $context["_key"] => $context["ogg"]) {
-                // line 20
-                echo "\t\t\t\t<source src=\"";
-                echo twig_escape_filter($this->env, $this->getAttribute((isset($context["ogg"]) ? $context["ogg"] : null), "getUrl", array(), "method"), "html", null, true);
-                echo "\" type=\"video/ogg\">
-\t\t\t";
-            }
-            $_parent = $context['_parent'];
-            unset($context['_seq'], $context['_iterated'], $context['_key'], $context['ogg'], $context['_parent'], $context['loop']);
-            $context = array_intersect_key($context, $_parent) + $_parent;
-            // line 22
-            echo "\t\t";
-        }
-        $_parent = $context['_parent'];
-        unset($context['_seq'], $context['_iterated'], $context['_key'], $context['block'], $context['_parent'], $context['loop']);
-        $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 23
-        echo "\t</video>
+\t<video id=\"bg-image\" style=\"background-image:url('/public/images/denizen-cave.png');left:0;\" preload=\"auto\" autoplay=\"true\" loop=\"loop\" muted=\"muted\" volume=\"0\">
+
+\t</video>
 
 \t<section id=\"home-top\" class=\"fullscreen\">
 \t\t<div class=\"logo-container\">
@@ -131,6 +78,6 @@ class __TwigTemplate_7792468032be05875895a8fd381a7548ac43b81d7228d99526a90bafecb
 
     public function getDebugInfo()
     {
-        return array (  88 => 23,  82 => 22,  73 => 20,  68 => 19,  59 => 17,  54 => 16,  45 => 14,  40 => 13,  36 => 12,  31 => 9,  28 => 8,);
+        return array (  31 => 9,  28 => 8,);
     }
 }

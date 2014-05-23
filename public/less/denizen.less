@@ -195,56 +195,10 @@ header {
 /* -------------------------------------------------------------------------------- */
 // HOMEPAGE
 
-/*
 #video_background { 
-	position: fixed; 
-	top: 0; 
-	left: 0;
-	min-width: 100%; 
-	min-height: 100%; 
-	width: auto; 
-	height: auto; 
-	z-index: -1000; 
-	overflow: hidden; 
-	background-color: @black;
-	#bg_video {
-		position: absolute;
-		top: 0;
-		left: 0;
-		width: 100%;
-		height: 100%;
-
-	}
-}
-
-@supports (object-fit: cover) {
-	#video_background { 
-		position: fixed; 
-		top: 0; 
-		left: -20%;
-		min-width: 100%; 
-		min-height: 100%; 
-		width: auto; 
-		height: auto; 
-		z-index: -1000; 
-		overflow: hidden; 
-		background-color: @black;
-		#bg_video {
-			position: absolute;
-			top: 0;
-			left: 0;
-			width: 100%;
-			height: 100%;
-			object-fit: cover;
-		}
-	}
-}
-*/
-
-#video_background { 
-	position: fixed; 
+	position: relative; 
 	bottom: 0px; 
-	left: -20%; 
+	left: 0%; 
 	min-width: 100%; 
 	min-height: 100%; 
 	width: auto; 
@@ -256,9 +210,25 @@ header {
 	#bg_video {
 		position: relative;
 	}
+	@media (max-width: 1440px) {
+		left: -20%;
+	}
+	@media (max-width: 1240px) {
+		left: -40%;
+	}
+	@media (max-width: 1040px) {
+		left: -60%;
+	}
+	@media (max-width: 850px) {
+		left: -80%;
+	}
 	@media (max-width: @small) {
 		left: -100%;
 	}
+}
+
+#bg_video {
+	width: 100%;
 }
 
 
@@ -340,6 +310,8 @@ header {
 	padding: 5em 2em;
 	.clientLogo {
 		padding: 40px 20px;
+		height: 0;
+		padding-bottom: 100%;
 		img {
 			max-width: 180px;
 		}
@@ -443,6 +415,21 @@ button {
 
 
 /* -------------------------------------------------------------------------------- */
+// CLIENTS
+
+#ourWork.singleClient {
+	padding-top: 7em;
+	min-height: 740px;
+	.logo {
+		margin-bottom: 3.5em;
+	}
+	@media (max-width: @small) {
+		padding-top: 14em;
+	}
+}
+
+
+/* -------------------------------------------------------------------------------- */
 // NEWS
 
 #news {
@@ -507,5 +494,22 @@ footer {
 		text-transform: uppercase;
 		.franklinD();
 		letter-spacing: .25em;
+	}
+	#bg-image { 
+		position: fixed; 
+		bottom: 0px; 
+		left: 0%; 
+		min-width: 100%; 
+		min-height: 100%; 
+		width: auto; 
+		height: auto; 
+		z-index: -1000; 
+		overflow: hidden; 
+		background-color: @black;
+		text-align: center;
+		background-size: cover;
+		#bg_video {
+			position: relative;
+		}
 	}
 }

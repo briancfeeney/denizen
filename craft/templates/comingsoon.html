@@ -8,18 +8,8 @@
 {% block content %}
 
 <div id="comingSoon">
-	<video id="video_background" preload="auto" autoplay="true" loop="loop" muted="muted" volume="0">
-		{% for block in home.mainBackgroundVideo %}
-			{% for mp4 in block.backgroundMp4 %}
-				<source src="{{ mp4.getUrl() }}" type="video/mp4">
-			{% endfor %}
-			{% for webm in block.backgroundWebm %}
-				<source src="{{ webm.getUrl() }}" type="video/webm">
-			{% endfor %}
-			{% for ogg in block.backgroundOgg %}
-				<source src="{{ ogg.getUrl() }}" type="video/ogg">
-			{% endfor %}
-		{% endfor %}
+	<video id="bg-image" style="background-image:url('/public/images/denizen-cave.png');left:0;" preload="auto" autoplay="true" loop="loop" muted="muted" volume="0">
+
 	</video>
 
 	<section id="home-top" class="fullscreen">
