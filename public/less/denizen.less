@@ -103,6 +103,10 @@ header {
 		top: 2em;
 		right: 4em;
 		z-index: 11;
+		@media (max-width: @screen-lg) {
+			top: 1em;
+			right: 1em;
+		}
 		ul {
 			list-style-type: none;
 			li {
@@ -195,6 +199,10 @@ header {
 /* -------------------------------------------------------------------------------- */
 // HOMEPAGE
 
+#home-top {
+	line-height: 0;
+}
+
 #video_background { 
 	position: relative; 
 	bottom: 0px; 
@@ -257,12 +265,16 @@ header {
 		max-height: 40%;
 		margin-top: -2em;
 		margin-left: 0;
+		@media (max-width: @screen-lg) {
+			margin-top: -3em;
+			margin-left: -3em;
+		}
 	}
 }
 
 #ourWork {
 	background-color: #111;
-	padding: 2.5em 0;
+	padding: 2.5em 0 7em;
 	.videoThumbnail {
 		padding: 1em 0;
 		a {

@@ -25,11 +25,11 @@
 	</div>
 -->
 
-	<section id="home-top" class="">
+	<section id="home-top">
 		<div class="logo-container">
 			<a href="/#home"><img class="logo-splash" src="/public/images/denizen-logo_white-outline.png"></a>
 		</div>
-		<video id="bg_video" preload="auto" autoplay="true" loop="loop" muted="muted" volume="0">
+		<video id="bg_video" preload="auto" autoplay="true" loop="loop" muted="muted" volume="0" class="hidden-xs">
 			{% for block in home.mainBackgroundVideo %}
 				{% for mp4 in block.backgroundMp4 %}
 					<source src="{{ mp4.getUrl() }}" type="video/mp4">
@@ -42,27 +42,30 @@
 				{% endfor %}
 			{% endfor %}
 		</video>
+		<img src="/public/images/denizen-cave.png" class="visible-xs">
 	</section>
 	
 	<section id="ourWork">
-		<div class="heading">
-			<h4>Our Work</h4>
-		</div>
 		<div class="container">
+			<div class="heading">
+				<h4>Our Work</h4>
+			</div>
+			
 			<div class="row">
-				{% for entry in craft.entries.section('work').find() %}
-					{% for image in entry.videoThumbnail.limit(1) %}
-					<div class="col-sm-4">
+				{% for video in home.videoGrid %}
+					<div class="col-md-4">
 						<div class="videoThumbnail">
-							<a href="{{ entry.url }}">
-								<h6>{{ entry.title }}</h6>
+							<a href="{{ video.url }}">
+								<h6>{{ video.title }}</h6>
+								{% for image in video.videoThumbnail.limit(1) %}
 								<img src="{{ image.getUrl() }}">
+								{% endfor %}
 							</a>
 						</div>
 					</div>
-					{% endfor %}
 				{% endfor %}
 			</div>
+			
 		</div>
 	</section>
 	
@@ -86,7 +89,7 @@
 			<div class="row">
 				{% for entry in craft.entries.section('clients').find() %}
 					{% for image in entry.logo.limit(1) %}
-					<div class="col-sm-3 col-xs-6">
+					<div class="col-md-2 col-sm-3 col-xs-6">
 						<div class="clientLogo">
 							<a href="{{ entry.url }}">
 								<img src="{{ image.getUrl() }}">
