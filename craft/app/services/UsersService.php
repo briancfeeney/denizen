@@ -84,20 +84,13 @@ class UsersService extends BaseApplicationComponent
 				'user' => $user
 			)));
 
-			$minCodeIssueDate = DateTimeHelper::currentUTCDateTime();
-			$duration = new DateInterval(craft()->config->get('verificationCodeDuration'));
-			$minCodeIssueDate->sub($duration);
-
-			if (
-				$userRecord->verificationCodeIssuedDate > $minCodeIssueDate &&
-				craft()->security->checkPassword($code, $userRecord->verificationCode)
-			)
+			if (craft()->security->checkPassword($code, $userRecord->verificationCode))
 			{
 				return $user;
 			}
 			else
 			{
-				Craft::log('Found a user with UID:'.$uid.', but the verification code given: '.$code.' has either expired or does not match the hash in the database.', LogLevel::Warning);
+				Craft::log('Found a user with UID:'.$uid.', but the verification code given: '.$code.' does not match the hash in the database.', LogLevel::Warning);
 			}
 		}
 		else
@@ -106,6 +99,75 @@ class UsersService extends BaseApplicationComponent
 		}
 
 		return null;
+	}
+
+	/**
+	 * Returns a user by their UID.
+	 *
+	 * @param $uid
+	 * @return \CActiveRecord
+	 */
+	public function getUserByUid($uid)
+	{
+		$userRecord = UserRecord::model()->findByAttributes(array(
+			'uid' => $uid
+		));
+
+		if ($userRecord)
+		{
+			return UserModel::populateModel($userRecord);
+		}
+
+		return null;
+	}
+
+	/**
+	 * Returns if a user's verification code has expired or is still valid.
+	 *
+	 * @param UserModel $user
+	 * @param           $code
+	 * @return bool
+	 */
+	public function isVerificationCodeValidForUser(UserModel $user, $code)
+	{
+		$valid = false;
+		$userRecord = $this->_getUserRecordById($user->id);
+
+		if ($userRecord)
+		{
+			$minCodeIssueDate = DateTimeHelper::currentUTCDateTime();
+			$duration = new DateInterval(craft()->config->get('verificationCodeDuration'));
+			$minCodeIssueDate->sub($duration);
+
+			$valid = $userRecord->verificationCodeIssuedDate > $minCodeIssueDate;
+
+			if (!$valid)
+			{
+				// It's expired, go ahead and remove it from the record so if they click the link again, it'll throw an Exception.
+				$userRecord = $this->_getUserRecordById($user->id);
+				$userRecord->verificationCodeIssuedDate = null;
+				$userRecord->verificationCode = null;
+				$userRecord->save();
+			}
+			else
+			{
+				if (craft()->security->checkPassword($code, $userRecord->verificationCode))
+				{
+					$valid = true;
+				}
+				else
+				{
+					$valid = false;
+					Craft::log('The verification code ('.$code.') given for userId: '.$user->id.' does not match the hash in the database.', LogLevel::Warning);
+				}
+			}
+		}
+		else
+		{
+			Craft::log('Could not find a user with id:'.$user->id.'.', LogLevel::Warning);
+		}
+
+		return $valid;
 	}
 
 	/**
@@ -255,6 +317,11 @@ class UsersService extends BaseApplicationComponent
 						}
 					}
 
+					if ($transaction !== null)
+					{
+						$transaction->commit();
+					}
+
 					// Fire an 'onSaveUser' event
 					$this->onSaveUser(new Event($this, array(
 						'user'      => $user,
@@ -267,11 +334,6 @@ class UsersService extends BaseApplicationComponent
 						$this->onSaveProfile(new Event($this, array(
 							'user' => $user
 						)));
-					}
-
-					if ($transaction !== null)
-					{
-						$transaction->commit();
 					}
 
 					return true;
@@ -518,6 +580,12 @@ class UsersService extends BaseApplicationComponent
 		if ($user->unverifiedEmail)
 		{
 			$userRecord->email = $user->unverifiedEmail;
+
+			if (craft()->config->get('useEmailAsUsername'))
+			{
+				$userRecord->username = $user->unverifiedEmail;
+			}
+
 			$userRecord->unverifiedEmail = null;
 		}
 
@@ -802,6 +870,31 @@ class UsersService extends BaseApplicationComponent
 		}
 
 		return false;
+	}
+
+	/**
+	 * If the purgePendingUsersDuration config setting has a valid duration, this method will delete any users in a pending
+	 * state that as past the duration.
+	 */
+	public function purgeExpiredPendingUsers()
+	{
+		if (($duration = craft()->config->get('purgePendingUsersDuration')) !== false)
+		{
+			$interval = new DateInterval($duration);
+			$expire = DateTimeHelper::currentUTCDateTime();
+			$pastTimeStamp = $expire->sub($interval)->getTimestamp();
+			$pastTime = DateTimeHelper::formatTimeForDb($pastTimeStamp);
+
+			$affectedRows = craft()->db->createCommand()->delete('users',
+				'status = :status AND dateCreated < :pastTime',
+				array('status' => 'pending', 'pastTime' => $pastTime)
+			);
+
+			if ($affectedRows > 0)
+			{
+				Craft::log('Just deleted '.$affectedRows.' pending users from the users table, because the were more than '.$duration.' old', LogLevel::Info, true);
+			}
+		}
 	}
 
 	// Events

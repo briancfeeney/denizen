@@ -53,7 +53,7 @@ class __TwigTemplate_ed9828a305972340c53d0d40de6bc3549ef5af4912c3259926e58666934
         echo ">
 \t<header id=\"header\">
 \t\t<div class=\"logo-container\">
-\t\t\t<a href=\"/\"><img class=\"logo-splash\" src=\"/public/images/denizen-logo_white-outline.png\"></a>
+\t\t\t<a href=\"/home\"><img class=\"logo-splash\" src=\"/public/images/denizen-logo_white-outline.png\"></a>
 \t\t</div>
 \t\t<nav>
 \t\t\t<ul>
@@ -63,7 +63,7 @@ class __TwigTemplate_ed9828a305972340c53d0d40de6bc3549ef5af4912c3259926e58666934
             echo "class=\"active\"";
         }
         echo ">Our Work</a></li>
-\t\t\t\t<li><a href=\"/#aboutUs\" ";
+\t\t\t\t<li><a href=\"/about\" ";
         // line 37
         if (($this->getAttribute($this->getAttribute((isset($context["craft"]) ? $context["craft"] : null), "request"), "firstSegment") == "about")) {
             echo "class=\"active\"";

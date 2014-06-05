@@ -219,7 +219,7 @@ class RackspaceAssetSourceType extends BaseAssetSourceType
 		// Ensure folders are in the DB
 		foreach ($containerFolders as $fullPath => $nothing)
 		{
-			$folderId = $this->_ensureFolderByFulPath($fullPath.'/');
+			$folderId = $this->_ensureFolderByFullPath($fullPath.'/');
 			$indexedFolderIds[$folderId] = true;
 		}
 
@@ -754,7 +754,7 @@ class RackspaceAssetSourceType extends BaseAssetSourceType
 		$response = static::_doRequest($targetUrl, 'POST', $headers, array(), $payload);
 		$body = json_decode(substr($response, strpos($response, '{')));
 
-		if (!$body)
+		if (empty($body->access))
 		{
 			throw new Exception(Craft::t("Wrong credentials supplied for Rackspace access!"));
 		}
@@ -1062,7 +1062,7 @@ class RackspaceAssetSourceType extends BaseAssetSourceType
 	 */
 	private static function _logUnexpectedResponse($response)
 	{
-		Craft::log("RACKSPACE: Received unexpected response: " . $response);
+		Craft::log('RACKSPACE: Received unexpected response: '.$response, LogLevel::Error);
 	}
 
 	/**

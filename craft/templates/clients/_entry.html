@@ -28,7 +28,10 @@
 				            <div class="col-sm-4">
 								<div class="videoThumbnail">
 									<a href="{{ post.url }}">
-										<h6>{{ post.title }}</h6>
+										<div class="videoInfo">
+											<h4>{{ entry.title }}
+											<h6>{{ post.title }}</h6>
+										</div>
 										{% for image in post.videoThumbnail.limit(1) %}
 										<img src="{{ image.getUrl() }}">
 										{% endfor %}

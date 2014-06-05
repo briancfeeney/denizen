@@ -209,27 +209,32 @@ class AssetTransformsService extends BaseApplicationComponent
 			// or if the transform dimensions have changed since it was last created
 			if (!$timeModified || $timeModified < $fileModel->dateModified || $timeModified < $transform->dimensionChangeTime)
 			{
-				$targetFile = AssetsHelper::getTempFilePath(IOHelper::getExtension($fileModel->filename));
+				$image = craft()->images->loadImage($imageSource);
+				$image->setQuality($quality);
+
 				switch ($transform->mode)
 				{
 					case 'fit':
 					{
-						craft()->images->loadImage($imageSource)->scaleToFit($transform->width, $transform->height)->setQuality($quality)->saveAs($targetFile);
+						$image->scaleToFit($transform->width, $transform->height);
 						break;
 					}
 
 					case 'stretch':
 					{
-						craft()->images->loadImage($imageSource)->resize($transform->width, $transform->height)->setQuality($quality)->saveAs($targetFile);
+						$image->resize($transform->width, $transform->height);
 						break;
 					}
 
 					default:
 					{
-						craft()->images->loadImage($imageSource)->scaleAndCrop($transform->width, $transform->height, true, $transform->position)->setQuality($quality)->saveAs($targetFile);
+						$image->scaleAndCrop($transform->width, $transform->height, true, $transform->position);
 						break;
 					}
 				}
+
+				$targetFile = AssetsHelper::getTempFilePath(IOHelper::getExtension($fileModel->filename));
+				$image->saveAs($targetFile);
 
 				clearstatcache(true, $targetFile);
 				$sourceType->putImageTransform($fileModel, $transformLocation, $targetFile);
@@ -295,6 +300,81 @@ class AssetTransformsService extends BaseApplicationComponent
 		return $this->storeTransformIndexData(new AssetTransformIndexModel($data));
 	}
 
+	/**
+	 * Get a transform URL by the transform index model.
+	 *
+	 * @param AssetTransformIndexModel $transformIndexModel
+	 * @return string
+	 * @throws Exception
+	 */
+	public function ensureTransformUrlByIndexModel(AssetTransformIndexModel $transformIndexModel)
+	{
+		if (!$transformIndexModel)
+		{
+			throw new Exception(Craft::t('No asset image transform exists with that ID.'));
+		}
+
+		// Make sure we're not in the middle of working on this transform from a separate request
+		if ($transformIndexModel->inProgress)
+		{
+			for ($safety = 0; $safety < 100; $safety++)
+			{
+				// Wait a second!
+				sleep(1);
+				ini_set('max_execution_time', 120);
+
+				$transformIndexModel = craft()->assetTransforms->getTransformIndexModelById($transformIndexModel->id);
+
+				// Is it being worked on right now?
+				if ($transformIndexModel->inProgress)
+				{
+					// Make sure it hasn't been working for more than 30 seconds. Otherwise give up on the other request.
+					$time = new DateTime();
+
+					if ($time->getTimestamp() - $transformIndexModel->dateUpdated->getTimestamp() < 30)
+					{
+						continue;
+					}
+					else
+					{
+						$transformIndexModel->dateUpdated = new DateTime();
+						craft()->assetTransforms->storeTransformIndexData($transformIndexModel);
+						break;
+					}
+				}
+				else
+				{
+					// Must be done now!
+					break;
+				}
+			}
+		}
+
+		if (!$transformIndexModel->fileExists)
+		{
+			$transformIndexModel->inProgress = 1;
+			craft()->assetTransforms->storeTransformIndexData($transformIndexModel);
+
+			$result = craft()->assetTransforms->generateTransform($transformIndexModel);
+
+			if ($result)
+			{
+				$transformIndexModel->inProgress = 0;
+				$transformIndexModel->fileExists = 1;
+				craft()->assetTransforms->storeTransformIndexData($transformIndexModel);
+			}
+			else
+			{
+				// No source file. Throw a 404.
+				$transformIndexModel->inProgress = 0;
+				craft()->assetTransforms->storeTransformIndexData($transformIndexModel);
+				throw new Exception(Craft::t("The requested image could not be found!"));
+			}
+
+		}
+
+		return $this->getUrlforTransformByIndexId($transformIndexModel->id);
+	}
 
 	/**
 	 * Index a transform.

@@ -16,7 +16,7 @@ class __TwigTemplate_c954584e6833098b9728072f141d5ce5b9835dcf5243e9eb2d9b88cd3ef
     protected function doDisplay(array $context, array $blocks = array())
     {
         // line 1
-        $context["__internal_3f70750a6d2b0c4e029efe7b1ec3093efce2842431818de021ed120879b65fca"] = $this->env->loadTemplate("_includes/forms");
+        $context["__internal_3f1a7afd24ea86e573f7d752426ce0872e0ac22998fbad741703612c00231f52"] = $this->env->loadTemplate("_includes/forms");
         // line 3
         \Craft\craft()->templates->includeTranslations(
         	"Display in a table",
@@ -47,8 +47,8 @@ class __TwigTemplate_c954584e6833098b9728072f141d5ce5b9835dcf5243e9eb2d9b88cd3ef
             // line 19
             echo twig_escape_filter($this->env, \Craft\Craft::t("All"), "html", null, true);
             echo "</div>
-\t\t\t\t\t\t<div class=\"menu padded\">
-\t\t\t\t\t\t\t<ul>
+\t\t\t\t\t\t<div class=\"menu\">
+\t\t\t\t\t\t\t<ul class=\"padded\">
 \t\t\t\t\t\t\t\t<li><a data-status=\"\" class=\"sel\"><span class=\"status\"></span>";
             // line 22
             echo twig_escape_filter($this->env, \Craft\Craft::t("All"), "html", null, true);
@@ -110,8 +110,8 @@ class __TwigTemplate_c954584e6833098b9728072f141d5ce5b9835dcf5243e9eb2d9b88cd3ef
             // line 40
             echo twig_escape_filter($this->env, (((isset($context["initialLocale"]) ? $context["initialLocale"] : null)) ? ($this->getAttribute((isset($context["initialLocale"]) ? $context["initialLocale"] : null), "getName", array(), "method")) : ("")), "html", null, true);
             echo "</div>
-\t\t\t\t\t\t<div class=\"menu padded\">
-\t\t\t\t\t\t\t<ul>
+\t\t\t\t\t\t<div class=\"menu\">
+\t\t\t\t\t\t\t<ul class=\"padded\">
 \t\t\t\t\t\t\t\t";
             // line 43
             $context['_parent'] = (array) $context;
@@ -143,9 +143,13 @@ class __TwigTemplate_c954584e6833098b9728072f141d5ce5b9835dcf5243e9eb2d9b88cd3ef
 \t\t\t\t\t<div class=\"texticon search icon\">
 \t\t\t\t\t\t";
         // line 52
-        echo $context["__internal_3f70750a6d2b0c4e029efe7b1ec3093efce2842431818de021ed120879b65fca"]->gettext(array("placeholder" => \Craft\Craft::t("Search")));
+        echo $context["__internal_3f1a7afd24ea86e573f7d752426ce0872e0ac22998fbad741703612c00231f52"]->gettext(array("placeholder" => \Craft\Craft::t("Search")));
         // line 54
         echo "
+\t\t\t\t\t\t<div class=\"clear hidden\" title=\"";
+        // line 55
+        echo twig_escape_filter($this->env, \Craft\Craft::t("Clear"), "html", null, true);
+        echo "\"></div>
 \t\t\t\t\t</div>
 \t\t\t\t</td>
 \t\t\t\t<td class=\"thin viewbtns hidden\"></td>
@@ -175,6 +179,6 @@ class __TwigTemplate_c954584e6833098b9728072f141d5ce5b9835dcf5243e9eb2d9b88cd3ef
 
     public function getDebugInfo()
     {
-        return array (  148 => 54,  146 => 52,  142 => 50,  136 => 46,  121 => 44,  117 => 43,  111 => 40,  108 => 39,  105 => 38,  102 => 37,  99 => 36,  96 => 35,  93 => 34,  90 => 33,  87 => 32,  81 => 30,  62 => 24,  54 => 22,  48 => 19,  45 => 18,  43 => 17,  36 => 12,  27 => 8,  21 => 3,  19 => 1,  92 => 35,  88 => 34,  84 => 31,  80 => 32,  75 => 26,  72 => 30,  66 => 18,  64 => 17,  61 => 16,  58 => 23,  55 => 14,  50 => 40,  46 => 26,  44 => 25,  41 => 24,  39 => 23,  37 => 11,  34 => 11,  32 => 10,  30 => 9,  28 => 4,  26 => 3,  24 => 2,);
+        return array (  151 => 55,  148 => 54,  146 => 52,  142 => 50,  136 => 46,  121 => 44,  117 => 43,  111 => 40,  108 => 39,  105 => 38,  102 => 37,  99 => 36,  96 => 35,  93 => 34,  90 => 33,  81 => 30,  62 => 24,  45 => 18,  43 => 17,  36 => 12,  21 => 3,  19 => 1,  88 => 34,  84 => 31,  80 => 32,  75 => 26,  66 => 18,  64 => 17,  61 => 16,  58 => 23,  55 => 14,  50 => 40,  44 => 25,  41 => 24,  34 => 11,  32 => 10,  30 => 9,  28 => 4,  26 => 3,  107 => 34,  104 => 33,  100 => 31,  92 => 35,  87 => 32,  76 => 24,  72 => 30,  65 => 20,  63 => 19,  60 => 18,  57 => 17,  54 => 22,  48 => 19,  46 => 26,  39 => 23,  37 => 11,  33 => 9,  31 => 7,  29 => 6,  27 => 8,  25 => 2,);
     }
 }

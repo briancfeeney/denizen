@@ -11,6 +11,12 @@
 @small: 650px;
 
 // FONTS
+
+.franklinL {
+	font-family: "franklin-gothic-urw",sans-serif;
+	font-style: normal;
+	font-weight: 300;
+}
 .franklinB {
 	font-family: "franklin-gothic-urw",sans-serif;
 	font-style: normal;
@@ -32,6 +38,33 @@
 	font-style: normal;
 	font-weight: 300;
 }
+.adelleT {
+	font-family: "adelle-sans",sans-serif;
+	font-style: normal;
+	font-weight: 100;
+}
+
+.myriadR {
+	font-family: "myriad-pro",sans-serif;
+	font-style: normal;
+	font-weight: 400;
+}
+.myriadI {
+	font-family: "myriad-pro",sans-serif;
+	font-style: italic;
+	font-weight: 400;
+}
+.myriadB {
+	font-family: "myriad-pro",sans-serif;
+	font-style: normal;
+	font-weight: 700;
+}
+.myriadBI {
+	font-family: "myriad-pro",sans-serif;
+	font-style: italic;
+	font-weight: 700;
+}
+
 
 body {
 	background-color: @darkGray;
@@ -44,7 +77,11 @@ body {
 }
 
 p {
-	.callunaR();
+	.adelleT();
+}
+
+h1 {
+	font-size: 2.5714em;
 }
 
 h2 {
@@ -248,7 +285,7 @@ header {
 	transition: all .65s ease-in-out;
 	margin-top: 15%;
 	max-height: 100%;
-	max-width: 100%;
+	width: 100%;
 	text-align: center;
 	-webkit-backface-visibility: hidden;
 	-webkit-transform: translateZ(0); 
@@ -260,6 +297,7 @@ header {
 		margin: auto;
 		padding: 4em;
 	}
+	/*
 	&.smaller {
 		max-width: 300px;
 		max-height: 40%;
@@ -270,6 +308,8 @@ header {
 			margin-left: -3em;
 		}
 	}
+	*/
+	position: absolute;
 }
 
 #ourWork {
@@ -281,17 +321,23 @@ header {
 			display: block;
 			background-color: @purple;
 		}
-		h6 {
-			position: absolute;
-			font-size: 1.5em;
-			bottom: 60px;
-			left: 30px;
-			color: white;
+		.videoInfo {
 			display: none;
+			position: absolute;
+			bottom: 60px;
+			padding: 0 1.5em 0 1em;
 			z-index: 2;
 		}
+		h4 {
+			color: mix(@purple, @white, 40%);
+			font-size: 1em;
+		}
+		h6 {
+			font-size: 1.5em;
+			color: white;
+		}
 		&:hover {
-			h6 {
+			.videoInfo {
 				display: block;
 			}
 			img {
@@ -338,6 +384,7 @@ header {
 	overflow: hidden;
 	@media (max-width: @small) {
 		padding-top: 100px;
+		padding-top: 50px;
 	}
 }
 
@@ -354,8 +401,12 @@ header {
 	width: 100%;
 	text-align: center;
 	z-index: 7;
+	
+	border-bottom: 5px solid @darkGray;
+	
 	@media (max-width: @small) {
 		top: 200px;
+		top: 150px;
 	}
 }
 
@@ -368,30 +419,28 @@ button {
 	font-size: 1.5em;
 	text-transform: uppercase;
 	.franklinD();
+	right: 20px;
+	font-size: 1em;
+	z-index: 5;
+	background-color: rgba(62,50,80,.5);
 	&:focus {
 		outline: none;
 	}
 	&:hover {
-		background-color: rgba(62,50,80,.5);
+		background-color: rgba(62,50,80,.8);
 	}
 	&.play {
-		top: 45%;
-		left: 47%;
-		@media (max-width: @small) {
-			left: 42%;
-			font-size: 1em;
-		}
+		top: 20px;
 	}
 	&.pause {
 		top: 120px;
-		right: 20px;
-		font-size: 1em;
-		z-index: 5;
-		@media (max-width: @small) {
-			bottom: 20px;
-			top: inherit;
-			font-size: .6em;
-			padding: 5px 10px;
+	}
+	@media (max-width: @small) {
+		top: inherit;
+		font-size: .6em;
+		padding: 5px 10px;
+		&.pause {
+			top: 170px;
 		}
 	}
 }
@@ -422,6 +471,20 @@ button {
 	.clientLogo {
 		img {
 			max-width: 100px;
+		}
+		@media (max-width: @small) {
+			text-align: left;
+			padding-top: 0;
+		}
+	}
+}
+
+.workMeta {
+	padding-top: 2em;
+	@media (max-width: @small) {
+		font-size: .9em;
+		h1 {
+			font-size: 2.3em;
 		}
 	}
 }
@@ -491,6 +554,17 @@ footer {
 			display: block;
 			margin: 10px 0;
 		}
+	}
+}
+
+
+/* -------------------------------------------------------------------------------- */
+// ABOUT US
+
+#aboutUs {
+	padding: 4.5em 0 2.5em;
+	@media (max-width: @small) {
+		padding-top: 9.5em;
 	}
 }
 

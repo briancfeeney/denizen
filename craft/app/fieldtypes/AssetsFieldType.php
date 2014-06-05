@@ -42,13 +42,6 @@ class AssetsFieldType extends BaseElementFieldType
 	private $_failedFiles = array();
 
 	/**
-	 * Allowed extension list.
-	 *
-	 * @var null
-	 */
-	static $_allowedExtensions = array();
-
-	/**
 	 * Returns the label for the "Add" button.
 	 *
 	 * @access protected
@@ -87,9 +80,12 @@ class AssetsFieldType extends BaseElementFieldType
 	{
 		$sourceOptions = array();
 
-		foreach (craft()->assetSources->getAllSources() as $source)
+		foreach ($this->getElementType()->getSources() as $key => $source)
 		{
-			$sourceOptions[] = array('label' => $source->name, 'value' => $source->id);
+			if (!isset($source['heading']))
+			{
+				$sourceOptions[] = array('label' => $source['label'], 'value' => $key);
+			}
 		}
 
 		$fileKindOptions = array();
@@ -292,7 +288,7 @@ class AssetsFieldType extends BaseElementFieldType
 				else
 				{
 					$targetFolder = reset($sources);
-					list ($bogus, $targetFolderId) = explode(":", $targetFolder);
+					list ($bogus, $targetFolderId) = explode(':', $targetFolder);
 				}
 			}
 		}
@@ -314,7 +310,7 @@ class AssetsFieldType extends BaseElementFieldType
 
 		if ($settings->useSingleFolder)
 		{
-			$folderPath = 'folder:'.$this->_determineUploadFolderId($settings);
+			$folderPath = 'folder:'.$this->_determineUploadFolderId($settings).':single';
 
 			return array($folderPath);
 		}
@@ -326,16 +322,15 @@ class AssetsFieldType extends BaseElementFieldType
 		{
 			foreach ($settings->sources as $source)
 			{
-				if (is_numeric($source))
+				if (strncmp($source, 'folder:', 7) === 0)
 				{
-					$folder = craft()->assets->findFolder(array(
-						'sourceId' => $source,
-						'parentId' => ':empty:'
-					));
-
-					$sources[] = 'folder:'.$folder->id;
+					$sources[] = $source;
 				}
 			}
+		}
+		else if ($settings->sources == '*')
+		{
+			$sources = '*';
 		}
 
 		return $sources;
@@ -379,7 +374,7 @@ class AssetsFieldType extends BaseElementFieldType
 		// Do we have the folder?
 		if (empty($folder))
 		{
-			throw new Exception (Craft::t("Cannot find the target folder."));
+			throw new Exception (Craft::t('Cannot find the target folder.'));
 		}
 
 		// Prepare the path by parsing tokens and normalizing slashes.
@@ -480,20 +475,15 @@ class AssetsFieldType extends BaseElementFieldType
 			return array();
 		}
 
-		// Cache in case several fields use the same settings.
-		$key = implode("|", $allowedKinds);
-		if (empty(static::$_allowedExtensions[$key]))
-		{
-			static::$_allowedExtensions[$key] = array();
-			$allKinds = IOHelper::getFileKinds();
-			foreach ($allowedKinds as $allowedKind)
-			{
-				static::$_allowedExtensions[$key] += $allKinds[$allowedKind]['extensions'];
-			}
+		$extensions = array();
+		$allKinds = IOHelper::getFileKinds();
 
+		foreach ($allowedKinds as $allowedKind)
+		{
+			$extensions = array_merge($extensions, $allKinds[$allowedKind]['extensions']);
 		}
 
-		return static::$_allowedExtensions[$key];
+		return $extensions;
 	}
 
 	/**

@@ -21,46 +21,46 @@ class __TwigTemplate_5c009a6da8f56bedbb1b5040b38b61b57579aaad2ba7287f4c09a4c24e8
         // line 1
         \Craft\craft()->templates->includeCssResource("css/craft.css", true);
         // line 3
+        $context["siteName"] = $this->getAttribute($this->getAttribute((isset($context["craft"]) ? $context["craft"] : null), "app"), "getSiteName", array(), "method");
+        // line 4
+        $context["docTitle"] = ((array_key_exists("docTitle", $context)) ? ((isset($context["docTitle"]) ? $context["docTitle"] : null)) : (strip_tags((isset($context["title"]) ? $context["title"] : null))));
+        // line 6
         echo "<!DOCTYPE html>
 <html xmlns=\"http://www.w3.org/1999/xhtml\" lang=\"en-US\">
 <head>
 \t";
-        // line 6
+        // line 9
         $this->displayBlock('head', $context, $blocks);
-        // line 17
+        // line 20
         echo "</head>
 <body class=\"";
-        // line 18
+        // line 21
         echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute($this->getAttribute((isset($context["craft"]) ? $context["craft"] : null), "i18n"), "getLocaleData", array(), "method"), "getOrientation", array(), "method"), "html", null, true);
         echo "\">
 \t";
-        // line 19
+        // line 22
         $this->displayBlock('body', $context, $blocks);
-        // line 20
+        // line 23
         echo "\t";
         $this->displayBlock('foot', $context, $blocks);
-        // line 21
+        // line 24
         echo "</body>
 </html>
 ";
     }
 
-    // line 6
+    // line 9
     public function block_head($context, array $blocks = array())
     {
-        // line 7
+        // line 10
         echo "\t<meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\">
 \t<meta charset=\"utf-8\">
 \t<title>";
-        // line 9
-        echo twig_escape_filter($this->env, strip_tags((isset($context["title"]) ? $context["title"] : null)), "html", null, true);
-        if (((isset($context["title"]) ? $context["title"] : null) && $this->getAttribute($this->getAttribute((isset($context["craft"]) ? $context["craft"] : null), "app"), "siteName"))) {
-            echo " - ";
-        }
-        echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute((isset($context["craft"]) ? $context["craft"] : null), "app"), "siteName"), "html", null, true);
+        // line 12
+        echo twig_escape_filter($this->env, (((isset($context["docTitle"]) ? $context["docTitle"] : null) . ((((isset($context["docTitle"]) ? $context["docTitle"] : null) && (isset($context["siteName"]) ? $context["siteName"] : null))) ? (" - ") : (""))) . (isset($context["siteName"]) ? $context["siteName"] : null)), "html", null, true);
         echo "</title>
 \t";
-        // line 10
+        // line 13
         echo twig_escape_filter($this->env, $this->env->getExtension('craft')->getHeadHtmlFunction(), "html", null, true);
         echo "
 \t<meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">
@@ -71,12 +71,12 @@ class __TwigTemplate_5c009a6da8f56bedbb1b5040b38b61b57579aaad2ba7287f4c09a4c24e8
 \t";
     }
 
-    // line 19
+    // line 22
     public function block_body($context, array $blocks = array())
     {
     }
 
-    // line 20
+    // line 23
     public function block_foot($context, array $blocks = array())
     {
     }
@@ -93,6 +93,6 @@ class __TwigTemplate_5c009a6da8f56bedbb1b5040b38b61b57579aaad2ba7287f4c09a4c24e8
 
     public function getDebugInfo()
     {
-        return array (  80 => 20,  75 => 19,  49 => 6,  40 => 20,  38 => 19,  34 => 18,  31 => 17,  22 => 1,  230 => 80,  224 => 79,  213 => 77,  209 => 76,  204 => 75,  200 => 74,  189 => 69,  185 => 68,  177 => 66,  169 => 64,  165 => 63,  157 => 61,  153 => 60,  149 => 59,  145 => 58,  137 => 56,  133 => 55,  129 => 54,  125 => 53,  121 => 52,  117 => 51,  113 => 50,  105 => 48,  101 => 47,  91 => 40,  86 => 37,  83 => 36,  78 => 34,  73 => 32,  71 => 30,  69 => 29,  67 => 28,  65 => 27,  63 => 26,  61 => 25,  59 => 24,  57 => 23,  55 => 22,  52 => 7,  50 => 18,  45 => 12,  43 => 21,  35 => 8,  29 => 6,  25 => 4,  656 => 225,  653 => 224,  645 => 231,  637 => 229,  635 => 228,  632 => 227,  630 => 224,  627 => 223,  621 => 220,  618 => 219,  616 => 218,  607 => 217,  604 => 216,  601 => 215,  598 => 214,  596 => 213,  590 => 209,  587 => 208,  584 => 207,  581 => 206,  578 => 205,  572 => 199,  566 => 196,  563 => 195,  561 => 194,  558 => 193,  552 => 191,  550 => 190,  547 => 189,  542 => 186,  531 => 184,  527 => 183,  523 => 181,  520 => 180,  517 => 179,  508 => 265,  502 => 263,  500 => 262,  496 => 261,  490 => 258,  486 => 257,  482 => 255,  480 => 254,  475 => 251,  467 => 249,  465 => 248,  454 => 245,  446 => 243,  444 => 242,  438 => 241,  430 => 240,  424 => 236,  422 => 205,  417 => 202,  415 => 179,  409 => 175,  403 => 174,  395 => 172,  392 => 171,  389 => 170,  385 => 169,  375 => 161,  367 => 158,  362 => 156,  360 => 155,  358 => 154,  351 => 153,  346 => 152,  342 => 151,  331 => 147,  319 => 141,  311 => 139,  309 => 138,  303 => 137,  297 => 134,  293 => 132,  287 => 128,  281 => 127,  268 => 125,  263 => 124,  259 => 123,  253 => 120,  245 => 117,  242 => 116,  240 => 115,  237 => 114,  234 => 113,  231 => 112,  228 => 111,  225 => 110,  218 => 106,  212 => 105,  205 => 104,  202 => 103,  199 => 102,  196 => 101,  193 => 70,  190 => 99,  187 => 98,  184 => 97,  181 => 67,  179 => 95,  176 => 94,  173 => 65,  170 => 92,  167 => 91,  164 => 90,  161 => 62,  158 => 88,  155 => 87,  152 => 86,  150 => 85,  144 => 81,  141 => 57,  138 => 79,  135 => 78,  131 => 76,  122 => 74,  118 => 73,  112 => 71,  109 => 49,  107 => 69,  104 => 68,  95 => 65,  115 => 72,  110 => 40,  108 => 36,  102 => 33,  98 => 66,  94 => 30,  92 => 64,  87 => 24,  72 => 22,  68 => 21,  64 => 10,  62 => 18,  56 => 9,  41 => 10,  37 => 9,  33 => 8,  30 => 4,  28 => 3,  26 => 5,  24 => 3,);
+        return array (  80 => 23,  75 => 22,  64 => 13,  60 => 12,  56 => 10,  53 => 9,  47 => 24,  44 => 23,  42 => 22,  38 => 21,  26 => 4,  24 => 3,  22 => 1,  230 => 80,  224 => 79,  209 => 76,  204 => 75,  193 => 70,  189 => 69,  181 => 67,  173 => 65,  169 => 64,  161 => 62,  157 => 61,  149 => 59,  141 => 57,  137 => 56,  133 => 55,  129 => 54,  125 => 53,  121 => 52,  117 => 51,  109 => 49,  101 => 47,  91 => 40,  86 => 37,  83 => 36,  73 => 32,  71 => 30,  69 => 29,  67 => 28,  65 => 27,  63 => 26,  61 => 25,  59 => 24,  57 => 23,  52 => 19,  50 => 18,  45 => 12,  43 => 11,  35 => 20,  661 => 227,  658 => 226,  650 => 233,  642 => 231,  640 => 230,  637 => 229,  635 => 226,  632 => 225,  626 => 222,  623 => 221,  621 => 220,  612 => 219,  609 => 218,  606 => 217,  603 => 216,  601 => 215,  595 => 211,  592 => 210,  589 => 209,  586 => 208,  583 => 207,  577 => 201,  571 => 198,  568 => 197,  566 => 196,  563 => 195,  557 => 193,  555 => 192,  552 => 191,  547 => 188,  536 => 186,  532 => 185,  528 => 183,  525 => 182,  522 => 181,  513 => 267,  507 => 265,  505 => 264,  501 => 263,  495 => 260,  491 => 259,  487 => 257,  485 => 256,  480 => 253,  472 => 251,  470 => 250,  459 => 247,  451 => 245,  449 => 244,  443 => 243,  435 => 242,  429 => 238,  427 => 207,  422 => 204,  420 => 181,  414 => 177,  408 => 176,  400 => 174,  397 => 173,  394 => 172,  390 => 171,  380 => 163,  372 => 160,  367 => 158,  365 => 157,  363 => 156,  356 => 155,  351 => 154,  347 => 153,  336 => 149,  324 => 143,  316 => 141,  314 => 140,  308 => 139,  302 => 136,  298 => 134,  293 => 131,  286 => 129,  273 => 127,  269 => 126,  263 => 124,  259 => 123,  254 => 121,  246 => 118,  243 => 117,  241 => 116,  238 => 115,  235 => 114,  232 => 113,  229 => 112,  226 => 111,  219 => 107,  213 => 77,  206 => 105,  203 => 104,  200 => 74,  197 => 102,  194 => 101,  191 => 100,  188 => 99,  185 => 68,  182 => 97,  180 => 96,  177 => 66,  174 => 94,  171 => 93,  168 => 92,  165 => 63,  162 => 90,  159 => 89,  156 => 88,  153 => 60,  151 => 86,  145 => 58,  142 => 81,  139 => 80,  136 => 79,  132 => 77,  123 => 75,  119 => 74,  116 => 73,  113 => 50,  110 => 71,  108 => 70,  105 => 48,  99 => 67,  96 => 66,  93 => 65,  30 => 4,  28 => 6,  78 => 34,  70 => 30,  62 => 25,  55 => 22,  48 => 17,  41 => 10,  36 => 11,  33 => 9,  31 => 9,  29 => 6,  27 => 3,  25 => 4,);
     }
 }

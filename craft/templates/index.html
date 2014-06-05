@@ -42,33 +42,14 @@
 				{% endfor %}
 			{% endfor %}
 		</video>
-		<img src="/public/images/denizen-cave.png" class="visible-xs">
+		{% for block in home.mainBackgroundVideo %}
+			{% for image in block.backgroundImage %}
+		<img src="{{ image.getUrl() }}" class="visible-xs">
+			{% endfor %}
+		{% endfor %}
 	</section>
 	
-	<section id="ourWork">
-		<div class="container">
-			<div class="heading">
-				<h4>Our Work</h4>
-			</div>
-			
-			<div class="row">
-				{% for video in home.videoGrid %}
-					<div class="col-md-4">
-						<div class="videoThumbnail">
-							<a href="{{ video.url }}">
-								<h6>{{ video.title }}</h6>
-								{% for image in video.videoThumbnail.limit(1) %}
-								<img src="{{ image.getUrl() }}">
-								{% endfor %}
-							</a>
-						</div>
-					</div>
-				{% endfor %}
-			</div>
-			
-		</div>
-	</section>
-	
+	<!--
 	<section id="aboutUs" class="fullscreen">
 		<div class="container">
 			<div class="heading">
@@ -81,6 +62,37 @@
 			</div>
 		</div>
 	</section>
+	-->
+	
+	<section id="ourWork">
+		<div class="container">
+			<div class="heading">
+				<h4>Our Work</h4>
+			</div>
+			
+			<div class="row">
+				{% for video in home.videoGrid %}
+					<div class="col-md-4">
+						<div class="videoThumbnail">
+							<a href="{{ video.url }}">
+								<div class="videoInfo">
+									{% for client in video.client %}
+										<h4>{{ client.title }}</h4>
+									{% endfor %}
+									<h6>{{ video.title }}</h6>
+								</div>
+								{% for image in video.videoThumbnail.limit(1) %}
+								<img src="{{ image.getUrl() }}">
+								{% endfor %}
+							</a>
+						</div>
+					</div>
+				{% endfor %}
+			</div>
+			
+		</div>
+	</section>
+	
 	<section id="ourClients" class="fullscreen">
 		<div class="container">
 			<div class="heading">
@@ -116,6 +128,23 @@
 			    var newHeight = $(window).height();
 			    $(".fullscreen").css("min-height", newHeight);
 		}
+	</script>
+	
+	<script>
+		$(function() {
+		  $('a[href*=#]:not([href=#])').click(function() {
+		    if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
+		      var target = $(this.hash);
+		      target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+		      if (target.length) {
+		        $('html,body').animate({
+		          scrollTop: target.offset().top
+		        }, 1000);
+		        return false;
+		      }
+		    }
+		  });
+		});
 	</script>
 
 {% endblock %}

@@ -349,6 +349,8 @@ class PluginsService extends BaseApplicationComponent
 			throw new Exception(Craft::t('“{plugin}” is already installed.', array('plugin' => $plugin->getName())));
 		}
 
+		$plugin->onBeforeInstall();
+
 		$transaction = craft()->db->getCurrentTransaction() === null ? craft()->db->beginTransaction() : null;
 		try
 		{
@@ -493,8 +495,6 @@ class PluginsService extends BaseApplicationComponent
 	 */
 	public function savePluginSettings(BasePlugin $plugin, $settings)
 	{
-		// Give the plugin a chance to modify the settings
-		$settings = $plugin->prepSettings($settings);
 		$settings = JsonHelper::encode($settings);
 
 		$affectedRows = craft()->db->createCommand()->update('plugins', array(

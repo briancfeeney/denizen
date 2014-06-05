@@ -743,7 +743,7 @@ pre code {
 }
 @media (min-width: 1200px) {
   .container {
-    width: 1170px;
+    width: 1030px;
   }
 }
 .container-fluid {
@@ -5772,6 +5772,11 @@ button.close {
     display: none !important;
   }
 }
+.franklinL {
+  font-family: "franklin-gothic-urw", sans-serif;
+  font-style: normal;
+  font-weight: 300;
+}
 .franklinB {
   font-family: "franklin-gothic-urw", sans-serif;
   font-style: normal;
@@ -5793,6 +5798,31 @@ button.close {
   font-style: normal;
   font-weight: 300;
 }
+.adelleT {
+  font-family: "adelle-sans", sans-serif;
+  font-style: normal;
+  font-weight: 100;
+}
+.myriadR {
+  font-family: "myriad-pro", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+}
+.myriadI {
+  font-family: "myriad-pro", sans-serif;
+  font-style: italic;
+  font-weight: 400;
+}
+.myriadB {
+  font-family: "myriad-pro", sans-serif;
+  font-style: normal;
+  font-weight: 700;
+}
+.myriadBI {
+  font-family: "myriad-pro", sans-serif;
+  font-style: italic;
+  font-weight: 700;
+}
 body {
   background-color: #1b1b1b;
   color: #ffffff;
@@ -5805,9 +5835,12 @@ body#home {
   /* background-image: url("/public/images/dot-pattern.png"); */
 }
 p {
-  font-family: "calluna", serif;
+  font-family: "adelle-sans", sans-serif;
   font-style: normal;
-  font-weight: 300;
+  font-weight: 100;
+}
+h1 {
+  font-size: 2.5714em;
 }
 h2 {
   color: #6c5e80;
@@ -6004,30 +6037,31 @@ header .logo-container .logo-splash {
   transition: all 0.65s ease-in-out;
   margin-top: 15%;
   max-height: 100%;
-  max-width: 100%;
+  width: 100%;
   text-align: center;
   -webkit-backface-visibility: hidden;
   -webkit-transform: translateZ(0);
   position: fixed;
   z-index: 12;
+  /*
+	&.smaller {
+		max-width: 300px;
+		max-height: 40%;
+		margin-top: -2em;
+		margin-left: 0;
+		@media (max-width: @screen-lg) {
+			margin-top: -3em;
+			margin-left: -3em;
+		}
+	}
+	*/
+  position: absolute;
 }
 .logo-container .logo-splash {
   max-width: 100%;
   max-height: 100%;
   margin: auto;
   padding: 4em;
-}
-.logo-container.smaller {
-  max-width: 300px;
-  max-height: 40%;
-  margin-top: -2em;
-  margin-left: 0;
-}
-@media (max-width: 1200px) {
-  .logo-container.smaller {
-    margin-top: -3em;
-    margin-left: -3em;
-  }
 }
 #ourWork {
   background-color: #111;
@@ -6040,16 +6074,22 @@ header .logo-container .logo-splash {
   display: block;
   background-color: #3e3250;
 }
-#ourWork .videoThumbnail h6 {
-  position: absolute;
-  font-size: 1.5em;
-  bottom: 60px;
-  left: 30px;
-  color: white;
+#ourWork .videoThumbnail .videoInfo {
   display: none;
+  position: absolute;
+  bottom: 60px;
+  padding: 0 1.5em 0 1em;
   z-index: 2;
 }
-#ourWork .videoThumbnail:hover h6 {
+#ourWork .videoThumbnail h4 {
+  color: #b2adb9;
+  font-size: 1em;
+}
+#ourWork .videoThumbnail h6 {
+  font-size: 1.5em;
+  color: white;
+}
+#ourWork .videoThumbnail:hover .videoInfo {
   display: block;
 }
 #ourWork .videoThumbnail:hover img {
@@ -6092,6 +6132,7 @@ header .logo-container .logo-splash {
 @media (max-width: 650px) {
   #video-player {
     padding-top: 100px;
+    padding-top: 50px;
   }
 }
 #video_fullwidth {
@@ -6106,10 +6147,12 @@ header .logo-container .logo-splash {
   width: 100%;
   text-align: center;
   z-index: 7;
+  border-bottom: 5px solid #1b1b1b;
 }
 @media (max-width: 650px) {
   .thumbnail-overlay {
     top: 200px;
+    top: 150px;
   }
 }
 button {
@@ -6124,35 +6167,31 @@ button {
   font-style: normal;
   font-weight: 700;
   letter-spacing: 2px;
+  right: 20px;
+  font-size: 1em;
+  z-index: 5;
+  background-color: rgba(62, 50, 80, 0.5);
 }
 button:focus {
   outline: none;
 }
 button:hover {
-  background-color: rgba(62, 50, 80, 0.5);
+  background-color: rgba(62, 50, 80, 0.8);
 }
 button.play {
-  top: 45%;
-  left: 47%;
-}
-@media (max-width: 650px) {
-  button.play {
-    left: 42%;
-    font-size: 1em;
-  }
+  top: 20px;
 }
 button.pause {
   top: 120px;
-  right: 20px;
-  font-size: 1em;
-  z-index: 5;
 }
 @media (max-width: 650px) {
-  button.pause {
-    bottom: 20px;
+  button {
     top: inherit;
     font-size: .6em;
     padding: 5px 10px;
+  }
+  button.pause {
+    top: 170px;
   }
 }
 #work-info {
@@ -6179,6 +6218,23 @@ button.pause {
 }
 #work-info .clientLogo img {
   max-width: 100px;
+}
+@media (max-width: 650px) {
+  #work-info .clientLogo {
+    text-align: left;
+    padding-top: 0;
+  }
+}
+.workMeta {
+  padding-top: 2em;
+}
+@media (max-width: 650px) {
+  .workMeta {
+    font-size: .9em;
+  }
+  .workMeta h1 {
+    font-size: 2.3em;
+  }
 }
 /* -------------------------------------------------------------------------------- */
 #ourWork.singleClient {
@@ -6241,6 +6297,15 @@ footer span:last-child {
   footer span {
     display: block;
     margin: 10px 0;
+  }
+}
+/* -------------------------------------------------------------------------------- */
+#aboutUs {
+  padding: 4.5em 0 2.5em;
+}
+@media (max-width: 650px) {
+  #aboutUs {
+    padding-top: 9.5em;
   }
 }
 /* -------------------------------------------------------------------------------- */

@@ -1,0 +1,39 @@
+{#
+ # About template
+ # ---------------
+ #}
+
+{% extends "_layout" %}
+
+{% block content %}
+
+
+
+<section id="aboutUs" class="fullscreen">
+	<div class="container">
+		<div class="heading">
+			<h4>About Us</h4>
+		</div>
+		<div class="row">
+			<div class="col-md-8 col-md-offset-2">
+				{{ about.aboutText }}
+			</div>
+		</div>
+	</div>
+</section>
+
+
+<script type='text/javascript'>
+	$(document).ready(sizeContent);
+
+		//Every resize of window
+		$(window).resize(sizeContent);
+
+		//Dynamically assign height
+		function sizeContent() {
+		    var newHeight = $(window).height();
+		    $(".fullscreen").css("min-height", newHeight);
+	}
+</script>
+
+{% endblock %}

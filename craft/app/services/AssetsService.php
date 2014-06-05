@@ -155,6 +155,11 @@ class AssetsService extends BaseApplicationComponent
 					// Save the file row
 					$fileRecord->save(false);
 
+					if ($transaction !== null)
+					{
+						$transaction->commit();
+					}
+
 					// Fire an 'onSaveAsset' event
 					$this->onSaveAsset(new Event($this, array(
 						'asset' => $file
@@ -166,11 +171,6 @@ class AssetsService extends BaseApplicationComponent
 						$this->onSaveFileContent(new Event($this, array(
 							'file' => $file
 						)));
-					}
-
-					if ($transaction !== null)
-					{
-						$transaction->commit();
 					}
 
 					return true;
@@ -788,6 +788,18 @@ class AssetsService extends BaseApplicationComponent
 		return $response;
 	}
 
+
+	/**
+	 * @param AssetFileModel $file
+	 * @param $filename
+	 * @param string $action action to take in case of a conflict.
+	 * @return bool|AssetOperationResponseModel
+	 */
+	public function renameFile(AssetFileModel $file, $filename, $action = "")
+	{
+		return $this->moveFiles(array($file->id), $file->folderId, $filename, $action);
+	}
+
 	/**
 	* Delete a folder record by id.
 	*
@@ -824,7 +836,22 @@ class AssetsService extends BaseApplicationComponent
 		}
 		else
 		{
-			return UrlHelper::getActionUrl('assets/generateTransform', array('transformId' => $existingTransformData->id));
+			if (craft()->config->get('generateTransformsBeforePageLoad'))
+			{
+				$existingTransformData->inProgress = true;
+				craft()->assetTransforms->storeTransformIndexData($existingTransformData);
+
+				craft()->assetTransforms->generateTransform($existingTransformData);
+
+				$existingTransformData->fileExists = true;
+				craft()->assetTransforms->storeTransformIndexData($existingTransformData);
+
+				return craft()->assetTransforms->getUrlforTransformByFile($file, $transform);
+			}
+			else
+			{
+				return UrlHelper::getResourceUrl('transforms/'.$existingTransformData->id);
+			}
 		}
 	}
 
@@ -911,7 +938,22 @@ class AssetsService extends BaseApplicationComponent
 
 		if (!is_null($criteria->path))
 		{
-			$whereConditions[] = DbHelper::parseParam('f.path', $criteria->path, $whereParams);
+			// This folder has a comma in it.
+			if (strpos($criteria->path, ',') !== false)
+			{
+				// Escape the comma.
+				$condition = DbHelper::parseParam('f.path', str_replace(',', '\,', $criteria->path), $whereParams);
+				$lastKey = key(array_slice($whereParams, -1, 1, true));
+
+				// Now unescape it.
+				$whereParams[$lastKey] = str_replace('\,', ',', $whereParams[$lastKey]);
+			}
+			else
+			{
+				$condition = DbHelper::parseParam('f.path', $criteria->path, $whereParams);
+			}
+
+			$whereConditions[] = $condition;
 		}
 
 		if (count($whereConditions) == 1)
@@ -1024,6 +1066,26 @@ class AssetsService extends BaseApplicationComponent
 		}
 
 		return $response;
+	}
+
+	/**
+	 * Return true if user has permission to perform the action on the folder.
+	 *
+	 * @param $folderId
+	 * @param $action
+	 * @return bool
+	 */
+	public function canUserPerformAction($folderId, $action)
+	{
+		try
+		{
+			$this->checkPermissionByFolderIds($folderId, $action);
+			return true;
+		}
+		catch (Exception $exception)
+		{
+			return false;
+		}
 	}
 
 	/**
