@@ -13,6 +13,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en-US">
 <head>
 	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width" />
 	<title>{% if title is defined %}{{ title }} - {% endif %}{{ siteName }}</title>
 	<link rel="home" href="{{ siteUrl }}" />
 
@@ -29,12 +30,14 @@
 <body {% if craft.request.firstSegment == '' %}id="home"{% endif %}>
 	<header id="header">
 		<div class="logo-container">
-			<a href="/home"><img class="logo-splash" src="/public/images/denizen-logo_white-outline.png"></a>
+			<a href="/"><img class="logo-splash" src="/public/images/denizen-logo_white-outline.png"></a>
 		</div>
 		<nav>
 			<ul>
-				<li><a href="/#ourWork" {% if craft.request.firstSegment == 'work' %}class="active"{% endif %}>Our Work</a></li>
-				<li><a href="/about" {% if craft.request.firstSegment == 'about' %}class="active"{% endif %}>About Us</a></li>
+				<li><a href="/#ourWork" {% if craft.request.firstSegment == 'work' %}class="active"{% endif %}>Work</a></li>
+				<li><a href="/#ourClients" {% if craft.request.firstSegment == 'Clients' %}class="active"{% endif %}>Clients</a></li>
+				<li><a href="/#aboutUs" {% if craft.request.firstSegment == 'about' %}class="active"{% endif %}>About Us</a></li>
+				<li><a href="/#footer" {% if craft.request.firstSegment == 'about' %}class="active"{% endif %}>Contact</a></li>
 				<!-- <li><a href="/#aboutUs" {% if craft.request.firstSegment == 'news' %}class="active"{% endif %}>News</a></li> -->
 			</ul>
 		</nav>
@@ -48,7 +51,7 @@
 	</main>
 
 	<footer id="footer">
-		<span>{{ contactInfo.address }}</span> <span>{{ contactInfo.phone }}</span>
+		<span>{{ contactInfo.address }}</span> <span>{{ contactInfo.phone }}</span> <span><a href="mailto:info@denizen.tv">info@denizen.tv</a></span>
 	</footer>
 
 </body>

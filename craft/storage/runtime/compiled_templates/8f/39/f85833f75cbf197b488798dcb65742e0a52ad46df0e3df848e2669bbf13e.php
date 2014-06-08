@@ -114,6 +114,7 @@ class __TwigTemplate_8f39f85833f75cbf197b488798dcb65742e0a52ad46df0e3df848e2669b
         }
         // line 44
         echo "\t\t\t</div>
+\t\t\t<input type=\"button\" value=\"Go Back\" class=\"btn\" onclick=\"history.back(-1)\" />
 \t\t</div>
 
 \t</div>

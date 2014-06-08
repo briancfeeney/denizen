@@ -7,24 +7,6 @@
 
 {% block content %}
 
-<!-- 	
-	<div id="video_background">
-		<video id="bg_video" preload="auto" autoplay="true" loop="loop" muted="muted" volume="0">
-			{% for block in home.mainBackgroundVideo %}
-				{% for mp4 in block.backgroundMp4 %}
-					<source src="{{ mp4.getUrl() }}" type="video/mp4">
-				{% endfor %}
-				{% for webm in block.backgroundWebm %}
-					<source src="{{ webm.getUrl() }}" type="video/webm">
-				{% endfor %}
-				{% for ogg in block.backgroundOgg %}
-					<source src="{{ ogg.getUrl() }}" type="video/ogg">
-				{% endfor %}
-			{% endfor %}
-		</video>
-	</div>
--->
-
 	<section id="home-top">
 		<div class="logo-container">
 			<a href="/#home"><img class="logo-splash" src="/public/images/denizen-logo_white-outline.png"></a>
@@ -49,21 +31,6 @@
 		{% endfor %}
 	</section>
 	
-	<!--
-	<section id="aboutUs" class="fullscreen">
-		<div class="container">
-			<div class="heading">
-				<h4>About Us</h4>
-			</div>
-			<div class="row">
-				<div class="col-md-8 col-md-offset-2">
-					{{ about.aboutText }}
-				</div>
-			</div>
-		</div>
-	</section>
-	-->
-	
 	<section id="ourWork">
 		<div class="container">
 			<div class="heading">
@@ -72,7 +39,7 @@
 			
 			<div class="row">
 				{% for video in home.videoGrid %}
-					<div class="col-md-4">
+					<div class="col-md-4 col-sm-6 col-xs-6">
 						<div class="videoThumbnail">
 							<a href="{{ video.url }}">
 								<div class="videoInfo">
@@ -110,6 +77,19 @@
 					</div>
 					{% endfor %}
 				{% endfor %}
+			</div>
+		</div>
+	</section>
+	
+	<section id="aboutUs" class="fullscreen">
+		<div class="container">
+			<div class="heading">
+				<h4>About Us</h4>
+			</div>
+			<div class="row">
+				<div class="col-md-8 col-md-offset-2">
+					{{ about.aboutText }}
+				</div>
 			</div>
 		</div>
 	</section>

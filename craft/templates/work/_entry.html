@@ -66,8 +66,10 @@
 						</section>
 					</div>
 				</div>
+				<input type="button" value="Go Back" class="btn" onclick="history.back(-1)" />
 			</section>
 		</div>
+		
 	</section>
 	
 	<script>
@@ -88,6 +90,16 @@
 		$("video").bind("ended", function() {
 		   $(".thumbnail-overlay").removeClass("hide");
 		});
+		
+		
+		$(function() {
+			var vheight = $(".thumbnail_fullwidth").height();
+		  	var video = document.getElementsByTagName("video")[0];
+			video.setAttribute('height', vheight);
+			video.setAttribute('width ', '700');
+		});
+		
+		$(".thumbnail_fullwidth").width();
 	</script>
 	
 {% endblock %}

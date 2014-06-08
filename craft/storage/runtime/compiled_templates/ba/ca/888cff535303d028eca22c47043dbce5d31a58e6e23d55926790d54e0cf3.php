@@ -190,8 +190,10 @@ class __TwigTemplate_baca888cff535303d028eca22c47043dbce5d31a58e6e23d55926790d54
         echo "\t\t\t\t\t\t</section>
 \t\t\t\t\t</div>
 \t\t\t\t</div>
+\t\t\t\t<input type=\"button\" value=\"Go Back\" class=\"btn\" onclick=\"history.back(-1)\" />
 \t\t\t</section>
 \t\t</div>
+\t\t
 \t</section>
 \t
 \t<script>
@@ -212,6 +214,16 @@ class __TwigTemplate_baca888cff535303d028eca22c47043dbce5d31a58e6e23d55926790d54
 \t\t\$(\"video\").bind(\"ended\", function() {
 \t\t   \$(\".thumbnail-overlay\").removeClass(\"hide\");
 \t\t});
+\t\t
+\t\t
+\t\t\$(function() {
+\t\t\tvar vheight = \$(\".thumbnail_fullwidth\").height();
+\t\t  \tvar video = document.getElementsByTagName(\"video\")[0];
+\t\t\tvideo.setAttribute('height', vheight);
+\t\t\tvideo.setAttribute('width ', '700');
+\t\t});
+\t\t
+\t\t\$(\".thumbnail_fullwidth\").width();
 \t</script>
 \t
 ";
