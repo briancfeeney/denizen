@@ -16,12 +16,17 @@ class __TwigTemplate_1c4511845e13c88ffc201889f20c7ac43635dbd47a2739ddc6c8ece508b
     protected function doDisplay(array $context, array $blocks = array())
     {
         // line 1
-        \Craft\craft()->request->redirect(\Craft\UrlHelper::getUrl("dashboard"));
+        \Craft\craft()->request->redirect(\Craft\UrlHelper::getUrl((($this->getAttribute($this->getAttribute((isset($context["craft"]) ? $context["craft"] : null), "config", array()), "postCpLoginRedirect", array())) ? ($this->getAttribute($this->getAttribute((isset($context["craft"]) ? $context["craft"] : null), "config", array()), "postCpLoginRedirect", array())) : ("dashboard"))), true, 302);
     }
 
     public function getTemplateName()
     {
         return "";
+    }
+
+    public function isTraitable()
+    {
+        return false;
     }
 
     public function getDebugInfo()

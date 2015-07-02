@@ -1,31 +1,42 @@
 {% extends "_layouts/cp" %}
-{% set title = "What’s new in Craft 2.1" %}
+{% set title = "What’s new in Craft 2.3" %}
 {% includeCssResource "css/whats-new.css" %}
 
 {% block pageHeader %}{% endblock %}
 
-{% set url = 'http://buildwithcraft.com/updates/2.1' %}
+{% set url = 'http://buildwithcraft.com/updates/2.3' %}
 
 {% set content %}
-	<h1>Work wonders on your workflow.</h1>
-	<p>Craft 2.1 packs <a href="{{ url }}" target="_blank"><strong>90</strong> new features and improvements</a>, with an emphasis on improving the workflow surrounding entries and users.</p>
+	<header>
+		<h1>{{ title }}</h1>
+		<p>Craft 2.3 packs <a href="{{ url }}">over <strong>230</strong> new features and improvements</a>, aimed to make working with content an even better experience than ever before.</p>
+	</header>
 
-	<img src="{{ resourceUrl('images/whats-new/draft-notes.png') }}" alt="Draft name and notes modal">
-	<h1>Remember what you’re working on.</h1>
-	<p>It’s now possible to give your drafts custom names, and even save some notes about them.</p>
+	<div id="video-wrapper">
+		<iframe id="video" class="video" data-vimeo-id="113308175" src="//player.vimeo.com/video/113308175" width="870" height="489" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+	</div>
 
-	<img src="{{ resourceUrl('images/whats-new/share-button.png') }}" alt="Share Entry button">
-	<h1>Share what you’re working on.</h1>
-	<p>The new Share button lets you share unpublished drafts and prior versions of an entry with others, using a tokenized URL that bypasses user permissions.</p>
+	<h1>Editing on the Index Pages</h1>
+	<p>It’s now possible to make changes to your entries, categories, assets, or users right from their index pages. You can edit a user from a modal window, update the status on a batch of entries, replace a file with a new one, bulk-delete a few unneeded categories, and more.</p>
+	<img src="{{ resourceUrl('images/whats-new/entry-index-editor.png') }}" alt="An entry being edited on the Entries index page.">
 
-	<img src="{{ resourceUrl('images/whats-new/version-notes.png') }}" alt="Entry version notes textbox">
-	<h1>Remember what you changed.</h1>
-	<p>You can now enter some notes about the changes you’ve made when saving an entry.</p>
+	<h1>Matrix, Revamped</h1>
+	<p>Matrix fields have a new look, and it’s now possible to reorder, expand/collapse, enable/disable, and delete multiple blocks at once. Matrix block type fields can now have instruction text, and they’re no longer required to have names.</p>
+	<img src="{{ resourceUrl('images/whats-new/matrix-field-batch-menu.png') }}" alt="A Matrix field with multiple blocks selected and a context menu open.">
 
-	<img src="{{ resourceUrl('images/whats-new/entry-revision.png') }}" alt="“Revert entry to this version” button">
-	<h1>Take back what you’ve changed.</h1>
-	<p>Make a change by mistake? No big deal with past versions’ new “Revert entry to this version” button.</p>
+	<h1>Five New Languages</h1>
+	<p>The Control Panel has been translated into five new languages: Simplified Chinese, Hebrew, Korean, Spanish, and Swedish. That brings the grand total up to <a href="http://buildwithcraft.com/help/cp-languages">15 supported languages!</a></p>
+	<img src="{{ resourceUrl('images/whats-new/assets-index-in-hebrew.png') }}" alt="The Assets index page translated into Hebrew">
 
-	<h1>Lots more!</h1>
-	<p>Craft 2.1 also brings improvements to the user management workflow, adds some new templating features, and introduces new plugin APIs. See the <a href="{{ url }}">release notes</a> for the complete list.</p>
+	<h1>More Scalable</h1>
+	<p>Several areas of the Control Panel have been updated to do a better job handling sites with hundreds (or even thousands) of entries, categories, users, and assets.</p>
+
+	<h1>More Extensible</h1>
+	<p>Plugins can add their own tools to element index pages using the new <a href="http://buildwithcraft.com/docs/plugins/element-actions">Element Actions</a> APIs, and there are some <a href="http://buildwithcraft.com/docs/plugins/hooks-reference#modifyEntryTableAttributes">new hooks</a> that make it possible to customize the index pages’ table columns.</p>
+
+	<h1>The List Goes On</h1>
+	<p>Check out the <a href="{{ url }}">release notes</a> for a complete list of all that’s changed!</p>
 {% endset %}
+
+{% includeJsResource 'lib/jquery.fitvids.js' %}
+{% includeJs '$("#content").fitVids();' %}

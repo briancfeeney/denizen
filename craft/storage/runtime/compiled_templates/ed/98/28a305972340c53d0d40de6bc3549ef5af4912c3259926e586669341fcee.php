@@ -23,16 +23,22 @@ class __TwigTemplate_ed9828a305972340c53d0d40de6bc3549ef5af4912c3259926e58666934
 <head>
 \t<meta charset=\"utf-8\" />
 \t<meta name=\"viewport\" content=\"width=device-width\" />
-\t<title>";
+\t<meta name=\"keywords\" content=\"";
         // line 17
+        echo twig_escape_filter($this->env, $this->getAttribute((isset($context["about"]) ? $context["about"] : null), "keywords", array()), "html", null, true);
+        echo "\">
+\t
+\t<title>";
+        // line 19
         if (array_key_exists("title", $context)) {
             echo twig_escape_filter($this->env, (isset($context["title"]) ? $context["title"] : null), "html", null, true);
             echo " - ";
         }
         echo twig_escape_filter($this->env, (isset($context["siteName"]) ? $context["siteName"] : null), "html", null, true);
         echo "</title>
+\t
 \t<link rel=\"home\" href=\"";
-        // line 18
+        // line 21
         echo twig_escape_filter($this->env, (isset($context["siteUrl"]) ? $context["siteUrl"] : null), "html", null, true);
         echo "\" />
 
@@ -40,6 +46,7 @@ class __TwigTemplate_ed9828a305972340c53d0d40de6bc3549ef5af4912c3259926e58666934
 \t
 \t<script src=\"//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js\"></script>
 \t<script src=\"/public/js/modernizr.custom.99139.js\"></script>\t
+\t<script src=\"/public/js/videocontrols.js\"></script>\t
 \t
 \t<script type=\"text/javascript\" src=\"//use.typekit.net/zzt4jrb.js\"></script>
 \t<script type=\"text/javascript\">try{Typekit.load();}catch(e){}</script>
@@ -47,8 +54,8 @@ class __TwigTemplate_ed9828a305972340c53d0d40de6bc3549ef5af4912c3259926e58666934
 </head>
 
 <body ";
-        // line 30
-        if (($this->getAttribute($this->getAttribute((isset($context["craft"]) ? $context["craft"] : null), "request"), "firstSegment") == "")) {
+        // line 34
+        if (($this->getAttribute($this->getAttribute((isset($context["craft"]) ? $context["craft"] : null), "request", array()), "firstSegment", array()) == "")) {
             echo "id=\"home\"";
         }
         echo ">
@@ -59,32 +66,32 @@ class __TwigTemplate_ed9828a305972340c53d0d40de6bc3549ef5af4912c3259926e58666934
 \t\t<nav>
 \t\t\t<ul>
 \t\t\t\t<li><a href=\"/#ourWork\" ";
-        // line 37
-        if (($this->getAttribute($this->getAttribute((isset($context["craft"]) ? $context["craft"] : null), "request"), "firstSegment") == "work")) {
+        // line 41
+        if (($this->getAttribute($this->getAttribute((isset($context["craft"]) ? $context["craft"] : null), "request", array()), "firstSegment", array()) == "work")) {
             echo "class=\"active\"";
         }
         echo ">Work</a></li>
 \t\t\t\t<li><a href=\"/#ourClients\" ";
-        // line 38
-        if (($this->getAttribute($this->getAttribute((isset($context["craft"]) ? $context["craft"] : null), "request"), "firstSegment") == "Clients")) {
+        // line 42
+        if (($this->getAttribute($this->getAttribute((isset($context["craft"]) ? $context["craft"] : null), "request", array()), "firstSegment", array()) == "Clients")) {
             echo "class=\"active\"";
         }
         echo ">Clients</a></li>
 \t\t\t\t<li><a href=\"/#aboutUs\" ";
-        // line 39
-        if (($this->getAttribute($this->getAttribute((isset($context["craft"]) ? $context["craft"] : null), "request"), "firstSegment") == "about")) {
+        // line 43
+        if (($this->getAttribute($this->getAttribute((isset($context["craft"]) ? $context["craft"] : null), "request", array()), "firstSegment", array()) == "about")) {
             echo "class=\"active\"";
         }
         echo ">About Us</a></li>
 \t\t\t\t<li><a href=\"/#footer\" ";
-        // line 40
-        if (($this->getAttribute($this->getAttribute((isset($context["craft"]) ? $context["craft"] : null), "request"), "firstSegment") == "about")) {
+        // line 44
+        if (($this->getAttribute($this->getAttribute((isset($context["craft"]) ? $context["craft"] : null), "request", array()), "firstSegment", array()) == "about")) {
             echo "class=\"active\"";
         }
         echo ">Contact</a></li>
 \t\t\t\t<!-- <li><a href=\"/#aboutUs\" ";
-        // line 41
-        if (($this->getAttribute($this->getAttribute((isset($context["craft"]) ? $context["craft"] : null), "request"), "firstSegment") == "news")) {
+        // line 45
+        if (($this->getAttribute($this->getAttribute((isset($context["craft"]) ? $context["craft"] : null), "request", array()), "firstSegment", array()) == "news")) {
             echo "class=\"active\"";
         }
         echo ">News</a></li> -->
@@ -94,17 +101,17 @@ class __TwigTemplate_ed9828a305972340c53d0d40de6bc3549ef5af4912c3259926e58666934
 
 \t<main id=\"content\" role=\"main\">
 \t\t";
-        // line 47
-        $this->displayBlock('content', $context, $blocks);
         // line 51
+        $this->displayBlock('content', $context, $blocks);
+        // line 55
         echo "\t</main>
 
 \t<footer id=\"footer\">
 \t\t<span>";
-        // line 54
-        echo twig_escape_filter($this->env, $this->getAttribute((isset($context["contactInfo"]) ? $context["contactInfo"] : null), "address"), "html", null, true);
+        // line 58
+        echo twig_escape_filter($this->env, $this->getAttribute((isset($context["contactInfo"]) ? $context["contactInfo"] : null), "address", array()), "html", null, true);
         echo "</span> <span>";
-        echo twig_escape_filter($this->env, $this->getAttribute((isset($context["contactInfo"]) ? $context["contactInfo"] : null), "phone"), "html", null, true);
+        echo twig_escape_filter($this->env, $this->getAttribute((isset($context["contactInfo"]) ? $context["contactInfo"] : null), "phone", array()), "html", null, true);
         echo "</span> <span><a href=\"mailto:info@denizen.tv\">info@denizen.tv</a></span>
 \t</footer>
 
@@ -113,10 +120,10 @@ class __TwigTemplate_ed9828a305972340c53d0d40de6bc3549ef5af4912c3259926e58666934
 ";
     }
 
-    // line 47
+    // line 51
     public function block_content($context, array $blocks = array())
     {
-        // line 48
+        // line 52
         echo "\t\t\t<p>If you see me, you haven’t set your <code>";
         echo "{% block content %}…{% endblock %}";
         echo "</code> yet.</p>
@@ -136,6 +143,6 @@ class __TwigTemplate_ed9828a305972340c53d0d40de6bc3549ef5af4912c3259926e58666934
 
     public function getDebugInfo()
     {
-        return array (  120 => 48,  117 => 47,  105 => 54,  100 => 51,  98 => 47,  87 => 41,  81 => 40,  75 => 39,  69 => 38,  63 => 37,  51 => 30,  36 => 18,  28 => 17,  20 => 11,);
+        return array (  127 => 52,  124 => 51,  112 => 58,  107 => 55,  105 => 51,  94 => 45,  88 => 44,  82 => 43,  76 => 42,  70 => 41,  58 => 34,  42 => 21,  33 => 19,  28 => 17,  20 => 11,);
     }
 }

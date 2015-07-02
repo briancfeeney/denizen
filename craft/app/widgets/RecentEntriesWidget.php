@@ -2,24 +2,30 @@
 namespace Craft;
 
 /**
- * Craft by Pixel & Tonic
+ * Class RecentEntriesWidget
  *
- * @package   Craft
- * @author    Pixel & Tonic, Inc.
+ * @author    Pixel & Tonic, Inc. <support@pixelandtonic.com>
  * @copyright Copyright (c) 2014, Pixel & Tonic, Inc.
  * @license   http://buildwithcraft.com/license Craft License Agreement
- * @link      http://buildwithcraft.com
- */
-
-/**
- *
+ * @see       http://buildwithcraft.com
+ * @package   craft.app.widgets
+ * @since     1.0
  */
 class RecentEntriesWidget extends BaseWidget
 {
-	public $multipleInstances = true;
+	// Properties
+	// =========================================================================
 
 	/**
-	 * Returns the type of widget this is.
+	 * @var bool
+	 */
+	public $multipleInstances = true;
+
+	// Public Methods
+	// =========================================================================
+
+	/**
+	 * @inheritDoc IComponentType::getName()
 	 *
 	 * @return string
 	 */
@@ -29,21 +35,7 @@ class RecentEntriesWidget extends BaseWidget
 	}
 
 	/**
-	 * Defines the settings.
-	 *
-	 * @access protected
-	 * @return array
-	 */
-	protected function defineSettings()
-	{
-		return array(
-			'section' => array(AttributeType::Mixed, 'default' => '*'),
-			'limit'   => array(AttributeType::Number, 'default' => 10),
-		);
-	}
-
-	/**
-	 * Returns the widget's body HTML.
+	 * @inheritDoc ISavableComponentType::getSettingsHtml()
 	 *
 	 * @return string
 	 */
@@ -55,7 +47,7 @@ class RecentEntriesWidget extends BaseWidget
 	}
 
 	/**
-	 * Gets the widget's title.
+	 * @inheritDoc IWidget::getTitle()
 	 *
 	 * @return string
 	 */
@@ -71,16 +63,36 @@ class RecentEntriesWidget extends BaseWidget
 
 				if ($section)
 				{
-					return Craft::t('Recently in {section}', array('section' => $section->name));
+					$title = Craft::t('Recent {section} Entries', array(
+						'section' => Craft::t($section->name)
+					));
 				}
 			}
 		}
 
-		return Craft::t('Recent Entries');
+		if (!isset($title))
+		{
+			$title = Craft::t('Recent Entries');
+		}
+
+		// See if they are pulling entries from a different locale
+		$targetLocale = $this->_getTargetLocale();
+
+		if ($targetLocale && $targetLocale != craft()->language)
+		{
+			$locale = craft()->i18n->getLocaleById($targetLocale);
+
+			$title = Craft::t('{title} ({locale})', array(
+				'title'  => $title,
+				'locale' => $locale->getName()
+			));
+		}
+
+		return $title;
 	}
 
 	/**
-	 * Returns the widget's body HTML.
+	 * @inheritDoc IWidget::getBodyHtml()
 	 *
 	 * @return string|false
 	 */
@@ -111,27 +123,39 @@ class RecentEntriesWidget extends BaseWidget
 		));
 	}
 
+	// Protected Methods
+	// =========================================================================
+
+	/**
+	 * @inheritDoc BaseSavableComponentType::defineSettings()
+	 *
+	 * @return array
+	 */
+	protected function defineSettings()
+	{
+		return array(
+			'section' => array(AttributeType::Mixed, 'default' => '*'),
+			'locale'  => array(AttributeType::Locale, 'default' => craft()->language),
+			'limit'   => array(AttributeType::Number, 'default' => 10),
+		);
+	}
+
+	// Private Methods
+	// =========================================================================
+
 	/**
 	 * Returns the recent entries, based on the widget settings and user permissions.
 	 *
-	 * @access private
 	 * @return array
 	 */
 	private function _getEntries()
 	{
-		// Make sure that the user is actually allowed to edit entries in the current locale.
-		// Otherwise grab entries in their first editable locale.
-		$editableLocaleIds = craft()->i18n->getEditableLocaleIds();
-		$targetLocale = craft()->language;
+		$targetLocale = $this->_getTargetLocale();
 
-		if (!$editableLocaleIds)
+		if (!$targetLocale)
 		{
+			// Hopeless
 			return array();
-		}
-
-		if (!in_array($targetLocale, $editableLocaleIds))
-		{
-			$targetLocale = $editableLocaleIds[0];
 		}
 
 		// Normalize the target section ID value.
@@ -155,7 +179,7 @@ class RecentEntriesWidget extends BaseWidget
 		$criteria->sectionId = $targetSectionId;
 		$criteria->editable = true;
 		$criteria->limit = $this->getSettings()->limit;
-		$criteria->order = 'dateCreated desc';
+		$criteria->order = 'elements.dateCreated desc';
 
 		return $criteria->find();
 	}
@@ -163,7 +187,6 @@ class RecentEntriesWidget extends BaseWidget
 	/**
 	 * Returns the Channel and Structure section IDs that the user is allowed to edit.
 	 *
-	 * @access private
 	 * @return array
 	 */
 	private function _getEditableSectionIds()
@@ -179,5 +202,37 @@ class RecentEntriesWidget extends BaseWidget
 		}
 
 		return $sectionIds;
+	}
+
+	/**
+	 * Returns the target locale for the widget.
+	 *
+	 * @return string|false
+	 */
+	private function _getTargetLocale()
+	{
+		// Make sure that the user is actually allowed to edit entries in the current locale. Otherwise grab entries in
+		// their first editable locale.
+
+		// Figure out which locales the user is actually allowed to edit
+		$editableLocaleIds = craft()->i18n->getEditableLocaleIds();
+
+		// If they aren't allowed to edit *any* locales, return false
+		if (!$editableLocaleIds)
+		{
+			return false;
+		}
+
+		// Figure out which locale was selected in the settings
+		$targetLocale = $this->getSettings()->locale;
+
+		// Only use that locale if it still exists and they're allowed to edit it.
+		// Otherwise go with the first locale that they are allowed to edit.
+		if (!in_array($targetLocale, $editableLocaleIds))
+		{
+			$targetLocale = $editableLocaleIds[0];
+		}
+
+		return $targetLocale;
 	}
 }

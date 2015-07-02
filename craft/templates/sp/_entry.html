@@ -1,0 +1,62 @@
+{#
+ # SP entry template
+ # -------------------
+ #}
+
+{% extends "_layout" %}
+
+{% block content %}
+
+<section id="ourWork" class="singleClient sp">
+	
+	<div class="container">
+
+		<div class="row">
+			{% if entry.client | length %}
+				{% for company in entry.client %}
+					{% for image in company.logo.limit(1) %}
+						<div class="col-sm-2 col-sm-offset-5 col-xs-6 col-xs-offset-3">
+							<img src="{{ image.getUrl() }}" class="logo">
+						</div>
+					{% endfor %}
+				{% endfor %}
+			{% else %}
+				<h4 class="SP-title">{{ entry.spTitle }}</h4>
+			{% endif %}
+		</div>
+		
+		<div class="container">
+			<div class="row">
+				{% for video in entry.videoGrid %}
+					<div class="col-md-4 col-sm-6 col-xs-6">
+						<div class="videoThumbnail">
+							<a href="{{ video.url }}">
+								<div class="videoInfo">
+									{% for client in video.client %}
+										<h4>{{ client.title }}</h4>
+									{% endfor %}
+									<h6>{{ video.title }}</h6>
+								</div>
+								{% for image in video.videoThumbnail.limit(1) %}
+								<img src="{{ image.getUrl() }}">
+								{% endfor %}
+							</a>
+						</div>
+					</div>
+				{% endfor %}
+			</div>
+		</div>
+		
+			<div class="container sp-body">
+				<div class="row">
+					<div class="col-md-8 col-md-offset-2">
+						{{ entry.body }}
+					</div>
+				</div>
+			</div>
+
+	</div>
+
+</section>
+
+{% endblock %}

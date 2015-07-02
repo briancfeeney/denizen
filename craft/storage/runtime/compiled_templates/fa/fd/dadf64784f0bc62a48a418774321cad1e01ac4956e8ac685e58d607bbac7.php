@@ -25,7 +25,7 @@ class __TwigTemplate_fafddadf64784f0bc62a48a418774321cad1e01ac4956e8ac685e58d607
         // line 3
         $context["elementTypeClass"] = (isset($context["elementType"]) ? $context["elementType"] : null);
         // line 4
-        $context["elementType"] = $this->getAttribute($this->getAttribute((isset($context["craft"]) ? $context["craft"] : null), "elements"), "getElementType", array(0 => (isset($context["elementTypeClass"]) ? $context["elementTypeClass"] : null)), "method");
+        $context["elementType"] = $this->getAttribute($this->getAttribute((isset($context["craft"]) ? $context["craft"] : null), "elements", array()), "getElementType", array(0 => (isset($context["elementTypeClass"]) ? $context["elementTypeClass"] : null)), "method");
         // line 5
         $context["context"] = "index";
         // line 7
@@ -72,7 +72,7 @@ class __TwigTemplate_fafddadf64784f0bc62a48a418774321cad1e01ac4956e8ac685e58d607
     public function block_initJs($context, array $blocks = array())
     {
         // line 31
-        echo "\tCraft.createElementIndex('";
+        echo "\tCraft.elementIndex = Craft.createElementIndex('";
         echo twig_escape_filter($this->env, (isset($context["elementTypeClass"]) ? $context["elementTypeClass"] : null), "html", null, true);
         echo "', \$('#main'), {
 \t\tcontext:        '";
@@ -81,11 +81,11 @@ class __TwigTemplate_fafddadf64784f0bc62a48a418774321cad1e01ac4956e8ac685e58d607
         echo "',
 \t\tshowStatusMenu: ";
         // line 33
-        echo ((array_key_exists("showStatusMenu", $context)) ? (twig_jsonencode_filter((isset($context["showStatusMenu"]) ? $context["showStatusMenu"] : null))) : ("'auto'"));
+        echo ((array_key_exists("showStatusMenu", $context)) ? ($this->env->getExtension('craft')->jsonEncodeFilter((isset($context["showStatusMenu"]) ? $context["showStatusMenu"] : null))) : ("'auto'"));
         echo ",
 \t\tshowLocaleMenu: ";
         // line 34
-        echo ((array_key_exists("showLocaleMenu", $context)) ? (twig_jsonencode_filter((isset($context["showLocaleMenu"]) ? $context["showLocaleMenu"] : null))) : ("'auto'"));
+        echo ((array_key_exists("showLocaleMenu", $context)) ? ($this->env->getExtension('craft')->jsonEncodeFilter((isset($context["showLocaleMenu"]) ? $context["showLocaleMenu"] : null))) : ("'auto'"));
         echo ",
 \t\tstorageKey:     'elementindex.";
         // line 35
@@ -108,6 +108,6 @@ class __TwigTemplate_fafddadf64784f0bc62a48a418774321cad1e01ac4956e8ac685e58d607
 
     public function getDebugInfo()
     {
-        return array (  88 => 34,  84 => 33,  80 => 32,  75 => 31,  66 => 18,  64 => 17,  61 => 16,  58 => 15,  55 => 14,  50 => 40,  44 => 25,  41 => 24,  34 => 8,  32 => 7,  30 => 5,  28 => 4,  26 => 3,  107 => 34,  104 => 33,  100 => 31,  92 => 35,  87 => 26,  76 => 24,  72 => 30,  65 => 20,  63 => 19,  60 => 18,  57 => 17,  54 => 16,  48 => 39,  46 => 26,  39 => 23,  37 => 11,  33 => 9,  31 => 7,  29 => 6,  27 => 3,  25 => 2,);
+        return array (  92 => 35,  88 => 34,  84 => 33,  80 => 32,  75 => 31,  72 => 30,  66 => 18,  64 => 17,  61 => 16,  58 => 15,  55 => 14,  50 => 40,  46 => 26,  44 => 25,  41 => 24,  39 => 23,  37 => 11,  34 => 8,  32 => 7,  30 => 5,  28 => 4,  26 => 3,);
     }
 }

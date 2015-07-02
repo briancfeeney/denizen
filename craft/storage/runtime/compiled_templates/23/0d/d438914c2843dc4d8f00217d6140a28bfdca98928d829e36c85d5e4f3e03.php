@@ -37,16 +37,16 @@ class __TwigTemplate_230dd438914c2843dc4d8f00217d6140a28bfdca98928d829e36c85d5e4
 \t\t\t";
         // line 15
         $context['_parent'] = (array) $context;
-        $context['_seq'] = twig_ensure_traversable($this->getAttribute((isset($context["home"]) ? $context["home"] : null), "mainBackgroundVideo"));
+        $context['_seq'] = twig_ensure_traversable($this->getAttribute((isset($context["home"]) ? $context["home"] : null), "mainBackgroundVideo", array()));
         foreach ($context['_seq'] as $context["_key"] => $context["block"]) {
             // line 16
             echo "\t\t\t\t";
             $context['_parent'] = (array) $context;
-            $context['_seq'] = twig_ensure_traversable($this->getAttribute((isset($context["block"]) ? $context["block"] : null), "backgroundMp4"));
+            $context['_seq'] = twig_ensure_traversable($this->getAttribute($context["block"], "backgroundMp4", array()));
             foreach ($context['_seq'] as $context["_key"] => $context["mp4"]) {
                 // line 17
                 echo "\t\t\t\t\t<source src=\"";
-                echo twig_escape_filter($this->env, $this->getAttribute((isset($context["mp4"]) ? $context["mp4"] : null), "getUrl", array(), "method"), "html", null, true);
+                echo twig_escape_filter($this->env, $this->getAttribute($context["mp4"], "getUrl", array(), "method"), "html", null, true);
                 echo "\" type=\"video/mp4\">
 \t\t\t\t";
             }
@@ -56,11 +56,11 @@ class __TwigTemplate_230dd438914c2843dc4d8f00217d6140a28bfdca98928d829e36c85d5e4
             // line 19
             echo "\t\t\t\t";
             $context['_parent'] = (array) $context;
-            $context['_seq'] = twig_ensure_traversable($this->getAttribute((isset($context["block"]) ? $context["block"] : null), "backgroundWebm"));
+            $context['_seq'] = twig_ensure_traversable($this->getAttribute($context["block"], "backgroundWebm", array()));
             foreach ($context['_seq'] as $context["_key"] => $context["webm"]) {
                 // line 20
                 echo "\t\t\t\t\t<source src=\"";
-                echo twig_escape_filter($this->env, $this->getAttribute((isset($context["webm"]) ? $context["webm"] : null), "getUrl", array(), "method"), "html", null, true);
+                echo twig_escape_filter($this->env, $this->getAttribute($context["webm"], "getUrl", array(), "method"), "html", null, true);
                 echo "\" type=\"video/webm\">
 \t\t\t\t";
             }
@@ -70,11 +70,11 @@ class __TwigTemplate_230dd438914c2843dc4d8f00217d6140a28bfdca98928d829e36c85d5e4
             // line 22
             echo "\t\t\t\t";
             $context['_parent'] = (array) $context;
-            $context['_seq'] = twig_ensure_traversable($this->getAttribute((isset($context["block"]) ? $context["block"] : null), "backgroundOgg"));
+            $context['_seq'] = twig_ensure_traversable($this->getAttribute($context["block"], "backgroundOgg", array()));
             foreach ($context['_seq'] as $context["_key"] => $context["ogg"]) {
                 // line 23
                 echo "\t\t\t\t\t<source src=\"";
-                echo twig_escape_filter($this->env, $this->getAttribute((isset($context["ogg"]) ? $context["ogg"] : null), "getUrl", array(), "method"), "html", null, true);
+                echo twig_escape_filter($this->env, $this->getAttribute($context["ogg"], "getUrl", array(), "method"), "html", null, true);
                 echo "\" type=\"video/ogg\">
 \t\t\t\t";
             }
@@ -92,16 +92,16 @@ class __TwigTemplate_230dd438914c2843dc4d8f00217d6140a28bfdca98928d829e36c85d5e4
 \t\t";
         // line 27
         $context['_parent'] = (array) $context;
-        $context['_seq'] = twig_ensure_traversable($this->getAttribute((isset($context["home"]) ? $context["home"] : null), "mainBackgroundVideo"));
+        $context['_seq'] = twig_ensure_traversable($this->getAttribute((isset($context["home"]) ? $context["home"] : null), "mainBackgroundVideo", array()));
         foreach ($context['_seq'] as $context["_key"] => $context["block"]) {
             // line 28
             echo "\t\t\t";
             $context['_parent'] = (array) $context;
-            $context['_seq'] = twig_ensure_traversable($this->getAttribute((isset($context["block"]) ? $context["block"] : null), "backgroundImage"));
+            $context['_seq'] = twig_ensure_traversable($this->getAttribute($context["block"], "backgroundImage", array()));
             foreach ($context['_seq'] as $context["_key"] => $context["image"]) {
                 // line 29
                 echo "\t\t<img src=\"";
-                echo twig_escape_filter($this->env, $this->getAttribute((isset($context["image"]) ? $context["image"] : null), "getUrl", array(), "method"), "html", null, true);
+                echo twig_escape_filter($this->env, $this->getAttribute($context["image"], "getUrl", array(), "method"), "html", null, true);
                 echo "\" class=\"visible-xs\">
 \t\t\t";
             }
@@ -127,24 +127,24 @@ class __TwigTemplate_230dd438914c2843dc4d8f00217d6140a28bfdca98928d829e36c85d5e4
 \t\t\t\t";
         // line 41
         $context['_parent'] = (array) $context;
-        $context['_seq'] = twig_ensure_traversable($this->getAttribute((isset($context["home"]) ? $context["home"] : null), "videoGrid"));
+        $context['_seq'] = twig_ensure_traversable($this->getAttribute((isset($context["home"]) ? $context["home"] : null), "videoGrid", array()));
         foreach ($context['_seq'] as $context["_key"] => $context["video"]) {
             // line 42
             echo "\t\t\t\t\t<div class=\"col-md-4 col-sm-6 col-xs-6\">
 \t\t\t\t\t\t<div class=\"videoThumbnail\">
 \t\t\t\t\t\t\t<a href=\"";
             // line 44
-            echo twig_escape_filter($this->env, $this->getAttribute((isset($context["video"]) ? $context["video"] : null), "url"), "html", null, true);
+            echo twig_escape_filter($this->env, $this->getAttribute($context["video"], "url", array()), "html", null, true);
             echo "\">
 \t\t\t\t\t\t\t\t<div class=\"videoInfo\">
 \t\t\t\t\t\t\t\t\t";
             // line 46
             $context['_parent'] = (array) $context;
-            $context['_seq'] = twig_ensure_traversable($this->getAttribute((isset($context["video"]) ? $context["video"] : null), "client"));
+            $context['_seq'] = twig_ensure_traversable($this->getAttribute($context["video"], "client", array()));
             foreach ($context['_seq'] as $context["_key"] => $context["client"]) {
                 // line 47
                 echo "\t\t\t\t\t\t\t\t\t\t<h4>";
-                echo twig_escape_filter($this->env, $this->getAttribute((isset($context["client"]) ? $context["client"] : null), "title"), "html", null, true);
+                echo twig_escape_filter($this->env, $this->getAttribute($context["client"], "title", array()), "html", null, true);
                 echo "</h4>
 \t\t\t\t\t\t\t\t\t";
             }
@@ -153,17 +153,17 @@ class __TwigTemplate_230dd438914c2843dc4d8f00217d6140a28bfdca98928d829e36c85d5e4
             $context = array_intersect_key($context, $_parent) + $_parent;
             // line 49
             echo "\t\t\t\t\t\t\t\t\t<h6>";
-            echo twig_escape_filter($this->env, $this->getAttribute((isset($context["video"]) ? $context["video"] : null), "title"), "html", null, true);
+            echo twig_escape_filter($this->env, $this->getAttribute($context["video"], "title", array()), "html", null, true);
             echo "</h6>
 \t\t\t\t\t\t\t\t</div>
 \t\t\t\t\t\t\t\t";
             // line 51
             $context['_parent'] = (array) $context;
-            $context['_seq'] = twig_ensure_traversable($this->getAttribute($this->getAttribute((isset($context["video"]) ? $context["video"] : null), "videoThumbnail"), "limit", array(0 => 1), "method"));
+            $context['_seq'] = twig_ensure_traversable($this->getAttribute($this->getAttribute($context["video"], "videoThumbnail", array()), "limit", array(0 => 1), "method"));
             foreach ($context['_seq'] as $context["_key"] => $context["image"]) {
                 // line 52
                 echo "\t\t\t\t\t\t\t\t<img src=\"";
-                echo twig_escape_filter($this->env, $this->getAttribute((isset($context["image"]) ? $context["image"] : null), "getUrl", array(), "method"), "html", null, true);
+                echo twig_escape_filter($this->env, $this->getAttribute($context["image"], "getUrl", array(), "method"), "html", null, true);
                 echo "\">
 \t\t\t\t\t\t\t\t";
             }
@@ -194,23 +194,23 @@ class __TwigTemplate_230dd438914c2843dc4d8f00217d6140a28bfdca98928d829e36c85d5e4
 \t\t\t\t";
         // line 69
         $context['_parent'] = (array) $context;
-        $context['_seq'] = twig_ensure_traversable($this->getAttribute($this->getAttribute($this->getAttribute((isset($context["craft"]) ? $context["craft"] : null), "entries"), "section", array(0 => "clients"), "method"), "find", array(), "method"));
+        $context['_seq'] = twig_ensure_traversable($this->getAttribute($this->getAttribute($this->getAttribute((isset($context["craft"]) ? $context["craft"] : null), "entries", array()), "section", array(0 => "clients"), "method"), "find", array(), "method"));
         foreach ($context['_seq'] as $context["_key"] => $context["entry"]) {
             // line 70
             echo "\t\t\t\t\t";
             $context['_parent'] = (array) $context;
-            $context['_seq'] = twig_ensure_traversable($this->getAttribute($this->getAttribute((isset($context["entry"]) ? $context["entry"] : null), "logo"), "limit", array(0 => 1), "method"));
+            $context['_seq'] = twig_ensure_traversable($this->getAttribute($this->getAttribute($context["entry"], "logo", array()), "limit", array(0 => 1), "method"));
             foreach ($context['_seq'] as $context["_key"] => $context["image"]) {
                 // line 71
                 echo "\t\t\t\t\t<div class=\"col-md-2 col-sm-3 col-xs-6\">
 \t\t\t\t\t\t<div class=\"clientLogo\">
 \t\t\t\t\t\t\t<a href=\"";
                 // line 73
-                echo twig_escape_filter($this->env, $this->getAttribute((isset($context["entry"]) ? $context["entry"] : null), "url"), "html", null, true);
+                echo twig_escape_filter($this->env, $this->getAttribute($context["entry"], "url", array()), "html", null, true);
                 echo "\">
 \t\t\t\t\t\t\t\t<img src=\"";
                 // line 74
-                echo twig_escape_filter($this->env, $this->getAttribute((isset($context["image"]) ? $context["image"] : null), "getUrl", array(), "method"), "html", null, true);
+                echo twig_escape_filter($this->env, $this->getAttribute($context["image"], "getUrl", array(), "method"), "html", null, true);
                 echo "\">
 \t\t\t\t\t\t\t</a>
 \t\t\t\t\t\t</div>
@@ -240,7 +240,7 @@ class __TwigTemplate_230dd438914c2843dc4d8f00217d6140a28bfdca98928d829e36c85d5e4
 \t\t\t\t<div class=\"col-md-8 col-md-offset-2\">
 \t\t\t\t\t";
         // line 91
-        echo twig_escape_filter($this->env, $this->getAttribute((isset($context["about"]) ? $context["about"] : null), "aboutText"), "html", null, true);
+        echo twig_escape_filter($this->env, $this->getAttribute((isset($context["about"]) ? $context["about"] : null), "aboutText", array()), "html", null, true);
         echo "
 \t\t\t\t</div>
 \t\t\t</div>

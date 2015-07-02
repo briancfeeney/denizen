@@ -14,13 +14,17 @@
 <head>
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width" />
+	<meta name="keywords" content="{{ about.keywords }}">
+	
 	<title>{% if title is defined %}{{ title }} - {% endif %}{{ siteName }}</title>
+	
 	<link rel="home" href="{{ siteUrl }}" />
 
 	<link rel="stylesheet" type="text/css" href="/public/css/denizen.css" />
 	
 	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
 	<script src="/public/js/modernizr.custom.99139.js"></script>	
+	<script src="/public/js/videocontrols.js"></script>	
 	
 	<script type="text/javascript" src="//use.typekit.net/zzt4jrb.js"></script>
 	<script type="text/javascript">try{Typekit.load();}catch(e){}</script>

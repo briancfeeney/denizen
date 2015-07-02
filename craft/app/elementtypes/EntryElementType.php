@@ -2,22 +2,22 @@
 namespace Craft;
 
 /**
- * Craft by Pixel & Tonic
+ * The EntryElementType class is responsible for implementing and defining entries as a native element type in Craft.
  *
- * @package   Craft
- * @author    Pixel & Tonic, Inc.
+ * @author    Pixel & Tonic, Inc. <support@pixelandtonic.com>
  * @copyright Copyright (c) 2014, Pixel & Tonic, Inc.
  * @license   http://buildwithcraft.com/license Craft License Agreement
- * @link      http://buildwithcraft.com
- */
-
-/**
- * Entry element type
+ * @see       http://buildwithcraft.com
+ * @package   craft.app.elementtypes
+ * @since     1.0
  */
 class EntryElementType extends BaseElementType
 {
+	// Public Methods
+	// =========================================================================
+
 	/**
-	 * Returns the element type name.
+	 * @inheritDoc IComponentType::getName()
 	 *
 	 * @return string
 	 */
@@ -27,7 +27,7 @@ class EntryElementType extends BaseElementType
 	}
 
 	/**
-	 * Returns whether this element type has content.
+	 * @inheritDoc IElementType::hasContent()
 	 *
 	 * @return bool
 	 */
@@ -37,7 +37,7 @@ class EntryElementType extends BaseElementType
 	}
 
 	/**
-	 * Returns whether this element type has titles.
+	 * @inheritDoc IElementType::hasTitles()
 	 *
 	 * @return bool
 	 */
@@ -47,7 +47,7 @@ class EntryElementType extends BaseElementType
 	}
 
 	/**
-	 * Returns whether this element type stores data on a per-locale basis.
+	 * @inheritDoc IElementType::isLocalized()
 	 *
 	 * @return bool
 	 */
@@ -57,7 +57,7 @@ class EntryElementType extends BaseElementType
 	}
 
 	/**
-	 * Returns whether this element type can have statuses.
+	 * @inheritDoc IElementType::hasStatuses()
 	 *
 	 * @return bool
 	 */
@@ -67,7 +67,7 @@ class EntryElementType extends BaseElementType
 	}
 
 	/**
-	 * Returns all of the possible statuses that elements of this type may have.
+	 * @inheritDoc IElementType::getStatuses()
 	 *
 	 * @return array|null
 	 */
@@ -82,10 +82,11 @@ class EntryElementType extends BaseElementType
 	}
 
 	/**
-	 * Returns this element type's sources.
+	 * @inheritDoc IElementType::getSources()
 	 *
-	 * @param string|null $context
-	 * @return array|false
+	 * @param null $context
+	 *
+	 * @return array|bool|false
 	 */
 	public function getSources($context = null)
 	{
@@ -157,76 +158,249 @@ class EntryElementType extends BaseElementType
 					if ($type == SectionType::Structure)
 					{
 						$sources[$key]['structureId'] = $section->structureId;
-						$sources[$key]['newChildUrl'] = 'entries/'.$section->handle.'/new';
+						$sources[$key]['structureEditable'] = craft()->userSession->checkPermission('publishEntries:'.$section->id);
 					}
 				}
 			}
 		}
 
+		// Allow plugins to modify the sources
+		craft()->plugins->call('modifyEntrySources', array(&$sources, $context));
+
 		return $sources;
 	}
 
 	/**
-	 * Returns the attributes that can be shown/sorted by in table views.
+	 * @inheritDoc IElementType::getAvailableActions()
 	 *
 	 * @param string|null $source
-	 * @return array
+	 *
+	 * @return array|null
 	 */
-	public function defineTableAttributes($source = null)
+	public function getAvailableActions($source = null)
 	{
-		if ($source && preg_match('/^section:(\d+)$/', $source, $match))
+		// Get the section(s) we need to check permissions on
+		switch ($source)
 		{
-			$section = craft()->sections->getSectionById($match[1]);
+			case '*':
+			{
+				$sections = craft()->sections->getEditableSections();
+				break;
+			}
+			case 'singles':
+			{
+				$sections = craft()->sections->getSectionsByType(SectionType::Single);
+				break;
+			}
+			default:
+			{
+				if (preg_match('/^section:(\d+)$/', $source, $matches))
+				{
+					$section = craft()->sections->getSectionById($matches[1]);
+
+					if ($section)
+					{
+						$sections = array($section);
+					}
+				}
+			}
 		}
 
-		$attributes = array(
-			'title' => Craft::t('Title'),
-			'uri'   => Craft::t('URI'),
-		);
+		// Now figure out what we can do with these
+		$actions = array();
 
-		if ($source != 'singles')
+		if (!empty($sections))
 		{
-			if (empty($section))
+			$userSessionService = craft()->userSession;
+			$canSetStatus = true;
+			$canEdit = false;
+
+			foreach ($sections as $section)
 			{
-				$attributes['sectionId'] = Craft::t('Section');
+				$canPublishEntries = $userSessionService->checkPermission('publishEntries:'.$section->id);
+
+				// Only show the Set Status action if we're sure they can make changes in all the sections
+				if (!(
+					$canPublishEntries &&
+					($section->type == SectionType::Single || $userSessionService->checkPermission('publishPeerEntries:'.$section->id))
+				))
+				{
+					$canSetStatus = false;
+				}
+
+				// Show the Edit action if they can publish changes to *any* of the sections
+				// (the trigger will disable itself for entries that aren't editable)
+				if ($canPublishEntries)
+				{
+					$canEdit = true;
+				}
 			}
 
-			$attributes['postDate']   = Craft::t('Post Date');
-			$attributes['expiryDate'] = Craft::t('Expiry Date');
+			// Set Status
+			if ($canSetStatus)
+			{
+				$setStatusAction = craft()->elements->getAction('SetStatus');
+				$setStatusAction->onSetStatus = function(Event $event)
+				{
+					if ($event->params['status'] == BaseElementModel::ENABLED)
+					{
+						// Set a Post Date as well
+						craft()->db->createCommand()->update(
+							'entries',
+							array('postDate' => DateTimeHelper::currentTimeForDb()),
+							array('and', array('in', 'id', $event->params['elementIds']), 'postDate is null')
+						);
+					}
+				};
+				$actions[] = $setStatusAction;
+			}
+
+			// Edit
+			if ($canEdit)
+			{
+				$editAction = craft()->elements->getAction('Edit');
+				$editAction->setParams(array(
+					'label' => Craft::t('Edit entry'),
+				));
+				$actions[] = $editAction;
+			}
+
+			if ($source == '*' || $source == 'singles' || $sections[0]->hasUrls)
+			{
+				// View
+				$viewAction = craft()->elements->getAction('View');
+				$viewAction->setParams(array(
+					'label' => Craft::t('View entry'),
+				));
+				$actions[] = $viewAction;
+			}
+
+			// Channel/Structure-only actions
+			if ($source != '*' && $source != 'singles')
+			{
+				$section = $sections[0];
+
+				// New child?
+				if (
+					$section->type == SectionType::Structure &&
+					$userSessionService->checkPermission('createEntries:'.$section->id)
+				)
+				{
+					$structure = craft()->structures->getStructureById($section->structureId);
+
+					if ($structure)
+					{
+						$newChildAction = craft()->elements->getAction('NewChild');
+						$newChildAction->setParams(array(
+							'label'       => Craft::t('Create a new child entry'),
+							'maxLevels'   => $structure->maxLevels,
+							'newChildUrl' => 'entries/'.$section->handle.'/new',
+						));
+						$actions[] = $newChildAction;
+					}
+				}
+
+				// Delete?
+				if (
+					$userSessionService->checkPermission('deleteEntries:'.$section->id) &&
+					$userSessionService->checkPermission('deletePeerEntries:'.$section->id)
+				)
+				{
+					$deleteAction = craft()->elements->getAction('Delete');
+					$deleteAction->setParams(array(
+						'confirmationMessage' => Craft::t('Are you sure you want to delete the selected entries?'),
+						'successMessage'      => Craft::t('Entries deleted.'),
+					));
+					$actions[] = $deleteAction;
+				}
+			}
 		}
+
+		// Allow plugins to add additional actions
+		$allPluginActions = craft()->plugins->call('addEntryActions', array($source), true);
+
+		foreach ($allPluginActions as $pluginActions)
+		{
+			$actions = array_merge($actions, $pluginActions);
+		}
+
+		return $actions;
+	}
+
+	/**
+	 * @inheritDoc IElementType::defineSortableAttributes()
+	 *
+	 * @retrun array
+	 */
+	public function defineSortableAttributes()
+	{
+		$attributes = array(
+			'title'      => Craft::t('Title'),
+			'uri'        => Craft::t('URI'),
+			'postDate'   => Craft::t('Post Date'),
+			'expiryDate' => Craft::t('Expiry Date'),
+		);
+
+		// Allow plugins to modify the attributes
+		craft()->plugins->call('modifyEntrySortableAttributes', array(&$attributes));
 
 		return $attributes;
 	}
 
 	/**
-	 * Returns the table view HTML for a given attribute.
+	 * @inheritDoc IElementType::defineTableAttributes()
+	 *
+	 * @param string|null $source
+	 *
+	 * @return array
+	 */
+	public function defineTableAttributes($source = null)
+	{
+		$attributes = array(
+			'title' => Craft::t('Title'),
+			'uri'   => Craft::t('URI'),
+		);
+
+		if ($source == '*')
+		{
+			$attributes['section'] = Craft::t('Section');
+		}
+
+		if ($source != 'singles')
+		{
+			$attributes['postDate']   = Craft::t('Post Date');
+			$attributes['expiryDate'] = Craft::t('Expiry Date');
+		}
+
+		// Allow plugins to modify the attributes
+		craft()->plugins->call('modifyEntryTableAttributes', array(&$attributes, $source));
+
+		return $attributes;
+	}
+
+	/**
+	 * @inheritDoc IElementType::getTableAttributeHtml()
 	 *
 	 * @param BaseElementModel $element
-	 * @param string $attribute
-	 * @return string
+	 * @param string           $attribute
+	 *
+	 * @return mixed|null|string
 	 */
 	public function getTableAttributeHtml(BaseElementModel $element, $attribute)
 	{
+		// First give plugins a chance to set this
+		$pluginAttributeHtml = craft()->plugins->callFirst('getEntryTableAttributeHtml', array($element, $attribute), true);
+
+		if ($pluginAttributeHtml !== null)
+		{
+			return $pluginAttributeHtml;
+		}
+
 		switch ($attribute)
 		{
-			case 'sectionId':
+			case 'section':
 			{
 				return Craft::t($element->getSection()->name);
-			}
-
-			case 'postDate':
-			case 'expiryDate':
-			{
-				$date = $element->$attribute;
-
-				if ($date)
-				{
-					return $date->localeDate();
-				}
-				else
-				{
-					return '';
-				}
 			}
 
 			default:
@@ -237,7 +411,7 @@ class EntryElementType extends BaseElementType
 	}
 
 	/**
-	 * Defines any custom element criteria attributes for this element type.
+	 * @inheritDoc IElementType::defineCriteriaAttributes()
 	 *
 	 * @return array
 	 */
@@ -250,6 +424,7 @@ class EntryElementType extends BaseElementType
 			'authorId'        => AttributeType::Number,
 			'before'          => AttributeType::Mixed,
 			'editable'        => AttributeType::Bool,
+			'expiryDate'      => AttributeType::Mixed,
 			'order'           => array(AttributeType::String, 'default' => 'lft, postDate desc'),
 			'postDate'        => AttributeType::Mixed,
 			'section'         => AttributeType::Mixed,
@@ -260,11 +435,12 @@ class EntryElementType extends BaseElementType
 	}
 
 	/**
-	 * Returns the element query condition for a custom status criteria.
+	 * @inheritDoc IElementType::getElementQueryStatusCondition()
 	 *
 	 * @param DbCommand $query
-	 * @param string $status
-	 * @return string|false
+	 * @param string    $status
+	 *
+	 * @return array|false|string|void
 	 */
 	public function getElementQueryStatusCondition(DbCommand $query, $status)
 	{
@@ -304,11 +480,12 @@ class EntryElementType extends BaseElementType
 	}
 
 	/**
-	 * Modifies an element query targeting elements of this type.
+	 * @inheritDoc IElementType::modifyElementsQuery()
 	 *
-	 * @param DbCommand $query
+	 * @param DbCommand            $query
 	 * @param ElementCriteriaModel $criteria
-	 * @return mixed
+	 *
+	 * @return bool|false|null|void
 	 */
 	public function modifyElementsQuery(DbCommand $query, ElementCriteriaModel $criteria)
 	{
@@ -419,6 +596,11 @@ class EntryElementType extends BaseElementType
 			}
 		}
 
+		if ($criteria->expiryDate)
+		{
+			$query->andWhere(DbHelper::parseDateParam('entries.expiryDate', $criteria->expiryDate, $query->params));
+		}
+
 		if ($criteria->editable)
 		{
 			$user = craft()->userSession->getUser();
@@ -497,10 +679,11 @@ class EntryElementType extends BaseElementType
 	}
 
 	/**
-	 * Populates an element model based on a query result.
+	 * @inheritDoc IElementType::populateElementModel()
 	 *
 	 * @param array $row
-	 * @return array
+	 *
+	 * @return BaseElementModel|BaseModel|void
 	 */
 	public function populateElementModel($row)
 	{
@@ -508,9 +691,10 @@ class EntryElementType extends BaseElementType
 	}
 
 	/**
-	 * Returns the HTML for an editor HUD for the given element.
+	 * @inheritDoc IElementType::getEditorHtml()
 	 *
 	 * @param BaseElementModel $element
+	 *
 	 * @return string
 	 */
 	public function getEditorHtml(BaseElementModel $element)
@@ -532,12 +716,22 @@ class EntryElementType extends BaseElementType
 	}
 
 	/**
+	 * @inheritdoc BaseElementType::saveElement()
+	 *
+	 * @return bool
+	 */
+	public function saveElement(BaseElementModel $element, $params)
+	{
+		// Route this through EntriesService::saveEntry() so the proper entry events get fired.
+		return craft()->entries->saveEntry($element);
+	}
+
+	/**
 	 * Routes the request when the URI matches an element.
 	 *
-	 * @param BaseElementModel
-	 * @return mixed Can be false if no special action should be taken,
-	 *               a string if it should route to a template path,
-	 *               or an array that can specify a controller action path, params, etc.
+	 * @param BaseElementModel $element
+	 *
+	 * @return array|bool|mixed
 	 */
 	public function routeRequestForMatchedElement(BaseElementModel $element)
 	{
@@ -565,10 +759,12 @@ class EntryElementType extends BaseElementType
 	}
 
 	/**
-	 * Performs actions after an element has been moved within a structure.
+	 * @inheritDoc IElementType::onAfterMoveElementInStructure()
 	 *
 	 * @param BaseElementModel $element
-	 * @param int $structureId
+	 * @param int              $structureId
+	 *
+	 * @return null|void
 	 */
 	public function onAfterMoveElementInStructure(BaseElementModel $element, $structureId)
 	{

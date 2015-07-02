@@ -65,8 +65,8 @@
 	</div>
 
 	{% if customizableTabs %}
-		<div class="buttons">
-			<div id="newtabbtn" class="btn add icon">{{ "New Tab"|t }}</div>
+		<div class="newtabbtn-container">
+			<div class="btn add icon">{{ "New Tab"|t }}</div>
 			<h3>{{ "…Or use one of your field groups as a starting point:"|t }}</h3>
 		</div>
 	{% endif %}
@@ -100,14 +100,16 @@
 
 {% set js %}
 	var initFLD = function() {
-		new Craft.FieldLayoutDesigner('#fieldlayoutform', {
-			customizableTabs: {{ customizableTabs ? 'true' : 'false' }}
+		new Craft.FieldLayoutDesigner('#{{ "fieldlayoutform"|namespaceInputId }}', {
+			customizableTabs: {{ customizableTabs ? 'true' : 'false' }},
+			fieldInputName: '{{ "fieldLayout[__TAB_NAME__][]"|namespaceInputName|e("js") }}',
+			requiredFieldInputName: '{{ "requiredFields[]"|namespaceInputName|e("js") }}'
 		});
 	};
 
 	{% if tab is defined %}
 
-		var $fldTab = $('#tab-{{ tab }}');
+		var $fldTab = $('#{{ ("tab-"~tab)|namespaceInputId }}');
 
 		if ($fldTab.hasClass('sel'))
 		{

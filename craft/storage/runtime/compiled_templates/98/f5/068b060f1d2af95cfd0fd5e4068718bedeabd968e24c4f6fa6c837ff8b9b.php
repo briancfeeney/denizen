@@ -45,7 +45,7 @@ class __TwigTemplate_98f5068b060f1d2af95cfd0fd5e4068718bedeabd968e24c4f6fa6c837f
         echo "\t<div class=\"grid\">
 \t\t";
         // line 13
-        if (($this->getAttribute((isset($context["currentUser"]) ? $context["currentUser"] : null), "admin") && $this->getAttribute($this->getAttribute((isset($context["craft"]) ? $context["craft"] : null), "deprecator"), "getTotalLogs", array(), "method"))) {
+        if (($this->getAttribute((isset($context["currentUser"]) ? $context["currentUser"] : null), "admin", array()) && $this->getAttribute($this->getAttribute((isset($context["craft"]) ? $context["craft"] : null), "deprecator", array()), "getTotalLogs", array(), "method"))) {
             // line 14
             echo "\t\t\t<div class=\"item\" data-colspan=\"4\">
 \t\t\t\t<div class=\"pane\">
@@ -62,11 +62,11 @@ class __TwigTemplate_98f5068b060f1d2af95cfd0fd5e4068718bedeabd968e24c4f6fa6c837f
 \t\t";
         // line 21
         $context['_parent'] = (array) $context;
-        $context['_seq'] = twig_ensure_traversable($this->getAttribute($this->getAttribute((isset($context["craft"]) ? $context["craft"] : null), "dashboard"), "getUserWidgets"));
+        $context['_seq'] = twig_ensure_traversable($this->getAttribute($this->getAttribute((isset($context["craft"]) ? $context["craft"] : null), "dashboard", array()), "getUserWidgets", array()));
         foreach ($context['_seq'] as $context["_key"] => $context["widget"]) {
             // line 22
             echo "\t\t\t";
-            $context["widgetType"] = $this->getAttribute($this->getAttribute((isset($context["craft"]) ? $context["craft"] : null), "dashboard"), "populateWidgetType", array(0 => (isset($context["widget"]) ? $context["widget"] : null)), "method");
+            $context["widgetType"] = $this->getAttribute($this->getAttribute((isset($context["craft"]) ? $context["craft"] : null), "dashboard", array()), "populateWidgetType", array(0 => $context["widget"]), "method");
             // line 23
             echo "\t\t\t";
             if ((isset($context["widgetType"]) ? $context["widgetType"] : null)) {
@@ -82,16 +82,16 @@ class __TwigTemplate_98f5068b060f1d2af95cfd0fd5e4068718bedeabd968e24c4f6fa6c837f
                     echo "\">
 \t\t\t\t\t\t<div id=\"widget";
                     // line 27
-                    echo twig_escape_filter($this->env, $this->getAttribute((isset($context["widget"]) ? $context["widget"] : null), "id"), "html", null, true);
+                    echo twig_escape_filter($this->env, $this->getAttribute($context["widget"], "id", array()), "html", null, true);
                     echo "\" class=\"pane widget ";
-                    echo twig_escape_filter($this->env, twig_lower_filter($this->env, $this->getAttribute((isset($context["widgetType"]) ? $context["widgetType"] : null), "classHandle")), "html", null, true);
+                    echo twig_escape_filter($this->env, twig_lower_filter($this->env, $this->getAttribute((isset($context["widgetType"]) ? $context["widgetType"] : null), "classHandle", array())), "html", null, true);
                     echo "\" data-id=\"";
-                    echo twig_escape_filter($this->env, $this->getAttribute((isset($context["widget"]) ? $context["widget"] : null), "id"), "html", null, true);
+                    echo twig_escape_filter($this->env, $this->getAttribute($context["widget"], "id", array()), "html", null, true);
                     echo "\">
 \t\t\t\t\t\t\t<div class=\"spinner body-loading\"></div>
 \t\t\t\t\t\t\t<h2>";
                     // line 29
-                    echo twig_escape_filter($this->env, $this->getAttribute((isset($context["widgetType"]) ? $context["widgetType"] : null), "title"), "html", null, true);
+                    echo twig_escape_filter($this->env, $this->getAttribute((isset($context["widgetType"]) ? $context["widgetType"] : null), "title", array()), "html", null, true);
                     echo "</h2>
 \t\t\t\t\t\t\t<div class=\"body\">";
                     // line 30

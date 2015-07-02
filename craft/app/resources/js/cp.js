@@ -1,11 +1,9 @@
 /**
- * Craft by Pixel & Tonic
- *
- * @package   Craft
- * @author    Pixel & Tonic, Inc.
+ * @author    Pixel & Tonic, Inc. <support@pixelandtonic.com>
  * @copyright Copyright (c) 2014, Pixel & Tonic, Inc.
  * @license   http://buildwithcraft.com/license Craft License Agreement
- * @link      http://buildwithcraft.com
+ * @see       http://buildwithcraft.com
+ * @package   craft.app.resources
  */
 
 (function($) {
@@ -16,6 +14,8 @@
  */
 var CP = Garnish.Base.extend(
 {
+	authManager: null,
+
 	$alerts: null,
 	$header: null,
 	$headerActionsList: null,
@@ -50,6 +50,12 @@ var CP = Garnish.Base.extend(
 
 	init: function()
 	{
+		// Is this session going to expire?
+		if (Craft.authTimeout != 0)
+		{
+			this.authManager = new Craft.AuthManager();
+		}
+
 		// Find all the key elements
 		this.$alerts = $('#alerts');
 		this.$header = $('#header');
@@ -94,44 +100,8 @@ var CP = Garnish.Base.extend(
 		var $errorNotifications = this.$notificationContainer.children('.error'),
 			$otherNotifications = this.$notificationContainer.children(':not(.error)');
 
-		$errorNotifications.delay(CP.notificationDuration * 2).fadeOut();
-		$otherNotifications.delay(CP.notificationDuration).fadeOut();
-
-		// Secondary form submit buttons
-		this.addListener($('.formsubmit'), 'activate', function(ev)
-		{
-			var $btn = $(ev.currentTarget);
-
-			if ($btn.attr('data-confirm'))
-			{
-				if (!confirm($btn.attr('data-confirm')))
-				{
-					return;
-				}
-			}
-
-			// Is this a menu item?
-			if ($btn.data('menu'))
-			{
-				var $form = $btn.data('menu').$trigger.closest('form');
-			}
-			else
-			{
-				var $form = $btn.closest('form');
-			}
-
-			if ($btn.attr('data-action'))
-			{
-				$('<input type="hidden" name="action" value="'+$btn.attr('data-action')+'"/>').appendTo($form);
-			}
-
-			if ($btn.attr('data-redirect'))
-			{
-				$('<input type="hidden" name="redirect" value="'+$btn.attr('data-redirect')+'"/>').appendTo($form);
-			}
-
-			$form.submit();
-		});
+		$errorNotifications.delay(CP.notificationDuration * 2).velocity('fadeOut');
+		$otherNotifications.delay(CP.notificationDuration).velocity('fadeOut');
 
 		// Alerts
 		if (this.$alerts.length)
@@ -140,7 +110,7 @@ var CP = Garnish.Base.extend(
 		}
 
 		// Listen for save shortcuts in primary forms
-		var $primaryForm = $('form[data-saveshortcut="1"]:first');
+		var $primaryForm = $('form[data-saveshortcut]:first');
 
 		if ($primaryForm.length == 1)
 		{
@@ -164,34 +134,59 @@ var CP = Garnish.Base.extend(
 			});
 		}
 
-		// Look for forms that we should watch for changes on
-		this.$confirmUnloadForms = $('form[data-confirm-unload="1"]');
-
-		if (this.$confirmUnloadForms.length)
+		Garnish.$win.on('load', $.proxy(function()
 		{
-			this.initialFormValues = [];
+			// Look for forms that we should watch for changes on
+			this.$confirmUnloadForms = $('form[data-confirm-unload]');
 
-			for (var i = 0; i < this.$confirmUnloadForms.length; i++)
+			if (this.$confirmUnloadForms.length)
 			{
-				var $form = $(this.$confirmUnloadForms);
-				this.initialFormValues[i] = $form.serialize();
-				this.addListener($form, 'submit', function()
+				if (!Craft.forceConfirmUnload)
 				{
-					this.removeListener(Garnish.$win, 'beforeunload');
-				});
-			}
+					this.initialFormValues = [];
+				}
 
-			this.addListener(Garnish.$win, 'beforeunload', function()
-			{
 				for (var i = 0; i < this.$confirmUnloadForms.length; i++)
 				{
-					if (this.initialFormValues[i] != $(this.$confirmUnloadForms[i]).serialize())
+					var $form = $(this.$confirmUnloadForms);
+
+					if (!Craft.forceConfirmUnload)
 					{
-						return Craft.t('Any changes will be lost if you leave this page.');
+						this.initialFormValues[i] = $form.serialize();
 					}
+
+					this.addListener($form, 'submit', function()
+					{
+						this.removeListener(Garnish.$win, 'beforeunload');
+					});
 				}
-			});
-		}
+
+				this.addListener(Garnish.$win, 'beforeunload', function(ev)
+				{
+					for (var i = 0; i < this.$confirmUnloadForms.length; i++)
+					{
+						if (
+							Craft.forceConfirmUnload ||
+							this.initialFormValues[i] != $(this.$confirmUnloadForms[i]).serialize()
+						)
+						{
+							var message = Craft.t('Any changes will be lost if you leave this page.');
+
+							if (ev)
+							{
+								ev.originalEvent.returnValue = message;
+							}
+							else
+							{
+								window.event.returnValue = message;
+							}
+
+							return message;
+						}
+					}
+				});
+			}
+		}, this));
 
 		this.addListener(this.$upgradePromo, 'click', 'showUpgradeModal');
 
@@ -261,11 +256,10 @@ var CP = Garnish.Base.extend(
 			else
 			{
 				// See if we can fit any more nav items in the main menu
-				do
+				while ((this.$nav.height() == CP.navHeight) && (this.visibleNavItems < this.totalNavItems))
 				{
 					this.addFirstOverflowNavItemToMainMenu();
 				}
-				while ((this.$nav.height() == CP.navHeight) && (this.visibleNavItems < this.totalNavItems));
 
 				// Now kick the last one back.
 				this.addLastVisibleNavItemToOverflowMenu();
@@ -399,9 +393,9 @@ var CP = Garnish.Base.extend(
 		$('<div class="notification '+type+'">'+message+'</div>')
 			.appendTo(this.$notificationContainer)
 			.hide()
-			.fadeIn('fast')
+			.velocity('fadeIn', { display: 'inline-block', duration: 'fast' })
 			.delay(notificationDuration)
-			.fadeOut();
+			.velocity('fadeOut');
 	},
 
 	/**
@@ -451,7 +445,7 @@ var CP = Garnish.Base.extend(
 
 			var height = this.$alerts.height();
 
-			this.$alerts.height(0).animate({ height: height }, 'fast', $.proxy(function()
+			this.$alerts.height(0).velocity({ height: height }, 'fast', $.proxy(function()
 			{
 				this.$alerts.height('auto');
 			}, this));
@@ -570,17 +564,23 @@ var CP = Garnish.Base.extend(
 
 	runPendingTasks: function()
 	{
-		Craft.queueActionRequest('tasks/runPendingTasks', $.proxy(function(taskInfo, textStatus)
+		if (Craft.runTasksAutomatically)
 		{
-			if (taskInfo)
+			Craft.queueActionRequest('tasks/runPendingTasks', $.proxy(function(taskInfo, textStatus)
 			{
-				this.setRunningTaskInfo(taskInfo);
-				this.trackTaskProgress();
-			}
-		}, this));
+				if (textStatus == 'success')
+				{
+					this.trackTaskProgress(0);
+				}
+			}, this));
+		}
+		else
+		{
+			this.trackTaskProgress(0);
+		}
 	},
 
-	trackTaskProgress: function()
+	trackTaskProgress: function(delay)
 	{
 		// Ignore if we're already tracking tasks
 		if (this.trackTaskProgressTimeout)
@@ -594,16 +594,22 @@ var CP = Garnish.Base.extend(
 			{
 				if (textStatus == 'success')
 				{
+					this.trackTaskProgressTimeout = null;
 					this.setRunningTaskInfo(taskInfo, true);
 
 					if (taskInfo.status == 'running')
 					{
-						// Keep checking
+						// Check again in one second
 						this.trackTaskProgress();
+					}
+					else if (taskInfo.status == 'pending')
+					{
+						// Check again in 30 seconds
+						this.trackTaskProgress(30000);
 					}
 				}
 			}, this));
-		}, this), 1000);
+		}, this), (typeof delay != typeof undefined ? delay : 1000));
 	},
 
 	stopTrackingTaskProgress: function()
@@ -626,7 +632,7 @@ var CP = Garnish.Base.extend(
 				this.taskProgressIcon = new TaskProgressIcon();
 			}
 
-			if (taskInfo.status == 'running')
+			if (taskInfo.status == 'running' || taskInfo.status == 'pending')
 			{
 				this.taskProgressIcon.hideFailMode();
 				this.taskProgressIcon.setDescription(taskInfo.description);
@@ -643,6 +649,7 @@ var CP = Garnish.Base.extend(
 			{
 				this.taskProgressIcon.hideFailMode();
 				this.taskProgressIcon.complete();
+				delete this.taskProgressIcon;
 			}
 		}
 	},
@@ -771,7 +778,7 @@ var TaskProgressIcon = Garnish.Base.extend(
 		{
 			this._animateArc(0, 1, $.proxy(function()
 			{
-				this._$bgCanvas.fadeOut();
+				this._$bgCanvas.velocity('fadeOut');
 
 				this._animateArc(1, 1, $.proxy(function()
 				{
@@ -783,7 +790,7 @@ var TaskProgressIcon = Garnish.Base.extend(
 		else
 		{
 			this._progressBar.setProgressPercentage(100);
-			this.$a.fadeOut();
+			this.$a.velocity('fadeOut');
 		}
 	},
 

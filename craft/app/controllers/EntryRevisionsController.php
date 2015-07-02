@@ -1,25 +1,31 @@
 <?php
 namespace Craft;
 
-/**
- * Craft by Pixel & Tonic
- *
- * @package   Craft
- * @author    Pixel & Tonic, Inc.
- * @copyright Copyright (c) 2014, Pixel & Tonic, Inc.
- * @license   http://buildwithcraft.com/license Craft License Agreement
- * @link      http://buildwithcraft.com
- */
-
 craft()->requireEdition(Craft::Client);
 
 /**
+ * The EntryRevisionsController class is a controller that handles various entry version and draft related tasks such as
+ * retrieving, saving, deleting, publishing and reverting entry drafts and versions.
  *
+ * Note that all actions in the controller require an authenticated Craft session via {@link BaseController::allowAnonymous}.
+ *
+ * @author    Pixel & Tonic, Inc. <support@pixelandtonic.com>
+ * @copyright Copyright (c) 2014, Pixel & Tonic, Inc.
+ * @license   http://buildwithcraft.com/license Craft License Agreement
+ * @see       http://buildwithcraft.com
+ * @package   craft.app.controllers
+ * @since     1.0
  */
 class EntryRevisionsController extends BaseEntriesController
 {
+	// Public Methods
+	// =========================================================================
+
 	/**
 	 * Saves a draft, or creates a new one.
+	 *
+	 * @throws Exception
+	 * @return null
 	 */
 	public function actionSaveDraft()
 	{
@@ -33,7 +39,7 @@ class EntryRevisionsController extends BaseEntriesController
 
 			if (!$draft)
 			{
-				throw new Exception(Craft::t('No draft exists with the ID “{id}”', array('id' => $draftId)));
+				throw new Exception(Craft::t('No draft exists with the ID “{id}”.', array('id' => $draftId)));
 			}
 		}
 		else
@@ -102,6 +108,9 @@ class EntryRevisionsController extends BaseEntriesController
 
 	/**
 	 * Renames a draft.
+	 *
+	 * @throws Exception
+	 * @return null
 	 */
 	public function actionUpdateDraftMeta()
 	{
@@ -115,7 +124,7 @@ class EntryRevisionsController extends BaseEntriesController
 
 		if (!$draft)
 		{
-			throw new Exception(Craft::t('No draft exists with the ID “{id}”', array('id' => $draftId)));
+			throw new Exception(Craft::t('No draft exists with the ID “{id}”.', array('id' => $draftId)));
 		}
 
 		if ($draft->creatorId != craft()->userSession->getUser()->id)
@@ -139,6 +148,9 @@ class EntryRevisionsController extends BaseEntriesController
 
 	/**
 	 * Deletes a draft.
+	 *
+	 * @throws Exception
+	 * @return null
 	 */
 	public function actionDeleteDraft()
 	{
@@ -149,7 +161,7 @@ class EntryRevisionsController extends BaseEntriesController
 
 		if (!$draft)
 		{
-			throw new Exception(Craft::t('No draft exists with the ID “{id}”', array('id' => $draftId)));
+			throw new Exception(Craft::t('No draft exists with the ID “{id}”.', array('id' => $draftId)));
 		}
 
 		if ($draft->creatorId != craft()->userSession->getUser()->id)
@@ -164,6 +176,9 @@ class EntryRevisionsController extends BaseEntriesController
 
 	/**
 	 * Publish a draft.
+	 *
+	 * @throws Exception
+	 * @return null
 	 */
 	public function actionPublishDraft()
 	{
@@ -175,15 +190,15 @@ class EntryRevisionsController extends BaseEntriesController
 
 		if (!$draft)
 		{
-			throw new Exception(Craft::t('No draft exists with the ID “{id}”', array('id' => $draftId)));
+			throw new Exception(Craft::t('No draft exists with the ID “{id}”.', array('id' => $draftId)));
 		}
 
 		// Permission enforcement
-		$entry = craft()->entries->getEntryById($draft->id);
+		$entry = craft()->entries->getEntryById($draft->id, $draft->locale);
 
 		if (!$entry)
 		{
-			throw new Exception(Craft::t('No entry exists with the ID “{id}”', array('id' => $entry->id)));
+			throw new Exception(Craft::t('No entry exists with the ID “{id}”.', array('id' => $draft->id)));
 		}
 
 		$this->enforceEditEntryPermissions($entry);
@@ -247,6 +262,9 @@ class EntryRevisionsController extends BaseEntriesController
 
 	/**
 	 * Reverts an entry to a version.
+	 *
+	 * @throws Exception
+	 * @return null
 	 */
 	public function actionRevertEntryToVersion()
 	{
@@ -254,19 +272,18 @@ class EntryRevisionsController extends BaseEntriesController
 
 		$versionId = craft()->request->getPost('versionId');
 		$version = craft()->entryRevisions->getVersionById($versionId);
-		$userId = craft()->userSession->getUser()->id;
 
 		if (!$version)
 		{
-			throw new Exception(Craft::t('No version exists with the ID “{id}”', array('id' => $versionId)));
+			throw new Exception(Craft::t('No version exists with the ID “{id}”.', array('id' => $versionId)));
 		}
 
 		// Permission enforcement
-		$entry = craft()->entries->getEntryById($version->id);
+		$entry = craft()->entries->getEntryById($version->id, $version->locale);
 
 		if (!$entry)
 		{
-			throw new Exception(Craft::t('No entry exists with the ID “{id}”', array('id' => $entry->id)));
+			throw new Exception(Craft::t('No entry exists with the ID “{id}”.', array('id' => $version->id)));
 		}
 
 		$this->enforceEditEntryPermissions($entry);
@@ -290,7 +307,7 @@ class EntryRevisionsController extends BaseEntriesController
 			$userSessionService->requirePermission('publishEntries:'.$entry->sectionId);
 		}
 
-		// Revent to the version
+		// Revert to the version
 		if (craft()->entryRevisions->revertEntryToVersion($version))
 		{
 			craft()->userSession->setNotice(Craft::t('Entry reverted to past version.'));
@@ -307,20 +324,43 @@ class EntryRevisionsController extends BaseEntriesController
 		}
 	}
 
+	// Private Methods
+	// =========================================================================
+
 	/**
 	 * Sets a draft's attributes from the post data.
 	 *
-	 * @access private
 	 * @param EntryDraftModel $draft
+	 *
+	 * @return null
 	 */
 	private function _setDraftAttributesFromPost(EntryDraftModel $draft)
 	{
+		$draft->typeId     = craft()->request->getPost('typeId');
 		$draft->slug       = craft()->request->getPost('slug');
 		$draft->postDate   = craft()->request->getPost('postDate');
 		$draft->expiryDate = craft()->request->getPost('expiryDate');
 		$draft->enabled    = (bool) craft()->request->getPost('enabled');
-		$draft->authorId   = craft()->request->getPost('author');
-
 		$draft->getContent()->title = craft()->request->getPost('title');
+
+		// Author
+		$authorId = craft()->request->getPost('author', ($draft->authorId ? $draft->authorId : craft()->userSession->getUser()->id));
+
+		if (is_array($authorId))
+		{
+			$authorId = isset($authorId[0]) ? $authorId[0] : null;
+		}
+
+		$draft->authorId = $authorId;
+
+		// Parent
+		$parentId = craft()->request->getPost('parentId');
+
+		if (is_array($parentId))
+		{
+			$parentId = isset($parentId[0]) ? $parentId[0] : null;
+		}
+
+		$draft->parentId = $parentId;
 	}
 }
