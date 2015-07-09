@@ -9,13 +9,28 @@ div#video_controls_bar {
 	padding: 0 0 6px;
 	color: @gray-light;
 	overflow: hidden;
-	border-radius: 0 0 5px 5px;
 	button {
 		&:active,
 		&:focus {
 			border: none;
 			outline: none;
 		}
+	}
+}
+
+#video_controls_bar {
+	opacity: 0;
+	position: absolute;
+	left: 0;
+	z-index: 100;
+	right: 0;
+	bottom: 0px;
+	transition: all .2s ease-in-out;
+}
+#video-player:hover {
+	#video_controls_bar {
+		opacity: 1;
+		transition: all .2s ease-in-out;
 	}
 }
 
@@ -92,21 +107,26 @@ div#video_controls_bar {
 	}
 }
 
-/* Positioning of Custom Control Bar Elemetns */
+@-moz-document url-prefix() {
+	#playpausebtn { 
+		background-position: 205px 85px;
+		&.pause {
+			background-position: 182px 84px;
+		}
+	}
+}
 
+
+/* Positioning of Custom Control Bar Elemetns */
 
 #curtimetext {  }
 #durtimetext { }
 
-
-
-
 #curtimetext, #durtimetext { font-size: .8em; }
 	
 
+/* SLIDER INPUT STYLES (Progress Bar and Volume Slider) */
 
-
-/* SLIDER INPUT STYLES (Progress Bar an Volume Slider) */
 
 input[type='range'] {
     -moz-appearance: none;
@@ -132,7 +152,7 @@ input[type='range']:focus {
 }
 
 input[type='range']::-webkit-slider-runnable-track {
-    -webkit-appearance: none;
+    -webkit-appearance: none !important;
     background: @gray-dark;
     height: 12px;
     width: 100%;
@@ -152,7 +172,6 @@ input[type='range']::-webkit-slider-thumb:before {
     pointer-events: none; //Update after comment of @Rich Smith
 }
 
-
 input[type='range']::-webkit-slider-thumb {
     -webkit-appearance: none !important;
 	position: relative;
@@ -169,18 +188,18 @@ input[type='range']#volumeslider::-webkit-slider-thumb {
 	width: 0px;
 	border-radius: 0;
 	cursor: pointer;
-	background: rgb(60,26,103);
+	background: @purple;
 }
 
 input[type='range']#volumeslider::-webkit-slider-thumb:before {
 	margin-right: 0px;
-
 }
 
 
 input[type='range']::-moz-range-track {
     width: 100%;
     height: 12px;
+    background: @gray-dark;
 
 }
 
@@ -188,7 +207,7 @@ input[type='range']::-moz-range-thumb {
     width: 12px;
     height: 12px;
     -moz-appearance: none;
-    background: rgb(152,119,181);
+    background: lighten(@purple, 25%);
     border: 0;
     border-radius: 30%;
     box-shadow: 0;
@@ -203,7 +222,7 @@ input[type='range']#volumeslider::-moz-range-thumb {
 }
 
 input[type='range']::-moz-range-progress {
-    background: rgb(60,26,103);
+    background: @purple;
     height: 12px;
    
 }
@@ -211,23 +230,23 @@ input[type='range']::-moz-range-progress {
 
 
 input[type='range']::-ms-track {
-    background: rgb(60,26,103);
+    background: @gray-dark;
     border: 0;
     border-color: transparent;
     border-radius: 0;
     border-width: 0;
     color: transparent;
-    height: 15px;
+    height: 12px;
     width: 100%;
 }
 
 input[type='range']::-ms-fill-lower {
-    background: purple;
+    background: @purple;
     border-radius: 0;
 }
 
 input[type='range']::-ms-fill-upper {
-    background: lightgreen;
+    background: @gray-dark;
     border-radius: 0;
 }
 
@@ -239,5 +258,30 @@ input[type='range']::-ms-thumb {
 
 input[type='range']::-ms-tooltip {
     display: none;
+}
+
+
+/* -------------------------------------------------------------------------------- */
+// VIDEO FULLSCREEN
+
+
+/* -------------------------------------------------------------------------------- */
+// IE 10+ STYLES
+
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+	#video_controls_bar {
+		padding-bottom: 10px;
+	}
+	#seekslider {
+		padding-top: 0;
+		padding-bottom: 5px;
+	}
+
+	#volumeslider {
+		padding-top: 0;
+		padding-bottom: 0px;
+		margin-top: 5px;
+		height: 12px;
+	}
 }
 

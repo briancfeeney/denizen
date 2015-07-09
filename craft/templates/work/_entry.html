@@ -32,16 +32,17 @@
 				</video>
 
 				<!-- <button class="pause hide">Pause</button> -->
-			</section>
-
 			<div id="video_controls_bar">
 				<input id="seekslider" type="range" min="0" max="100" value="0" step="1">
 				<button id="playpausebtn"></button>
 				<span id="curtimetext">00:00</span> / <span id="durtimetext">00:00</span>
-				<button id="fullscreenbtn"></button>
+				<!-- <button id="fullscreenbtn"></button> -->
 				<input id="volumeslider" type="range" min="0" max="100" value="100" step="1">
 				<button id="mutebtn"></button>
 			</div>
+			</section>
+
+
 			
 			<section class="workMeta">
 				<div class="row">
@@ -84,13 +85,18 @@
 	<script>
 		$("#playpausebtn").click(function() {
 			$(".thumbnail-overlay").addClass("hide");
-			$('.pause').removeClass("hide");
 			$("#playpausebtn").toggleClass("pause");
+		});
+
+		$(".play").click(function() {
+			$(".thumbnail-overlay").addClass("hide");
+			$('video').trigger("play");
 		});
 
 		$('video').on('ended',function(){
 		    $("#playpausebtn").removeClass("pause");
 		});
+
 	
 		$(".pause").click(function() {
 			if($("video").get(0).paused) {
@@ -113,6 +119,7 @@
 		});
 		
 		$(".thumbnail_fullwidth").width();
+
 	</script>
 	
 {% endblock %}
