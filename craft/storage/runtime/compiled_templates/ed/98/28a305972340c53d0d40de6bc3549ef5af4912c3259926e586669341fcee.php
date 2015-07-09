@@ -43,6 +43,9 @@ class __TwigTemplate_ed9828a305972340c53d0d40de6bc3549ef5af4912c3259926e58666934
         echo "\" />
 
 \t<link rel=\"stylesheet\" type=\"text/css\" href=\"/public/css/denizen.css\" />
+\t<!--[if IE]>
+\t\t<link rel=\"stylesheet\" type=\"text/css\" href=\"/public/css/denizen-ie.css\" />
+\t<![endif]-->
 \t
 \t<script src=\"//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js\"></script>
 \t<script src=\"/public/js/modernizr.custom.99139.js\"></script>\t
@@ -54,7 +57,7 @@ class __TwigTemplate_ed9828a305972340c53d0d40de6bc3549ef5af4912c3259926e58666934
 </head>
 
 <body ";
-        // line 34
+        // line 37
         if (($this->getAttribute($this->getAttribute((isset($context["craft"]) ? $context["craft"] : null), "request", array()), "firstSegment", array()) == "")) {
             echo "id=\"home\"";
         }
@@ -66,31 +69,31 @@ class __TwigTemplate_ed9828a305972340c53d0d40de6bc3549ef5af4912c3259926e58666934
 \t\t<nav>
 \t\t\t<ul>
 \t\t\t\t<li><a href=\"/#ourWork\" ";
-        // line 41
+        // line 44
         if (($this->getAttribute($this->getAttribute((isset($context["craft"]) ? $context["craft"] : null), "request", array()), "firstSegment", array()) == "work")) {
             echo "class=\"active\"";
         }
         echo ">Work</a></li>
 \t\t\t\t<li><a href=\"/#ourClients\" ";
-        // line 42
+        // line 45
         if (($this->getAttribute($this->getAttribute((isset($context["craft"]) ? $context["craft"] : null), "request", array()), "firstSegment", array()) == "Clients")) {
             echo "class=\"active\"";
         }
         echo ">Clients</a></li>
 \t\t\t\t<li><a href=\"/#aboutUs\" ";
-        // line 43
+        // line 46
         if (($this->getAttribute($this->getAttribute((isset($context["craft"]) ? $context["craft"] : null), "request", array()), "firstSegment", array()) == "about")) {
             echo "class=\"active\"";
         }
         echo ">About Us</a></li>
 \t\t\t\t<li><a href=\"/#footer\" ";
-        // line 44
+        // line 47
         if (($this->getAttribute($this->getAttribute((isset($context["craft"]) ? $context["craft"] : null), "request", array()), "firstSegment", array()) == "about")) {
             echo "class=\"active\"";
         }
         echo ">Contact</a></li>
 \t\t\t\t<!-- <li><a href=\"/#aboutUs\" ";
-        // line 45
+        // line 48
         if (($this->getAttribute($this->getAttribute((isset($context["craft"]) ? $context["craft"] : null), "request", array()), "firstSegment", array()) == "news")) {
             echo "class=\"active\"";
         }
@@ -101,14 +104,14 @@ class __TwigTemplate_ed9828a305972340c53d0d40de6bc3549ef5af4912c3259926e58666934
 
 \t<main id=\"content\" role=\"main\">
 \t\t";
-        // line 51
+        // line 54
         $this->displayBlock('content', $context, $blocks);
-        // line 55
+        // line 58
         echo "\t</main>
 
 \t<footer id=\"footer\">
 \t\t<span>";
-        // line 58
+        // line 61
         echo twig_escape_filter($this->env, $this->getAttribute((isset($context["contactInfo"]) ? $context["contactInfo"] : null), "address", array()), "html", null, true);
         echo "</span> <span>";
         echo twig_escape_filter($this->env, $this->getAttribute((isset($context["contactInfo"]) ? $context["contactInfo"] : null), "phone", array()), "html", null, true);
@@ -120,10 +123,10 @@ class __TwigTemplate_ed9828a305972340c53d0d40de6bc3549ef5af4912c3259926e58666934
 ";
     }
 
-    // line 51
+    // line 54
     public function block_content($context, array $blocks = array())
     {
-        // line 52
+        // line 55
         echo "\t\t\t<p>If you see me, you haven’t set your <code>";
         echo "{% block content %}…{% endblock %}";
         echo "</code> yet.</p>
@@ -143,6 +146,6 @@ class __TwigTemplate_ed9828a305972340c53d0d40de6bc3549ef5af4912c3259926e58666934
 
     public function getDebugInfo()
     {
-        return array (  127 => 52,  124 => 51,  112 => 58,  107 => 55,  105 => 51,  94 => 45,  88 => 44,  82 => 43,  76 => 42,  70 => 41,  58 => 34,  42 => 21,  33 => 19,  28 => 17,  20 => 11,);
+        return array (  130 => 55,  127 => 54,  115 => 61,  110 => 58,  108 => 54,  97 => 48,  91 => 47,  85 => 46,  79 => 45,  73 => 44,  61 => 37,  42 => 21,  33 => 19,  28 => 17,  20 => 11,);
     }
 }
